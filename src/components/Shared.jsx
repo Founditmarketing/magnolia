@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, I, Fade } from "./utils";
+import { Link, I, Fade } from "../utils";
 
 export function ISNBadge({ size = 48 }) {
   return (
