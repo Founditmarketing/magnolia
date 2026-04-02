@@ -46,7 +46,7 @@ export function TrustBar() {
   ];
   return (
     <div style={{ background: "var(--bg-surface)", borderTop: "1px solid var(--border-light)", borderBottom: "1px solid var(--border-light)", padding: "20px 24px" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(clamp(140px, 40vw, 200px), 1fr))", gap: "16px 8px" }}>
         {items.map((it, i) => (
           <div key={i} style={{ display: "flex", alignItems: "center", gap: 14, padding: "8px 0" }}>
             <div style={{ color: "var(--primary)", flexShrink: 0 }}>{it.badge ? <ISNBadge size={38} /> : it.icon}</div>
@@ -75,7 +75,7 @@ export function SH({ tag, title, sub, light = true, center }) {
 
 export function CTA({ title, sub, btn, btnTo }) {
   return (
-    <section style={{ background: "var(--bg-elevated)", padding: "120px 24px", textAlign: "center", position: "relative", overflow: "hidden", borderTop: "1px solid var(--border-light)" }}>
+    <section style={{ background: "var(--bg-elevated)", padding: "clamp(60px, 10vh, 120px) 24px", textAlign: "center", position: "relative", overflow: "hidden", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 800, height: 800, background: "radial-gradient(circle, var(--primary-glow) 0%, transparent 60%)", pointerEvents: "none", opacity: 0.5 }} />
       <div style={{ position: "relative", zIndex: 1, maxWidth: 720, margin: "0 auto" }}>
         <Fade><h2 className="text-gradient" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(32px, 5.5vw, 52px)", textTransform: "uppercase", letterSpacing: -0.5, margin: "0 0 20px" }}>{title}</h2></Fade>
@@ -93,12 +93,12 @@ export function CTA({ title, sub, btn, btnTo }) {
 
 export function PageHero({ tag, title, titleAccent, sub, children }) {
   return (
-    <section style={{ background: "var(--bg-dark)", padding: "180px 24px 100px", position: "relative", overflow: "hidden", borderBottom: "1px solid var(--border-light)" }}>
+    <section style={{ background: "var(--bg-dark)", padding: "clamp(120px, 15vh, 180px) 24px clamp(60px, 8vh, 100px)", position: "relative", overflow: "hidden", borderBottom: "1px solid var(--border-light)" }}>
       <div style={{ position: "absolute", inset: 0, opacity: 0.1, backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       <div style={{ position: "absolute", right: "-10%", bottom: "-10%", width: "60%", height: "80%", background: "radial-gradient(ellipse, var(--primary-glow) 0%, transparent 70%)", pointerEvents: "none" }} />
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
         {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 5, textTransform: "uppercase", marginBottom: 20 }}>{tag}</div>}
-        <h1 className="text-gradient" style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(44px, 7vw, 76px)", textTransform: "uppercase", letterSpacing: -1, margin: 0, lineHeight: 1.05, maxWidth: 900 }}>
+        <h1 className="text-gradient" style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 9vw, 76px)", textTransform: "uppercase", letterSpacing: -1, margin: 0, lineHeight: 1.05, maxWidth: 900 }}>
           {title}{titleAccent && <><br /><span className="primary-text">{titleAccent}</span></>}
         </h1>
         {sub && <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.7, marginTop: 28, maxWidth: 700 }}>{sub}</p>}

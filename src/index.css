@@ -133,6 +133,31 @@ html {
   gap: 24px;
 }
 
+/* Mobile-First Swipe-able Carousels */
+@media (max-width: 768px) {
+  .bento-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 20px;
+    padding-bottom: 24px;
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    /* Hide scrollbar for clean aesthetic */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+  }
+  .bento-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .bento-item, .bento-gallery-item {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+}
+
 .bento-item {
   background: var(--bg-surface);
   border-radius: 16px;

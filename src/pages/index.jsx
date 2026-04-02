@@ -19,7 +19,7 @@ export function HomePage() {
           </Fade>
 
           <Fade delay={0.1}>
-            <h1 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(56px, 8vw, 100px)", lineHeight: 1, textTransform: "uppercase", letterSpacing: -2, margin: "0 0 32px", maxWidth: 900 }}>
+            <h1 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 11vw, 100px)", lineHeight: 1, textTransform: "uppercase", letterSpacing: -2, margin: "0 0 32px", maxWidth: 900 }}>
               Commercial &amp;<br />Industrial<br /><span className="text-gradient">Construction</span>
             </h1>
           </Fade>
@@ -41,7 +41,7 @@ export function HomePage() {
 
       <TrustBar />
 
-      <section style={{ background: "var(--bg-surface)", padding: "120px 24px" }}>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="What We Do" title="Built for Projects That Can't Afford to Go Wrong" sub="Multi-unit apartments, financial institutions, plant turnarounds, and job-site waste. We bring the certifications, insurance, and experience that serious projects demand." />
 
@@ -73,7 +73,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section style={{ background: "var(--bg-elevated)", padding: "120px 24px", position: "relative", overflow: "hidden", borderTop: "1px solid var(--border-light)" }}>
+      <section style={{ background: "var(--bg-elevated)", padding: "clamp(60px, 10vh, 120px) 24px", position: "relative", overflow: "hidden", borderTop: "1px solid var(--border-light)" }}>
         <div style={{ position: "absolute", top: 0, right: 0, bottom: 0, width: "30%", background: "linear-gradient(-90deg, var(--primary-glow), transparent)", opacity: 0.1, pointerEvents: "none" }} />
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 40, alignItems: "center" }}>
           <div>
@@ -120,7 +120,7 @@ export function CommercialPage() {
     <>
       <PageHero tag="Our Services" title="Commercial" titleAccent="Construction" sub="Full-service commercial builds across Central Louisiana. From multi-unit apartments and financial institutions to restaurants and retail — we handle every phase from permits to punch list." />
       <TrustBar />
-      <section style={{ background: "var(--bg-surface)", padding: "120px 24px" }}>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="What We Build" title="Quality Construction for Commercial Spaces" sub="We specialize in commercial projects that require careful planning, code compliance, and the kind of craftsmanship that holds up to daily public use." />
           <div className="bento-grid">
@@ -150,7 +150,7 @@ export function IndustrialPage() {
     <>
       <PageHero tag="ISN Certified" title="Industrial" titleAccent="Services" sub="On-site industrial contracting for refineries, mills, manufacturing facilities, and heavy infrastructure. Pre-qualified through ISNetworld. Pre-insured. Ready to mobilize." />
       <TrustBar />
-      <section style={{ background: "var(--bg-surface)", padding: "120px 24px" }}>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="Plant-Ready" title="Industrial Capabilities" sub="Our ISNetworld certification means we've already cleared your facility's contractor requirements. No waiting on paperwork — we mobilize pre-qualified and ready to work." />
            <div className="bento-grid">
@@ -179,7 +179,7 @@ export function DumpstersPage() {
   return (
     <>
       <PageHero tag="Dumpster Rentals" title="Roll-Off Dumpsters" titleAccent="for Every Project" sub="Convenient, reliable dumpster rentals for commercial job sites, demolition projects, renovations, and large-scale cleanouts across Central Louisiana." />
-      <section style={{ background: "var(--bg-surface)", padding: "120px 24px" }}>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="Our Fleet" title="Three Sizes. One Standard of Service." center />
           <div className="bento-grid" style={{ marginBottom: 64 }}>
@@ -218,10 +218,10 @@ export function GalleryPage() {
   return (
     <>
       <PageHero tag="Our Work" title="Project" titleAccent="Gallery" sub="Hyper-realistic commercial and industrial construction projects across Central Louisiana, featuring structural foundations, steel assembly, and modern distribution centers." />
-      <section style={{ background: "var(--bg-surface)", padding: "120px 24px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))", gap: 24 }}>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+        <div className="bento-grid" style={{ maxWidth: 1200, margin: "0 auto", gap: 24, gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))" }}>
           {paths.map((src, i) => (
-            <Fade key={i} delay={(i % 4) * 0.1}>
+            <Fade key={i} delay={(i % 4) * 0.1} className="bento-gallery-item">
               <div className="sc" style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "16/10", background: "var(--bg-elevated)", border: "1px solid var(--border-light)" }}>
                 <img src={src} alt={`Project ${i + 1}`} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s" }} loading="lazy" onMouseOver={e => e.currentTarget.style.transform="scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform="scale(1)"}/>
               </div>

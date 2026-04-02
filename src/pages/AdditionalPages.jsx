@@ -11,7 +11,7 @@ export function PricingPage() {
   return (
     <>
       <PageHero tag="Dumpster Rentals" title="Dumpster" titleAccent="Pricing" sub="Transparent pricing on every roll-off rental. No hidden fees." />
-      <section style={{ background: "var(--bg-surface)", padding: "120px 24px" }}>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="bento-grid" style={{ marginBottom: 64 }}>
             {sizes.map((s, i) => (
@@ -55,7 +55,7 @@ export function AboutPage() {
     <>
       <PageHero tag="About Us" title="Safety Is Not a Slogan." titleAccent="It's How We Operate." sub="Magnolia State Construction is built on the principle that safety and quality aren't competing priorities — they're the same thing." />
       <TrustBar />
-      <section style={{ background: "var(--bg-surface)", padding: "120px 24px" }}>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <SH tag="Our Story" title="Over 15 Years Building Central Louisiana" />
           <div style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "var(--text-secondary)", marginBottom: 64 }}>
@@ -99,7 +99,7 @@ export function ContactPage() {
   return (
     <>
       <PageHero tag="Contact" title="Let's Discuss" titleAccent="Your Project" sub="One call to Chris. No call centers, no runaround." />
-      <section style={{ background: "var(--bg-surface)", padding: "120px 24px" }}>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 64 }}>
           <div className="glass" style={{ borderRadius: 24, padding: "56px 48px" }}>
             {sent ? (
@@ -177,7 +177,7 @@ export function ResidentialPage() {
   return (
     <>
       <PageHero tag="Residential" title="Residential" titleAccent="Services" sub="While our primary focus is commercial and industrial construction, we continue to serve select residential clients across Central Louisiana with the same quality and professionalism." />
-      <section style={{ background: "var(--bg-surface)", padding: "120px 24px" }}>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "var(--text-secondary)", marginBottom: 64 }}>
             <p>Led by Chris Naalbandian — a member of the Louisiana Home Builders Association and an LP BuildSmart Preferred Contractor — our residential team brings the same safety standards, quality materials, and professional project management to every home project.</p>
