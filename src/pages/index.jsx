@@ -41,7 +41,7 @@ export function HomePage() {
 
       <TrustBar />
 
-      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="What We Do" title="Built for Projects That Can't Afford to Go Wrong" sub="Multi-unit apartments, financial institutions, plant turnarounds, and job-site waste. We bring the certifications, insurance, and experience that serious projects demand." />
 
@@ -120,7 +120,7 @@ export function CommercialPage() {
     <>
       <PageHero tag="Our Services" title="Commercial" titleAccent="Construction" sub="Full-service commercial builds across Central Louisiana. From multi-unit apartments and financial institutions to restaurants and retail — we handle every phase from permits to punch list." />
       <TrustBar />
-      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="What We Build" title="Quality Construction for Commercial Spaces" sub="We specialize in commercial projects that require careful planning, code compliance, and the kind of craftsmanship that holds up to daily public use." />
           <div className="bento-grid">
@@ -150,7 +150,7 @@ export function IndustrialPage() {
     <>
       <PageHero tag="ISN Certified" title="Industrial" titleAccent="Services" sub="On-site industrial contracting for refineries, mills, manufacturing facilities, and heavy infrastructure. Pre-qualified through ISNetworld. Pre-insured. Ready to mobilize." />
       <TrustBar />
-      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="Plant-Ready" title="Industrial Capabilities" sub="Our ISNetworld certification means we've already cleared your facility's contractor requirements. No waiting on paperwork — we mobilize pre-qualified and ready to work." />
            <div className="bento-grid">
@@ -179,7 +179,7 @@ export function DumpstersPage() {
   return (
     <>
       <PageHero tag="Dumpster Rentals" title="Roll-Off Dumpsters" titleAccent="for Every Project" sub="Convenient, reliable dumpster rentals for commercial job sites, demolition projects, renovations, and large-scale cleanouts across Central Louisiana." />
-      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="Our Fleet" title="Three Sizes. One Standard of Service." center />
           <div className="bento-grid" style={{ marginBottom: 64 }}>
@@ -218,7 +218,7 @@ export function GalleryPage() {
   return (
     <>
       <PageHero tag="Our Work" title="Project" titleAccent="Gallery" sub="Hyper-realistic commercial and industrial construction projects across Central Louisiana, featuring structural foundations, steel assembly, and modern distribution centers." />
-      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div className="bento-grid" style={{ maxWidth: 1200, margin: "0 auto", gap: 24, gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))" }}>
           {paths.map((src, i) => (
             <Fade key={i} delay={(i % 4) * 0.1} className="bento-gallery-item">
