@@ -91,22 +91,37 @@ export function CTA({ title, sub, btn, btnTo }) {
 }
 
 export function PageHero({ tag, title, titleAccent, sub, children, media }) {
+  if (media) {
+    return (
+      <section style={{ padding: "clamp(24px, 4vh, 48px) 24px", background: "var(--bg-dark)", paddingTop: "clamp(100px, 15vh, 140px)" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto", borderRadius: "24px", overflow: "hidden", position: "relative", minHeight: "clamp(550px, 75vh, 750px)", display: "flex", alignItems: "flex-end", padding: "clamp(24px, 5vw, 64px)", boxShadow: "var(--shadow-md)" }}>
+          <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+            <img src={media} alt="Hero Background" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 60%)" }} />
+          </div>
+          
+          <div className="glass sc" style={{ position: "relative", zIndex: 1, maxWidth: 840, padding: "clamp(32px, 6vw, 56px)", borderRadius: 16, border: "1px solid rgba(255,255,255,1)", boxShadow: "0 20px 40px -10px rgba(0,0,0,0.15)" }}>
+            {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>{tag}</div>}
+            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 6.5vw, 68px)", textTransform: "uppercase", letterSpacing: -1, margin: 0, lineHeight: 1.05 }}>
+              {title}{titleAccent && <><br /><span className="primary-text">{titleAccent}</span></>}
+            </h1>
+            {sub && <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: "clamp(16px, 2vw, 20px)", lineHeight: 1.6, marginTop: 24, maxWidth: 600 }}>{sub}</p>}
+            {children && <div style={{ marginTop: 40 }}>{children}</div>}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section style={{ background: "var(--bg-dark)", padding: "clamp(120px, 15vh, 180px) 24px clamp(60px, 8vh, 100px)", position: "relative", overflow: "hidden", borderBottom: "1px solid var(--border-light)" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: media ? "repeat(auto-fit, minmax(360px, 1fr))" : "1fr", gap: 64, alignItems: "center" }}>
-        <div>
-          {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 5, textTransform: "uppercase", marginBottom: 20 }}>{tag}</div>}
-          <h1 className="text-gradient" style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 8vw, 76px)", textTransform: "uppercase", letterSpacing: -1, margin: 0, lineHeight: 1.05, maxWidth: 900 }}>
-            {title}{titleAccent && <><br /><span className="primary-text">{titleAccent}</span></>}
-          </h1>
-          {sub && <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.7, marginTop: 28, maxWidth: 700 }}>{sub}</p>}
-          {children && <div style={{ marginTop: 48 }}>{children}</div>}
-        </div>
-        {media && (
-          <div className="sc glass" style={{ position: "relative", overflow: "hidden", borderRadius: 24, boxShadow: "var(--shadow-md)", aspectRatio: "4/3", border: "1px solid var(--border-light)" }}>
-            <img src={media} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-          </div>
-        )}
+      <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
+        {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 5, textTransform: "uppercase", marginBottom: 20 }}>{tag}</div>}
+        <h1 className="text-gradient" style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 9vw, 84px)", textTransform: "uppercase", letterSpacing: -1, margin: 0, lineHeight: 1.05, maxWidth: 900 }}>
+          {title}{titleAccent && <><br /><span className="primary-text">{titleAccent}</span></>}
+        </h1>
+        {sub && <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.7, marginTop: 28, maxWidth: 700 }}>{sub}</p>}
+        {children && <div style={{ marginTop: 48 }}>{children}</div>}
       </div>
     </section>
   );
