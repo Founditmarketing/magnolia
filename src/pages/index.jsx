@@ -12,7 +12,7 @@ export function HomePage() {
 
   return (
     <>
-      <PageHero media="/hero-video-2.mp4">
+      <PageHero media="/hero-video-3.mp4">
         {/* The Direct-Response Interactive Hero */}
         <Fade delay={0.1}>
           <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 24 }}>Licensed & Insured</div>
