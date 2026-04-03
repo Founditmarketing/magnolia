@@ -5,10 +5,10 @@ export function HomePage() {
   return (
     <>
             <PageHero 
-        title={<>Commercial &<br/>Industrial<br/></>} 
+        title="Commercial & Industrial " 
         titleAccent="Construction" 
         sub="ISNetworld Certified general contractor delivering uncompromising quality across Louisiana."
-        media="/images/warehouse_finished_1775169110438.png"
+        media="/hero-video.mp4"
       >
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
           <Btn to="/commercial">Explore Services</Btn>

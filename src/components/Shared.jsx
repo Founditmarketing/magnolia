@@ -96,8 +96,14 @@ export function PageHero({ tag, title, titleAccent, sub, children, media }) {
       <section style={{ padding: "clamp(24px, 4vh, 48px) 24px", background: "var(--bg-dark)", paddingTop: "clamp(100px, 15vh, 140px)" }}>
         <div style={{ maxWidth: 1400, margin: "0 auto", borderRadius: "24px", overflow: "hidden", position: "relative", minHeight: "clamp(550px, 75vh, 750px)", display: "flex", alignItems: "flex-end", padding: "clamp(24px, 5vw, 64px)", boxShadow: "var(--shadow-md)" }}>
           <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-            <img src={media} alt="Hero Background" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 60%)" }} />
+            {media.endsWith(".mp4") ? (
+              <video autoPlay loop muted playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}>
+                <source src={media} type="video/mp4" />
+              </video>
+            ) : (
+              <img src={media} alt="Hero Background" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            )}
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 60%)", pointerEvents: "none" }} />
           </div>
           
           <div className="glass sc" style={{ position: "relative", zIndex: 1, maxWidth: 840, padding: "clamp(32px, 6vw, 56px)", borderRadius: 16, border: "1px solid rgba(255,255,255,1)", boxShadow: "0 20px 40px -10px rgba(0,0,0,0.15)" }}>
