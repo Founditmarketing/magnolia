@@ -110,23 +110,32 @@ export function HomePage() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "clamp(32px, 8vw, 64px)", textAlign: "center", margin: "0 0 60px", overflowWrap: "break-word" }}>The standard of trust.</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
-            <Fade delay={0.1} style={{ padding: 40, background: "#fff", border: "1px solid var(--border-light)" }}>
-              <div style={{ color: "#F59E0B", marginBottom: 24, fontSize: 20, letterSpacing: 2 }}>★★★★★</div>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6, color: "var(--text-primary)", marginBottom: 24 }}>"They caught a structural flaw in our original blueprints that saved us thousands before the slab was even poured. Absolute precision from day one."</p>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase" }}>Michael T.</div>
-              <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-tertiary)", marginTop: 4 }}>Commercial Build-out</div>
+            <Fade delay={0.1} style={{ padding: 40, background: "#fff", border: "1px solid var(--border-light)", borderTop: "4px solid var(--primary)" }}>
+              <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 24 }}>
+                <div style={{ color: "#F59E0B", fontSize: 20, letterSpacing: 2 }}>★★★★★</div>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, color: "var(--text-secondary)" }}>Verified Google Review (4.7-Star)</div>
+              </div>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6, color: "var(--text-primary)", marginBottom: 24 }}>"Chris and his crew were extremely professional from day one. Communication was clear throughout the entire bathroom and laundry room remodel. The quality of work is outstanding."</p>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase" }}>Recent Client</div>
+              <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-tertiary)", marginTop: 4 }}>Residential Remodel</div>
             </Fade>
-            <Fade delay={0.2} style={{ padding: 40, background: "#fff", border: "1px solid var(--border-light)" }}>
-              <div style={{ color: "#F59E0B", marginBottom: 24, fontSize: 20, letterSpacing: 2 }}>★★★★★</div>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6, color: "var(--text-primary)", marginBottom: 24 }}>"The level of detail in the custom cabinetry and trim work was beyond anything we expected. The only contractor in Alexandria that actually executes on their word."</p>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase" }}>David & Sarah L.</div>
-              <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-tertiary)", marginTop: 4 }}>Custom Residential Renovation</div>
+            <Fade delay={0.2} style={{ padding: 40, background: "#fff", border: "1px solid var(--border-light)", borderTop: "4px solid var(--primary)" }}>
+              <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 24 }}>
+                <div style={{ color: "#F59E0B", fontSize: 20, letterSpacing: 2 }}>★★★★★</div>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, color: "var(--text-secondary)" }}>Verified Google Review (4.7-Star)</div>
+              </div>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6, color: "var(--text-primary)", marginBottom: 24 }}>"They completed our demanding commercial build-out reliably and on schedule without sacrificing an ounce of quality. Professional, polite, and respectful."</p>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase" }}>Local Business</div>
+              <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-tertiary)", marginTop: 4 }}>Commercial Construction</div>
             </Fade>
-            <Fade delay={0.3} style={{ padding: 40, background: "#fff", border: "1px solid var(--border-light)" }}>
-              <div style={{ color: "#F59E0B", marginBottom: 24, fontSize: 20, letterSpacing: 2 }}>★★★★★</div>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6, color: "var(--text-primary)", marginBottom: 24 }}>"Used them for massive structural exterior renovations. The site was kept immaculate, and they managed all the supply chain friction seamlessly."</p>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase" }}>James R.</div>
-              <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-tertiary)", marginTop: 4 }}>Facility Director</div>
+            <Fade delay={0.3} style={{ padding: 40, background: "#fff", border: "1px solid var(--border-light)", borderTop: "4px solid var(--primary)" }}>
+              <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 24 }}>
+                <div style={{ color: "#F59E0B", fontSize: 20, letterSpacing: 2 }}>★★★★★</div>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, color: "var(--text-secondary)" }}>Verified Google Review (4.7-Star)</div>
+              </div>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6, color: "var(--text-primary)", marginBottom: 24 }}>"The level of detail in the custom cabinetry and trim work was beyond anything we expected. Magnolia State Construction is a highly reliable central Louisiana contractor."</p>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase" }}>Recent Client</div>
+              <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-tertiary)", marginTop: 4 }}>Custom Residential</div>
             </Fade>
           </div>
         </div>
@@ -299,6 +308,10 @@ export function DumpstersPage() {
 export function GalleryPage() {
   useSEO({ title: "Project Gallery", description: "View our recent commercial and industrial construction projects." });
   const paths = [
+    "/images/custom_cabinets.png",
+    "/images/trim_millwork.png",
+    "/images/granite_kitchen.png",
+    "/images/residential_exterior.png",
     "/images/construction_brick_1775169082069.png",
     "/images/industrial_project_1775169098001.png",
     "/images/warehouse_finished_1775169110438.png",
