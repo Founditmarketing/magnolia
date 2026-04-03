@@ -93,7 +93,7 @@ export function CTA({ title, sub, btn, btnTo }) {
 export function PageHero({ tag, title, titleAccent, sub, children, media }) {
   if (media) {
     return (
-      <section style={{ position: "relative", minHeight: "clamp(600px, 100vh, 900px)", display: "flex", alignItems: "flex-end", padding: "clamp(100px, 15vh, 160px) 24px clamp(40px, 8vh, 80px)", overflow: "hidden", background: "#000" }}>
+      <section style={{ position: "relative", minHeight: "clamp(600px, 100vh, 900px)", display: "flex", alignItems: "center", padding: "clamp(100px, 15vh, 160px) 24px clamp(40px, 8vh, 80px)", overflow: "hidden", background: "#000" }}>
         
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
           {media.endsWith(".mp4") ? (
