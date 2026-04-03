@@ -46,10 +46,20 @@ export function Fade({ children, delay = 0, className = "", style = {} }) {
   );
 }
 
-export function useSEO({ title, description }) {
+export function useSEO({ title, description, image = "https://magnoliastateconstruction.com/og-image.jpg" }) {
   useEffect(() => {
     const fullTitle = title + " | Magnolia State Construction";
     document.title = fullTitle;
+    
+    // PRELOAD FONTS
+    let fontPreload = document.querySelector('link[rel="preload"][as="style"]');
+    if (!fontPreload) {
+      fontPreload = document.createElement('link');
+      fontPreload.rel = "preload";
+      fontPreload.as = "style";
+      fontPreload.href = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&display=swap";
+      document.head.appendChild(fontPreload);
+    }
     
     const setMeta = (name, content, isProp = false) => {
       const attr = isProp ? 'property' : 'name';
@@ -61,6 +71,7 @@ export function useSEO({ title, description }) {
     setMeta("description", description);
     setMeta("og:title", fullTitle, true);
     setMeta("og:description", description, true);
+    setMeta("og:image", image, true);
     setMeta("og:type", "website", true);
     setMeta("twitter:card", "summary_large_image");
     

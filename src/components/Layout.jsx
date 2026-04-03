@@ -33,8 +33,8 @@ export function Header({ path }) {
   return (
     <>
       {/* Premium Dark Pre-Header */}
-      <div className="dn" style={{ background: "#0F172A", position: "relative", zIndex: 1001, height: 40, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 24px", fontFamily: "var(--font-display)", fontSize: 13, color: "#94A3B8", letterSpacing: 0.5 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 24, maxWidth: 1400, margin: "0 auto", width: "100%", justifyContent: "space-between" }}>
+      <div style={{ background: "#0F172A", position: "relative", zIndex: 1001, height: "auto", minHeight: 40, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 24px", fontFamily: "var(--font-display)", fontSize: "clamp(11px, 2vw, 13px)", color: "#94A3B8", letterSpacing: 0.5, flexWrap: "wrap", gap: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 24, maxWidth: 1400, margin: "0 auto", width: "100%", justifyContent: "space-between", flexWrap: "wrap" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
              <span style={{ color: "var(--primary)" }}><I.Check /></span>
              <span style={{ fontWeight: 600, color: "#fff" }}>Licensed & Insured</span> Contractor
@@ -46,7 +46,7 @@ export function Header({ path }) {
       </div>
 
       {/* Main Structural Nav */}
-      <header style={{ position: "fixed", top: isMobile ? 0 : (sc ? 0 : 40), left: 0, right: 0, zIndex: 1000, transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)", background: sc ? "rgba(255, 255, 255, 0.95)" : "transparent", backdropFilter: sc ? "blur(24px)" : "none", WebkitBackdropFilter: sc ? "blur(24px)" : "none", borderBottom: sc ? "1px solid var(--border-light)" : "1px solid transparent", boxShadow: sc ? "0 10px 30px -10px rgba(0,0,0,0.05)" : "none" }}>
+      <header style={{ position: "fixed", top: sc ? 0 : 40, left: 0, right: 0, zIndex: 1000, transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)", background: sc ? "rgba(255, 255, 255, 0.95)" : "transparent", backdropFilter: sc ? "blur(24px)" : "none", WebkitBackdropFilter: sc ? "blur(24px)" : "none", borderBottom: sc ? "1px solid var(--border-light)" : "1px solid transparent", boxShadow: sc ? "0 10px 30px -10px rgba(0,0,0,0.05)" : "none" }}>
         <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: sc ? 80 : 100, transition: "height 0.4s" }}>
           
           <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }} aria-label="Magnolia State Construction Home">

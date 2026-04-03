@@ -15,9 +15,10 @@ export function HomePage() {
       <PageHero media="/hero-video-2.mp4">
         {/* The Direct-Response Interactive Hero */}
         <Fade delay={0.1}>
-          <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>Licensed & Insured</div>
-          <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 8vw, 72px)", letterSpacing: -1, margin: 0, lineHeight: 1.05, wordBreak: "break-word", hyphens: "auto" }}>
-            Careful Craftsmanship.<br/>Distinctive Spaces.
+          <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 24 }}>Licensed & Insured</div>
+          <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "clamp(32px, 9vw, 88px)", letterSpacing: -1, margin: 0, lineHeight: 1.05, wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto" }}>
+            Careful Craftsmanship.<br/>
+            <span style={{ fontStyle: "italic", opacity: 0.9, color: "var(--primary)" }}>Distinctive Spaces.</span>
           </h1>
           <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: "clamp(18px, 3vw, 24px)", lineHeight: 1.5, marginTop: 24, maxWidth: 800 }}>
             From extensive commercial build-outs to meticulous residential woodworking. Building Central Louisiana with absolute precision for 15+ years.
@@ -45,67 +46,95 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Relatable Pain Section */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(80px, 12vh, 160px) 24px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: 64, alignItems: "center" }}>
-          <div style={{ flex: "1 1 400px" }}>
-            <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1, margin: "0 0 32px" }}>
-              Spaces you can be incredibly proud of.
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 160px) 24px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: 64, alignItems: "center" }}>
+          <div style={{ flex: "1 1 500px" }}>
+            <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "clamp(32px, 8vw, 64px)", lineHeight: 1.1, margin: "0 0 32px", overflowWrap: "break-word" }}>
+              Spaces you can be <span style={{ fontStyle: "italic", color: "var(--primary)" }}>incredibly</span> proud of.
             </h2>
-            <p style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 20, letterSpacing: 1.5, textTransform: "uppercase", margin: 0 }}>The Magnolia Standard</p>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 2, textTransform: "uppercase", margin: 0 }}>The Magnolia Standard</p>
           </div>
           <div style={{ flex: "1 1 400px" }}>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.6, margin: "0 0 24px" }}>At Magnolia State Construction, we believe that whether you’re coming home or opening your business for the day, your space should be something you’re proud of.</p>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.6, margin: "0 0 24px" }}>Serving both residential and commercial clients, we bring rich details and careful craftsmanship to every project. From fine cabinetry and trim to complete exterior renovations.</p>
-            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: 20, fontWeight: 700, lineHeight: 1.6, margin: 0 }}>We ensure that every material, color, and texture is thoughtfully chosen to reflect your style and deliver lasting quality.</p>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.6, margin: "0 0 24px" }}>At Magnolia State Construction, we believe that whether you’re coming home or opening your doors for the day, the architecture should inspire exactly what you stand for.</p>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.6, margin: "0 0 24px" }}>Serving both residential and commercial clients, we bring rich details and careful craftsmanship to every project. We don't just build walls; we engineer environments.</p>
+            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: 20, fontWeight: 700, lineHeight: 1.6, margin: 0 }}>From managing complex structural supply chains to aligning multiple subcontractors seamlessly, we protect your timeline and your vision.</p>
           </div>
         </div>
       </section>
 
-      {/* What We Do */}
-      <section style={{ background: "var(--bg-surface)", padding: "clamp(80px, 12vh, 160px) 24px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(48px, 7vw, 72px)", textAlign: "center", margin: "0 0 80px" }}>We keep your project moving.</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 40 }}>
-            <Fade delay={0.1} className="bento-item sc" style={{ padding: 32 }}>
-              <div style={{ color: "var(--primary)", fontSize: 40, marginBottom: 24 }}><I.Building /></div>
-              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, margin: "0 0 16px" }}>Light Commercial</h3>
-              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.5, margin: 0 }}>Office build-outs, retail spaces, and exterior renovations. Pre-qualified and fully insured.</p>
-            </Fade>
-            <Fade delay={0.2} className="bento-item sc" style={{ padding: 32 }}>
-              <div style={{ color: "var(--primary)", fontSize: 40, marginBottom: 24 }}><I.Check /></div>
-              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, margin: "0 0 16px" }}>Custom Residential</h3>
-              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.5, margin: 0 }}>Rich trim work, custom cabinetry, granite countertops, and premium roofing solutions.</p>
-            </Fade>
-            <Fade delay={0.3} className="bento-item sc" style={{ padding: 32 }}>
-              <div style={{ color: "var(--primary)", fontSize: 40, marginBottom: 24 }}><I.Truck /></div>
-              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, margin: "0 0 16px" }}>Dumpster Rentals</h3>
-              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.5, margin: 0 }}>Fast 24-48 hr deliveries on 20, 30, and 40-yard roll-offs. Keep your site clear.</p>
-            </Fade>
-          </div>
+      <section style={{ padding: "0", background: "var(--bg-dark)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr", width: "100%" }}>
+          <Fade delay={0.1} style={{ position: "relative", minHeight: "60vh", display: "flex", alignItems: "flex-end", padding: "clamp(40px, 8vw, 80px) 24px" }}>
+            <img src="/images/industrial_project_1775169098001.png" alt="Commercial Base" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.6) 50%, rgba(15,23,42,0) 100%)", zIndex: 1 }} />
+            <div style={{ position: "relative", zIndex: 2, color: "#fff", maxWidth: 1000, margin: "0 auto", width: "100%" }}>
+              <div style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Solving Complex Logistics</div>
+              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(32px, 8vw, 64px)", fontWeight: 600, margin: "0 0 24px", lineHeight: 1.1, overflowWrap: "break-word" }}>Commercial Build-outs &<br/><span style={{ fontStyle: "italic", fontWeight: 400 }}>Structural Envelopes</span></h3>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 18, maxWidth: 600, opacity: 0.9, lineHeight: 1.6, margin: 0 }}>We engineer environments that withstand the rigorous reality of commercial wear while maintaining stunning, magazine-quality aesthetics.</p>
+            </div>
+          </Fade>
+          <Fade delay={0.2} style={{ position: "relative", minHeight: "60vh", display: "flex", alignItems: "flex-end", padding: "clamp(40px, 8vw, 80px) 24px" }}>
+            <img src="/images/warehouse_finished_1775169110438.png" alt="Residential Trim" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.6) 50%, rgba(15,23,42,0) 100%)", zIndex: 1 }} />
+            <div style={{ position: "relative", zIndex: 2, color: "#fff", maxWidth: 1000, margin: "0 auto", width: "100%" }}>
+              <div style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Obsessive Detailing</div>
+              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(32px, 8vw, 64px)", fontWeight: 600, margin: "0 0 24px", lineHeight: 1.1, overflowWrap: "break-word" }}>Premium Woodworking &<br/><span style={{ fontStyle: "italic", fontWeight: 400 }}>Custom Residential</span></h3>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 18, maxWidth: 600, opacity: 0.9, lineHeight: 1.6, margin: 0 }}>Rich architectural trim work, custom cabinetry installations, and premium roofing solutions executed with immaculate precision.</p>
+            </div>
+          </Fade>
+          <Fade delay={0.3} style={{ position: "relative", minHeight: "40vh", display: "flex", alignItems: "flex-end", padding: "clamp(40px, 8vw, 80px) 24px", background: "var(--bg-elevated)" }}>
+            <div style={{ position: "relative", zIndex: 2, color: "var(--text-primary)", maxWidth: 1000, margin: "0 auto", width: "100%" }}>
+              <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Rapid Site Services</div>
+              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(30px, 7vw, 48px)", fontWeight: 600, margin: "0 0 24px", lineHeight: 1.1, overflowWrap: "break-word" }}>Professional Roll-off Dumpsters</h3>
+              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, maxWidth: 600, lineHeight: 1.6, margin: 0 }}>Fast 24-48 hr deliveries on 20, 30, and 40-yard containers. Keeping active architectural and build sites completely clear and compliant.</p>
+            </div>
+          </Fade>
         </div>
       </section>
 
-      {/* Why Us (Psychology Trust Block) */}
-      <section style={{ background: "var(--bg-elevated)", padding: "clamp(80px, 12vh, 160px) 24px", borderTop: "1px solid var(--border-light)" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: 64 }}>
-          <div>
-            <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(48px, 6vw, 64px)", lineHeight: 1.1, margin: 0 }}>Uncompromising execution.</h2>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 160px) 24px", position: "relative" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: 64, alignItems: "flex-start" }}>
+          <div style={{ flex: "1 1 400px" }}>
+            <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "clamp(32px, 8vw, 64px)", lineHeight: 1.1, margin: 0, overflowWrap: "break-word" }}>Uncompromising<br/><span style={{ fontStyle: "italic", color: "var(--primary)" }}>Execution.</span></h2>
           </div>
-          <div>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 24px" }}>We build strictly to the blueprints.</p>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 40px" }}>We obsess over the transition of every material, color, and texture.</p>
+          <div style={{ flex: "1 1 400px" }}>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 32px" }}>We execute strictly to the architectural blueprints.</p>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 40px" }}>Our teams obsess over the transition of every material, color, and texture, delivering an undeniable sense of permanence.</p>
             
-            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: 24, fontWeight: 700, lineHeight: 1.6, margin: "0 0 16px" }}>From welcoming guests to impressing clients, we make sure your space is something you're completely proud of.</p>
-            <p style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 900, lineHeight: 1.2, margin: 0 }}>Lasting quality.</p>
+            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: 24, fontWeight: 700, lineHeight: 1.6, margin: "0 0 16px" }}>From welcoming discerning guests to impressing commercial clients, we engineer spaces that command respect.</p>
           </div>
         </div>
       </section>
 
-      {/* Visual Proof / Gallery Teaser */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(80px, 12vh, 160px) 24px" }}>
+      <section style={{ background: "var(--bg-elevated)", padding: "clamp(60px, 10vh, 160px) 24px", borderTop: "1px solid var(--border-light)", borderBottom: "1px solid var(--border-light)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(48px, 6vw, 64px)", margin: "0 0 48px", textAlign: "center" }}>Real builds. Real craftsmanship.</h2>
+          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "clamp(32px, 8vw, 64px)", textAlign: "center", margin: "0 0 60px", overflowWrap: "break-word" }}>The standard of trust.</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 32 }}>
+            <Fade delay={0.1} style={{ padding: 40, background: "#fff", border: "1px solid var(--border-light)" }}>
+              <div style={{ color: "#F59E0B", marginBottom: 24, fontSize: 20, letterSpacing: 2 }}>★★★★★</div>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6, color: "var(--text-primary)", marginBottom: 24 }}>"They caught a structural flaw in our original blueprints that saved us thousands before the slab was even poured. Absolute precision from day one."</p>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase" }}>Michael T.</div>
+              <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-tertiary)", marginTop: 4 }}>Commercial Build-out</div>
+            </Fade>
+            <Fade delay={0.2} style={{ padding: 40, background: "#fff", border: "1px solid var(--border-light)" }}>
+              <div style={{ color: "#F59E0B", marginBottom: 24, fontSize: 20, letterSpacing: 2 }}>★★★★★</div>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6, color: "var(--text-primary)", marginBottom: 24 }}>"The level of detail in the custom cabinetry and trim work was beyond anything we expected. The only contractor in Alexandria that actually executes on their word."</p>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase" }}>David & Sarah L.</div>
+              <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-tertiary)", marginTop: 4 }}>Custom Residential Renovation</div>
+            </Fade>
+            <Fade delay={0.3} style={{ padding: 40, background: "#fff", border: "1px solid var(--border-light)" }}>
+              <div style={{ color: "#F59E0B", marginBottom: 24, fontSize: 20, letterSpacing: 2 }}>★★★★★</div>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6, color: "var(--text-primary)", marginBottom: 24 }}>"Used them for massive structural exterior renovations. The site was kept immaculate, and they managed all the supply chain friction seamlessly."</p>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase" }}>James R.</div>
+              <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-tertiary)", marginTop: 4 }}>Facility Director</div>
+            </Fade>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 160px) 24px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "clamp(32px, 8vw, 64px)", margin: "0 0 48px", textAlign: "center", overflowWrap: "break-word" }}>Real builds.<br/>Real craftsmanship.</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: 24, marginBottom: 48 }}>
             {[
               { img: "/images/industrial_project_1775169098001.png", tag: "Heavy Timber Custom Additions", desc: "Delivered 2 weeks ahead of schedule." },
@@ -153,12 +182,13 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Strong Relief Section */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(120px, 15vh, 200px) 24px", textAlign: "center" }}>
-        <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontSize: "clamp(24px, 4vw, 36px)", fontWeight: 700, lineHeight: 1.4, margin: "0 0 24px" }}>Every material thoughtfully chosen.</p>
-          <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontSize: "clamp(24px, 4vw, 36px)", fontWeight: 700, lineHeight: 1.4, margin: "0 0 48px" }}>Every detail flawlessly executed.</p>
-          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontSize: "clamp(36px, 6vw, 56px)", fontWeight: 900, lineHeight: 1.1, margin: 0 }}>Built for lasting distinction.</h2>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(120px, 15vh, 200px) 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        <img src="/images/warehouse_finished_1775169110438.png" style={{ position: "absolute", inset: 0, width: "100%", height: "120%", objectFit: "cover", zIndex: 0, opacity: 0.15, transform: "translateY(-10%)" }} loading="lazy" alt="Parallax Background" />
+        <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 2 }}>
+          <p style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontSize: 16, letterSpacing: 3, fontWeight: 800, textTransform: "uppercase", margin: "0 0 24px" }}>The Output</p>
+          <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-serif)", fontSize: "clamp(28px, 4vw, 40px)", fontStyle: "italic", lineHeight: 1.4, margin: "0 0 24px" }}>Every material thoughtfully chosen.</p>
+          <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-serif)", fontSize: "clamp(28px, 4vw, 40px)", fontStyle: "italic", lineHeight: 1.4, margin: "0 0 48px" }}>Every detail flawlessly executed.</p>
+          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 900, lineHeight: 1.1, margin: 0 }}>Built for lasting distinction.</h2>
         </div>
       </section>
 
