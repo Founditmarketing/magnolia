@@ -31,19 +31,9 @@ export function Link({ to, children, ...props }) {
 }
 
 // --- SCROLL ANIMATION HOOK ---
-export function Fade({ children, delay = 0, className = '', style = {} }) {
-  const [isVisible, setVisible] = useState(false);
-  const ref = useRef(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.1 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div ref={ref} className={className} style={{ transition: "opacity 0.25s ease-out, transform 0.25s ease-out", transitionDelay: `${delay}s`, opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0)" : "translateY(15px)", ...style }}>
-      {children}
-    </div>
-  );
+export function Fade({ children, className = "", style = {} }) {
+  // Animations stripped globally per directive.
+  return <div className={className} style={style}>{children}</div>;
 }
 
 export function useSEO({ title, description }) {

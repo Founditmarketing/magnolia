@@ -1,7 +1,9 @@
-import { Fade, Link, I, Counter, useSEO } from "../utils";
-import { Btn, TrustBar, SH, CTA, PageHero, ISNBadge } from "../components/Shared";
+const fs = require('fs');
+let code = fs.readFileSync('src/pages/index.jsx', 'utf8');
 
-export function HomePage() {
+const regex = /export function HomePage\(\) \{[\s\S]*?return \([\s\S]*?^  \);?\n\}/m;
+
+const newHomePage = `export function HomePage() {
   useSEO({ title: "Construction & Dumpsters", description: "ISNetworld Certified commercial and industrial construction company." });
 
   const OptionBtn = ({ children }) => (
@@ -159,128 +161,7 @@ export function HomePage() {
       </section>
     </>
   );
-}
+}`;
 
-export function CommercialPage() {
-  return (
-    <>
-      <PageHero tag="Our Services" title="Commercial" titleAccent="Construction" sub="Full-service commercial builds across Central Louisiana. From multi-unit apartments and financial institutions to restaurants and retail — we handle every phase from permits to punch list." />
-      <TrustBar />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <SH tag="What We Build" title="Quality Construction for Commercial Spaces" sub="We specialize in commercial projects that require careful planning, code compliance, and the kind of craftsmanship that holds up to daily public use." />
-          <div className="bento-grid">
-            {[
-              { t: "Metal Buildings", d: "Pre-engineered and custom metal structures for warehouses, workshops, and commercial facilities." },
-              { t: "Concrete & Foundations", d: "Slabs, footings, equipment pads, and structural concrete for commercial and industrial applications." },
-              { t: "Commercial Roofing", d: "TPO, metal, and modified bitumen systems built for commercial and industrial durability." },
-              { t: "Siding, Windows & Doors", d: "Complete exterior envelope packages — materials chosen for performance, code, and aesthetics." },
-              { t: "Tenant Improvements", d: "Interior buildouts for offices, retail, restaurants, and mixed-use spaces. Back-of-house to customer-facing." },
-              { t: "Renovations & Remodels", d: "Transforming existing commercial spaces with structural, cosmetic, and functional upgrades." },
-            ].map((s, i) => (
-              <Fade key={i} delay={i * 0.05} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 4" : "span 12" }}>
-                <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, textTransform: "uppercase", margin: "0 0 12px" }}>{s.t}</h3>
-                <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>{s.d}</p>
-              </Fade>
-            ))}
-          </div>
-        </div>
-      </section>
-      <CTA title="Let's Talk About Your Commercial Project" sub="ISN-certified, fully insured, and ready to break ground. Get a detailed quote from a contractor who shows up on time, on budget, and on record." />
-    </>
-  );
-}
-
-export function IndustrialPage() {
-  return (
-    <>
-      <PageHero tag="ISN Certified" title="Industrial" titleAccent="Services" sub="On-site industrial contracting for refineries, mills, manufacturing facilities, and heavy infrastructure. Pre-qualified through ISNetworld. Pre-insured. Ready to mobilize." />
-      <TrustBar />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <SH tag="Plant-Ready" title="Industrial Capabilities" sub="Our ISNetworld certification means we've already cleared your facility's contractor requirements. No waiting on paperwork — we mobilize pre-qualified and ready to work." />
-           <div className="bento-grid">
-            {[
-              { t: "Plant Maintenance", d: "Scheduled and emergency maintenance for industrial facilities. Structural, roofing, and building envelope repairs that keep operations running." },
-              { t: "Equipment Pads & Foundations", d: "Precision concrete work for heavy equipment installations — engineered pads, anchor bolt layouts, and structural supports." },
-              { t: "Facility Repairs & Upgrades", d: "Building envelope repairs, structural modifications, and facility improvements executed under full safety protocols." },
-              { t: "Turnaround Support", d: "Rapid mobilization for plant turnaround projects. We bring the manpower, equipment, and documentation to meet tight deadlines." },
-              { t: "Industrial Demolition", d: "Controlled demolition and removal of industrial structures, equipment, and building components — safely and on schedule." },
-              { t: "Safety & Compliance", d: "All work performed under strict OSHA protocols with full documentation, JHAs, and site-specific safety plans. No exceptions." },
-            ].map((s, i) => (
-              <Fade key={i} delay={i * 0.05} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 4" : "span 12" }}>
-                <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, textTransform: "uppercase", margin: "0 0 12px" }}>{s.t}</h3>
-                <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>{s.d}</p>
-              </Fade>
-            ))}
-          </div>
-        </div>
-      </section>
-      <CTA title="Need an ISN-Certified Contractor On-Site?" sub="Pre-qualified and ready to mobilize for your next industrial project. Let's discuss scope and timelines." />
-    </>
-  );
-}
-
-export function DumpstersPage() {
-  return (
-    <>
-      <PageHero tag="Dumpster Rentals" title="Roll-Off Dumpsters" titleAccent="for Every Project" sub="Convenient, reliable dumpster rentals for commercial job sites, demolition projects, renovations, and large-scale cleanouts across Central Louisiana." />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <SH tag="Our Fleet" title="Three Sizes. One Standard of Service." center />
-          <div className="bento-grid" style={{ marginBottom: 64 }}>
-            {[
-              { sz: "20", d: "Designed for small construction projects, renovations, or cleanouts. Compact dimensions — best balance of space efficiency and placement flexibility.", fit: "~6 pickup loads" },
-              { sz: "30", d: "Suited for medium construction projects, renovations, or cleanouts. The right mix of accessibility, debris handling, and capacity for most job sites.", fit: "~9 pickup loads" },
-              { sz: "40", d: "Perfect for large construction, demolition, or major cleanouts. Maximum capacity for maximum project efficiency.", fit: "~12 pickup loads" },
-            ].map((d, i) => (
-              <Fade key={i} delay={i * 0.1} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 4" : "span 12", textAlign: "center", padding: "56px 40px" }}>
-                <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 64, lineHeight: 1 }}>{d.sz}</div>
-                <div style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 3, textTransform: "uppercase", margin: "8px 0 24px" }}>Yard Roll-Off</div>
-                <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7, marginBottom: 24 }}>{d.d}</p>
-                <div style={{ display: "inline-block", background: "rgba(0,0,0,0.05)", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 50, padding: "8px 20px", fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: "var(--text-primary)" }}>{d.fit}</div>
-              </Fade>
-            ))}
-          </div>
-
-          <div style={{ textAlign: "center" }}>
-            <Btn to="/dumpster-pricing">View Full Pricing Details <I.Arrow /></Btn>
-          </div>
-        </div>
-      </section>
-      <CTA title="Need a Dumpster on Your Job Site?" sub="Call Chris directly or fill out the form. We'll get a roll-off delivered — often same day." btn="Reserve a Dumpster" />
-    </>
-  );
-}
-
-export function GalleryPage() {
-  useSEO({ title: "Project Gallery", description: "View our recent commercial and industrial construction projects." });
-  const paths = [
-    "/images/construction_brick_1775169082069.png",
-    "/images/industrial_project_1775169098001.png",
-    "/images/warehouse_finished_1775169110438.png",
-    "/images/workers_blueprints_1775169124334.png"
-  ];
-
-  return (
-    <>
-      <PageHero tag="Our Work" title="Project" titleAccent="Gallery" sub="Hyper-realistic commercial and industrial construction projects across Central Louisiana, featuring structural foundations, steel assembly, and modern distribution centers." />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
-        <div className="bento-grid" style={{ maxWidth: 1200, margin: "0 auto", gap: 24, gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))" }}>
-          {paths.map((src, i) => (
-            <Fade key={i} delay={(i % 4) * 0.1} className="bento-gallery-item">
-              <div className="sc" style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "16/10", background: "var(--bg-elevated)", border: "1px solid var(--border-light)" }}>
-                <img src={src} alt={`Project ${i + 1}`} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s" }} loading="lazy" onMouseOver={e => e.currentTarget.style.transform="scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform="scale(1)"}/>
-              </div>
-            </Fade>
-          ))}
-        </div>
-      </section>
-      <CTA title="Like What You See?" sub="Let's build something worth showing off. Request a quote for your commercial or industrial project." />
-    </>
-  );
-}
-
-export function OtherPages() {
-  return <PageHero tag="System Options" title="Under Construction" sub="This section is currently being visually modernized. Please use navigation to return." />;
-}
+code = code.replace(regex, newHomePage);
+fs.writeFileSync('src/pages/index.jsx', code);
