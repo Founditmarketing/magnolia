@@ -181,3 +181,45 @@ html {
   left: 40px !important;
   z-index: 0;
 }
+
+/* Mobile Hero Split Configuration */
+.hero-split-container {
+  position: relative;
+  min-height: clamp(600px, 100vh, 900px);
+  display: flex;
+  align-items: center;
+  padding: clamp(100px, 15vh, 160px) 24px clamp(40px, 8vh, 80px);
+  overflow: hidden;
+  background: #0F172A; /* Slate 900 */
+}
+.hero-split-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-split-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .hero-split-container {
+    flex-direction: column;
+    padding: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+  .hero-split-media {
+    position: relative;
+    height: 55vh;
+    min-height: 55vh;
+    overflow: hidden;
+  }
+  .hero-split-content {
+    margin-top: -10vh; /* Deliberate overlap */
+    padding: 0 24px 40px;
+  }
+}
+

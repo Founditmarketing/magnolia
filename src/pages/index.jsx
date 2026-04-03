@@ -1,4 +1,4 @@
-import { Fade, Link, I, Counter, useSEO } from "../utils";
+import { Fade, Link, I, Counter, useSEO, Parallax } from "../utils";
 import { Btn, TrustBar, SH, CTA, PageHero, ISNBadge } from "../components/Shared";
 
 export function HomePage() {
@@ -64,8 +64,10 @@ export function HomePage() {
 
       <section style={{ padding: "0", background: "var(--bg-dark)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr", width: "100%" }}>
-          <Fade delay={0.1} style={{ position: "relative", minHeight: "60vh", display: "flex", alignItems: "flex-end", padding: "clamp(40px, 8vw, 80px) 24px" }}>
-            <img src="/images/industrial_project_1775169098001.png" alt="Commercial Base" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
+          <Fade delay={0.1} style={{ position: "relative", minHeight: "60vh", display: "flex", alignItems: "flex-end", padding: "clamp(40px, 8vw, 80px) 24px", overflow: "hidden" }}>
+            <Parallax speed={0.15} style={{ position: "absolute", inset: 0, width: "100%", height: "120%", zIndex: 0, top: "-10%" }}>
+              <img src="/images/industrial_project_1775169098001.png" alt="Commercial Base" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </Parallax>
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.6) 50%, rgba(15,23,42,0) 100%)", zIndex: 1 }} />
             <div style={{ position: "relative", zIndex: 2, color: "#fff", maxWidth: 1000, margin: "0 auto", width: "100%" }}>
               <div style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Solving Complex Logistics</div>
@@ -73,8 +75,10 @@ export function HomePage() {
               <p style={{ fontFamily: "var(--font-body)", fontSize: 18, maxWidth: 600, opacity: 0.9, lineHeight: 1.6, margin: 0 }}>We engineer environments that withstand the rigorous reality of commercial wear while maintaining stunning, magazine-quality aesthetics.</p>
             </div>
           </Fade>
-          <Fade delay={0.2} style={{ position: "relative", minHeight: "60vh", display: "flex", alignItems: "flex-end", padding: "clamp(40px, 8vw, 80px) 24px" }}>
-            <img src="/images/warehouse_finished_1775169110438.png" alt="Residential Trim" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
+          <Fade delay={0.2} style={{ position: "relative", minHeight: "60vh", display: "flex", alignItems: "flex-end", padding: "clamp(40px, 8vw, 80px) 24px", overflow: "hidden" }}>
+            <Parallax speed={0.15} style={{ position: "absolute", inset: 0, width: "100%", height: "120%", zIndex: 0, top: "-10%" }}>
+              <img src="/images/warehouse_finished_1775169110438.png" alt="Residential Trim" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </Parallax>
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.6) 50%, rgba(15,23,42,0) 100%)", zIndex: 1 }} />
             <div style={{ position: "relative", zIndex: 2, color: "#fff", maxWidth: 1000, margin: "0 auto", width: "100%" }}>
               <div style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Obsessive Detailing</div>
@@ -192,7 +196,9 @@ export function HomePage() {
       </section>
 
       <section style={{ background: "var(--bg-dark)", padding: "clamp(120px, 15vh, 200px) 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
-        <img src="/images/warehouse_finished_1775169110438.png" style={{ position: "absolute", inset: 0, width: "100%", height: "120%", objectFit: "cover", zIndex: 0, opacity: 0.15, transform: "translateY(-10%)" }} loading="lazy" alt="Parallax Background" />
+        <Parallax speed={0.25} style={{ position: "absolute", inset: 0, width: "100%", height: "140%", zIndex: 0, top: "-20%" }}>
+          <img src="/images/warehouse_finished_1775169110438.png" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.15 }} loading="lazy" alt="Parallax Background" />
+        </Parallax>
         <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 2 }}>
           <p style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontSize: 16, letterSpacing: 3, fontWeight: 800, textTransform: "uppercase", margin: "0 0 24px" }}>The Output</p>
           <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-serif)", fontSize: "clamp(28px, 4vw, 40px)", lineHeight: 1.4, margin: "0 0 24px" }}>Every material thoughtfully chosen.</p>

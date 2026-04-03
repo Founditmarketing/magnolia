@@ -40,7 +40,33 @@ export function Fade({ children, delay = 0, className = "", style = {} }) {
     return () => observer.disconnect();
   }, []);
   return (
-    <div ref={ref} className={className} style={{ transition: "opacity 0.25s ease-out, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)", transitionDelay: `${delay}s`, opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0)" : "translateY(15px)", ...style }}>
+    <div ref={ref} className={className} style={{ transition: "opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)", transitionDelay: `${delay}s`, opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0) scale(1)" : "translateY(40px) scale(0.98)", ...style }}>
+      {children}
+    </div>
+  );
+}
+
+// --- PARALLAX ENGINE ---
+export function Parallax({ children, speed = 0.2, style = {}, className = "" }) {
+  const [offset, setOffset] = useState(0);
+  
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setOffset(window.scrollY * speed);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [speed]);
+
+  return (
+    <div className={className} style={{ transform: `translateY(${offset}px)`, willChange: "transform", ...style }}>
       {children}
     </div>
   );
