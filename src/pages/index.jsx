@@ -1,43 +1,20 @@
-import { Fade, Link, I, Counter } from "../utils";
+import { Fade, Link, I, Counter, useSEO } from "../utils";
 import { Btn, TrustBar, SH, CTA, PageHero, ISNBadge } from "../components/Shared";
 
 export function HomePage() {
   return (
     <>
-      <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", background: "var(--bg-dark)", position: "relative", overflow: "hidden", paddingTop: 80 }}>
-        <div style={{ position: "absolute", inset: 0, opacity: 0.15, backgroundImage: "linear-gradient(rgba(0,0,0,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,1) 1px, transparent 1px)", backgroundSize: "100px 100px" }} />
-        <div style={{ position: "absolute", right: "-15%", top: "-10%", width: "70%", height: "100%", background: "radial-gradient(ellipse, var(--primary-glow) 0%, transparent 60%)", pointerEvents: "none" }} />
-        
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 24px", position: "relative", zIndex: 1, width: "100%" }}>
-          <Fade>
-            <div className="glass" style={{ display: "inline-flex", alignItems: "center", gap: 16, marginBottom: 40, padding: "12px 24px", borderRadius: 50, border: "1px solid rgba(255, 90, 0, 0.3)" }}>
-              <span style={{color: "var(--primary)"}}><I.Shield /></span>
-              <div>
-                <div style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 2, textTransform: "uppercase" }}>ISNetworld Certified</div>
-              </div>
-            </div>
-          </Fade>
-
-          <Fade delay={0.1}>
-            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 11vw, 100px)", lineHeight: 1, textTransform: "uppercase", letterSpacing: -2, margin: "0 0 32px", maxWidth: 900 }}>
-              Commercial &amp;<br />Industrial<br /><span className="text-gradient">Construction</span>
-            </h1>
-          </Fade>
-
-          <Fade delay={0.2}>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 22, lineHeight: 1.6, maxWidth: 600, margin: "0 0 48px" }}>
-              15+ years building Central Louisiana. From ground-up commercial projects and industrial plant services to reliable dumpster rentals. One call to Chris, and it's handled.
-            </p>
-          </Fade>
-
-          <Fade delay={0.3}>
-            <div style={{ display: "flex", gap: 20, flexWrap: "wrap", alignItems: "center" }}>
-              <Btn to="/contact">Request a Quote <I.Arrow /></Btn>
-              <Btn to="/dumpsters" variant="outline">Rent a Dumpster</Btn>
-            </div>
-          </Fade>
+            <PageHero 
+        title={<>Commercial &<br/>Industrial<br/></>} 
+        titleAccent="Construction" 
+        sub="ISNetworld Certified general contractor delivering uncompromising quality across Louisiana."
+        media="/images/warehouse_finished_1775169110438.png"
+      >
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+          <Btn to="/commercial">Explore Services</Btn>
+          <Btn to="/contact" variant="outlineDark">Request a Quote</Btn>
         </div>
-      </section>
+      </PageHero>
 
       <TrustBar />
 
@@ -106,6 +83,28 @@ export function HomePage() {
                  </div>
                </div>
              ))}
+          </div>
+        </div>
+      </section>
+
+      
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <SH tag="Social Proof" title="Trusted by Project Managers Across Louisiana" center />
+          <div className="bento-grid">
+            {[
+              { q: "Magnolia stepped in when our previous contractor fell behind. They had the steel up and the foundation poured ahead of the revised schedule. Zero safety incidents.", n: "Marcus T.", t: "Plant Director" },
+              { q: "Their ISN compliance made procurement a breeze. The team was professional, the site was clean, and there were no hidden change orders.", n: "Sarah L.", t: "Commercial Developer" },
+              { q: "Fast dumpster deliveries and they actually sweep the area before pull-off. Easiest waste management partner we've had on a 10-month build.", n: "David R.", t: "Site Superintendent" }
+            ].map((t, i) => (
+              <Fade key={i} delay={i * 0.1} className="bento-item sc" style={{ gridColumn: "span 4", padding: 32, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7, fontStyle: "italic", marginBottom: 24 }}>"{t.q}"</p>
+                <div>
+                  <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 16 }}>{t.n}</div>
+                  <div style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontSize: 13, textTransform: "uppercase", letterSpacing: 1 }}>{t.t}</div>
+                </div>
+              </Fade>
+            ))}
           </div>
         </div>
       </section>
@@ -208,6 +207,7 @@ export function DumpstersPage() {
 }
 
 export function GalleryPage() {
+  useSEO({ title: "Project Gallery", description: "View our recent commercial and industrial construction projects." });
   const paths = [
     "/images/construction_brick_1775169082069.png",
     "/images/industrial_project_1775169098001.png",

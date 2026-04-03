@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link, I, Fade } from "../utils";
+import { Link, I, Fade, useSEO } from "../utils";
 import { Btn, TrustBar, SH, CTA, PageHero, ISNBadge } from "../components/Shared";
 
 export function PricingPage() {
+  useSEO({ title: "Dumpster Pricing", description: "Transparent pricing for roll-off dumpsters." });
   const sizes = [
     { sz: "20-Yard", del: "$150", dump: "$450", fuel: "$30", daily: "$5/day", mixed: "$300 + $100/ton" },
     { sz: "30-Yard", del: "$150", dump: "$525", fuel: "$30", daily: "$5/day", mixed: "$300 + $100/ton" },
@@ -51,6 +52,7 @@ export function PricingPage() {
 }
 
 export function AboutPage() {
+  useSEO({ title: "About Us", description: "Our 15-year history building Central Louisiana." });
   return (
     <>
       <PageHero tag="About Us" title="Safety Is Not a Slogan." titleAccent="It's How We Operate." sub="Magnolia State Construction is built on the principle that safety and quality aren't competing priorities — they're the same thing." />
@@ -85,6 +87,7 @@ export function AboutPage() {
 }
 
 export function ContactPage() {
+  useSEO({ title: "Contact", description: "Get a quote for your next project." });
   const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", zip: "", message: "" });
   const [sent, setSent] = useState(false);
   const up = (k, v) => setForm(f => ({ ...f, [k]: v }));

@@ -8,39 +8,79 @@ const ROUTES = {
 };
 
 export function useRouter() {
-  const [path, setPath] = useState("/");
+  const [path, setPath] = useState(window.location.pathname || "/");
   useEffect(() => {
-    const h = () => setPath(window.location.hash.slice(1) || "/");
-    window.addEventListener("hashchange", h); h();
-    return () => window.removeEventListener("hashchange", h);
+    const handlePop = () => setPath(window.location.pathname || "/");
+    window.addEventListener("popstate", handlePop);
+    return () => window.removeEventListener("popstate", handlePop);
   }, []);
   return { path, page: ROUTES[path] || "home" };
 }
 
 // --- APP LINK ---
-export function Link({ to, children, className, style, onClick: oc }) {
+export function Link({ to, children, ...props }) {
   return (
-    <a href={`#${to}`} className={className} style={style} onClick={(e) => { oc?.(); window.scrollTo({ top: 0, behavior: "instant" }); }}>
-      {children}
-    </a>
+    <a href={to} onClick={(e) => {
+      e.preventDefault();
+      window.history.pushState(null, "", to);
+      window.dispatchEvent(new Event("popstate"));
+      window.scrollTo(0, 0);
+      if (props.onClick) props.onClick(e);
+    }} {...props}>{children}</a>
   );
 }
 
 // --- SCROLL ANIMATION HOOK ---
-export function useFade() {
+export function Fade({ children, delay = 0, className = '', style = {} }) {
+  const [isVisible, setVisible] = useState(false);
   const ref = useRef(null);
-  const [vis, setVis] = useState(false);
   useEffect(() => {
-    const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVis(true); }, { threshold: 0.15 });
-    if (ref.current) o.observe(ref.current);
-    return () => o.disconnect();
+    const observer = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.1 });
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
   }, []);
-  return { ref, style: { opacity: vis ? 1 : 0, transform: vis ? "translateY(0)" : "translateY(32px)", transition: "opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1)" } };
+  return (
+    <div ref={ref} className={className} style={{ transition: "opacity 0.25s ease-out, transform 0.25s ease-out", transitionDelay: `${delay}s`, opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0)" : "translateY(15px)", ...style }}>
+      {children}
+    </div>
+  );
 }
 
-export function Fade({ children, delay = 0, style: s = {}, className = "" }) {
-  const { ref, style } = useFade();
-  return <div ref={ref} className={className} style={{ ...style, transitionDelay: `${delay}s`, ...s }}>{children}</div>;
+export function useSEO({ title, description }) {
+  useEffect(() => {
+    document.title = title + " | Magnolia State Construction";
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = "description";
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.content = description;
+    
+    let script = document.querySelector('script#ld-json');
+    if (!script) {
+      script = document.createElement('script');
+      script.id = "ld-json";
+      script.type = "application/ld+json";
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "GeneralContractor",
+      "name": "Magnolia State Construction",
+      "image": "https://magnoliastateconstruction.com/logo.png",
+      "telephone": "(318) 704-6308",
+      "url": "https://magnoliastateconstruction.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "706 N. 3rd St",
+        "addressLocality": "Alexandria",
+        "addressRegion": "LA",
+        "postalCode": "71301",
+        "addressCountry": "US"
+      }
+    });
+  }, [title, description]);
 }
 
 // --- COUNTER ---
