@@ -46,7 +46,7 @@ export function Header({ path }) {
       </div>
 
       {/* Main Structural Nav */}
-      <header style={{ position: "fixed", top: sc ? 0 : 40, left: 0, right: 0, zIndex: 1000, transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)", background: sc ? "rgba(255, 255, 255, 0.95)" : "transparent", backdropFilter: sc ? "blur(24px)" : "none", WebkitBackdropFilter: sc ? "blur(24px)" : "none", borderBottom: sc ? "1px solid var(--border-light)" : "1px solid transparent", boxShadow: sc ? "0 10px 30px -10px rgba(0,0,0,0.05)" : "none" }}>
+      <header style={{ position: "fixed", top: sc ? 0 : 40, left: 0, right: 0, zIndex: 1000, transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)", background: sc ? "#FFFFFF" : "transparent", borderBottom: sc ? "2px solid var(--border-light)" : "2px solid transparent", boxShadow: sc ? "0 10px 30px -10px rgba(0,0,0,0.05)" : "none" }}>
         <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: sc ? 80 : 100, transition: "height 0.4s" }}>
           
           <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }} aria-label="Magnolia State Construction Home">
@@ -61,7 +61,7 @@ export function Header({ path }) {
                 </button>
                 {dd && (
                   <div style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", padding: 16 }}>
-                    <div className="glass" style={{ borderRadius: 16, padding: 12, minWidth: 400, boxShadow: "0 24px 48px rgba(0,0,0,0.1)", border: "1px solid var(--border-light)", background: "#ffffff", display: "flex", flexDirection: "column", gap: 8 }}>
+                    <div className="glass" style={{ borderRadius: 8, padding: 12, minWidth: 400, boxShadow: "0 24px 48px rgba(0,0,0,0.1)", display: "flex", flexDirection: "column", gap: 8 }}>
                       {l.ch.map((c, j) => (
                         <Link key={j} to={c.to} style={{ display: "flex", alignItems: "flex-start", gap: 16, padding: 16, borderRadius: 12, color: "var(--text-secondary)", textDecoration: "none", transition: "all 0.2s" }} onMouseOver={e => { e.currentTarget.style.background = "var(--bg-dark)" }} onMouseOut={e => { e.currentTarget.style.background = "transparent" }}>
                           <div style={{ color: "var(--primary)", background: "var(--primary-bg)", padding: 12, borderRadius: 10 }}>{c.icon}</div>
@@ -95,7 +95,7 @@ export function Header({ path }) {
       </header>
 
       {/* Premium Full-Screen Mobile Menu */}
-      {open && <div className="glass" style={{ position: "fixed", inset: 0, zIndex: 999, paddingTop: 120, background: "rgba(255,255,255,0.98)", display: "flex", flexDirection: "column", padding: "120px 24px 40px" }}>
+      {open && <div style={{ position: "fixed", inset: 0, zIndex: 999, paddingTop: 120, background: "#FFFFFF", display: "flex", flexDirection: "column", padding: "120px 24px 40px" }}>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 24 }}>
           {links.map((l, i) => l.ch ? (
             <div key={i}>

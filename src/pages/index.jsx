@@ -18,7 +18,7 @@ export function HomePage() {
           <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 24 }}>Licensed & Insured</div>
           <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "clamp(32px, 9vw, 88px)", letterSpacing: -1, margin: 0, lineHeight: 1.05, wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto" }}>
             Careful Craftsmanship.<br/>
-            <span style={{ fontStyle: "italic", opacity: 0.9, color: "var(--primary)" }}>Distinctive Spaces.</span>
+            <span style={{ color: "var(--primary)" }}>Distinctive Spaces.</span>
           </h1>
           <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: "clamp(18px, 3vw, 24px)", lineHeight: 1.5, marginTop: 24, maxWidth: 800 }}>
             From extensive commercial build-outs to meticulous residential woodworking. Building Central Louisiana with absolute precision for 15+ years.
@@ -50,7 +50,7 @@ export function HomePage() {
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: 64, alignItems: "center" }}>
           <div style={{ flex: "1 1 500px" }}>
             <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "clamp(32px, 8vw, 64px)", lineHeight: 1.1, margin: "0 0 32px", overflowWrap: "break-word" }}>
-              Spaces you can be <span style={{ fontStyle: "italic", color: "var(--primary)" }}>incredibly</span> proud of.
+              Spaces you can be <span style={{ color: "var(--primary)" }}>incredibly</span> proud of.
             </h2>
             <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 2, textTransform: "uppercase", margin: 0 }}>The Magnolia Standard</p>
           </div>
@@ -69,7 +69,7 @@ export function HomePage() {
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.6) 50%, rgba(15,23,42,0) 100%)", zIndex: 1 }} />
             <div style={{ position: "relative", zIndex: 2, color: "#fff", maxWidth: 1000, margin: "0 auto", width: "100%" }}>
               <div style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Solving Complex Logistics</div>
-              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(32px, 8vw, 64px)", fontWeight: 600, margin: "0 0 24px", lineHeight: 1.1, overflowWrap: "break-word" }}>Commercial Build-outs &<br/><span style={{ fontStyle: "italic", fontWeight: 400 }}>Structural Envelopes</span></h3>
+              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(32px, 8vw, 64px)", fontWeight: 600, margin: "0 0 24px", lineHeight: 1.1, overflowWrap: "break-word" }}>Commercial Build-outs &<br/><span style={{ color: "var(--primary)", fontWeight: 400 }}>Structural Envelopes</span></h3>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 18, maxWidth: 600, opacity: 0.9, lineHeight: 1.6, margin: 0 }}>We engineer environments that withstand the rigorous reality of commercial wear while maintaining stunning, magazine-quality aesthetics.</p>
             </div>
           </Fade>
@@ -78,7 +78,7 @@ export function HomePage() {
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.6) 50%, rgba(15,23,42,0) 100%)", zIndex: 1 }} />
             <div style={{ position: "relative", zIndex: 2, color: "#fff", maxWidth: 1000, margin: "0 auto", width: "100%" }}>
               <div style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Obsessive Detailing</div>
-              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(32px, 8vw, 64px)", fontWeight: 600, margin: "0 0 24px", lineHeight: 1.1, overflowWrap: "break-word" }}>Premium Woodworking &<br/><span style={{ fontStyle: "italic", fontWeight: 400 }}>Custom Residential</span></h3>
+              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(32px, 8vw, 64px)", fontWeight: 600, margin: "0 0 24px", lineHeight: 1.1, overflowWrap: "break-word" }}>Premium Woodworking &<br/><span style={{ color: "var(--primary)", fontWeight: 400 }}>Custom Residential</span></h3>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 18, maxWidth: 600, opacity: 0.9, lineHeight: 1.6, margin: 0 }}>Rich architectural trim work, custom cabinetry installations, and premium roofing solutions executed with immaculate precision.</p>
             </div>
           </Fade>
@@ -95,7 +95,7 @@ export function HomePage() {
       <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 160px) 24px", position: "relative" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: 64, alignItems: "flex-start" }}>
           <div style={{ flex: "1 1 400px" }}>
-            <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "clamp(32px, 8vw, 64px)", lineHeight: 1.1, margin: 0, overflowWrap: "break-word" }}>Uncompromising<br/><span style={{ fontStyle: "italic", color: "var(--primary)" }}>Execution.</span></h2>
+            <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "clamp(32px, 8vw, 64px)", lineHeight: 1.1, margin: 0, overflowWrap: "break-word" }}>Uncompromising<br/><span style={{ color: "var(--primary)" }}>Execution.</span></h2>
           </div>
           <div style={{ flex: "1 1 400px" }}>
             <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 32px" }}>We execute strictly to the architectural blueprints.</p>
@@ -141,7 +141,7 @@ export function HomePage() {
               { img: "/images/warehouse_finished_1775169110438.png", tag: "Complete Commercial Build-out", desc: "4,500 sq ft executed flawlessly to spec." },
               { img: "/images/workers_blueprints_1775169124334.png", tag: "Turnkey Structural Envelope", desc: "Zero safety incidents. Zero change orders." },
             ].map((p, i) => (
-               <Fade key={i} delay={i * 0.15} className="sc bento-item" style={{ borderRadius: 16, overflow: "hidden", background: "var(--bg-surface)", border: "1px solid var(--border-light)" }}>
+               <Fade key={i} delay={i * 0.15} className="sc bento-item" style={{ overflow: "hidden", background: "var(--bg-surface)", padding: 0 }}>
                  <div style={{ aspectRatio: "4/3", width: "100%", overflow: "hidden" }}>
                    <img src={p.img} alt={p.tag} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s", filter: "brightness(0.95)" }} onMouseOver={e => e.currentTarget.style.transform="scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform="scale(1)"} />
                  </div>
@@ -186,9 +186,9 @@ export function HomePage() {
         <img src="/images/warehouse_finished_1775169110438.png" style={{ position: "absolute", inset: 0, width: "100%", height: "120%", objectFit: "cover", zIndex: 0, opacity: 0.15, transform: "translateY(-10%)" }} loading="lazy" alt="Parallax Background" />
         <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 2 }}>
           <p style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontSize: 16, letterSpacing: 3, fontWeight: 800, textTransform: "uppercase", margin: "0 0 24px" }}>The Output</p>
-          <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-serif)", fontSize: "clamp(28px, 4vw, 40px)", fontStyle: "italic", lineHeight: 1.4, margin: "0 0 24px" }}>Every material thoughtfully chosen.</p>
-          <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-serif)", fontSize: "clamp(28px, 4vw, 40px)", fontStyle: "italic", lineHeight: 1.4, margin: "0 0 48px" }}>Every detail flawlessly executed.</p>
-          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 900, lineHeight: 1.1, margin: 0 }}>Built for lasting distinction.</h2>
+          <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-serif)", fontSize: "clamp(28px, 4vw, 40px)", lineHeight: 1.4, margin: "0 0 24px" }}>Every material thoughtfully chosen.</p>
+          <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-serif)", fontSize: "clamp(28px, 4vw, 40px)", lineHeight: 1.4, margin: "0 0 48px" }}>Every detail flawlessly executed.</p>
+          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 900, lineHeight: 1.1, margin: 0 }}>Built for lasting distinction.</h2>
         </div>
       </section>
 
