@@ -8,7 +8,7 @@ export function HomePage() {
         title="Commercial & Industrial " 
         titleAccent="Construction" 
         sub="ISNetworld Certified general contractor delivering uncompromising quality across Louisiana."
-        media="/hero-video.mp4"
+        media="/hero-video-2.mp4"
       >
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
           <Btn to="/commercial">Explore Services</Btn>
