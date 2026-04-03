@@ -5,7 +5,7 @@ export function HomePage() {
   return (
     <>
       <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", background: "var(--bg-dark)", position: "relative", overflow: "hidden", paddingTop: 80 }}>
-        <div style={{ position: "absolute", inset: 0, opacity: 0.15, backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "100px 100px" }} />
+        <div style={{ position: "absolute", inset: 0, opacity: 0.15, backgroundImage: "linear-gradient(rgba(0,0,0,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,1) 1px, transparent 1px)", backgroundSize: "100px 100px" }} />
         <div style={{ position: "absolute", right: "-15%", top: "-10%", width: "70%", height: "100%", background: "radial-gradient(ellipse, var(--primary-glow) 0%, transparent 60%)", pointerEvents: "none" }} />
         
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 24px", position: "relative", zIndex: 1, width: "100%" }}>
@@ -13,13 +13,13 @@ export function HomePage() {
             <div className="glass" style={{ display: "inline-flex", alignItems: "center", gap: 16, marginBottom: 40, padding: "12px 24px", borderRadius: 50, border: "1px solid rgba(255, 90, 0, 0.3)" }}>
               <span style={{color: "var(--primary)"}}><I.Shield /></span>
               <div>
-                <div style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 2, textTransform: "uppercase" }}>ISNetworld Certified</div>
+                <div style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 2, textTransform: "uppercase" }}>ISNetworld Certified</div>
               </div>
             </div>
           </Fade>
 
           <Fade delay={0.1}>
-            <h1 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 11vw, 100px)", lineHeight: 1, textTransform: "uppercase", letterSpacing: -2, margin: "0 0 32px", maxWidth: 900 }}>
+            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 11vw, 100px)", lineHeight: 1, textTransform: "uppercase", letterSpacing: -2, margin: "0 0 32px", maxWidth: 900 }}>
               Commercial &amp;<br />Industrial<br /><span className="text-gradient">Construction</span>
             </h1>
           </Fade>
@@ -49,7 +49,7 @@ export function HomePage() {
             <div className="bento-item sc" style={{ gridColumn: "span 4" }}>
               <div className="icon-glow" style={{ top: -20, left: -20 }} />
               <div style={{ color: "var(--primary)", marginBottom: 24, position: "relative", zIndex: 1 }}><I.Building /></div>
-              <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, textTransform: "uppercase", margin: "0 0 16px", position: "relative", zIndex: 1 }}>Commercial Construction</h3>
+              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, textTransform: "uppercase", margin: "0 0 16px", position: "relative", zIndex: 1 }}>Commercial Construction</h3>
               <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7, marginBottom: 32, position: "relative", zIndex: 1 }}>Ground-up builds, renovations, and tenant improvements managed from permits to punch list.</p>
               <Link to="/commercial" style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, textTransform: "uppercase", textDecoration: "none", display: "flex", alignItems: "center", gap: 8, position: "relative", zIndex: 1 }}>Learn More <I.Arrow /></Link>
             </div>
@@ -57,7 +57,7 @@ export function HomePage() {
             <div className="bento-item sc" style={{ gridColumn: "span 4" }}>
               <div className="icon-glow" style={{ top: -20, left: -20, background: "rgba(59, 130, 246, 0.4)" }} />
               <div style={{ color: "#3B82F6", marginBottom: 24, position: "relative", zIndex: 1 }}><I.Factory /></div>
-              <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, textTransform: "uppercase", margin: "0 0 16px", position: "relative", zIndex: 1 }}>Industrial Services</h3>
+              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, textTransform: "uppercase", margin: "0 0 16px", position: "relative", zIndex: 1 }}>Industrial Services</h3>
               <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7, marginBottom: 32, position: "relative", zIndex: 1 }}>ISN-certified contractor for refineries, mills, manufacturing maintenance, and turnarounds.</p>
               <Link to="/industrial" style={{ color: "#3B82F6", fontFamily: "var(--font-display)", fontWeight: 700, textTransform: "uppercase", textDecoration: "none", display: "flex", alignItems: "center", gap: 8, position: "relative", zIndex: 1 }}>Learn More <I.Arrow /></Link>
             </div>
@@ -65,7 +65,7 @@ export function HomePage() {
             <div className="bento-item sc" style={{ gridColumn: "span 4" }}>
               <div className="icon-glow" style={{ top: -20, left: -20, background: "rgba(34, 197, 94, 0.4)" }} />
               <div style={{ color: "#22C55E", marginBottom: 24, position: "relative", zIndex: 1 }}><I.Truck /></div>
-              <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, textTransform: "uppercase", margin: "0 0 16px", position: "relative", zIndex: 1 }}>Dumpster Rentals</h3>
+              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, textTransform: "uppercase", margin: "0 0 16px", position: "relative", zIndex: 1 }}>Dumpster Rentals</h3>
               <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7, marginBottom: 32, position: "relative", zIndex: 1 }}>20, 30, and 40-yard roll-off dumpsters with clear-cut pricing and 24-48 hr fast delivery.</p>
               <Link to="/dumpsters" style={{ color: "#22C55E", fontFamily: "var(--font-display)", fontWeight: 700, textTransform: "uppercase", textDecoration: "none", display: "flex", alignItems: "center", gap: 8, position: "relative", zIndex: 1 }}>Learn More <I.Arrow /></Link>
             </div>
@@ -91,7 +91,7 @@ export function HomePage() {
           </div>
           
           <div className="glass" style={{ padding: 48, borderRadius: 24, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-             <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 24, textTransform: "uppercase", margin: "0 0 32px" }}>The Process</h3>
+             <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 24, textTransform: "uppercase", margin: "0 0 32px" }}>The Process</h3>
              {[
                { n: "01", t: "Call Chris", d: "One phone call to discuss your scope. No call centers." },
                { n: "02", t: "Site Evaluation", d: "We review specs and build a clear, detailed estimate." },
@@ -101,7 +101,7 @@ export function HomePage() {
                <div key={i} style={{ display: "flex", gap: 24, marginBottom: i === 3 ? 0 : 32 }}>
                  <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 24, opacity: 0.8 }}>{s.n}</div>
                  <div>
-                   <div style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, textTransform: "uppercase", margin: "0 0 8px" }}>{s.t}</div>
+                   <div style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, textTransform: "uppercase", margin: "0 0 8px" }}>{s.t}</div>
                    <div style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6 }}>{s.d}</div>
                  </div>
                </div>
@@ -133,7 +133,7 @@ export function CommercialPage() {
               { t: "Renovations & Remodels", d: "Transforming existing commercial spaces with structural, cosmetic, and functional upgrades." },
             ].map((s, i) => (
               <Fade key={i} delay={i * 0.05} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 4" : "span 12" }}>
-                <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, textTransform: "uppercase", margin: "0 0 12px" }}>{s.t}</h3>
+                <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, textTransform: "uppercase", margin: "0 0 12px" }}>{s.t}</h3>
                 <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>{s.d}</p>
               </Fade>
             ))}
@@ -163,7 +163,7 @@ export function IndustrialPage() {
               { t: "Safety & Compliance", d: "All work performed under strict OSHA protocols with full documentation, JHAs, and site-specific safety plans. No exceptions." },
             ].map((s, i) => (
               <Fade key={i} delay={i * 0.05} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 4" : "span 12" }}>
-                <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, textTransform: "uppercase", margin: "0 0 12px" }}>{s.t}</h3>
+                <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20, textTransform: "uppercase", margin: "0 0 12px" }}>{s.t}</h3>
                 <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>{s.d}</p>
               </Fade>
             ))}
@@ -190,9 +190,9 @@ export function DumpstersPage() {
             ].map((d, i) => (
               <Fade key={i} delay={i * 0.1} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 4" : "span 12", textAlign: "center", padding: "56px 40px" }}>
                 <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 64, lineHeight: 1 }}>{d.sz}</div>
-                <div style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 3, textTransform: "uppercase", margin: "8px 0 24px" }}>Yard Roll-Off</div>
+                <div style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 3, textTransform: "uppercase", margin: "8px 0 24px" }}>Yard Roll-Off</div>
                 <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7, marginBottom: 24 }}>{d.d}</p>
-                <div style={{ display: "inline-block", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 50, padding: "8px 20px", fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: "#fff" }}>{d.fit}</div>
+                <div style={{ display: "inline-block", background: "rgba(0,0,0,0.05)", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 50, padding: "8px 20px", fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: "var(--text-primary)" }}>{d.fit}</div>
               </Fade>
             ))}
           </div>

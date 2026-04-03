@@ -18,13 +18,13 @@ export function PricingPage() {
               <Fade key={i} delay={i * 0.1} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 4" : "span 12", padding: "48px 32px", borderColor: i === 2 ? "rgba(255, 90, 0, 0.4)" : "var(--border-light)" }}>
                 {i === 2 && <div style={{ position: "absolute", top: 16, right: 16, background: "rgba(255, 90, 0, 0.15)", color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 11, letterSpacing: 2, textTransform: "uppercase", padding: "6px 14px", borderRadius: 50, border: "1px solid rgba(255, 90, 0, 0.3)" }}>Top Choice</div>}
                 <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 48, marginBottom: 8 }}>{s.sz}</div>
-                <div style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 2, textTransform: "uppercase", marginBottom: 32 }}>Roll-Off Dumpster</div>
+                <div style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 2, textTransform: "uppercase", marginBottom: 32 }}>Roll-Off Dumpster</div>
                 {[
                   ["Delivery Fee", s.del], ["Dump Fee (C&D)", s.dump], ["Fuel", s.fuel], ["Daily Rental", s.daily], ["Mixed Waste", s.mixed],
                 ].map(([l, v], j) => (
                   <div key={j} style={{ display: "flex", justifyContent: "space-between", padding: "14px 0", borderBottom: "1px solid var(--border-light)" }}>
                     <span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15 }}>{l}</span>
-                    <span style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15 }}>{v}</span>
+                    <span style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15 }}>{v}</span>
                   </div>
                 ))}
                 <div style={{ marginTop: 32 }}><Btn href="tel:3187046308" style={{ width: "100%", justifyContent: "center" }}>Call for Quote</Btn></div>
@@ -34,7 +34,7 @@ export function PricingPage() {
 
           <Fade>
             <div className="glass" style={{ borderRadius: 16, padding: "48px" }}>
-              <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 20, textTransform: "uppercase", marginBottom: 24 }}>Important Notes</h3>
+              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 20, textTransform: "uppercase", marginBottom: 24 }}>Important Notes</h3>
               <div style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.8 }}>
                 <p style={{ marginBottom: 16 }}>• No oils, liquids, paints, combustibles, or tires. Tires found at landfill incur $50/tire.</p>
                 <p style={{ marginBottom: 16 }}>• Fill to water level only — no materials above rim. 5-ton weight limit; excess charged per ton.</p>
@@ -72,7 +72,7 @@ export function AboutPage() {
               { t: "LA Home Builders Association", d: "Chris Naalbandian is a member of the LHBA, ensuring residential work meets the highest standards of the building community." },
             ].map((c, i) => (
               <Fade key={i} delay={i * 0.05} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 6" : "span 12" }}>
-                <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, textTransform: "uppercase", marginBottom: 12 }}>{c.t}</h3>
+                <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, textTransform: "uppercase", marginBottom: 12 }}>{c.t}</h3>
                 <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>{c.d}</p>
               </Fade>
             ))}
@@ -92,7 +92,7 @@ export function ContactPage() {
   const inp = (k, l, t = "text") => (
     <div style={{ marginBottom: 24 }}>
       <label style={{ display: "block", color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>{l}</label>
-      <input type={t} value={form[k]} onChange={e => up(k, e.target.value)} style={{ width: "100%", padding: "16px 20px", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, fontFamily: "var(--font-body)", fontSize: 16, outline: "none", boxSizing: "border-box", background: "rgba(0,0,0,0.3)", color: "#fff", transition: "border-color 0.3s" }} onFocus={e => e.target.style.borderColor = "var(--primary)"} onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"} />
+      <input type={t} value={form[k]} onChange={e => up(k, e.target.value)} style={{ width: "100%", padding: "16px 20px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 8, fontFamily: "var(--font-body)", fontSize: 16, outline: "none", boxSizing: "border-box", background: "#ffffff", color: "var(--text-primary)", transition: "border-color 0.3s" }} onFocus={e => e.target.style.borderColor = "var(--primary)"} onBlur={e => e.target.style.borderColor = "rgba(0,0,0,0.1)"} />
     </div>
   );
 
@@ -105,12 +105,12 @@ export function ContactPage() {
             {sent ? (
               <div style={{ textAlign: "center", padding: "48px 0" }}>
                 <div style={{ color: "var(--primary)", marginBottom: 24, transform: "scale(2)" }}><I.Check /></div>
-                <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, textTransform: "uppercase", margin: "0 0 16px" }}>Message Sent</h3>
+                <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, textTransform: "uppercase", margin: "0 0 16px" }}>Message Sent</h3>
                 <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18 }}>We'll be in touch within one business day.</p>
               </div>
             ) : (
               <>
-                <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 24, textTransform: "uppercase", margin: "0 0 32px" }}>Request a Quote</h3>
+                <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 24, textTransform: "uppercase", margin: "0 0 32px" }}>Request a Quote</h3>
                 {inp("name", "Full Name")}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                   {inp("email", "Email", "email")}
@@ -120,7 +120,7 @@ export function ContactPage() {
                 
                 <div style={{ marginBottom: 24 }}>
                   <label style={{ display: "block", color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>Service Needed</label>
-                  <select value={form.service} onChange={e => up("service", e.target.value)} style={{ width: "100%", padding: "16px 20px", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, fontFamily: "var(--font-body)", fontSize: 16, outline: "none", boxSizing: "border-box", background: "rgba(0,0,0,0.3)", color: "#fff" }}>
+                  <select value={form.service} onChange={e => up("service", e.target.value)} style={{ width: "100%", padding: "16px 20px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 8, fontFamily: "var(--font-body)", fontSize: 16, outline: "none", boxSizing: "border-box", background: "#ffffff", color: "var(--text-primary)" }}>
                     <option value="">Select a service...</option>
                     <option>Commercial Construction</option>
                     <option>Industrial Services</option>
@@ -132,16 +132,16 @@ export function ContactPage() {
 
                 <div style={{ marginBottom: 32 }}>
                   <label style={{ display: "block", color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>Project Details</label>
-                  <textarea value={form.message} onChange={e => up("message", e.target.value)} rows={4} style={{ width: "100%", padding: "16px 20px", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, fontFamily: "var(--font-body)", fontSize: 16, outline: "none", boxSizing: "border-box", background: "rgba(0,0,0,0.3)", color: "#fff", resize: "vertical" }} />
+                  <textarea value={form.message} onChange={e => up("message", e.target.value)} rows={4} style={{ width: "100%", padding: "16px 20px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 8, fontFamily: "var(--font-body)", fontSize: 16, outline: "none", boxSizing: "border-box", background: "#ffffff", color: "var(--text-primary)", resize: "vertical" }} />
                 </div>
 
-                <button className="sc" onClick={() => setSent(true)} style={{ width: "100%", padding: "18px", background: "linear-gradient(135deg, var(--primary), var(--primary-hover))", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 1.5, textTransform: "uppercase", boxShadow: "0 8px 24px rgba(255, 90, 0, 0.4)" }}>Submit Quote Request</button>
+                <button className="sc" onClick={() => setSent(true)} style={{ width: "100%", padding: "18px", background: "linear-gradient(135deg, var(--primary), var(--primary-hover))", color: "var(--text-primary)", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 1.5, textTransform: "uppercase", boxShadow: "0 8px 24px rgba(255, 90, 0, 0.4)" }}>Submit Quote Request</button>
               </>
             )}
           </div>
           
           <div>
-            <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 24, textTransform: "uppercase", margin: "0 0 32px" }}>Get in Touch Directly</h3>
+            <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 24, textTransform: "uppercase", margin: "0 0 32px" }}>Get in Touch Directly</h3>
             {[
               { icon: <I.Phone />, l: "Phone", v: "(318) 704-6308", h: "tel:3187046308" },
               { icon: <I.Mail />, l: "Email", v: "chris@magnoliastateconstruction.com", h: "mailto:chris@magnoliastateconstruction.com" },
@@ -151,7 +151,7 @@ export function ContactPage() {
                 <div style={{ color: "var(--primary)", marginTop: 2, background: "rgba(255, 90, 0, 0.1)", padding: 12, borderRadius: 50 }}>{c.icon}</div>
                 <div>
                   <div style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", marginBottom: 6 }}>{c.l}</div>
-                  {c.h ? <a href={c.h} style={{ color: "#fff", textDecoration: "none", fontFamily: "var(--font-body)", fontSize: 18, fontWeight: 500, transition: "color 0.2s" }} onMouseOver={e => e.currentTarget.style.color="var(--primary)"} onMouseOut={e => e.currentTarget.style.color="#fff"}>{c.v}</a> : <div style={{ color: "#fff", fontFamily: "var(--font-body)", fontSize: 18, fontWeight: 500 }}>{c.v}</div>}
+                  {c.h ? <a href={c.h} style={{ color: "var(--text-primary)", textDecoration: "none", fontFamily: "var(--font-body)", fontSize: 18, fontWeight: 500, transition: "color 0.2s" }} onMouseOver={e => e.currentTarget.style.color="var(--primary)"} onMouseOut={e => e.currentTarget.style.color="#fff"}>{c.v}</a> : <div style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: 18, fontWeight: 500 }}>{c.v}</div>}
                 </div>
               </div>
             ))}
@@ -190,7 +190,7 @@ export function ResidentialPage() {
               { t: "Renovations", d: "From single-room upgrades to full home renovations. Each project managed with care from start to finish." },
             ].map((s, i) => (
               <div key={i} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 6" : "span 12" }}>
-                <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, textTransform: "uppercase", marginBottom: 12 }}>{s.t}</h3>
+                <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, textTransform: "uppercase", marginBottom: 12 }}>{s.t}</h3>
                 <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>{s.d}</p>
               </div>
             ))}

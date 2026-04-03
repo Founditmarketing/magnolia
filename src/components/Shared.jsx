@@ -3,9 +3,9 @@ import { Link, I, Fade } from "../utils";
 
 export function ISNBadge({ size = 48 }) {
   return (
-    <div style={{ width: size, height: size, borderRadius: size * 0.14, background: "linear-gradient(135deg, #FF5A00, #E04F00)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 4px 16px rgba(255, 90, 0, 0.4)", position: "relative" }}>
+    <div style={{ width: size, height: size, borderRadius: size * 0.14, background: "linear-gradient(135deg, var(--primary), var(--primary-hover))", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 4px 16px var(--primary-glow)", position: "relative" }}>
       <span style={{ color: "#fff", fontWeight: 800, fontSize: size * 0.35, fontFamily: "var(--font-display)", letterSpacing: 1, zIndex: 1 }}>ISN</span>
-      <div style={{ position: "absolute", inset: 0, background: "rgba(255,255,255,0.1)", borderRadius: "inherit", borderTop: "1px solid rgba(255,255,255,0.4)" }} />
+      <div style={{ position: "absolute", inset: 0, background: "rgba(255,255,255,0.1)", borderRadius: "inherit", borderTop: "1px solid rgba(255,255,255,0.2)" }} />
     </div>
   );
 }
@@ -14,16 +14,16 @@ export function Btn({ to, href, children, variant = "primary", style: s = {} }) 
   const base = { display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 16, letterSpacing: 1.5, textTransform: "uppercase", borderRadius: 8, transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)", cursor: "pointer", border: "none" };
   
   const variants = {
-    primary: { ...base, background: "linear-gradient(135deg, var(--primary), var(--primary-hover))", color: "#fff", padding: "16px 36px", boxShadow: "0 8px 24px rgba(255, 90, 0, 0.35)", borderTop: "1px solid rgba(255,255,255,0.2)", ...s },
-    outline: { ...base, border: "2px solid var(--border-light)", color: "#fff", padding: "14px 34px", background: "rgba(255,255,255,0.02)", ...s },
-    outlineDark: { ...base, border: "2px solid rgba(255,255,255,0.2)", color: "#fff", padding: "14px 34px", background: "rgba(255,255,255,0.05)", ...s },
+    primary: { ...base, background: "linear-gradient(135deg, var(--primary), var(--primary-hover))", color: "#fff", padding: "16px 36px", boxShadow: "0 8px 24px var(--primary-glow)", borderTop: "1px solid rgba(255,255,255,0.2)", ...s },
+    outline: { ...base, border: "2px solid var(--border-light)", color: "var(--text-primary)", padding: "14px 34px", background: "var(--bg-elevated)", ...s },
+    outlineDark: { ...base, border: "2px solid rgba(0,0,0,0.1)", color: "var(--text-primary)", padding: "14px 34px", background: "transparent", ...s },
   };
 
   const hoverProps = {
     onMouseOver: (e) => {
       e.currentTarget.style.transform = "translateY(-3px)";
-      if (variant === "primary") e.currentTarget.style.boxShadow = "0 12px 32px rgba(255, 90, 0, 0.5)";
-      if (variant === "outline" || variant === "outlineDark") e.currentTarget.style.background = "rgba(255,255,255,0.08)";
+      if (variant === "primary") e.currentTarget.style.boxShadow = "0 12px 32px var(--shadow-glow)";
+      if (variant === "outline" || variant === "outlineDark") e.currentTarget.style.background = "var(--bg-surface)";
     },
     onMouseOut: (e) => {
       e.currentTarget.style.transform = "translateY(0)";
@@ -94,7 +94,7 @@ export function CTA({ title, sub, btn, btnTo }) {
 export function PageHero({ tag, title, titleAccent, sub, children }) {
   return (
     <section style={{ background: "var(--bg-dark)", padding: "clamp(120px, 15vh, 180px) 24px clamp(60px, 8vh, 100px)", position: "relative", overflow: "hidden", borderBottom: "1px solid var(--border-light)" }}>
-      <div style={{ position: "absolute", inset: 0, opacity: 0.1, backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+      <div style={{ position: "absolute", inset: 0, opacity: 0.8, backgroundImage: "linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       <div style={{ position: "absolute", right: "-10%", bottom: "-10%", width: "60%", height: "80%", background: "radial-gradient(ellipse, var(--primary-glow) 0%, transparent 70%)", pointerEvents: "none" }} />
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
         {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 5, textTransform: "uppercase", marginBottom: 20 }}>{tag}</div>}
