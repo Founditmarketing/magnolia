@@ -31,21 +31,46 @@ export function Link({ to, children, ...props }) {
 }
 
 // --- SCROLL ANIMATION HOOK ---
-export function Fade({ children, className = "", style = {} }) {
-  // Animations stripped globally per directive.
-  return <div className={className} style={style}>{children}</div>;
+export function Fade({ children, delay = 0, className = "", style = {} }) {
+  const [isVisible, setVisible] = useState(false);
+  const ref = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.1 });
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className={className} style={{ transition: "opacity 0.25s ease-out, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)", transitionDelay: `${delay}s`, opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0)" : "translateY(15px)", ...style }}>
+      {children}
+    </div>
+  );
 }
 
 export function useSEO({ title, description }) {
   useEffect(() => {
-    document.title = title + " | Magnolia State Construction";
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.content = description;
+    const fullTitle = title + " | Magnolia State Construction";
+    document.title = fullTitle;
+    
+    const setMeta = (name, content, isProp = false) => {
+      const attr = isProp ? 'property' : 'name';
+      let tag = document.querySelector(`meta[${attr}="${name}"]`);
+      if (!tag) { tag = document.createElement('meta'); tag.setAttribute(attr, name); document.head.appendChild(tag); }
+      tag.content = content;
+    };
+
+    setMeta("description", description);
+    setMeta("og:title", fullTitle, true);
+    setMeta("og:description", description, true);
+    setMeta("og:type", "website", true);
+    setMeta("twitter:card", "summary_large_image");
+    
+    // Canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+    const cleanUrl = "https://magnoliastateconstruction.com" + window.location.pathname;
+    canonical.href = cleanUrl;
+    setMeta("og:url", cleanUrl, true);
+    
     
     let script = document.querySelector('script#ld-json');
     if (!script) {

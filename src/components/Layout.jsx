@@ -22,8 +22,8 @@ export function Header({ path }) {
   const links = [
     { to: "/", label: "Home" },
     { label: "Services", ch: [
-      { to: "/commercial", label: "Commercial Construction", icon: <I.Building />, desc: "Ground-up builds and major renovations." }, 
-      { to: "/industrial", label: "Industrial Services", icon: <I.Factory />, desc: "ISN-certified plant construction & maintenance." }, 
+      { to: "/commercial", label: "Light Commercial", icon: <I.Building />, desc: "Build-outs, renovations, and facility improvements." }, 
+      { to: "/residential", label: "Custom Residential", icon: <I.Building />, desc: "Custom cabinets, trim, and high-end remodeling." }, 
       { to: "/dumpsters", label: "Dumpster Rentals", icon: <I.Truck />, desc: "20, 30, and 40-yard fast roll-off delivery." }
     ]},
     { to: "/gallery", label: "Our Work" },
@@ -37,7 +37,7 @@ export function Header({ path }) {
         <div style={{ display: "flex", alignItems: "center", gap: 24, maxWidth: 1400, margin: "0 auto", width: "100%", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
              <span style={{ color: "var(--primary)" }}><I.Check /></span>
-             <span style={{ fontWeight: 600, color: "#fff" }}>ISNetworld Certified</span> Contractor
+             <span style={{ fontWeight: 600, color: "#fff" }}>Licensed & Insured</span> Contractor
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
             <a href="https://maps.google.com" style={{ color: "inherit", textDecoration: "none", display: "flex", gap: 8, alignItems: "center" }}><I.MapPin /> 706 N. 3rd St, Alexandria, LA</a>
@@ -49,14 +49,14 @@ export function Header({ path }) {
       <header style={{ position: "fixed", top: isMobile ? 0 : (sc ? 0 : 40), left: 0, right: 0, zIndex: 1000, transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)", background: sc ? "rgba(255, 255, 255, 0.95)" : "transparent", backdropFilter: sc ? "blur(24px)" : "none", WebkitBackdropFilter: sc ? "blur(24px)" : "none", borderBottom: sc ? "1px solid var(--border-light)" : "1px solid transparent", boxShadow: sc ? "0 10px 30px -10px rgba(0,0,0,0.05)" : "none" }}>
         <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: sc ? 80 : 100, transition: "height 0.4s" }}>
           
-          <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-            <img src="/logo.png" alt="Magnolia State Construction" style={{ height: 50, objectFit: "contain", filter: !sc && path === "/" ? "drop-shadow(0 4px 6px rgba(0,0,0,0.1))" : "none" }} />
+          <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }} aria-label="Magnolia State Construction Home">
+            <img src="/logo.png" alt="Magnolia State Construction" style={{ height: 50, objectFit: "contain", filter: !sc && path === "/" ? "drop-shadow(0 4px 6px rgba(0,0,0,0.1))" : "none" }} loading="lazy" />
           </Link>
 
-          <nav className="dn" style={{ display: "flex", alignItems: "center", gap: 40 }}>
+          <nav className="dn" style={{ display: "flex", alignItems: "center", gap: "clamp(16px, 2vw, 32px)", whiteSpace: "nowrap" }}>
             {links.map((l, i) => l.ch ? (
               <div key={i} style={{ position: "relative", height: "100%", display: "flex", alignItems: "center" }} onMouseEnter={() => setDd(true)} onMouseLeave={() => setDd(false)}>
-                <button style={{ background: "none", border: "none", color: "var(--text-primary)", cursor: "pointer", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", display: "flex", alignItems: "center", gap: 6, padding: "24px 0" }}>
+                <button aria-expanded={dd} style={{ background: "none", border: "none", color: "var(--text-primary)", cursor: "pointer", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", display: "flex", alignItems: "center", gap: 6, padding: "24px 0" }}>
                   {l.label} <I.ChevDown />
                 </button>
                 {dd && (
@@ -76,19 +76,19 @@ export function Header({ path }) {
                 )}
               </div>
             ) : (
-              <Link key={i} to={l.to} style={{ color: "var(--text-primary)", textDecoration: "none", fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", padding: "24px 0", position: "relative" }}>
+              <Link key={i} to={l.to} style={{ color: "var(--text-primary)", textDecoration: "none", fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", padding: "24px 0", position: "relative" }}>
                 {l.label}
               </Link>
             ))}
           </nav>
           
           {/* Action Area */}
-          <div className="dn" style={{ display: "flex", alignItems: "center", gap: 24 }}>
-            <a href="tel:3187046308" style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}><span style={{ color: "var(--primary)" }}><I.Phone /></span> (318) 704-6308</a>
-            <Btn to="/contact" style={{ padding: "14px 32px", fontSize: 14 }}>Get a Quote</Btn>
+          <div className="dn" style={{ display: "flex", alignItems: "center", gap: "clamp(12px, 1.5vw, 24px)", whiteSpace: "nowrap" }}>
+            <a href="tel:3187046308" aria-label="Call Magnolia State Construction" style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}><span style={{ color: "var(--primary)" }}><I.Phone /></span> (318) 704-6308</a>
+            <Btn to="/contact" style={{ padding: "12px 24px", fontSize: 13 }}>Get a Quote</Btn>
           </div>
 
-          <button className="mt" onClick={() => setOpen(!open)} style={{ background: "var(--bg-elevated)", border: "1px solid var(--border-light)", borderRadius: 8, color: "var(--text-primary)", cursor: "pointer", padding: 12 }}>
+          <button aria-label="Toggle Mobile Menu" className="mt" onClick={() => setOpen(!open)} style={{ background: "var(--bg-elevated)", border: "1px solid var(--border-light)", borderRadius: 8, color: "var(--text-primary)", cursor: "pointer", padding: 12 }}>
             {open ? <I.X /> : <I.Menu />}
           </button>
         </div>
@@ -134,7 +134,7 @@ export function Footer() {
           </div>
           <div>
             <h4 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 4, textTransform: "uppercase", marginBottom: 24 }}>Services</h4>
-            {[{ to: "/commercial", l: "Commercial Construction" }, { to: "/industrial", l: "Industrial Services" }, { to: "/dumpsters", l: "Dumpster Rentals" }, { to: "/dumpster-pricing", l: "Pricing Guide" }].map((x, i) =>
+            {[{ to: "/commercial", l: "Commercial Construction" }, { to: "/residential", l: "Custom Residential" }, { to: "/dumpsters", l: "Dumpster Rentals" }, { to: "/dumpster-pricing", l: "Pricing Guide" }].map((x, i) =>
               <Link key={i} to={x.to} style={{ display: "block", color: "var(--text-secondary)", textDecoration: "none", fontFamily: "var(--font-body)", fontSize: 15, padding: "8px 0", transition: "color 0.2s" }} onMouseOver={e => e.currentTarget.style.color="var(--primary)"} onMouseOut={e => e.currentTarget.style.color="var(--text-secondary)"}>{x.l}</Link>
             )}
           </div>

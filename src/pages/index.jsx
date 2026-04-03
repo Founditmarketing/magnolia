@@ -14,30 +14,34 @@ export function HomePage() {
     <>
       <PageHero media="/hero-video-2.mp4">
         {/* The Direct-Response Interactive Hero */}
-        <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>ISNetworld Certified</div>
-        <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(40px, 8vw, 72px)", letterSpacing: -1, margin: 0, lineHeight: 1.05 }}>
-          Tired of unreliable contractors & blown schedules?
-        </h1>
-        <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: "clamp(18px, 3vw, 24px)", lineHeight: 1.5, marginTop: 24, maxWidth: 600 }}>
-          We deliver commercial and industrial projects with absolute precision. Building Louisiana's infrastructure for 15+ years.
-        </p>
+        <Fade delay={0.1}>
+          <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>Licensed & Insured</div>
+          <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 8vw, 72px)", letterSpacing: -1, margin: 0, lineHeight: 1.05, wordBreak: "break-word", hyphens: "auto" }}>
+            Tired of unreliable contractors & blown schedules?
+          </h1>
+          <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: "clamp(18px, 3vw, 24px)", lineHeight: 1.5, marginTop: 24, maxWidth: 600 }}>
+            From light commercial builds to high-end residential craftsmanship, we deliver with absolute precision. Building Louisiana for 15+ years.
+          </p>
+        </Fade>
         
-        <div style={{ marginTop: 48, background: "#ffffff", padding: "32px", borderRadius: 16, border: "2px solid var(--border-light)", boxShadow: "0 24px 48px -12px rgba(0,0,0,0.1)" }}>
-          <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 24, marginBottom: 24 }}>What's stalling your project right now?</h3>
-          <OptionBtn>My current contractor is behind</OptionBtn>
-          <OptionBtn>I need an ISN-compliant crew</OptionBtn>
-          <OptionBtn>Need heavy concrete & steel</OptionBtn>
-          <OptionBtn>I just need roll-off dumpsters</OptionBtn>
-        </div>
+        <Fade delay={0.3}>
+          <div style={{ marginTop: 48, background: "#ffffff", padding: "clamp(24px, 4vw, 32px)", borderRadius: 16, border: "2px solid var(--border-light)", boxShadow: "0 24px 48px -12px rgba(0,0,0,0.1)" }}>
+            <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 24, marginBottom: 24 }}>What's stalling your project right now?</h3>
+          <OptionBtn>My home remodel is stalled</OptionBtn>
+          <OptionBtn>Need a reliable commercial builder</OptionBtn>
+          <OptionBtn>Looking for custom cabinets & trim</OptionBtn>
+            <OptionBtn>I just need roll-off dumpsters</OptionBtn>
+          </div>
+        </Fade>
       </PageHero>
 
       {/* Trust Snapshot Strip */}
       <section style={{ background: "var(--bg-elevated)", padding: "40px 24px", borderBottom: "1px solid var(--border-light)" }}>
         <div style={{ maxWidth: 1400, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 32, textAlign: "center", color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, textTransform: "uppercase" }}>
           <div>15+ Years Building LA</div>
-          <div>ISNetworld Certified</div>
-          <div>Real, Visible Results</div>
-          <div>Built For Developers</div>
+          <div>Careful Craftsmanship</div>
+          <div>Rich Details</div>
+          <div>Built For You</div>
         </div>
       </section>
 
@@ -46,14 +50,14 @@ export function HomePage() {
         <div style={{ maxWidth: 1000, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: 64, alignItems: "center" }}>
           <div style={{ flex: "1 1 400px" }}>
             <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1, margin: "0 0 32px" }}>
-              You're managing a massive build... but the foundation is shaky.
+              Whether it's your business or your home, the wrong contractor costs you.
             </h2>
           </div>
           <div style={{ flex: "1 1 400px" }}>
             <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 24px" }}>Some contractors overpromise.</p>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 24px" }}>Some contractors cut corners on safety.</p>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 24px" }}>You get bids, but half of them ignore the actual specs. Or worse... the crew doesn't show up.</p>
-            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: 24, fontWeight: 700, lineHeight: 1.6, margin: 0 }}>You've probably been burned on a schedule before.<br/>And it cost you tens of thousands of dollars.</p>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 24px" }}>Some contractors do sloppy work.</p>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 24px" }}>You get bids, but half of them ignore the actual details. Or worse... the crew never shows up.</p>
+            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: 24, fontWeight: 700, lineHeight: 1.6, margin: 0 }}>You've probably been burned on a renovation before.<br/>And it cost you thousands to fix.</p>
           </div>
         </div>
       </section>
@@ -61,23 +65,23 @@ export function HomePage() {
       {/* What We Do */}
       <section style={{ background: "var(--bg-surface)", padding: "clamp(80px, 12vh, 160px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(48px, 7vw, 72px)", textAlign: "center", margin: "0 0 80px" }}>We keep your site moving.</h2>
+          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(48px, 7vw, 72px)", textAlign: "center", margin: "0 0 80px" }}>We keep your project moving.</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 40 }}>
-            <div>
+            <Fade delay={0.1} className="bento-item sc" style={{ padding: 32 }}>
               <div style={{ color: "var(--primary)", fontSize: 40, marginBottom: 24 }}><I.Building /></div>
-              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, margin: "0 0 16px" }}>Commercial Builds</h3>
-              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.5, margin: 0 }}>Ground-up execution from permits to punch list. Built to spec, built to code.</p>
-            </div>
-            <div>
-              <div style={{ color: "var(--primary)", fontSize: 40, marginBottom: 24 }}><I.Factory /></div>
-              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, margin: "0 0 16px" }}>Industrial Services</h3>
-              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.5, margin: 0 }}>ISNetworld-certified crew equipped for heavy turnarounds and plant maintenance.</p>
-            </div>
-            <div>
+              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, margin: "0 0 16px" }}>Light Commercial</h3>
+              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.5, margin: 0 }}>Office build-outs, retail spaces, and exterior renovations. Pre-qualified and fully insured.</p>
+            </Fade>
+            <Fade delay={0.2} className="bento-item sc" style={{ padding: 32 }}>
+              <div style={{ color: "var(--primary)", fontSize: 40, marginBottom: 24 }}><I.Check /></div>
+              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, margin: "0 0 16px" }}>Custom Residential</h3>
+              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.5, margin: 0 }}>Rich trim work, custom cabinetry, granite countertops, and premium roofing solutions.</p>
+            </Fade>
+            <Fade delay={0.3} className="bento-item sc" style={{ padding: 32 }}>
               <div style={{ color: "var(--primary)", fontSize: 40, marginBottom: 24 }}><I.Truck /></div>
               <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, margin: "0 0 16px" }}>Dumpster Rentals</h3>
-              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.5, margin: 0 }}>Fast 24-48 hr deliveries on 20, 30, and 40-yard roll-offs. Keep your site clear.</p>
-            </div>
+              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.5, margin: 0 }}>Fast 24-48 hr deliveries on 20, 30, and 40-yard roll-offs. Keep your site clear.</p>
+            </Fade>
           </div>
         </div>
       </section>
@@ -86,14 +90,14 @@ export function HomePage() {
       <section style={{ background: "var(--bg-elevated)", padding: "clamp(80px, 12vh, 160px) 24px", borderTop: "1px solid var(--border-light)" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: 64 }}>
           <div>
-            <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(48px, 6vw, 64px)", lineHeight: 1.1, margin: 0 }}>Why developers stick with us.</h2>
+            <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(48px, 6vw, 64px)", lineHeight: 1.1, margin: 0 }}>Why locals stick with us.</h2>
           </div>
           <div>
             <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 24px" }}>We don't ignore the blueprints.</p>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 24px" }}>We don't disappear after the slab is poured.</p>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 40px" }}>We show you the schedule. And we hit our deadlines.</p>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 24px" }}>We don't disappear after the deposit is paid.</p>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 24, lineHeight: 1.6, margin: "0 0 40px" }}>We obsess over the materials, colors, and textures.</p>
             
-            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: 24, fontWeight: 700, lineHeight: 1.6, margin: "0 0 16px" }}>Most of the plant directors we work with only call us.</p>
+            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: 24, fontWeight: 700, lineHeight: 1.6, margin: "0 0 16px" }}>From welcoming guests to impressing clients, we make sure your space is something you're proud of.</p>
             <p style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 900, lineHeight: 1.2, margin: 0 }}>Because we actually deliver.</p>
           </div>
         </div>
@@ -102,12 +106,22 @@ export function HomePage() {
       {/* Visual Proof / Gallery Teaser */}
       <section style={{ background: "var(--bg-dark)", padding: "clamp(80px, 12vh, 160px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(48px, 6vw, 64px)", margin: "0 0 48px", textAlign: "center" }}>Real builds. Real safety.</h2>
+          <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(48px, 6vw, 64px)", margin: "0 0 48px", textAlign: "center" }}>Real builds. Real craftsmanship.</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: 24, marginBottom: 48 }}>
-            {["/images/industrial_project_1775169098001.png", "/images/warehouse_finished_1775169110438.png", "/images/workers_blueprints_1775169124334.png"].map((img, i) => (
-               <div key={i} className="sc glass" style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "4/3", border: "1px solid var(--border-light)" }}>
-                 <img src={img} alt="Past Build" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.9)" }} />
-               </div>
+            {[
+              { img: "/images/industrial_project_1775169098001.png", tag: "Heavy Timber Custom Additions", desc: "Delivered 2 weeks ahead of schedule." },
+              { img: "/images/warehouse_finished_1775169110438.png", tag: "Complete Commercial Build-out", desc: "4,500 sq ft executed flawlessly to spec." },
+              { img: "/images/workers_blueprints_1775169124334.png", tag: "Turnkey Structural Envelope", desc: "Zero safety incidents. Zero change orders." },
+            ].map((p, i) => (
+               <Fade key={i} delay={i * 0.15} className="sc bento-item" style={{ borderRadius: 16, overflow: "hidden", background: "var(--bg-surface)", border: "1px solid var(--border-light)" }}>
+                 <div style={{ aspectRatio: "4/3", width: "100%", overflow: "hidden" }}>
+                   <img src={p.img} alt={p.tag} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s", filter: "brightness(0.95)" }} onMouseOver={e => e.currentTarget.style.transform="scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform="scale(1)"} />
+                 </div>
+                 <div style={{ padding: 24, borderTop: "1px solid var(--border-light)" }}>
+                   <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 20, margin: "0 0 8px" }}>{p.tag}</h3>
+                   <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, margin: 0 }}>{p.desc}</p>
+                 </div>
+               </Fade>
             ))}
           </div>
           <div style={{ textAlign: "center" }}>
@@ -121,21 +135,21 @@ export function HomePage() {
         <div style={{ maxWidth: 1200, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(48px, 6vw, 64px)", margin: "0 0 80px" }}>Here's how it works.</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 40, textAlign: "left" }}>
-            <div style={{ padding: 40, background: "var(--bg-elevated)", borderRadius: 16, border: "1px solid var(--border-light)" }}>
+            <Fade delay={0.1} className="bento-item" style={{ padding: 40, background: "var(--bg-elevated)", borderRadius: 16, border: "1px solid var(--border-light)" }}>
               <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 56, lineHeight: 1, opacity: 0.5, marginBottom: 24 }}>1</div>
               <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, margin: "0 0 16px" }}>You Reach Out</h3>
-              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.5, margin: 0 }}>Tell us your scope and timeline.</p>
-            </div>
-            <div style={{ padding: 40, background: "var(--bg-elevated)", borderRadius: 16, border: "1px solid var(--border-light)" }}>
+              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.5, margin: 0 }}>Tell us your vision, scope, and timeline.</p>
+            </Fade>
+            <Fade delay={0.2} className="bento-item" style={{ padding: 40, background: "var(--bg-elevated)", borderRadius: 16, border: "1px solid var(--border-light)" }}>
               <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 56, lineHeight: 1, opacity: 0.5, marginBottom: 24 }}>2</div>
               <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, margin: "0 0 16px" }}>We Review Plans</h3>
-              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.5, margin: 0 }}>We see exactly what it takes to execute safely.</p>
-            </div>
-            <div style={{ padding: 40, background: "var(--bg-elevated)", borderRadius: 16, border: "1px solid var(--border-light)" }}>
+              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.5, margin: 0 }}>We map out the materials, details, and exact costs.</p>
+            </Fade>
+            <Fade delay={0.3} className="bento-item" style={{ padding: 40, background: "var(--bg-elevated)", borderRadius: 16, border: "1px solid var(--border-light)" }}>
               <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 56, lineHeight: 1, opacity: 0.5, marginBottom: 24 }}>3</div>
               <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 32, margin: "0 0 16px" }}>We Handle It</h3>
-              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.5, margin: 0 }}>You focus on running your business.</p>
-            </div>
+              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.5, margin: 0 }}>You sit back and watch your space transform.</p>
+            </Fade>
           </div>
         </div>
       </section>

@@ -55,22 +55,22 @@ export function AboutPage() {
   useSEO({ title: "About Us", description: "Our 15-year history building Central Louisiana." });
   return (
     <>
-      <PageHero tag="About Us" title="Safety Is Not a Slogan." titleAccent="It's How We Operate." sub="Magnolia State Construction is built on the principle that safety and quality aren't competing priorities — they're the same thing." />
+      <PageHero tag="About Us" title="Details Matter." titleAccent="Quality Lasts." sub="Magnolia State Construction is built on the principle that careful craftsmanship and precise execution aren't competing priorities — they're the same thing." />
       <TrustBar />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <SH tag="Our Story" title="Over 15 Years Building Central Louisiana" />
           <div style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "var(--text-secondary)", marginBottom: 64 }}>
             <p>At Magnolia State Construction, we've spent over 15 years bringing construction projects to life across Central Louisiana. Our mission is simple: high-quality construction services delivered with craftsmanship, professionalism, and care.</p>
-            <p style={{ marginTop: 24 }}>Led by Chris Naalbandian, our team has grown from a local operation into an ISNetworld-certified contractor trusted by industrial plants, commercial developers, and municipal projects across the region.</p>
-            <p style={{ marginTop: 24 }}>Our ISN certification isn't just a badge. It represents hundreds of hours of verified safety documentation, insurance validation, and compliance auditing. When we show up to your site, we've already passed the test.</p>
+            <p style={{ marginTop: 24 }}>Led by Chris Naalbandian, our team has grown from a local operation into the premier contractor trusted by demanding homeowners, light commercial developers, and local businesses across the region.</p>
+            <p style={{ marginTop: 24 }}>From precise custom cabinetry and rich trim work to extensive commercial build-outs and complex exterior envelopes, we focus obsessively on the details that make a space exceptional.</p>
           </div>
 
           <div className="bento-grid">
             {[
-              { t: "ISNetworld Certified", d: "Third-party verified safety and compliance. Pre-qualified for the industrial and commercial sites that demand the highest standards." },
-              { t: "Comprehensive Insurance", d: "General liability and workers' compensation coverage that meets or exceeds every industrial and commercial site requirement." },
-              { t: "OSHA Compliant", d: "Every crew member trained. Every job has a safety plan. Every project fully documented. Zero exceptions." },
+              { t: "Fully Insured", d: "Comprehensive general liability and workers' compensation coverage that meets or exceeds every commercial site requirement." },
+              { t: "Careful Craftsmanship", d: "Our team Obsesses over the transition of materials, selecting only what stands the test of time and looks immaculate." },
+              { t: "Licensed Professionals", d: "Every crew member vetted. Every job expertly managed. Every project fully documented. Zero exceptions." },
               { t: "LA Home Builders Association", d: "Chris Naalbandian is a member of the LHBA, ensuring residential work meets the highest standards of the building community." },
             ].map((c, i) => (
               <Fade key={i} delay={i * 0.05} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 6" : "span 12" }}>
@@ -81,7 +81,7 @@ export function AboutPage() {
           </div>
         </div>
       </section>
-      <CTA title="Work With a Contractor You Can Trust" sub="ISN-certified. Fully insured. Over 15 years serving Central Louisiana." />
+      <CTA title="Work With a Contractor You Can Trust" sub="Fully insured. Guaranteed precision. Over 15 years serving Central Louisiana." />
     </>
   );
 }
@@ -125,10 +125,9 @@ export function ContactPage() {
                   <label style={{ display: "block", color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>Service Needed</label>
                   <select value={form.service} onChange={e => up("service", e.target.value)} style={{ width: "100%", padding: "16px 20px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 8, fontFamily: "var(--font-body)", fontSize: 16, outline: "none", boxSizing: "border-box", background: "#ffffff", color: "var(--text-primary)" }}>
                     <option value="">Select a service...</option>
-                    <option>Commercial Construction</option>
-                    <option>Industrial Services</option>
+                    <option>Light Commercial</option>
+                    <option>Custom Residential</option>
                     <option>Dumpster Rental</option>
-                    <option>Residential</option>
                     <option>Other</option>
                   </select>
                 </div>
@@ -161,13 +160,13 @@ export function ContactPage() {
 
             <div className="glass" style={{ borderRadius: 20, padding: 40, marginTop: 48 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 20 }}>
-                <ISNBadge size={56} />
+                <div style={{ color: "var(--primary)" }}><I.Check /></div>
                 <div>
-                  <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 1.5, textTransform: "uppercase" }}>ISNetworld Certified</div>
-                  <div style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 13 }}>Verified Commercial & Industrial Contractor</div>
+                  <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 1.5, textTransform: "uppercase" }}>Licensed & Insured</div>
+                  <div style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 13 }}>Verified Light Commercial & Custom Residential</div>
                 </div>
               </div>
-              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>Our ISN certification means we're pre-qualified for industrial and commercial sites. No waiting on paperwork — we mobilize ready to work.</p>
+              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>We carry comprehensive liability and workers' compensation coverage that meets or exceeds all local requirements. Peace of mind from day one.</p>
             </div>
           </div>
         </div>
@@ -179,28 +178,29 @@ export function ContactPage() {
 export function ResidentialPage() {
   return (
     <>
-      <PageHero tag="Residential" title="Residential" titleAccent="Services" sub="While our primary focus is commercial and industrial construction, we continue to serve select residential clients across Central Louisiana with the same quality and professionalism." />
+      <PageHero tag="Custom Design" title="Custom" titleAccent="Residential" sub="We bring rich details and careful craftsmanship to your home. From bespoke cabinetry and trim to complete exterior envelopes, we ensure every material is thoughtfully chosen to reflect your style." />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "var(--text-secondary)", marginBottom: 64 }}>
-            <p>Led by Chris Naalbandian — a member of the Louisiana Home Builders Association and an LP BuildSmart Preferred Contractor — our residential team brings the same safety standards, quality materials, and professional project management to every home project.</p>
-          </div>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <SH tag="Craftsmanship" title="Built for the Details" sub="We believe that whether you're welcoming guests or enjoying a quiet evening, your home should be something you're incredibly proud of." />
           <div className="bento-grid" style={{ marginBottom: 64 }}>
             {[
-              { t: "Custom Trim Work", d: "Crown molding, baseboards, window and door casings — professional trim that brings charm and structure to every room." },
-              { t: "Custom Cabinetry", d: "Kitchen, bathroom, closet, and laundry cabinetry built to your exact specifications." },
-              { t: "Granite Countertops", d: "Natural stone surfaces for kitchens and bathrooms. Polished, durable, and installed with expert precision." },
-              { t: "Renovations", d: "From single-room upgrades to full home renovations. Each project managed with care from start to finish." },
+              { t: "Custom Cabinets", d: "Hand-crafted, custom-built cabinetry designed specifically for your kitchen, bath, or living spaces." },
+              { t: "Trim & Millwork", d: "Detailed interior trim work, baseboards, crown molding, and wainscoting that adds architectural character." },
+              { t: "Granite Countertops", d: "Premium granite selection, fabrication, and installation for a flawless, high-end finish." },
+              { t: "Roofing Systems", d: "Complete residential roofing tear-offs and replacements to protect your home's exterior envelope." },
+              { t: "Siding & Exteriors", d: "Enhance your curb appeal with premium siding replacement, windows, and custom exterior doors." },
+              { t: "Major Renovations", d: "Whole-home remodels, additions, and structural changes executed with extreme care." },
             ].map((s, i) => (
-              <div key={i} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 6" : "span 12" }}>
+              <div key={i} className="bento-item sc" style={{ gridColumn: window.innerWidth > 768 ? "span 6" : "span 12", padding: 32 }}>
                 <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 18, textTransform: "uppercase", marginBottom: 12 }}>{s.t}</h3>
                 <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.7, margin: 0 }}>{s.d}</p>
               </div>
             ))}
           </div>
-          <Btn to="/contact">Contact Us for Residential Work <I.Arrow /></Btn>
+          <Btn to="/contact">Contact Us For A Quote <I.Arrow /></Btn>
         </div>
       </section>
+      <CTA title="Ready to Transform Your Space?" sub="Schedule a consultation to discuss your custom project specifications." />
     </>
   );
 }
