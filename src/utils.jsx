@@ -35,12 +35,17 @@ export function Fade({ children, delay = 0, className = "", style = {} }) {
   const [isVisible, setVisible] = useState(false);
   const ref = useRef(null);
   useEffect(() => {
-    const observer = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(([e]) => { 
+      if (e.isIntersecting) { 
+        setVisible(true);
+        observer.disconnect(); 
+      } 
+    }, { threshold: 0.05 });
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
   return (
-    <div ref={ref} className={className} style={{ transition: "opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)", transitionDelay: `${delay}s`, opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0) scale(1)" : "translateY(40px) scale(0.98)", ...style }}>
+    <div ref={ref} className={className} style={{ transition: "opacity 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)", transitionDelay: `${delay}s`, opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0)" : "translateY(20px)", ...style }}>
       {children}
     </div>
   );

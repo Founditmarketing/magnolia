@@ -68,10 +68,10 @@ export function HomePage() {
             <Parallax speed={0.15} style={{ position: "absolute", inset: 0, width: "100%", height: "120%", zIndex: 0, top: "-10%" }}>
               <img src="/images/industrial_project_1775169098001.png" alt="Commercial Base" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Parallax>
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.6) 50%, rgba(15,23,42,0) 100%)", zIndex: 1 }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%)", zIndex: 1 }} />
             <div style={{ position: "relative", zIndex: 2, color: "#fff", maxWidth: 1000, margin: "0 auto", width: "100%" }}>
               <div style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Solving Complex Logistics</div>
-              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(32px, 8vw, 64px)", fontWeight: 600, margin: "0 0 24px", lineHeight: 1.1, overflowWrap: "break-word" }}>Commercial Build-outs &<br/><span style={{ color: "var(--primary)", fontWeight: 400 }}>Structural Envelopes</span></h3>
+              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(32px, 8vw, 64px)", fontWeight: 600, margin: "0 0 24px", lineHeight: 1.1, overflowWrap: "break-word" }}>Commercial Build-outs &<br/><span style={{ color: "var(--primary-bg)", fontWeight: 400 }}>Structural Envelopes</span></h3>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 18, maxWidth: 600, opacity: 0.9, lineHeight: 1.6, margin: 0 }}>We engineer environments that withstand the rigorous reality of commercial wear while maintaining stunning, magazine-quality aesthetics.</p>
             </div>
           </Fade>
@@ -79,10 +79,10 @@ export function HomePage() {
             <Parallax speed={0.15} style={{ position: "absolute", inset: 0, width: "100%", height: "120%", zIndex: 0, top: "-10%" }}>
               <img src="/images/warehouse_finished_1775169110438.png" alt="Residential Trim" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </Parallax>
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.6) 50%, rgba(15,23,42,0) 100%)", zIndex: 1 }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%)", zIndex: 1 }} />
             <div style={{ position: "relative", zIndex: 2, color: "#fff", maxWidth: 1000, margin: "0 auto", width: "100%" }}>
               <div style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Obsessive Detailing</div>
-              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(32px, 8vw, 64px)", fontWeight: 600, margin: "0 0 24px", lineHeight: 1.1, overflowWrap: "break-word" }}>Premium Woodworking &<br/><span style={{ color: "var(--primary)", fontWeight: 400 }}>Custom Residential</span></h3>
+              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(32px, 8vw, 64px)", fontWeight: 600, margin: "0 0 24px", lineHeight: 1.1, overflowWrap: "break-word" }}>Premium Woodworking &<br/><span style={{ color: "var(--primary-bg)", fontWeight: 400 }}>Custom Residential</span></h3>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 18, maxWidth: 600, opacity: 0.9, lineHeight: 1.6, margin: 0 }}>Rich architectural trim work, custom cabinetry installations, and premium roofing solutions executed with immaculate precision.</p>
             </div>
           </Fade>

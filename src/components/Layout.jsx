@@ -50,7 +50,7 @@ export function Header({ path }) {
         <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: sc ? 80 : 100, transition: "height 0.4s" }}>
           
           <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }} aria-label="Magnolia State Construction Home">
-            <img src="/logo.png" alt="Magnolia State Construction" style={{ height: "clamp(50px, 8vw, 65px)", objectFit: "contain", filter: !sc && path === "/" ? "drop-shadow(0 4px 6px rgba(0,0,0,0.1))" : "none" }} loading="lazy" />
+            <img src="/logo.png" alt="Magnolia State Construction" style={{ height: "clamp(45px, 7vw, 60px)", objectFit: "contain", filter: !sc && path === "/" ? "drop-shadow(0 4px 6px rgba(0,0,0,0.1))" : "none" }} loading="lazy" />
           </Link>
 
           <nav className="dn" style={{ display: "flex", alignItems: "center", gap: "clamp(16px, 2vw, 32px)", whiteSpace: "nowrap" }}>
@@ -88,9 +88,9 @@ export function Header({ path }) {
             <Btn to="/contact" style={{ padding: "12px 24px", fontSize: 13 }}>Get a Quote</Btn>
           </div>
 
-          <button aria-label="Toggle Mobile Menu" className="mt" onClick={() => setOpen(!open)} style={{ background: "transparent", border: "none", color: "var(--text-primary)", cursor: "pointer", padding: "8px 12px", display: "flex", flexDirection: "column", justifyContent: "center", gap: open ? 0 : 6, width: 44, height: 44, position: "relative" }}>
-            <span style={{ display: "block", width: "100%", height: 2, background: "currentColor", transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)", transform: open ? "rotate(45deg) translateY(1px)" : "none" }} />
-            <span style={{ display: "block", width: "100%", height: 2, background: "currentColor", transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)", transform: open ? "rotate(-45deg) translateY(-1px)" : "none" }} />
+          <button aria-label="Toggle Mobile Menu" className="mt" onClick={() => setOpen(!open)} style={{ background: "rgba(0,0,0,0.03)", border: "none", borderRadius: 8, color: "var(--text-primary)", cursor: "pointer", padding: "10px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: open ? 0 : 5, width: 44, height: 44, position: "relative" }}>
+            <span style={{ display: "block", width: "22px", height: "2px", background: "currentColor", transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)", transform: open ? "rotate(45deg) translateY(1px)" : "none" }} />
+            <span style={{ display: "block", width: "22px", height: "2px", background: "currentColor", transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)", transform: open ? "rotate(-45deg) translateY(-1px)" : "none" }} />
           </button>
         </div>
       </header>

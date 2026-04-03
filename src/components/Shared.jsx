@@ -103,11 +103,11 @@ export function PageHero({ tag, title, titleAccent, sub, children, media }) {
           ) : (
             <img src={media} alt="Hero Background" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           )}
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 20%), linear-gradient(to top, #0F172A 0%, transparent 60%)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 20%), linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 40%)", pointerEvents: "none" }} />
         </div>
         
         <div className="hero-split-content">
-          <div className="glass sc" style={{ maxWidth: 840, padding: "clamp(32px, 5vw, 56px)", borderRadius: 16, border: "2px solid rgba(255,255,255,1)", boxShadow: "var(--shadow-md)" }}>
+          <div className="glass sc" style={{ maxWidth: 840, padding: "clamp(32px, 5vw, 56px)", borderRadius: 16, border: "2px solid rgba(255,255,255,1)", boxShadow: "0 24px 48px -12px rgba(0,0,0,0.1)" }}>
             {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>{tag}</div>}
             <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 10vw, 68px)", textTransform: "uppercase", letterSpacing: -1, margin: 0, lineHeight: 1.05 }}>
               {title}{titleAccent && <><br /><span className="primary-text">{titleAccent}</span></>}

@@ -213,13 +213,13 @@ html {
   }
   .hero-split-media {
     position: relative;
-    height: 55vh;
-    min-height: 55vh;
+    height: 65vh;
+    min-height: 65vh;
     overflow: hidden;
   }
   .hero-split-content {
-    margin-top: -10vh; /* Deliberate overlap */
-    padding: 0 24px 40px;
+    margin-top: -5vh; /* Gentle overlap */
+    padding: 0 16px 40px;
   }
 }
 
