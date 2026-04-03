@@ -32,21 +32,8 @@ export function Header({ path }) {
 
   return (
     <>
-      {/* Premium Dark Pre-Header */}
-      <div style={{ background: "#0F172A", position: "relative", zIndex: 1001, height: "auto", minHeight: 40, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 24px", fontFamily: "var(--font-display)", fontSize: "clamp(11px, 2vw, 13px)", color: "#94A3B8", letterSpacing: 0.5, flexWrap: "wrap", gap: 8 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 24, maxWidth: 1400, margin: "0 auto", width: "100%", justifyContent: "space-between", flexWrap: "wrap" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-             <span style={{ color: "var(--primary)" }}><I.Check /></span>
-             <span style={{ fontWeight: 600, color: "#fff" }}>Licensed & Insured</span> Contractor
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-            <a href="https://maps.google.com" style={{ color: "inherit", textDecoration: "none", display: "flex", gap: 8, alignItems: "center" }}><I.MapPin /> 706 N. 3rd St, Alexandria, LA</a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Structural Nav */}
-      <header style={{ position: "fixed", top: sc ? 0 : 40, left: 0, right: 0, zIndex: 1000, transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)", background: sc ? "#FFFFFF" : "transparent", borderBottom: sc ? "2px solid var(--border-light)" : "2px solid transparent", boxShadow: sc ? "0 10px 30px -10px rgba(0,0,0,0.05)" : "none" }}>
+      <header style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)", background: sc ? "#FFFFFF" : "transparent", borderBottom: sc ? "2px solid var(--border-light)" : "2px solid transparent", boxShadow: sc ? "0 10px 30px -10px rgba(0,0,0,0.05)" : "none" }}>
         <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: sc ? 80 : 100, transition: "height 0.4s" }}>
           
           <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }} aria-label="Magnolia State Construction Home">
@@ -121,6 +108,16 @@ export function Header({ path }) {
 export function Footer() {
   return (
     <footer style={{ background: "var(--bg-surface)", borderTop: "1px solid var(--border-light)" }}>
+      {/* Integrated Minimal CTA */}
+      <div style={{ padding: "80px 24px", borderBottom: "1px solid var(--border-light)", textAlign: "center" }}>
+        <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(36px, 6vw, 56px)", margin: "0 0 24px", color: "var(--text-primary)" }}>Ready to build?</h2>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 24, margin: "0 0 40px", fontFamily: "var(--font-body)", fontSize: 18 }}>
+          <a href="tel:3187046308" style={{ color: "var(--primary)", textDecoration: "none", fontWeight: 600 }}>(318) 704-6308</a>
+          <a href="mailto:chris@magnoliastateconstruction.com" style={{ color: "var(--primary)", textDecoration: "none", fontWeight: 600 }}>chris@magnoliastateconstruction.com</a>
+        </div>
+        <Btn to="/contact" style={{ padding: "16px 40px", fontSize: 18 }}>Contact Us</Btn>
+      </div>
+
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 24px 40px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 56, marginBottom: 56 }}>
           <div>
