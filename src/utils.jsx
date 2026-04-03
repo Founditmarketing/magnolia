@@ -57,7 +57,7 @@ export function useSEO({ title, description, image = "https://magnoliastateconst
       fontPreload = document.createElement('link');
       fontPreload.rel = "preload";
       fontPreload.as = "style";
-      fontPreload.href = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&display=swap";
+      fontPreload.href = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&display=swap";
       document.head.appendChild(fontPreload);
     }
     
