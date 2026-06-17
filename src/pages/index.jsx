@@ -31,6 +31,7 @@ const FAQ_ITEMS = [
 
 // Real Google reviews (verbatim) — aggregate 4.7 across 23 reviews as of 2026-06.
 const RATING = { value: 4.7, count: 23 };
+const REVIEWS_URL = "https://share.google/B8INfhtP4WqrgQICZ";
 const REVIEWS = [
   { author: "Avery Bandy", role: "Custom Home Build · Google review", rating: 5, text: "Chris built our custom home! Was a great communicator and executed all our dreams. Will call Chris again to build our next home!" },
   { author: "Christopher Johns", role: "Construction Client · Google review", rating: 5, text: "Chris and his crew do great work! They were quick, accommodating, and had constant communication throughout our project. Looking forward to working with Magnolia State Construction again!" },
@@ -112,7 +113,7 @@ export function HomePage() {
       </section>
 
       {/* 5. Social Proof — real Google reviews */}
-      <Testimonials rating={RATING.value} count={RATING.count} items={REVIEWS} />
+      <Testimonials rating={RATING.value} count={RATING.count} items={REVIEWS} reviewsUrl={REVIEWS_URL} />
 
       {/* 6. Service area — local SEO for the surrounding Cenla communities */}
       <ServiceArea towns={TOWNS} />
@@ -275,15 +276,16 @@ export function DumpstersPage() {
 
 export function GalleryPage() {
   useSEO({ title: "Project Gallery", description: "View our recent commercial, custom home, and roofing projects across Central Louisiana." });
+  // Edit captions/categories here. Keep them truthful — category only, no fabricated project locations.
   const items = [
-    { src: "/images/custom-home-greatroom.webp", alt: "Open-concept great room in a Magnolia custom home" },
-    { src: "/images/kitchen-marble.webp", alt: "Custom kitchen with marble island and gold lighting" },
-    { src: "/images/kitchen-white.webp", alt: "White custom kitchen with marble counters" },
-    { src: "/images/staircase-overhead.webp", alt: "Custom staircase and two-story entry" },
-    { src: "/images/foyer-staircase.webp", alt: "Two-story foyer with arched front door" },
-    { src: "/images/closet.webp", alt: "Built-in custom closet millwork" },
-    { src: "/images/commercial-build.webp", alt: "Commercial construction job site in Central Louisiana" },
-    { src: "/images/roof-framing.webp", alt: "Roof framing and decking on a Magnolia project" },
+    { src: "/images/custom-home-greatroom.webp", alt: "Open-concept great room in a Magnolia custom home", cat: "Custom Home" },
+    { src: "/images/kitchen-marble.webp", alt: "Custom kitchen with marble island and gold lighting", cat: "Custom Kitchen" },
+    { src: "/images/kitchen-white.webp", alt: "White custom kitchen with marble counters", cat: "Custom Kitchen" },
+    { src: "/images/staircase-overhead.webp", alt: "Custom staircase and two-story entry", cat: "Custom Home" },
+    { src: "/images/foyer-staircase.webp", alt: "Two-story foyer with arched front door", cat: "Custom Home" },
+    { src: "/images/closet.webp", alt: "Built-in custom closet millwork", cat: "Custom Millwork" },
+    { src: "/images/commercial-build.webp", alt: "Commercial construction job site in Central Louisiana", cat: "Commercial" },
+    { src: "/images/roof-framing.webp", alt: "Roof framing and decking on a Magnolia project", cat: "Roofing" },
   ];
 
   return (
@@ -296,6 +298,7 @@ export function GalleryPage() {
               <div className="sc" style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "16/10", background: "var(--bg-elevated)", border: "1px solid var(--border-light)" }}>
                 <img src={it.src} alt={it.alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s" }} loading="lazy" onMouseOver={e => e.currentTarget.style.transform="scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform="scale(1)"}/>
               </div>
+              <div style={{ marginTop: 14, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--text-tertiary)" }}>{it.cat} · Central Louisiana</div>
             </Fade>
           ))}
         </div>

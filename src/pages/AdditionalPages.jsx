@@ -114,6 +114,7 @@ export function ContactPage() {
             <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.7, margin: "0 0 32px" }}>Full builds and major projects only — commercial construction, custom homes, roofing systems, and roll-off dumpster rental across Central Louisiana.</p>
             <a href={TEL} style={{ display: "inline-flex", alignItems: "center", gap: 14, color: "var(--text-primary)", textDecoration: "none", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(28px, 5vw, 40px)", letterSpacing: -0.5, marginBottom: 28 }}><span style={{ color: "var(--primary)", display: "inline-flex" }}><I.Phone /></span>{PHONE}</a>
             <Btn href={TEL} style={{ width: "100%", justifyContent: "center", padding: "18px" }}>Call Chris Now</Btn>
+            <Btn href="sms:3187046308" variant="outline" style={{ width: "100%", justifyContent: "center", padding: "16px", marginTop: 12 }}>Text Chris</Btn>
           </div>
 
           {/* Direct details */}

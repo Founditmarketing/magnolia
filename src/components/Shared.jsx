@@ -1,4 +1,4 @@
-import { Link, I, Fade } from "../utils";
+import { Link, I, Fade, useSEO } from "../utils";
 
 const PHONE = "(318) 704-6308";
 const TEL = "tel:3187046308";
@@ -186,7 +186,7 @@ export function ProcessSteps({ tag = "Our Process", title, sub, steps }) {
   );
 }
 
-export function Testimonials({ rating, count, items }) {
+export function Testimonials({ rating, count, items, reviewsUrl }) {
   return (
     <section style={{ background: "var(--bg-elevated)", padding: "clamp(80px, 13vh, 150px) 24px", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -207,6 +207,11 @@ export function Testimonials({ rating, count, items }) {
             </Fade>
           ))}
         </div>
+        {reviewsUrl && (
+          <Fade style={{ textAlign: "center", marginTop: 48 }}>
+            <a href={reviewsUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, letterSpacing: 1, textTransform: "uppercase", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8 }}>Read all {count} reviews on Google <I.Arrow /></a>
+          </Fade>
+        )}
       </div>
     </section>
   );
@@ -238,6 +243,25 @@ export function FAQ({ items }) {
   );
 }
 
+export function NotFound() {
+  useSEO({ title: "Page Not Found", description: "The page you're looking for doesn't exist. Explore Magnolia State Construction's commercial, custom home, roofing, and dumpster services across Central Louisiana.", noindex: true });
+  return (
+    <section style={{ background: "var(--bg-dark)", padding: "clamp(140px, 20vh, 220px) 24px clamp(80px, 12vh, 140px)", textAlign: "center", minHeight: "70vh", display: "flex", alignItems: "center" }}>
+      <div style={{ maxWidth: 640, margin: "0 auto" }}>
+        <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 6, textTransform: "uppercase", marginBottom: 16 }}>404</div>
+        <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(36px, 7vw, 64px)", lineHeight: 1.05, color: "var(--text-primary)", margin: "0 0 20px" }}>Page Not Found</h1>
+        <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7, margin: "0 0 40px" }}>The page you're looking for doesn't exist or has moved. Let's get you back on track.</p>
+        <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginBottom: 36 }}>
+          <Btn to="/">Back to Home</Btn>
+          <Btn to="/commercial" variant="outline">Our Services</Btn>
+          <Btn to="/gallery" variant="outline">Our Work</Btn>
+        </div>
+        <a href={TEL} style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 18, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 10 }}><I.Phone /> {PHONE}</a>
+      </div>
+    </section>
+  );
+}
+
 export function PageHero({ tag, title, titleAccent, sub, children, media }) {
   if (media) {
     return (
@@ -258,7 +282,7 @@ export function PageHero({ tag, title, titleAccent, sub, children, media }) {
           <div className="glass sc" style={{ maxWidth: 840, padding: "clamp(32px, 5vw, 56px)", borderRadius: 16, border: "2px solid rgba(255,255,255,1)", boxShadow: "0 24px 48px -12px rgba(0,0,0,0.1)" }}>
             {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>{tag}</div>}
             <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 10vw, 68px)", textTransform: "uppercase", letterSpacing: -1, margin: 0, lineHeight: 1.05 }}>
-              {title}{titleAccent && <><br /><span className="primary-text">{titleAccent}</span></>}
+              {title}{titleAccent && <>{" "}<br /><span className="primary-text">{titleAccent}</span></>}
             </h1>
             {sub && <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: "clamp(16px, 4vw, 20px)", lineHeight: 1.6, marginTop: 24, maxWidth: 600 }}>{sub}</p>}
             {children && <div style={{ marginTop: 40, width: "100%" }}>{children}</div>}
@@ -273,7 +297,7 @@ export function PageHero({ tag, title, titleAccent, sub, children, media }) {
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
         {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 5, textTransform: "uppercase", marginBottom: 20 }}>{tag}</div>}
         <h1 className="text-gradient" style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 9vw, 84px)", textTransform: "uppercase", letterSpacing: -1, margin: 0, lineHeight: 1.05, maxWidth: 900 }}>
-          {title}{titleAccent && <><br /><span className="primary-text">{titleAccent}</span></>}
+          {title}{titleAccent && <>{" "}<br /><span className="primary-text">{titleAccent}</span></>}
         </h1>
         {sub && <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.7, marginTop: 28, maxWidth: 700 }}>{sub}</p>}
         {children && <div style={{ marginTop: 48 }}>{children}</div>}

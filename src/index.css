@@ -60,6 +60,13 @@ body {
   color: #fff;
 }
 
+/* Visible keyboard focus for a11y (mouse clicks don't trigger :focus-visible) */
+a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 img {
   max-width: 100%;
   display: block;

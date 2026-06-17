@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, I } from "../utils";
 import { Btn, ISNBadge } from "./Shared";
 
@@ -17,6 +17,27 @@ export function Header({ path }) {
   }, []);
 
   useEffect(() => { setOpen(false); setDd(false); }, [path]);
+
+  // Mobile-menu accessibility: focus the menu on open, trap Tab, close on Escape, restore focus on close.
+  const menuRef = useRef(null);
+  const hamburgerRef = useRef(null);
+  useEffect(() => {
+    if (!open) return;
+    const node = menuRef.current;
+    const hamburger = hamburgerRef.current;
+    const focusables = node ? node.querySelectorAll('a[href], button') : [];
+    if (focusables.length) focusables[0].focus();
+    const onKey = (e) => {
+      if (e.key === "Escape") { setOpen(false); return; }
+      if (e.key === "Tab" && focusables.length) {
+        const first = focusables[0], last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => { document.removeEventListener("keydown", onKey); if (hamburger) hamburger.focus(); };
+  }, [open]);
 
   const links = [
     { to: "/", label: "Home" },
@@ -75,7 +96,7 @@ export function Header({ path }) {
             <Btn href={TEL} aria-label={`Call Magnolia State Construction at ${PHONE}`} style={{ padding: "13px 24px", fontSize: 14, letterSpacing: 1 }}><I.Phone /> {PHONE}</Btn>
           </div>
 
-          <button aria-label="Toggle Mobile Menu" className="mt" onClick={() => setOpen(!open)} style={{ background: "rgba(0,0,0,0.03)", border: "none", borderRadius: 8, color: "var(--text-primary)", cursor: "pointer", padding: "10px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: open ? 0 : 5, width: 44, height: 44, position: "relative" }}>
+          <button ref={hamburgerRef} aria-label="Toggle menu" aria-expanded={open} aria-controls="mobile-menu" className="mt" onClick={() => setOpen(!open)} style={{ background: "rgba(0,0,0,0.03)", border: "none", borderRadius: 8, color: "var(--text-primary)", cursor: "pointer", padding: "10px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: open ? 0 : 5, width: 44, height: 44, position: "relative" }}>
             <span style={{ display: "block", width: "22px", height: "2px", background: "currentColor", transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)", transform: open ? "rotate(45deg) translateY(1px)" : "none" }} />
             <span style={{ display: "block", width: "22px", height: "2px", background: "currentColor", transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)", transform: open ? "rotate(-45deg) translateY(-1px)" : "none" }} />
           </button>
@@ -83,7 +104,7 @@ export function Header({ path }) {
       </header>
 
       {/* Premium Full-Screen Mobile Menu */}
-      {open && <div style={{ position: "fixed", inset: 0, zIndex: 999, paddingTop: 120, background: "#FFFFFF", display: "flex", flexDirection: "column", padding: "120px 24px 40px", overflowY: "auto" }}>
+      {open && <div ref={menuRef} id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site menu" style={{ position: "fixed", inset: 0, zIndex: 999, paddingTop: 120, background: "#FFFFFF", display: "flex", flexDirection: "column", padding: "120px 24px 40px", overflowY: "auto" }}>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 24 }}>
           {links.map((l, i) => l.ch ? (
             <div key={i}>
@@ -145,16 +166,16 @@ export function Footer() {
         <div style={{ borderTop: "1px solid var(--border-light)", paddingTop: 32, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 24 }}>
           <p style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-body)", fontSize: 14, margin: 0 }}>© {new Date().getFullYear()} Magnolia State Construction LLC. All rights reserved.</p>
           <div style={{ display: "flex", alignItems: "center", gap: 28, flexWrap: "wrap" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <a href="https://www.isnetworld.com/" target="_blank" rel="noopener noreferrer" aria-label="ISNetworld verified contractor" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
               <ISNBadge size={34} />
               <span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", fontSize: 12 }}>ISNetworld Verified</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            </a>
+            <a href="https://www.lagc.org/" target="_blank" rel="noopener noreferrer" aria-label="Louisiana Associated General Contractors member" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
               <div style={{ width: 34, height: 34, borderRadius: 5, border: "2px solid var(--text-secondary)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                 <span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 12, letterSpacing: 0.5 }}>LAGC</span>
               </div>
               <span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", fontSize: 12 }}>LA Assoc. General Contractors</span>
-            </div>
+            </a>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <span style={{ color: "var(--text-secondary)", display: "inline-flex" }}><I.Shield /></span>
               <span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", fontSize: 12 }}>Licensed & Insured</span>
