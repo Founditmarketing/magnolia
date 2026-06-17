@@ -133,6 +133,10 @@ export function useSEO({ title, description, image = "https://magnoliastateconst
         { "@type": "Organization", "name": "Louisiana Associated General Contractors (LAGC)" },
         { "@type": "Organization", "name": "ISNetworld" }
       ],
+      "geo": { "@type": "GeoCoordinates", "latitude": 31.322010, "longitude": -92.457323 },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "17:00" }
+      ],
       ...(rating ? { "aggregateRating": { "@type": "AggregateRating", "ratingValue": rating.value, "reviewCount": rating.count, "bestRating": 5 } } : {}),
       ...(reviews ? { "review": reviews.map(r => ({ "@type": "Review", "author": { "@type": "Person", "name": r.author }, "reviewRating": { "@type": "Rating", "ratingValue": r.rating, "bestRating": 5 }, "reviewBody": r.text })) } : {})
     });
