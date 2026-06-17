@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "./utils";
 import { Header, Footer } from "./components/Layout";
-import { HomePage, CommercialPage, IndustrialPage, DumpstersPage, GalleryPage } from "./pages";
+import { HomePage, CommercialPage, IndustrialPage, DumpstersPage, GalleryPage, RoofingPage } from "./pages";
 import { PricingPage, AboutPage, ContactPage, ResidentialPage } from "./pages/AdditionalPages";
 
 export default function App() {
@@ -14,6 +14,7 @@ export default function App() {
         {page === "home" && <HomePage />}
         {page === "commercial" && <CommercialPage />}
         {page === "industrial" && <IndustrialPage />}
+        {page === "roofing" && <RoofingPage />}
         {page === "dumpsters" && <DumpstersPage />}
         {page === "pricing" && <PricingPage />}
         {page === "about" && <AboutPage />}

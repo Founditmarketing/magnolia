@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 const ROUTES = {
   "/": "home", "/commercial": "commercial", "/industrial": "industrial",
   "/dumpsters": "dumpsters", "/dumpster-pricing": "pricing", "/about": "about",
-  "/contact": "contact", "/residential": "residential", "/gallery": "gallery",
+  "/contact": "contact", "/residential": "residential", "/roofing": "roofing",
+  "/gallery": "gallery",
 };
 
 export function useRouter() {
@@ -88,7 +89,7 @@ export function useSEO({ title, description, image = "https://magnoliastateconst
       fontPreload = document.createElement('link');
       fontPreload.rel = "preload";
       fontPreload.as = "style";
-      fontPreload.href = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&display=swap";
+      fontPreload.href = "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap";
       document.head.appendChild(fontPreload);
     }
     
@@ -135,9 +136,14 @@ export function useSEO({ title, description, image = "https://magnoliastateconst
         "addressRegion": "LA",
         "postalCode": "71301",
         "addressCountry": "US"
-      }
+      },
+      "areaServed": ["Alexandria LA", "Pineville LA", "Central Louisiana"],
+      "memberOf": [
+        { "@type": "Organization", "name": "Louisiana Associated General Contractors (LAGC)" },
+        { "@type": "Organization", "name": "ISNetworld" }
+      ]
     });
-  }, [title, description]);
+  }, [title, description, image]);
 }
 
 // --- COUNTER ---
@@ -174,6 +180,8 @@ export const I = {
   Menu: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>,
   X: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>,
   Factory: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg>,
+  Home: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10"/><path d="M9 21v-6h6v6"/></svg>,
+  Roof: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12 12 4l10 8"/><path d="M5 11v8h14v-8"/><path d="M12 4v3"/></svg>,
   ChevDown: () => <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>,
   Clock: () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
   FB: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>,

@@ -129,6 +129,11 @@ html {
   gap: 24px;
 }
 
+/* Desktop column spans (ignored inside the mobile flex carousel below) */
+.span-4 { grid-column: span 4; }
+.span-6 { grid-column: span 6; }
+.span-12 { grid-column: span 12; }
+
 /* Mobile-First Swipe-able Carousels */
 @media (max-width: 768px) {
   .bento-grid {
@@ -220,6 +225,16 @@ html {
   .hero-split-content {
     margin-top: -5vh; /* Gentle overlap */
     padding: 0 16px 40px;
+  }
+}
+
+/* Respect reduced-motion preference: calm the entrance/parallax/hover motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
