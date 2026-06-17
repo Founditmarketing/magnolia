@@ -1,5 +1,5 @@
 import { Fade, Link, I, useSEO } from "../utils";
-import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ } from "../components/Shared";
+import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials } from "../components/Shared";
 
 const TEL = "tel:3187046308";
 
@@ -27,8 +27,15 @@ const FAQ_ITEMS = [
   { q: "How do I get an estimate?", a: "Call Chris directly at (318) 704-6308. No forms and no call center — one call to talk through your project scope and timeline." },
 ];
 
+// Real Google reviews (verbatim) — aggregate 4.7 across 23 reviews as of 2026-06.
+const RATING = { value: 4.7, count: 23 };
+const REVIEWS = [
+  { author: "Avery Bandy", role: "Custom Home Build · Google review", rating: 5, text: "Chris built our custom home! Was a great communicator and executed all our dreams. Will call Chris again to build our next home!" },
+  { author: "Christopher Johns", role: "Construction Client · Google review", rating: 5, text: "Chris and his crew do great work! They were quick, accommodating, and had constant communication throughout our project. Looking forward to working with Magnolia State Construction again!" },
+];
+
 export function HomePage() {
-  useSEO({ title: "Commercial Construction, Custom Homes, Roofing & Dumpsters", description: "Central Louisiana's commercial and custom builder. Ground-up commercial construction, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. ISN-certified.", faq: FAQ_ITEMS });
+  useSEO({ title: "Commercial Construction, Custom Homes, Roofing & Dumpsters", description: "Central Louisiana's commercial and custom builder. Ground-up commercial construction, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. ISN-certified.", faq: FAQ_ITEMS, rating: RATING, reviews: REVIEWS });
 
   const services = [
     { icon: <I.Building />, n: "Commercial Construction", to: "/commercial", cta: "Explore Commercial Construction", d: "Ground-up commercial buildings engineered to withstand daily public use — permits to punch list, one contractor on record." },
@@ -102,17 +109,8 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 5. Social Proof: One Singular Statement */}
-      <section style={{ background: "var(--bg-elevated)", padding: "clamp(96px, 16vh, 160px) 24px" }}>
-        <Fade delay={0.1} style={{ maxWidth: 840, margin: "0 auto", textAlign: "center" }}>
-          <div style={{ color: "var(--primary)", fontSize: 32, letterSpacing: 4, margin: "0 auto 32px" }}>★★★★★</div>
-          <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontSize: "clamp(24px, 5vw, 42px)", lineHeight: 1.4, margin: "0 0 40px" }}>
-            "Chris and his crew were extremely professional from day one. Communication was clear throughout the entire build. The quality of work is absolutely outstanding."
-          </p>
-          <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 2, textTransform: "uppercase", color: "var(--text-primary)" }}>Verified Client</div>
-          <div style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "var(--text-secondary)", marginTop: 8 }}>Commercial Build · Central Louisiana</div>
-        </Fade>
-      </section>
+      {/* 5. Social Proof — real Google reviews */}
+      <Testimonials rating={RATING.value} count={RATING.count} items={REVIEWS} />
 
       {/* 6. FAQ — depth + FAQPage schema (see useSEO faq prop) */}
       <FAQ items={FAQ_ITEMS} />

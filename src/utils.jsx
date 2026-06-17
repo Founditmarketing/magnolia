@@ -78,7 +78,7 @@ export function Parallax({ children, speed = 0.2, style = {}, className = "" }) 
   );
 }
 
-export function useSEO({ title, description, image = "https://magnoliastateconstruction.com/og-image.jpg", faq }) {
+export function useSEO({ title, description, image = "https://magnoliastateconstruction.com/og-image.jpg", faq, rating, reviews }) {
   useEffect(() => {
     const fullTitle = title + " | Magnolia State Construction";
     document.title = fullTitle;
@@ -131,7 +131,9 @@ export function useSEO({ title, description, image = "https://magnoliastateconst
       "memberOf": [
         { "@type": "Organization", "name": "Louisiana Associated General Contractors (LAGC)" },
         { "@type": "Organization", "name": "ISNetworld" }
-      ]
+      ],
+      ...(rating ? { "aggregateRating": { "@type": "AggregateRating", "ratingValue": rating.value, "reviewCount": rating.count, "bestRating": 5 } } : {}),
+      ...(reviews ? { "review": reviews.map(r => ({ "@type": "Review", "author": { "@type": "Person", "name": r.author }, "reviewRating": { "@type": "Rating", "ratingValue": r.rating, "bestRating": 5 }, "reviewBody": r.text })) } : {})
     });
 
     // FAQPage structured data — only on pages that pass a faq list
@@ -155,7 +157,7 @@ export function useSEO({ title, description, image = "https://magnoliastateconst
     } else if (faqScript) {
       faqScript.remove();
     }
-  }, [title, description, image, faq]);
+  }, [title, description, image, faq, rating, reviews]);
 }
 
 // --- COUNTER ---

@@ -144,6 +144,32 @@ export function CTA({ title, sub, btn }) {
   );
 }
 
+export function Testimonials({ rating, count, items }) {
+  return (
+    <section style={{ background: "var(--bg-elevated)", padding: "clamp(80px, 13vh, 150px) 24px", borderTop: "1px solid var(--border-light)" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <Fade style={{ textAlign: "center", marginBottom: 56 }}>
+          <div style={{ color: "var(--primary)", fontSize: 26, letterSpacing: 3 }}>★★★★★</div>
+          <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, letterSpacing: 0.5, color: "var(--text-primary)", marginTop: 12 }}>{rating} · {count} Google reviews</div>
+          <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(30px, 5vw, 50px)", lineHeight: 1.1, color: "var(--text-primary)", margin: "16px 0 0" }}>What our clients say</h2>
+        </Fade>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 28 }}>
+          {items.map((t, i) => (
+            <Fade key={i} delay={i * 0.1}>
+              <div className="sc" style={{ borderRadius: 16, padding: "36px 34px", height: "100%", display: "flex", flexDirection: "column" }}>
+                <div style={{ color: "var(--primary)", letterSpacing: 2, fontSize: 16, marginBottom: 18 }}>★★★★★</div>
+                <p style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(19px, 2.5vw, 22px)", lineHeight: 1.5, color: "var(--text-primary)", margin: "0 0 24px", flex: 1 }}>"{t.text}"</p>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, color: "var(--text-primary)" }}>{t.author}</div>
+                <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", marginTop: 4 }}>{t.role}</div>
+              </div>
+            </Fade>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function FAQ({ items }) {
   return (
     <section style={{ background: "var(--bg-dark)", padding: "clamp(72px, 11vh, 120px) 24px", borderTop: "1px solid var(--border-light)" }}>
