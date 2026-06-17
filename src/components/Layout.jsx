@@ -34,11 +34,11 @@ export function Header({ path }) {
   return (
     <>
       {/* Main Structural Nav */}
-      <header style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)", background: sc ? "#FFFFFF" : "transparent", borderBottom: sc ? "2px solid var(--border-light)" : "2px solid transparent", boxShadow: sc ? "0 10px 30px -10px rgba(0,0,0,0.05)" : "none" }}>
+      <header style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)", background: "#FFFFFF", borderBottom: "2px solid var(--border-light)", boxShadow: sc ? "0 10px 30px -10px rgba(0,0,0,0.08)" : "none" }}>
         <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: sc ? 80 : 100, transition: "height 0.4s" }}>
 
           <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }} aria-label="Magnolia State Construction Home">
-            <img src="/logo.png" alt="Magnolia State Construction" style={{ height: "clamp(45px, 7vw, 60px)", objectFit: "contain", filter: !sc && path === "/" ? "drop-shadow(0 4px 6px rgba(0,0,0,0.1))" : "none" }} />
+            <img src="/logo.png" alt="Magnolia State Construction" style={{ height: "clamp(45px, 7vw, 60px)", objectFit: "contain" }} />
           </Link>
 
           <nav className="dn" style={{ display: "flex", alignItems: "center", gap: "clamp(16px, 2vw, 32px)", whiteSpace: "nowrap" }}>
