@@ -62,6 +62,10 @@ export function AboutPage() {
       <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <SH tag="Our Story" title="Over 15 Years Building Central Louisiana" />
+          <Fade style={{ textAlign: "center", margin: "0 0 48px" }}>
+            <img src="/images/team-family.webp" alt="Chris Naalbandian and family" loading="lazy" style={{ width: "100%", maxWidth: 460, borderRadius: 16, border: "1px solid var(--border-light)" }} />
+            <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-tertiary)", marginTop: 12 }}>Chris Naalbandian &amp; family · Central Louisiana</div>
+          </Fade>
           <div style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "var(--text-secondary)", marginBottom: 64 }}>
             <p>At Magnolia State Construction, we've spent over 15 years bringing major construction projects to life across Central Louisiana. Our mission is simple: high-quality construction delivered with craftsmanship, professionalism, and care.</p>
             <p style={{ marginTop: 24 }}>Led by Chris Naalbandian, our team has grown from a local operation into the contractor trusted to deliver ground-up commercial buildings, custom homes, and complete roofing systems for owners and businesses across the region.</p>
@@ -152,7 +156,7 @@ export function ResidentialPage() {
   useSEO({ title: "Custom Home Building in Central Louisiana", description: "Ground-up custom home building across Central Louisiana — foundation to roof, one accountable builder. Full custom homes, not remodels or repairs. Call (318) 704-6308." });
   return (
     <>
-      <PageHero tag="Custom Home Building" title="Custom" titleAccent="Homes" sub="Ground-up custom homes built across Central Louisiana. We take a lot and a set of plans and deliver a finished home — foundation to roof, framing to final trim. This is full custom home building, not remodels or repairs." />
+      <PageHero tag="Custom Home Building" title="Custom" titleAccent="Homes" sub="Ground-up custom homes built across Central Louisiana. We take a lot and a set of plans and deliver a finished home — foundation to roof, framing to final trim. This is full custom home building, not remodels or repairs." media="/images/custom-home-greatroom.webp" />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <SH tag="Ground-Up" title="Built From the Foundation Up" sub="We build new custom homes as a single accountable contractor — every phase managed in-house, from raw lot to final walk-through." />

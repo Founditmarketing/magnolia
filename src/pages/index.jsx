@@ -51,7 +51,7 @@ export function HomePage() {
       {/* 1. Hero — sells scale, repels small jobs */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", padding: "clamp(60px, 15vh, 120px) 24px" }}>
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-          <img src="/images/industrial-project.webp" fetchPriority="high" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} alt="" />
+          <img src="/images/commercial-build.webp" fetchPriority="high" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} alt="" />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.82) 100%)" }} />
         </div>
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto", width: "100%" }}>
@@ -92,9 +92,9 @@ export function HomePage() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "flex", gap: 32, overflowX: "auto", scrollSnapType: "x mandatory", paddingBottom: 24, WebkitOverflowScrolling: "touch" }}>
             {[
-              { img: "/images/warehouse-finished.webp", n: "Commercial Build-Out", r: "4,500 sq ft, flawless execution." },
-              { img: "/images/construction-brick.webp", n: "Ground-Up Commercial", r: "Full structure, permits to punch list." },
-              { img: "/images/custom-cabinets.webp", n: "Custom Home", r: "Built once, built right." },
+              { img: "/images/foyer-staircase.webp", n: "Custom Home", r: "Ground-up, built once and built right." },
+              { img: "/images/commercial-trusses.webp", n: "Commercial Structure", r: "Steel and structure delivered to site." },
+              { img: "/images/roof-framing.webp", n: "Roof System", r: "Full tear-off and rebuild to deck." },
             ].map((p, i) => (
                <Fade key={i} delay={i * 0.1} style={{ flex: "1 0 min(350px, 85vw)", scrollSnapAlign: "start" }}>
                  <div style={{ aspectRatio: "4/3", width: "100%", overflow: "hidden", marginBottom: 24, borderRadius: 8 }}>
@@ -127,7 +127,7 @@ export function CommercialPage() {
   useSEO({ title: "Commercial Construction in Central Louisiana", description: "Ground-up commercial construction across Alexandria and Central Louisiana — metal buildings, foundations, full envelopes, and tenant buildouts. ISN-certified. Call (318) 704-6308." });
   return (
     <>
-      <PageHero tag="Our Services" title="Commercial" titleAccent="Construction" sub="Full-service, ground-up commercial builds across Central Louisiana. From multi-unit apartments and financial institutions to restaurants and retail — we handle every phase from permits to punch list." />
+      <PageHero tag="Our Services" title="Commercial" titleAccent="Construction" sub="Full-service, ground-up commercial builds across Central Louisiana. From multi-unit apartments and financial institutions to restaurants and retail — we handle every phase from permits to punch list." media="/images/commercial-trusses.webp" />
       <TrustBar />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -201,7 +201,7 @@ export function RoofingPage() {
   useSEO({ title: "Roofing Systems in Alexandria & Central Louisiana", description: "Complete commercial and residential roof systems across Alexandria and Central Louisiana — TPO, metal, modified bitumen, and architectural shingle. Full tear-off and new installation by an ISN-certified contractor. Call (318) 704-6308." });
   return (
     <>
-      <PageHero tag="Roofing Systems" title="Commercial & Residential" titleAccent="Roof Systems" sub="Complete roof systems for Central Louisiana — engineered, torn off to deck, and installed new. Commercial flat-roof systems and full residential roofs. We install whole systems, not patch jobs." />
+      <PageHero tag="Roofing Systems" title="Commercial & Residential" titleAccent="Roof Systems" sub="Complete roof systems for Central Louisiana — engineered, torn off to deck, and installed new. Commercial flat-roof systems and full residential roofs. We install whole systems, not patch jobs." media="/images/roof-framing.webp" />
       <TrustBar />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -238,7 +238,7 @@ export function DumpstersPage() {
   useSEO({ title: "Roll-Off Dumpster Rental — Alexandria & Cenla", description: "20, 30, and 40-yard roll-off dumpster rental across Central Louisiana. Transparent pricing, fast delivery for job sites, demolition, and major cleanouts. Call (318) 704-6308." });
   return (
     <>
-      <PageHero tag="Dumpster Rentals" title="Roll-Off Dumpsters" titleAccent="for Every Project" sub="Convenient, reliable dumpster rentals for commercial job sites, demolition projects, renovations, and large-scale cleanouts across Central Louisiana." />
+      <PageHero tag="Dumpster Rentals" title="Roll-Off Dumpsters" titleAccent="for Every Project" sub="Convenient, reliable dumpster rentals for commercial job sites, demolition projects, renovations, and large-scale cleanouts across Central Louisiana." media="/images/dumpster.webp" />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="Our Fleet" title="Three Sizes. One Standard of Service." center />
@@ -275,15 +275,15 @@ export function DumpstersPage() {
 
 export function GalleryPage() {
   useSEO({ title: "Project Gallery", description: "View our recent commercial, custom home, and roofing projects across Central Louisiana." });
-  const paths = [
-    "/images/warehouse-finished.webp",
-    "/images/industrial-project.webp",
-    "/images/construction-brick.webp",
-    "/images/workers-blueprints.webp",
-    "/images/residential-exterior.webp",
-    "/images/custom-cabinets.webp",
-    "/images/trim-millwork.webp",
-    "/images/granite-kitchen.webp",
+  const items = [
+    { src: "/images/custom-home-greatroom.webp", alt: "Open-concept great room in a Magnolia custom home" },
+    { src: "/images/kitchen-marble.webp", alt: "Custom kitchen with marble island and gold lighting" },
+    { src: "/images/kitchen-white.webp", alt: "White custom kitchen with marble counters" },
+    { src: "/images/staircase-overhead.webp", alt: "Custom staircase and two-story entry" },
+    { src: "/images/foyer-staircase.webp", alt: "Two-story foyer with arched front door" },
+    { src: "/images/closet.webp", alt: "Built-in custom closet millwork" },
+    { src: "/images/commercial-build.webp", alt: "Commercial construction job site in Central Louisiana" },
+    { src: "/images/roof-framing.webp", alt: "Roof framing and decking on a Magnolia project" },
   ];
 
   return (
@@ -291,10 +291,10 @@ export function GalleryPage() {
       <PageHero tag="Our Work" title="Project" titleAccent="Gallery" sub="Commercial, custom home, and roofing projects across Central Louisiana — structural foundations, full envelopes, and finished builds." />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div className="bento-grid" style={{ maxWidth: 1200, margin: "0 auto", gap: 24, gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))" }}>
-          {paths.map((src, i) => (
+          {items.map((it, i) => (
             <Fade key={i} delay={(i % 4) * 0.1} className="bento-gallery-item">
               <div className="sc" style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "16/10", background: "var(--bg-elevated)", border: "1px solid var(--border-light)" }}>
-                <img src={src} alt={`Magnolia State Construction project ${i + 1}`} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s" }} loading="lazy" onMouseOver={e => e.currentTarget.style.transform="scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform="scale(1)"}/>
+                <img src={it.src} alt={it.alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s" }} loading="lazy" onMouseOver={e => e.currentTarget.style.transform="scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform="scale(1)"}/>
               </div>
             </Fade>
           ))}
