@@ -47,12 +47,25 @@ const STATS = [
 export function HomePage() {
   useSEO({ title: "Commercial Construction, Custom Homes, Roofing & Dumpsters", description: "Central Louisiana's commercial and custom builder. Ground-up commercial construction, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. ISN-certified.", faq: FAQ_ITEMS, rating: RATING, reviews: REVIEWS });
 
-  const services = [
-    { n: "Commercial Construction", to: "/commercial", img: "/images/commercial-build.webp", d: "Ground-up commercial builds — permits to punch list." },
-    { n: "Custom Home Building", to: "/residential", img: "/images/custom-home-greatroom.webp", d: "New custom homes, foundation to finish." },
-    { n: "Roofing Systems", to: "/roofing", img: "/images/roof-framing.webp", d: "Full commercial & residential roof systems." },
-    { n: "Roll-Off Dumpster Rental", to: "/dumpsters", img: "/images/dumpster.webp", d: "20, 30 & 40-yard roll-offs across Cenla." },
+  const featured = [
+    { n: "Commercial Construction", to: "/commercial", img: "/images/commercial-build.webp", proof: "Metal buildings, foundations, full envelopes, and tenant buildouts — every phase on record.", cta: "Explore commercial construction" },
+    { n: "Custom Home Building", to: "/residential", img: "/images/custom-home-greatroom.webp", proof: "Ground-up custom homes, foundation to final walk-through. One accountable builder.", cta: "Learn about custom homes" },
   ];
+  const secondary = [
+    { n: "Roofing Systems", to: "/roofing", img: "/images/roof-framing.webp", proof: "TPO, metal, and modified bitumen — full systems, never patch jobs.", cta: "Explore roofing" },
+    { n: "Roll-Off Dumpster Rental", to: "/dumpsters", img: "/images/dumpster.webp", proof: "20, 30, and 40-yard roll-offs. Transparent pricing, fast delivery.", cta: "See sizes & pricing" },
+  ];
+  const serviceCard = (s, big) => (
+    <Link to={s.to} className="service-card" aria-label={s.n} style={{ display: "block", position: "relative", aspectRatio: big ? "5 / 4" : "16 / 9", borderRadius: 14, overflow: "hidden", textDecoration: "none" }}>
+      <img src={s.img} alt="" className="service-card-img" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(8,20,12,0.93) 0%, rgba(8,20,12,0.45) 52%, rgba(8,20,12,0.08) 100%)" }} />
+      <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: big ? "clamp(28px, 4vw, 40px)" : "26px 26px" }}>
+        <h3 style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: big ? "clamp(26px, 3.5vw, 34px)" : 23, margin: "0 0 10px", lineHeight: 1.12 }}>{s.n}</h3>
+        <p style={{ color: "rgba(255,255,255,0.85)", fontFamily: "var(--font-body)", fontSize: big ? 15.5 : 14, lineHeight: 1.55, margin: "0 0 16px", maxWidth: 440 }}>{s.proof}</p>
+        <span style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 12, letterSpacing: 1.5, textTransform: "uppercase", display: "inline-flex", alignItems: "center", gap: 8 }}>{s.cta} <I.Arrow /></span>
+      </div>
+    </Link>
+  );
 
   return (
     <>
@@ -81,22 +94,20 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 2. Services — image cards for the four money pages */}
+      {/* 2. Services — image cards with hierarchy (flagships larger) */}
       <section style={{ background: "var(--bg-dark)", padding: "clamp(96px, 15vh, 184px) 24px" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(248px, 1fr))", gap: 24 }}>
-          {services.map((s, i) => (
-            <Fade key={i} delay={i * 0.08}>
-              <Link to={s.to} className="service-card" aria-label={s.n} style={{ display: "block", position: "relative", aspectRatio: "3 / 4", borderRadius: 14, overflow: "hidden", textDecoration: "none" }}>
-                <img src={s.img} alt="" className="service-card-img" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(8,20,12,0.92) 0%, rgba(8,20,12,0.4) 48%, rgba(8,20,12,0.08) 100%)" }} />
-                <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: "28px 24px" }}>
-                  <h3 style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: 25, margin: "0 0 8px", lineHeight: 1.12 }}>{s.n}</h3>
-                  <p style={{ color: "rgba(255,255,255,0.82)", fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.5, margin: "0 0 14px" }}>{s.d}</p>
-                  <span style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 12, letterSpacing: 1.5, textTransform: "uppercase", display: "inline-flex", alignItems: "center", gap: 8 }}>Explore <I.Arrow /></span>
-                </div>
-              </Link>
-            </Fade>
-          ))}
+        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
+          <Fade>
+            <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 18 }}>Our Services</div>
+            <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(32px, 4.5vw, 50px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: 0, maxWidth: 560 }}>What we take on.</h2>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7, marginTop: 18, maxWidth: 520 }}>Full builds and major projects, start to finish.</p>
+          </Fade>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24, marginTop: 56 }}>
+            {featured.map((s, i) => <Fade key={i} delay={i * 0.08}>{serviceCard(s, true)}</Fade>)}
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24, marginTop: 24 }}>
+            {secondary.map((s, i) => <Fade key={i} delay={i * 0.08}>{serviceCard(s, false)}</Fade>)}
+          </div>
         </div>
       </section>
 
