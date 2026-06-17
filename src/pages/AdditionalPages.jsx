@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { I, Fade, useSEO } from "../utils";
 import { Btn, TrustBar, SH, CTA, PageHero, ProcessSteps } from "../components/Shared";
 
@@ -95,6 +96,31 @@ export function AboutPage() {
 export function ContactPage() {
   useSEO({ title: "Contact", description: "Call Chris directly for a commercial estimate. Full builds and major projects only — commercial construction, custom homes, roofing, and dumpster rental across Central Louisiana." });
 
+  // Spam-resistant mini intake. Posts to a Formspree endpoint (public URL, not a secret)
+  // set via VITE_FORMSPREE_ENDPOINT. Honeypot + required fields. Form is hidden until configured.
+  const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+  const [form, setForm] = useState({ name: "", phone: "", projectType: "", message: "", company: "" });
+  const [status, setStatus] = useState("idle");
+  const up = (k, v) => setForm(f => ({ ...f, [k]: v }));
+  const submit = async (e) => {
+    e.preventDefault();
+    if (form.company) { setStatus("success"); return; } // honeypot tripped — drop silently
+    if (!endpoint) { setStatus("error"); return; }
+    setStatus("submitting");
+    try {
+      const res = await fetch(endpoint, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify({ name: form.name, phone: form.phone, projectType: form.projectType, message: form.message }) });
+      setStatus(res.ok ? "success" : "error");
+    } catch { setStatus("error"); }
+  };
+  const inputStyle = { width: "100%", padding: "14px 16px", border: "1px solid var(--border-light)", borderRadius: 8, fontFamily: "var(--font-body)", fontSize: 16, outline: "none", boxSizing: "border-box", background: "#fff", color: "var(--text-primary)" };
+  const labelStyle = { display: "block", color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontSize: 12, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 };
+  const field = (k, label, type = "text") => (
+    <label style={{ display: "block", marginBottom: 18 }}>
+      <span style={labelStyle}>{label} *</span>
+      <input type={type} required value={form[k]} onChange={e => up(k, e.target.value)} style={inputStyle} onFocus={e => e.target.style.borderColor = "var(--primary)"} onBlur={e => e.target.style.borderColor = "var(--border-light)"} />
+    </label>
+  );
+
   const details = [
     { icon: <I.Phone />, l: "Phone", v: PHONE, h: TEL },
     { icon: <I.Mail />, l: "Email", v: "chris@magnoliastateconstruction.com", h: "mailto:chris@magnoliastateconstruction.com" },
@@ -103,7 +129,7 @@ export function ContactPage() {
 
   return (
     <>
-      <PageHero tag="Contact" title="Let's Discuss" titleAccent="Your Project" sub="One call to Chris. No call centers, no runaround, no forms." />
+      <PageHero tag="Contact" title="Let's Discuss" titleAccent="Your Project" sub="One call to Chris. No call centers, no runaround." />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 64 }}>
 
@@ -142,6 +168,46 @@ export function ContactPage() {
             </div>
           </div>
         </div>
+
+        {endpoint && (
+          <div style={{ maxWidth: 720, margin: "64px auto 0" }}>
+            <div className="glass" style={{ borderRadius: 24, padding: "clamp(32px, 5vw, 48px)" }}>
+              {status === "success" ? (
+                <div style={{ textAlign: "center", padding: "24px 0" }}>
+                  <div style={{ color: "var(--primary)", display: "inline-flex", transform: "scale(1.4)", marginBottom: 22 }}><I.Check /></div>
+                  <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: 30, color: "var(--text-primary)", margin: "0 0 12px" }}>Request sent</h3>
+                  <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7, margin: 0 }}>Thanks — Chris will reach out shortly. Need it faster? Call or text {PHONE}.</p>
+                </div>
+              ) : (
+                <form onSubmit={submit}>
+                  <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 12 }}>Prefer to send a request?</div>
+                  <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(24px, 3.5vw, 32px)", color: "var(--text-primary)", margin: "0 0 8px" }}>Tell us about your project</h3>
+                  <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, margin: "0 0 28px" }}>Full builds and major projects only. The fastest way to reach Chris is still a call or text.</p>
+                  <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" value={form.company} onChange={e => up("company", e.target.value)} style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }} />
+                  {field("name", "Name")}
+                  {field("phone", "Phone", "tel")}
+                  <label style={{ display: "block", marginBottom: 18 }}>
+                    <span style={labelStyle}>Project Type *</span>
+                    <select required value={form.projectType} onChange={e => up("projectType", e.target.value)} style={inputStyle}>
+                      <option value="">Select…</option>
+                      <option>Commercial Construction</option>
+                      <option>Custom Home Building</option>
+                      <option>Roofing Systems</option>
+                      <option>Roll-Off Dumpster Rental</option>
+                      <option>Other</option>
+                    </select>
+                  </label>
+                  <label style={{ display: "block", marginBottom: 24 }}>
+                    <span style={labelStyle}>Project Details</span>
+                    <textarea rows={4} value={form.message} onChange={e => up("message", e.target.value)} style={{ ...inputStyle, resize: "vertical" }} onFocus={e => e.target.style.borderColor = "var(--primary)"} onBlur={e => e.target.style.borderColor = "var(--border-light)"} />
+                  </label>
+                  {status === "error" && <p style={{ color: "#b91c1c", fontFamily: "var(--font-body)", fontSize: 14, margin: "0 0 16px" }}>Couldn't send your request — please call or text {PHONE}.</p>}
+                  <button type="submit" disabled={status === "submitting"} style={{ width: "100%", padding: "16px", background: "linear-gradient(135deg, var(--primary), var(--primary-hover))", color: "#fff", border: "none", borderRadius: 8, cursor: status === "submitting" ? "default" : "pointer", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, letterSpacing: 1.5, textTransform: "uppercase", opacity: status === "submitting" ? 0.7 : 1 }}>{status === "submitting" ? "Sending…" : "Send Request"}</button>
+                </form>
+              )}
+            </div>
+          </div>
+        )}
 
         <div style={{ maxWidth: 1200, margin: "64px auto 0" }}>
           <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid var(--border-light)", lineHeight: 0 }}>
