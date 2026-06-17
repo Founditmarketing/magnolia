@@ -15,7 +15,7 @@ export function PricingPage() {
   return (
     <>
       <PageHero tag="Dumpster Rentals" title="Dumpster" titleAccent="Pricing" sub="Transparent pricing on every roll-off rental. No hidden fees." />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="bento-grid" style={{ marginBottom: 64 }}>
             {sizes.map((s, i) => (
@@ -60,7 +60,7 @@ export function AboutPage() {
     <>
       <PageHero tag="About Us" title="Details Matter." titleAccent="Quality Lasts." sub="Magnolia State Construction is built on the principle that careful craftsmanship and precise execution aren't competing priorities — they're the same thing." />
       <TrustBar />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <SH tag="Our Story" title="Over 15 Years Building Central Louisiana" />
           <Fade style={{ textAlign: "center", margin: "0 0 48px" }}>
@@ -130,7 +130,7 @@ export function ContactPage() {
   return (
     <>
       <PageHero tag="Contact" title="Let's Discuss" titleAccent="Your Project" sub="One call to Chris. No call centers, no runaround." />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 64 }}>
 
           {/* Phone-first call card */}
@@ -224,7 +224,7 @@ export function ResidentialPage() {
   return (
     <>
       <PageHero tag="Custom Home Building" title="Custom" titleAccent="Homes" sub="Ground-up custom homes built across Central Louisiana. We take a lot and a set of plans and deliver a finished home — foundation to roof, framing to final trim. This is full custom home building, not remodels or repairs." media="/images/custom-home-greatroom.webp" />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <SH tag="Ground-Up" title="Built From the Foundation Up" sub="We build new custom homes as a single accountable contractor — every phase managed in-house, from raw lot to final walk-through." />
           <div className="bento-grid" style={{ marginBottom: 64 }}>

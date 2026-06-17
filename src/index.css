@@ -6,21 +6,21 @@
   --font-display: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   
-  /* Color Palette - Structured Architecture */
-  --bg-dark: #F8FAFC; /* Crisp Slate 50 backdrop */
-  --bg-surface: #FFFFFF; /* Pure White components */
-  --bg-elevated: #F1F5F9; /* Subtle gray background contrast */
-  
-  --primary: #1A5A35; /* Magnolia Green */
+  /* Color Palette — warm premium neutrals + deep green ("Land Rover interior") */
+  --bg-dark: #F6F5F1;     /* warm off-white / linen */
+  --bg-surface: #FCFCFA;  /* warm near-white (not pure #fff) */
+  --bg-elevated: #EEECE5; /* warm light greige */
+
+  --primary: #1A5A35;     /* Magnolia Green */
   --primary-hover: #134527;
-  --primary-bg: #E8F5E9; /* Soft geometric green */
-  
-  --text-primary: #0F172A; /* Slate 900 */
-  --text-secondary: #334155; /* Slate 600 */
-  --text-tertiary: #64748B; /* Slate 500 */
-  
+  --primary-bg: #E7EEE6;  /* soft warm-green tint */
+
+  --text-primary: #21241F;   /* warm near-black */
+  --text-secondary: #4D5048; /* warm gray */
+  --text-tertiary: #8A8C80;  /* warm muted gray */
+
   /* Borders */
-  --border-light: #E2E8F0; /* Stark structural line */
+  --border-light: #E6E3DA; /* warm hairline */
   
   /* Elevations */
   --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
@@ -76,7 +76,7 @@ img {
 .sc {
   transition: all 0.3s ease;
   border: 1px solid var(--border-light);
-  background-color: #FFFFFF;
+  background-color: var(--bg-surface);
 }
 
 .sc:hover {
@@ -98,13 +98,13 @@ html {
 
 /* Material/Solid Structural Classes */
 .glass {
-  background: #FFFFFF;
-  border: 2px solid var(--border-light);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
   box-shadow: var(--shadow-md);
 }
 
 .glass-nav {
-  background: #FFFFFF;
+  background: var(--bg-surface);
   border-bottom: 2px solid var(--border-light);
 }
 
@@ -115,10 +115,7 @@ html {
 
 /* Gradients */
 .text-gradient {
-  background: linear-gradient(135deg, #0F172A 0%, #475569 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
 }
 
 .primary-gradient {
@@ -166,7 +163,7 @@ html {
 }
 
 .bento-item {
-  background: #FFFFFF;
+  background: var(--bg-surface);
   border-radius: 8px; /* Sharper geometric corners */
   padding: 40px;
   border: 2px solid var(--border-light); /* Heavier materiality */

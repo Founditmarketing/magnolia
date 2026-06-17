@@ -65,12 +65,12 @@ export function TrustBar() {
 
 export function SH({ tag, title, sub, center }) {
   return (
-    <div style={{ marginBottom: 64, textAlign: center ? "center" : "left", maxWidth: center ? 800 : "none", margin: center ? "0 auto 64px" : "0 0 64px", position: "relative" }}>
-      {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>{tag}</div>}
-      <h2 className="text-gradient" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(32px, 5vw, 48px)", lineHeight: 1.1, textTransform: "uppercase", letterSpacing: -0.5, margin: 0 }}>
+    <div style={{ marginBottom: 76, textAlign: center ? "center" : "left", maxWidth: center ? 760 : "none", margin: center ? "0 auto 76px" : "0 0 76px", position: "relative" }}>
+      {tag && <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 22 }}>{tag}</div>}
+      <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(34px, 5vw, 54px)", lineHeight: 1.12, letterSpacing: -0.4, margin: 0, color: "var(--text-primary)" }}>
         {title}
       </h2>
-      {sub && <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7, marginTop: 20, maxWidth: 640, marginLeft: center ? "auto" : 0, marginRight: center ? "auto" : 0 }}>{sub}</p>}
+      {sub && <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.75, marginTop: 24, maxWidth: 600, marginLeft: center ? "auto" : 0, marginRight: center ? "auto" : 0 }}>{sub}</p>}
     </div>
   );
 }
@@ -79,10 +79,10 @@ export function SH({ tag, title, sub, center }) {
    "We focus on full builds and major projects" — standards, not apology. */
 export function StandardsBand({ eyebrow, heading, framingLine, weBuild, weDont, closingLine }) {
   return (
-    <section id="what-we-do" style={{ background: "var(--bg-surface)", padding: "clamp(72px, 11vh, 132px) 24px", borderTop: "1px solid var(--border-light)", borderBottom: "1px solid var(--border-light)", scrollMarginTop: 100 }}>
+    <section id="what-we-do" style={{ background: "var(--bg-surface)", padding: "clamp(100px, 16vh, 192px) 24px", borderTop: "1px solid var(--border-light)", borderBottom: "1px solid var(--border-light)", scrollMarginTop: 100 }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <Fade>
-          <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16, textAlign: "center" }}>{eyebrow}</div>
+          <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16, textAlign: "center" }}>{eyebrow}</div>
           <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(32px, 5.5vw, 54px)", lineHeight: 1.1, color: "var(--text-primary)", textAlign: "center", margin: "0 0 20px" }}>{heading}</h2>
           <p style={{ maxWidth: 720, margin: "0 auto 56px", textAlign: "center", color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: "clamp(16px, 2.5vw, 19px)", lineHeight: 1.7 }}>{framingLine}</p>
         </Fade>
@@ -129,10 +129,10 @@ export function StandardsBand({ eyebrow, heading, framingLine, weBuild, weDont, 
 
 export function CTA({ title, sub, btn }) {
   return (
-    <section style={{ background: "var(--bg-elevated)", padding: "clamp(60px, 10vh, 120px) 24px", textAlign: "center", position: "relative", overflow: "hidden", borderTop: "1px solid var(--border-light)" }}>
-      <div style={{ position: "relative", zIndex: 1, maxWidth: 800, margin: "0 auto" }}>
-        <Fade><h2 className="text-gradient" style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(32px, 5.5vw, 52px)", textTransform: "uppercase", letterSpacing: -0.5, margin: "0 0 20px" }}>{title}</h2></Fade>
-        <Fade><p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7, marginBottom: 40 }}>{sub}</p></Fade>
+    <section style={{ background: "var(--bg-elevated)", padding: "clamp(88px, 15vh, 176px) 24px", textAlign: "center", position: "relative", overflow: "hidden", borderTop: "1px solid var(--border-light)" }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: 760, margin: "0 auto" }}>
+        <Fade><h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(34px, 5.5vw, 56px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: "0 0 24px" }}>{title}</h2></Fade>
+        <Fade><p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.75, maxWidth: 560, margin: "0 auto 44px" }}>{sub}</p></Fade>
         <Fade>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <Btn href={TEL} variant="primary">{btn || "Call for an Estimate"} <I.Phone /></Btn>
@@ -146,7 +146,7 @@ export function CTA({ title, sub, btn }) {
 
 export function StatsBand({ items }) {
   return (
-    <section style={{ background: "linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)", padding: "clamp(56px, 9vh, 100px) 24px", borderTop: "1px solid var(--border-light)" }}>
+    <section style={{ background: "linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)", padding: "clamp(76px, 12vh, 136px) 24px", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 32, textAlign: "center" }}>
         {items.map((s, i) => (
           <Fade key={i} delay={i * 0.1}>
@@ -163,10 +163,10 @@ export function StatsBand({ items }) {
 
 export function ServiceArea({ towns }) {
   return (
-    <section style={{ background: "var(--bg-elevated)", padding: "clamp(60px, 9vh, 110px) 24px", borderTop: "1px solid var(--border-light)" }}>
+    <section style={{ background: "var(--bg-elevated)", padding: "clamp(88px, 13vh, 160px) 24px", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
         <Fade>
-          <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>Service Area</div>
+          <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Service Area</div>
           <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(30px, 5vw, 50px)", lineHeight: 1.1, color: "var(--text-primary)", margin: "0 0 20px" }}>Serving Central Louisiana</h2>
           <p style={{ maxWidth: 680, margin: "0 auto", color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7 }}>Ground-up commercial, custom homes, roofing systems, and roll-off dumpster rental for Alexandria, Pineville, and communities across Cenla.</p>
         </Fade>
@@ -184,7 +184,7 @@ export function ServiceArea({ towns }) {
 
 export function ProcessSteps({ tag = "Our Process", title, sub, steps }) {
   return (
-    <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px", borderTop: "1px solid var(--border-light)" }}>
+    <section style={{ background: "var(--bg-surface)", padding: "clamp(88px, 14vh, 176px) 24px", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <SH tag={tag} title={title} sub={sub} center />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 28 }}>
@@ -205,7 +205,7 @@ export function ProcessSteps({ tag = "Our Process", title, sub, steps }) {
 
 export function Testimonials({ rating, count, items, reviewsUrl }) {
   return (
-    <section style={{ background: "var(--bg-elevated)", padding: "clamp(80px, 13vh, 150px) 24px", borderTop: "1px solid var(--border-light)" }}>
+    <section style={{ background: "var(--bg-elevated)", padding: "clamp(96px, 15vh, 184px) 24px", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <Fade style={{ textAlign: "center", marginBottom: 56 }}>
           <div style={{ color: "var(--primary)", fontSize: 26, letterSpacing: 3 }}>★★★★★</div>
@@ -236,10 +236,10 @@ export function Testimonials({ rating, count, items, reviewsUrl }) {
 
 export function FAQ({ items }) {
   return (
-    <section style={{ background: "var(--bg-dark)", padding: "clamp(72px, 11vh, 120px) 24px", borderTop: "1px solid var(--border-light)" }}>
+    <section style={{ background: "var(--bg-dark)", padding: "clamp(96px, 15vh, 184px) 24px", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
         <Fade>
-          <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16, textAlign: "center" }}>Questions</div>
+          <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16, textAlign: "center" }}>Questions</div>
           <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(30px, 5vw, 48px)", lineHeight: 1.1, color: "var(--text-primary)", textAlign: "center", margin: "0 0 48px" }}>Common Questions</h2>
         </Fade>
         <Fade>
@@ -298,7 +298,7 @@ export function PageHero({ tag, title, titleAccent, sub, children, media }) {
         <div className="hero-split-content">
           <div className="glass sc" style={{ maxWidth: 840, padding: "clamp(32px, 5vw, 56px)", borderRadius: 16, border: "2px solid rgba(255,255,255,1)", boxShadow: "0 24px 48px -12px rgba(0,0,0,0.1)" }}>
             {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>{tag}</div>}
-            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 10vw, 68px)", textTransform: "uppercase", letterSpacing: -1, margin: 0, lineHeight: 1.05 }}>
+            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(34px, 7vw, 60px)", letterSpacing: -0.4, margin: 0, lineHeight: 1.1 }}>
               {title}{titleAccent && <>{" "}<br /><span className="primary-text">{titleAccent}</span></>}
             </h1>
             {sub && <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: "clamp(16px, 4vw, 20px)", lineHeight: 1.6, marginTop: 24, maxWidth: 600 }}>{sub}</p>}
@@ -313,7 +313,7 @@ export function PageHero({ tag, title, titleAccent, sub, children, media }) {
     <section style={{ background: "var(--bg-dark)", padding: "clamp(120px, 15vh, 180px) 24px clamp(60px, 8vh, 100px)", position: "relative", overflow: "hidden", borderBottom: "1px solid var(--border-light)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
         {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 5, textTransform: "uppercase", marginBottom: 20 }}>{tag}</div>}
-        <h1 className="text-gradient" style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 9vw, 84px)", textTransform: "uppercase", letterSpacing: -1, margin: 0, lineHeight: 1.05, maxWidth: 900 }}>
+        <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(36px, 7.5vw, 72px)", letterSpacing: -0.4, margin: 0, lineHeight: 1.1, maxWidth: 900 }}>
           {title}{titleAccent && <>{" "}<br /><span className="primary-text">{titleAccent}</span></>}
         </h1>
         {sub && <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 20, lineHeight: 1.7, marginTop: 28, maxWidth: 700 }}>{sub}</p>}

@@ -79,7 +79,7 @@ export function HomePage() {
       </section>
 
       {/* 2. Services — image cards for the four money pages */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(72px, 11vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(96px, 15vh, 184px) 24px" }}>
         <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(248px, 1fr))", gap: 24 }}>
           {services.map((s, i) => (
             <Fade key={i} delay={i * 0.08}>
@@ -104,7 +104,7 @@ export function HomePage() {
       <StandardsBand {...STANDARDS} />
 
       {/* 4. Work Grid (Horizontal Scroll on Mobile) */}
-      <section style={{ background: "var(--bg-surface)", padding: "clamp(72px, 11vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(96px, 15vh, 184px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "flex", gap: 32, overflowX: "auto", scrollSnapType: "x mandatory", paddingBottom: 24, WebkitOverflowScrolling: "touch" }}>
             {[
@@ -145,7 +145,7 @@ export function CommercialPage() {
     <>
       <PageHero tag="Our Services" title="Commercial" titleAccent="Construction" sub="Full-service, ground-up commercial builds across Central Louisiana. From multi-unit apartments and financial institutions to restaurants and retail — we handle every phase from permits to punch list." media="/images/commercial-trusses.webp" />
       <TrustBar />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="What We Build" title="Ground-Up Commercial Construction" sub="We specialize in full commercial builds that require careful planning, code compliance, and the kind of craftsmanship that holds up to daily public use." />
           <div className="bento-grid">
@@ -182,7 +182,7 @@ export function IndustrialPage() {
     <>
       <PageHero tag="ISN Certified" title="Industrial" titleAccent="Services" sub="On-site industrial contracting for refineries, mills, manufacturing facilities, and heavy infrastructure. Pre-qualified through ISNetworld. Pre-insured. Ready to mobilize." />
       <TrustBar />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="Plant-Ready" title="Industrial Capabilities" sub="Our ISNetworld certification means we've already cleared your facility's contractor requirements. No waiting on paperwork — we mobilize pre-qualified and ready to work." />
            <div className="bento-grid">
@@ -219,7 +219,7 @@ export function RoofingPage() {
     <>
       <PageHero tag="Roofing Systems" title="Commercial & Residential" titleAccent="Roof Systems" sub="Complete roof systems for Central Louisiana — engineered, torn off to deck, and installed new. Commercial flat-roof systems and full residential roofs. We install whole systems, not patch jobs." media="/images/roof-framing.webp" />
       <TrustBar />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="Full Systems" title="Built to Shed Louisiana Weather" sub="Cenla heat, humidity, and hurricane-season wind demand a real roof system — proper decking, underlayment, flashing, and a manufacturer-grade membrane or covering. We scope, tear off, and install the entire assembly so it performs for decades, not seasons." />
           <div className="bento-grid">
@@ -255,7 +255,7 @@ export function DumpstersPage() {
   return (
     <>
       <PageHero tag="Dumpster Rentals" title="Roll-Off Dumpsters" titleAccent="for Every Project" sub="Convenient, reliable dumpster rentals for commercial job sites, demolition projects, renovations, and large-scale cleanouts across Central Louisiana." media="/images/dumpster.webp" />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="Our Fleet" title="Three Sizes. One Standard of Service." center />
           <div className="bento-grid" style={{ marginBottom: 64 }}>
@@ -306,7 +306,7 @@ export function GalleryPage() {
   return (
     <>
       <PageHero tag="Our Work" title="Project" titleAccent="Gallery" sub="Commercial, custom home, and roofing projects across Central Louisiana — structural foundations, full envelopes, and finished builds." />
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(60px, 10vh, 120px) 24px" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div className="bento-grid" style={{ maxWidth: 1200, margin: "0 auto", gap: 24, gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))" }}>
           {items.map((it, i) => (
             <Fade key={i} delay={(i % 4) * 0.1} className="bento-gallery-item">
