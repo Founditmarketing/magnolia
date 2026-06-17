@@ -232,6 +232,12 @@ html {
   }
 }
 
+/* Hero background video — fall back to the static poster for reduced-motion */
+.hero-video { display: block; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+}
+
 /* Hero Ken Burns drift — subtle life on the static hero image */
 @keyframes kenburns {
   from { transform: scale(1); }

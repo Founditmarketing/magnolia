@@ -59,7 +59,10 @@ export function HomePage() {
       {/* 1. Hero — sells scale, repels small jobs */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", padding: "clamp(60px, 15vh, 120px) 24px" }}>
         <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
-          <img src="/images/industrial-project.webp" className="kenburns" fetchPriority="high" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} alt="" />
+          <img src="/images/hero-poster.webp" alt="" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+          <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-poster.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
+            <source src="/hero-build.mp4" type="video/mp4" />
+          </video>
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.82) 100%)" }} />
         </div>
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto", width: "100%" }}>
