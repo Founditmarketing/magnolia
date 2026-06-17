@@ -144,6 +144,27 @@ export function CTA({ title, sub, btn }) {
   );
 }
 
+export function ProcessSteps({ tag = "Our Process", title, sub, steps }) {
+  return (
+    <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px", borderTop: "1px solid var(--border-light)" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <SH tag={tag} title={title} sub={sub} center />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 28 }}>
+          {steps.map((s, i) => (
+            <Fade key={i} delay={i * 0.08}>
+              <div style={{ height: "100%", borderTop: "2px solid var(--border-light)", paddingTop: 24 }}>
+                <div style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: 46, color: "var(--primary)", lineHeight: 1, marginBottom: 16 }}>{String(i + 1).padStart(2, "0")}</div>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 17, textTransform: "uppercase", letterSpacing: 0.5, color: "var(--text-primary)", margin: "0 0 10px" }}>{s.t}</h3>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.7, color: "var(--text-secondary)", margin: 0 }}>{s.d}</p>
+              </div>
+            </Fade>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function Testimonials({ rating, count, items }) {
   return (
     <section style={{ background: "var(--bg-elevated)", padding: "clamp(80px, 13vh, 150px) 24px", borderTop: "1px solid var(--border-light)" }}>

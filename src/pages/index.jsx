@@ -1,5 +1,5 @@
 import { Fade, Link, I, useSEO } from "../utils";
-import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials } from "../components/Shared";
+import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials, ProcessSteps } from "../components/Shared";
 
 const TEL = "tel:3187046308";
 
@@ -144,6 +144,12 @@ export function CommercialPage() {
           </div>
         </div>
       </section>
+      <ProcessSteps title="How a Commercial Build Works" sub="One accountable contractor, from the first call to the final walk-through." steps={[
+        { t: "Call & Scope", d: "Call Chris directly. We walk the site and talk scope, budget, and timeline — no call center, no runaround." },
+        { t: "Estimate & Plan", d: "We build a real estimate and a plan: permits, materials, and schedule, all handled in-house." },
+        { t: "Ground-Up Build", d: "One contractor runs every phase — foundation, structure, envelope, and finish — on time and on record." },
+        { t: "Punch List & Handover", d: "We walk the finished building with you, close the punch list, and hand over a space ready to open." },
+      ]} />
       <CTA title="Let's Talk About Your Commercial Project" sub="ISN-certified, fully insured, and ready to break ground. Get a real scope from a contractor who shows up on time, on budget, and on record." btn="Call for a Commercial Estimate" />
     </>
   );
@@ -175,6 +181,12 @@ export function IndustrialPage() {
           </div>
         </div>
       </section>
+      <ProcessSteps tag="How We Mobilize" title="Pre-Qualified and Ready to Work" sub="ISNetworld certification means we clear your contractor requirements before we ever set foot on site." steps={[
+        { t: "Pre-Qualified", d: "We're already cleared through ISNetworld — no waiting on contractor paperwork before we can work in your facility." },
+        { t: "Scope & Safety Plan", d: "We scope the job and build a site-specific safety plan with JHAs and full documentation." },
+        { t: "Mobilize", d: "We bring the manpower, equipment, and documentation to hit your turnaround or project window." },
+        { t: "Document & Close", d: "Every task is documented and closed out to your facility's standards. No exceptions." },
+      ]} />
       <CTA title="Need an ISN-Certified Contractor On-Site?" sub="Pre-qualified and ready to mobilize for your next industrial project. Let's discuss scope and timelines." btn="Call to Discuss Scope" />
     </>
   );
@@ -206,6 +218,12 @@ export function RoofingPage() {
           </div>
         </div>
       </section>
+      <ProcessSteps title="How a Roof System Goes In" sub="We replace the whole assembly, not a few shingles — so it performs for decades." steps={[
+        { t: "Inspection & Scope", d: "We get on the roof, find what's actually failing, and scope the full system — not a patch." },
+        { t: "System & Estimate", d: "We spec the right assembly — membrane or metal, decking, flashing, underlayment — and give you a clear price." },
+        { t: "Tear-Off & Install", d: "We tear off to deck and install the entire system, sealed top to bottom, under full safety protocols." },
+        { t: "Final Inspection", d: "We inspect the finished roof and hand over a system engineered to last decades, not seasons." },
+      ]} />
       <CTA title="Specifying a Roof System?" sub="Talk to Chris directly about your commercial or residential roof. One call, no call center, a real scope from an ISN-certified contractor." btn="Call About Your Roof" />
     </>
   );
@@ -239,6 +257,12 @@ export function DumpstersPage() {
           </div>
         </div>
       </section>
+      <ProcessSteps tag="Simple Process" title="How Roll-Off Rental Works" sub="Call, and we handle the rest — fast delivery, transparent pricing, clean pickup." steps={[
+        { t: "Call to Reserve", d: "Call Chris with your job and location. We help you size the right roll-off — 20, 30, or 40-yard." },
+        { t: "Fast Delivery", d: "We drop the container where you need it, often same day, placed for easy loading." },
+        { t: "Fill It", d: "Load to the water line over your rental period. Transparent pricing — no surprise fees." },
+        { t: "We Haul It", d: "Call when you're done and we haul it off and dispose of the debris properly." },
+      ]} />
       <CTA title="Need a Dumpster on Your Job Site?" sub="Call Chris directly at (318) 704-6308 — we'll get a roll-off delivered, often same day." btn="Call to Reserve a Roll-Off" />
     </>
   );

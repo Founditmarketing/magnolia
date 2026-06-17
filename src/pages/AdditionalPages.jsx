@@ -1,5 +1,5 @@
 import { I, Fade, useSEO } from "../utils";
-import { Btn, TrustBar, SH, CTA, PageHero } from "../components/Shared";
+import { Btn, TrustBar, SH, CTA, PageHero, ProcessSteps } from "../components/Shared";
 
 const PHONE = "(318) 704-6308";
 const TEL = "tel:3187046308";
@@ -174,6 +174,12 @@ export function ResidentialPage() {
           <Btn href={TEL}><I.Phone /> Call to Discuss Your Custom Home</Btn>
         </div>
       </section>
+      <ProcessSteps title="How We Build Your Home" sub="One builder accountable from raw lot to the day we hand you the keys." steps={[
+        { t: "Call & Lot Review", d: "Call Chris with your lot and your plans. We talk through what you want to build and what it takes." },
+        { t: "Plans, Permits & Estimate", d: "We handle the permitting and code path and give you a real number before a wall goes up." },
+        { t: "Foundation to Finish", d: "One builder manages every phase — sitework, foundation, framing, envelope, mechanicals, and finish." },
+        { t: "Final Walk-Through", d: "We walk the finished home with you and hand over the keys to a home built once and built right." },
+      ]} />
       <CTA title="Planning a Custom Home Build?" sub="Talk to Chris about your lot, your plans, and your timeline. Full custom homes only." btn="Call to Discuss Your Build" />
     </>
   );
