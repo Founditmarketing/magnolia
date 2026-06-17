@@ -93,7 +93,7 @@ export function HomePage() {
           <div style={{ display: "flex", gap: 32, overflowX: "auto", scrollSnapType: "x mandatory", paddingBottom: 24, WebkitOverflowScrolling: "touch" }}>
             {[
               { img: "/images/foyer-staircase.webp", n: "Custom Home", r: "Ground-up, built once and built right." },
-              { img: "/images/commercial-trusses.webp", n: "Commercial Structure", r: "Steel and structure delivered to site." },
+              { img: "/images/kitchen-white.webp", n: "Custom Interiors", r: "Finished in-house, down to the last detail." },
               { img: "/images/roof-framing.webp", n: "Roof System", r: "Full tear-off and rebuild to deck." },
             ].map((p, i) => (
                <Fade key={i} delay={i * 0.1} style={{ flex: "1 0 min(350px, 85vw)", scrollSnapAlign: "start" }}>
