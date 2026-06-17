@@ -144,6 +144,32 @@ export function CTA({ title, sub, btn }) {
   );
 }
 
+export function FAQ({ items }) {
+  return (
+    <section style={{ background: "var(--bg-dark)", padding: "clamp(72px, 11vh, 120px) 24px", borderTop: "1px solid var(--border-light)" }}>
+      <div style={{ maxWidth: 860, margin: "0 auto" }}>
+        <Fade>
+          <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16, textAlign: "center" }}>Questions</div>
+          <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(30px, 5vw, 48px)", lineHeight: 1.1, color: "var(--text-primary)", textAlign: "center", margin: "0 0 48px" }}>Common Questions</h2>
+        </Fade>
+        <Fade>
+          <div>
+            {items.map((f, i) => (
+              <details key={i} className="faq-item">
+                <summary>
+                  <span>{f.q}</span>
+                  <span className="faq-plus"><I.ChevDown /></span>
+                </summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </Fade>
+      </div>
+    </section>
+  );
+}
+
 export function PageHero({ tag, title, titleAccent, sub, children, media }) {
   if (media) {
     return (

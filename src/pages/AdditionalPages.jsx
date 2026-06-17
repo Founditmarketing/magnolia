@@ -137,6 +137,12 @@ export function ContactPage() {
             </div>
           </div>
         </div>
+
+        <div style={{ maxWidth: 1200, margin: "64px auto 0" }}>
+          <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid var(--border-light)", lineHeight: 0 }}>
+            <iframe title="Magnolia State Construction — 706 N. 3rd St, Alexandria, LA 71301" src="https://www.google.com/maps?q=706%20N%203rd%20St%2C%20Alexandria%2C%20LA%2071301&output=embed" width="100%" height="380" style={{ border: 0, display: "block" }} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
       </section>
     </>
   );

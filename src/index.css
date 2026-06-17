@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* Fonts are loaded via <link> in index.html (preconnect + non-blocking) — not @import here. */
 
 :root {
   /* Typography */
@@ -226,6 +226,36 @@ html {
     margin-top: -5vh; /* Gentle overlap */
     padding: 0 16px 40px;
   }
+}
+
+/* FAQ accordion (native <details> for zero-JS accessibility) */
+.faq-item { border-bottom: 1px solid var(--border-light); }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 4px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(17px, 2.5vw, 20px);
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--primary); }
+.faq-plus { color: var(--primary); flex-shrink: 0; display: inline-flex; transition: transform 0.25s ease; }
+.faq-item[open] .faq-plus { transform: rotate(180deg); }
+.faq-item p {
+  margin: 0;
+  padding: 0 4px 26px;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 720px;
 }
 
 /* Respect reduced-motion preference: calm the entrance/parallax/hover motion */

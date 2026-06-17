@@ -1,5 +1,5 @@
 import { Fade, Link, I, useSEO } from "../utils";
-import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand } from "../components/Shared";
+import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ } from "../components/Shared";
 
 const TEL = "tel:3187046308";
 
@@ -18,8 +18,17 @@ const STANDARDS = {
   closingLine: "Not handyman work. If the job is a quick fix, we'll point you to someone who does that — it isn't us.",
 };
 
+const FAQ_ITEMS = [
+  { q: "What areas do you serve?", a: "Magnolia State Construction serves Alexandria, Pineville, and all of Central Louisiana." },
+  { q: "Are you licensed and insured?", a: "Yes. We're a licensed Louisiana contractor carrying comprehensive general liability and workers' compensation coverage that meets or exceeds commercial site requirements — and we're ISNetworld-certified and a member of the Louisiana Associated General Contractors (LAGC)." },
+  { q: "Do you take on small repairs or handyman work?", a: "No. We focus on full builds and major projects — ground-up commercial, custom homes, complete roofing systems, demolition, and roll-off dumpster rental. We don't do sheetrock patches, door swaps, fence repair, or general handyman jobs." },
+  { q: "Do you handle both commercial and residential roofing?", a: "Yes — complete roof systems for both. Commercial flat and low-slope systems (TPO, EPDM, modified bitumen) and full residential systems (standing-seam metal and architectural shingle). We install whole systems, not patch jobs." },
+  { q: "What size roll-off dumpster do I need?", a: "We offer 20, 30, and 40-yard roll-offs — roughly 6, 9, and 12 pickup-truck loads. A 20-yard suits smaller projects and cleanouts; a 40-yard handles major construction and demolition. Call and we'll size it for your job." },
+  { q: "How do I get an estimate?", a: "Call Chris directly at (318) 704-6308. No forms and no call center — one call to talk through your project scope and timeline." },
+];
+
 export function HomePage() {
-  useSEO({ title: "Commercial Construction, Custom Homes, Roofing & Dumpsters", description: "Central Louisiana's commercial and custom builder. Ground-up commercial construction, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. ISN-certified." });
+  useSEO({ title: "Commercial Construction, Custom Homes, Roofing & Dumpsters", description: "Central Louisiana's commercial and custom builder. Ground-up commercial construction, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. ISN-certified.", faq: FAQ_ITEMS });
 
   const services = [
     { icon: <I.Building />, n: "Commercial Construction", to: "/commercial", cta: "Explore Commercial Construction", d: "Ground-up commercial buildings engineered to withstand daily public use — permits to punch list, one contractor on record." },
@@ -33,7 +42,7 @@ export function HomePage() {
       {/* 1. Hero — sells scale, repels small jobs */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", padding: "clamp(60px, 15vh, 120px) 24px" }}>
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-          <img src="/images/industrial_project_1775169098001.png" style={{ width: "100%", height: "100%", objectFit: "cover" }} alt="" />
+          <img src="/images/industrial-project.webp" fetchPriority="high" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} alt="" />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.82) 100%)" }} />
         </div>
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto", width: "100%" }}>
@@ -74,9 +83,9 @@ export function HomePage() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "flex", gap: 32, overflowX: "auto", scrollSnapType: "x mandatory", paddingBottom: 24, WebkitOverflowScrolling: "touch" }}>
             {[
-              { img: "/images/warehouse_finished_1775169110438.png", n: "Commercial Build-Out", r: "4,500 sq ft, flawless execution." },
-              { img: "/images/construction_brick_1775169082069.png", n: "Ground-Up Commercial", r: "Full structure, permits to punch list." },
-              { img: "/images/custom_cabinets.png", n: "Custom Home", r: "Built once, built right." },
+              { img: "/images/warehouse-finished.webp", n: "Commercial Build-Out", r: "4,500 sq ft, flawless execution." },
+              { img: "/images/construction-brick.webp", n: "Ground-Up Commercial", r: "Full structure, permits to punch list." },
+              { img: "/images/custom-cabinets.webp", n: "Custom Home", r: "Built once, built right." },
             ].map((p, i) => (
                <Fade key={i} delay={i * 0.1} style={{ flex: "1 0 min(350px, 85vw)", scrollSnapAlign: "start" }}>
                  <div style={{ aspectRatio: "4/3", width: "100%", overflow: "hidden", marginBottom: 24, borderRadius: 8 }}>
@@ -104,6 +113,9 @@ export function HomePage() {
           <div style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "var(--text-secondary)", marginTop: 8 }}>Commercial Build · Central Louisiana</div>
         </Fade>
       </section>
+
+      {/* 6. FAQ — depth + FAQPage schema (see useSEO faq prop) */}
+      <FAQ items={FAQ_ITEMS} />
     </>
   );
 }
@@ -237,14 +249,14 @@ export function DumpstersPage() {
 export function GalleryPage() {
   useSEO({ title: "Project Gallery", description: "View our recent commercial, custom home, and roofing projects across Central Louisiana." });
   const paths = [
-    "/images/warehouse_finished_1775169110438.png",
-    "/images/industrial_project_1775169098001.png",
-    "/images/construction_brick_1775169082069.png",
-    "/images/workers_blueprints_1775169124334.png",
-    "/images/residential_exterior.png",
-    "/images/custom_cabinets.png",
-    "/images/trim_millwork.png",
-    "/images/granite_kitchen.png",
+    "/images/warehouse-finished.webp",
+    "/images/industrial-project.webp",
+    "/images/construction-brick.webp",
+    "/images/workers-blueprints.webp",
+    "/images/residential-exterior.webp",
+    "/images/custom-cabinets.webp",
+    "/images/trim-millwork.webp",
+    "/images/granite-kitchen.webp",
   ];
 
   return (

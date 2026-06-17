@@ -78,21 +78,11 @@ export function Parallax({ children, speed = 0.2, style = {}, className = "" }) 
   );
 }
 
-export function useSEO({ title, description, image = "https://magnoliastateconstruction.com/og-image.jpg" }) {
+export function useSEO({ title, description, image = "https://magnoliastateconstruction.com/og-image.jpg", faq }) {
   useEffect(() => {
     const fullTitle = title + " | Magnolia State Construction";
     document.title = fullTitle;
-    
-    // PRELOAD FONTS
-    let fontPreload = document.querySelector('link[rel="preload"][as="style"]');
-    if (!fontPreload) {
-      fontPreload = document.createElement('link');
-      fontPreload.rel = "preload";
-      fontPreload.as = "style";
-      fontPreload.href = "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap";
-      document.head.appendChild(fontPreload);
-    }
-    
+
     const setMeta = (name, content, isProp = false) => {
       const attr = isProp ? 'property' : 'name';
       let tag = document.querySelector(`meta[${attr}="${name}"]`);
@@ -143,7 +133,29 @@ export function useSEO({ title, description, image = "https://magnoliastateconst
         { "@type": "Organization", "name": "ISNetworld" }
       ]
     });
-  }, [title, description, image]);
+
+    // FAQPage structured data — only on pages that pass a faq list
+    let faqScript = document.querySelector('script#faq-ld-json');
+    if (faq && faq.length) {
+      if (!faqScript) {
+        faqScript = document.createElement('script');
+        faqScript.id = "faq-ld-json";
+        faqScript.type = "application/ld+json";
+        document.head.appendChild(faqScript);
+      }
+      faqScript.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faq.map(f => ({
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": { "@type": "Answer", "text": f.a }
+        }))
+      });
+    } else if (faqScript) {
+      faqScript.remove();
+    }
+  }, [title, description, image, faq]);
 }
 
 // --- COUNTER ---
