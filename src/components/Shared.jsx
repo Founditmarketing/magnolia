@@ -144,6 +144,27 @@ export function CTA({ title, sub, btn }) {
   );
 }
 
+export function ServiceArea({ towns }) {
+  return (
+    <section style={{ background: "var(--bg-elevated)", padding: "clamp(60px, 9vh, 110px) 24px", borderTop: "1px solid var(--border-light)" }}>
+      <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
+        <Fade>
+          <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>Service Area</div>
+          <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(30px, 5vw, 50px)", lineHeight: 1.1, color: "var(--text-primary)", margin: "0 0 20px" }}>Serving Central Louisiana</h2>
+          <p style={{ maxWidth: 680, margin: "0 auto", color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7 }}>Ground-up commercial, custom homes, roofing systems, and roll-off dumpster rental for Alexandria, Pineville, and communities across Cenla.</p>
+        </Fade>
+        <Fade>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12, maxWidth: 840, margin: "40px auto 0" }}>
+            {towns.map((t, i) => (
+              <span key={i} style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14, letterSpacing: 0.3, color: "var(--text-secondary)", background: "var(--bg-surface)", border: "1px solid var(--border-light)", borderRadius: 50, padding: "9px 18px" }}>{t}</span>
+            ))}
+          </div>
+        </Fade>
+      </div>
+    </section>
+  );
+}
+
 export function ProcessSteps({ tag = "Our Process", title, sub, steps }) {
   return (
     <section style={{ background: "var(--bg-surface)", padding: "clamp(60px, 10vh, 120px) 24px", borderTop: "1px solid var(--border-light)" }}>

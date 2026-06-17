@@ -1,5 +1,7 @@
 import { Fade, Link, I, useSEO } from "../utils";
-import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials, ProcessSteps } from "../components/Shared";
+import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials, ProcessSteps, ServiceArea } from "../components/Shared";
+
+const TOWNS = ["Alexandria", "Pineville", "Ball", "Tioga", "Boyce", "Lecompte", "Deville", "Woodworth", "Forest Hill", "Glenmora", "Pollock", "Marksville", "Bunkie", "Cheneyville"];
 
 const TEL = "tel:3187046308";
 
@@ -112,7 +114,10 @@ export function HomePage() {
       {/* 5. Social Proof — real Google reviews */}
       <Testimonials rating={RATING.value} count={RATING.count} items={REVIEWS} />
 
-      {/* 6. FAQ — depth + FAQPage schema (see useSEO faq prop) */}
+      {/* 6. Service area — local SEO for the surrounding Cenla communities */}
+      <ServiceArea towns={TOWNS} />
+
+      {/* 7. FAQ — depth + FAQPage schema (see useSEO faq prop) */}
       <FAQ items={FAQ_ITEMS} />
     </>
   );
