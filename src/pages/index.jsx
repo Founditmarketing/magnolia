@@ -1,5 +1,5 @@
 import { Fade, Link, I, useSEO } from "../utils";
-import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials, ProcessSteps, ServiceArea } from "../components/Shared";
+import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials, ProcessSteps, ServiceArea, StatsBand } from "../components/Shared";
 
 const TOWNS = ["Alexandria", "Pineville", "Ball", "Tioga", "Boyce", "Lecompte", "Deville", "Woodworth", "Forest Hill", "Glenmora", "Pollock", "Marksville", "Bunkie", "Cheneyville"];
 
@@ -37,22 +37,29 @@ const REVIEWS = [
   { author: "Christopher Johns", role: "Construction Client · Google review", rating: 5, text: "Chris and his crew do great work! They were quick, accommodating, and had constant communication throughout our project. Looking forward to working with Magnolia State Construction again!" },
 ];
 
+const STATS = [
+  { end: 15, suffix: "+", label: "Years Building Cenla" },
+  { text: "4.7★", label: "Google Rating" },
+  { end: 23, label: "Google Reviews" },
+  { text: "ISN", label: "Certified Contractor" },
+];
+
 export function HomePage() {
   useSEO({ title: "Commercial Construction, Custom Homes, Roofing & Dumpsters", description: "Central Louisiana's commercial and custom builder. Ground-up commercial construction, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. ISN-certified.", faq: FAQ_ITEMS, rating: RATING, reviews: REVIEWS });
 
   const services = [
-    { icon: <I.Building />, n: "Commercial Construction", to: "/commercial", cta: "Explore Commercial Construction", d: "Ground-up commercial buildings engineered to withstand daily public use — permits to punch list, one contractor on record." },
-    { icon: <I.Home />, n: "Custom Home Building", to: "/residential", cta: "Explore Custom Home Building", d: "New custom homes built from the ground up across Central Louisiana. Full builds, not remodels or repairs." },
-    { icon: <I.Roof />, n: "Roofing Systems", to: "/roofing", cta: "Explore Roofing Systems", d: "Complete commercial and residential roof systems — TPO, metal, modified bitumen, and architectural shingle. Whole systems, never patch jobs." },
-    { icon: <I.Truck />, n: "Roll-Off Dumpster Rental", to: "/dumpsters", cta: "See Sizes & Pricing", d: "20, 30, and 40-yard roll-offs delivered across Cenla for job sites, demolition, and major cleanouts. Transparent pricing." },
+    { n: "Commercial Construction", to: "/commercial", img: "/images/commercial-build.webp", d: "Ground-up commercial builds — permits to punch list." },
+    { n: "Custom Home Building", to: "/residential", img: "/images/custom-home-greatroom.webp", d: "New custom homes, foundation to finish." },
+    { n: "Roofing Systems", to: "/roofing", img: "/images/roof-framing.webp", d: "Full commercial & residential roof systems." },
+    { n: "Roll-Off Dumpster Rental", to: "/dumpsters", img: "/images/dumpster.webp", d: "20, 30 & 40-yard roll-offs across Cenla." },
   ];
 
   return (
     <>
       {/* 1. Hero — sells scale, repels small jobs */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", padding: "clamp(60px, 15vh, 120px) 24px" }}>
-        <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-          <img src="/images/industrial-project.webp" fetchPriority="high" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} alt="" />
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
+          <img src="/images/industrial-project.webp" className="kenburns" fetchPriority="high" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} alt="" />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.82) 100%)" }} />
         </div>
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto", width: "100%" }}>
@@ -71,19 +78,27 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 2. Services Grid — the four money pages */}
+      {/* 2. Services — image cards for the four money pages */}
       <section style={{ background: "var(--bg-dark)", padding: "clamp(72px, 11vh, 120px) 24px" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(258px, 1fr))", gap: 48 }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(248px, 1fr))", gap: 24 }}>
           {services.map((s, i) => (
             <Fade key={i} delay={i * 0.08}>
-              <div style={{ color: "var(--primary)", marginBottom: 22, display: "inline-flex" }}>{s.icon}</div>
-              <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontSize: 28, margin: "0 0 14px" }}>{s.n}</h3>
-              <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.6, margin: "0 0 22px" }}>{s.d}</p>
-              <Link to={s.to} style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8, textTransform: "uppercase", fontSize: 13, letterSpacing: 1 }}>{s.cta} <I.Arrow /></Link>
+              <Link to={s.to} className="service-card" aria-label={s.n} style={{ display: "block", position: "relative", aspectRatio: "3 / 4", borderRadius: 14, overflow: "hidden", textDecoration: "none" }}>
+                <img src={s.img} alt="" className="service-card-img" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(8,20,12,0.92) 0%, rgba(8,20,12,0.4) 48%, rgba(8,20,12,0.08) 100%)" }} />
+                <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: "28px 24px" }}>
+                  <h3 style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: 25, margin: "0 0 8px", lineHeight: 1.12 }}>{s.n}</h3>
+                  <p style={{ color: "rgba(255,255,255,0.82)", fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.5, margin: "0 0 14px" }}>{s.d}</p>
+                  <span style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 12, letterSpacing: 1.5, textTransform: "uppercase", display: "inline-flex", alignItems: "center", gap: 8 }}>Explore <I.Arrow /></span>
+                </div>
+              </Link>
             </Fade>
           ))}
         </div>
       </section>
+
+      {/* 3. By the numbers — dark band: contrast + proof */}
+      <StatsBand items={STATS} />
 
       {/* 3. The lead filter — What We Build / What We Don't */}
       <StandardsBand {...STANDARDS} />

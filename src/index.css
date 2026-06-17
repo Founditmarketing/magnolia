@@ -235,6 +235,18 @@ html {
   }
 }
 
+/* Hero Ken Burns drift — subtle life on the static hero image */
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+.kenburns { animation: kenburns 26s ease-in-out infinite alternate; will-change: transform; }
+
+/* Service image cards — photo zoom on hover/focus */
+.service-card-img { transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1); }
+.service-card:hover .service-card-img,
+.service-card:focus-visible .service-card-img { transform: scale(1.06); }
+
 /* FAQ accordion (native <details> for zero-JS accessibility) */
 .faq-item { border-bottom: 1px solid var(--border-light); }
 .faq-item summary {

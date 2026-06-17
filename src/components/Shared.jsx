@@ -1,4 +1,4 @@
-import { Link, I, Fade, useSEO } from "../utils";
+import { Link, I, Fade, useSEO, Counter } from "../utils";
 
 const PHONE = "(318) 704-6308";
 const TEL = "tel:3187046308";
@@ -139,6 +139,23 @@ export function CTA({ title, sub, btn }) {
             <Btn href={TEL} variant="outlineDark">{PHONE}</Btn>
           </div>
         </Fade>
+      </div>
+    </section>
+  );
+}
+
+export function StatsBand({ items }) {
+  return (
+    <section style={{ background: "linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)", padding: "clamp(56px, 9vh, 100px) 24px", borderTop: "1px solid var(--border-light)" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 32, textAlign: "center" }}>
+        {items.map((s, i) => (
+          <Fade key={i} delay={i * 0.1}>
+            <div style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(40px, 6vw, 62px)", lineHeight: 1, color: "#fff" }}>
+              {s.end != null ? <Counter end={s.end} suffix={s.suffix || ""} /> : s.text}
+            </div>
+            <div style={{ marginTop: 12, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: "rgba(255,255,255,0.78)" }}>{s.label}</div>
+          </Fade>
+        ))}
       </div>
     </section>
   );
