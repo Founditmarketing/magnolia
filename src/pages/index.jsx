@@ -51,7 +51,7 @@ export function HomePage() {
       {/* 1. Hero — sells scale, repels small jobs */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", padding: "clamp(60px, 15vh, 120px) 24px" }}>
         <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-          <img src="/images/commercial-build.webp" fetchPriority="high" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} alt="" />
+          <img src="/images/industrial-project.webp" fetchPriority="high" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} alt="" />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.82) 100%)" }} />
         </div>
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto", width: "100%" }}>
