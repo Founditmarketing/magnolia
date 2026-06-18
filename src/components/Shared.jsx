@@ -144,6 +144,28 @@ export function CTA({ title, sub, btn }) {
   );
 }
 
+export function WhyUs({ items }) {
+  return (
+    <section style={{ background: "var(--bg-dark)", padding: "clamp(96px, 15vh, 184px) 24px", borderTop: "1px solid var(--border-light)" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <Fade>
+          <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 18 }}>Why Magnolia State</div>
+          <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(32px, 4.5vw, 50px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: 0, maxWidth: 600 }}>Serious builds, managed like it matters.</h2>
+        </Fade>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(238px, 1fr))", gap: "clamp(32px, 4vw, 56px)", marginTop: 64 }}>
+          {items.map((it, i) => (
+            <Fade key={i} delay={i * 0.08}>
+              <div style={{ color: "var(--primary)", marginBottom: 18, display: "inline-flex" }}>{it.icon}</div>
+              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 17, textTransform: "uppercase", letterSpacing: 0.5, color: "var(--text-primary)", margin: "0 0 10px" }}>{it.t}</h3>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 15.5, lineHeight: 1.65, color: "var(--text-secondary)", margin: 0 }}>{it.d}</p>
+            </Fade>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function StatsBand({ items }) {
   return (
     <section style={{ background: "linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)", padding: "clamp(76px, 12vh, 136px) 24px", borderTop: "1px solid var(--border-light)" }}>

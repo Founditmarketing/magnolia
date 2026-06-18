@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Fade, Link, I, useSEO } from "../utils";
-import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials, ProcessSteps, ServiceArea, StatsBand } from "../components/Shared";
+import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials, ProcessSteps, ServiceArea, StatsBand, WhyUs } from "../components/Shared";
 
 const TOWNS = ["Alexandria", "Pineville", "Ball", "Tioga", "Boyce", "Lecompte", "Deville", "Woodworth", "Forest Hill", "Glenmora", "Pollock", "Marksville", "Bunkie", "Cheneyville"];
 
@@ -37,6 +37,13 @@ const REVIEWS = [
   { author: "Avery Bandy", role: "Custom Home Build · Google review", rating: 5, text: "Chris built our custom home! Was a great communicator and executed all our dreams. Will call Chris again to build our next home!" },
   { author: "Christopher Johns", role: "Construction Client · Google review", rating: 5, text: "Chris and his crew do great work! They were quick, accommodating, and had constant communication throughout our project. Looking forward to working with Magnolia State Construction again!" },
   { author: "Tatiana Keizman", role: "Commercial & Residential · Google review", rating: 5, text: "I highly recommend Magnolia State Construction for any upcoming residential or commercial projects. Chris, the owner, runs a team that is professional, respectful, and truly committed to quality." },
+];
+
+const WHY_US = [
+  { icon: <I.Shield />, t: "One Accountable Builder", d: "One contractor on record from permits to punch list — no subs to chase, no finger-pointing." },
+  { icon: <I.Clock />, t: "Real Project Management", d: "Schedules kept, budgets respected, and updates straight from Chris — not a call center." },
+  { icon: <I.HardHat />, t: "15+ Years in Cenla", d: "Over fifteen years building across Central Louisiana. ISN-certified, licensed, and fully insured." },
+  { icon: <I.Truck />, t: "Clean, Professional Sites", d: "We treat your property like our own — orderly job sites, tidy finishes, roll-offs on hand." },
 ];
 
 const STATS = [
@@ -149,6 +156,9 @@ export function HomePage() {
           </Fade>
         </div>
       </section>
+
+      {/* 4b. Why Magnolia State — value props / differentiators */}
+      <WhyUs items={WHY_US} />
 
       {/* 5. Social Proof — real Google reviews */}
       <Testimonials rating={RATING.value} count={RATING.count} items={REVIEWS} reviewsUrl={REVIEWS_URL} />
