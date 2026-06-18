@@ -41,10 +41,14 @@ export function Btn({ to, href, children, variant = "primary", style: s = {}, ..
 }
 
 // Real-logo slot: shows the image at /assets/* if present, else a graceful fallback.
-export function AssetBadge({ src, alt, size = 44, fallback = null }) {
+// chip=true frames the (unaltered, official-color) logo on a clean white card so it
+// reads as a credential badge on tinted surfaces instead of a floating white box.
+export function AssetBadge({ src, alt, size = 44, fallback = null, chip = false }) {
   const [failed, setFailed] = useState(false);
   if (failed || !src) return fallback;
-  return <img src={src} alt={alt} style={{ height: size, width: "auto", maxWidth: 220, objectFit: "contain", display: "block" }} onError={() => setFailed(true)} />;
+  const img = <img src={src} alt={alt} style={{ height: size, width: "auto", maxWidth: 220, objectFit: "contain", display: "block" }} onError={() => setFailed(true)} />;
+  if (!chip) return img;
+  return <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", background: "#fff", border: "1px solid var(--border-light)", borderRadius: 12, padding: "10px 14px", boxShadow: "var(--shadow-sm)" }}>{img}</span>;
 }
 
 export function TrustBar() {
