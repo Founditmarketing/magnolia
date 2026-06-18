@@ -44,7 +44,17 @@ export function HomePage() {
   return (
     <>
       {/* 1. Hero — warm editorial split: charcoal serif on linen, proof-forward, phone-first */}
-      <section style={{ background: "radial-gradient(115% 80% at 8% -12%, rgba(26,90,53,0.10), transparent 52%), radial-gradient(95% 75% at 110% 120%, rgba(33,36,31,0.07), transparent 55%), var(--bg-dark)", padding: "clamp(132px, 17vh, 172px) max(24px, env(safe-area-inset-right)) clamp(56px, 9vh, 100px) max(24px, env(safe-area-inset-left))" }}>
+      <section style={{ background: "radial-gradient(115% 80% at 8% -12%, rgba(26,90,53,0.10), transparent 52%), radial-gradient(95% 75% at 110% 120%, rgba(33,36,31,0.07), transparent 55%), var(--bg-dark)", padding: "clamp(132px, 17vh, 172px) max(24px, env(safe-area-inset-right)) clamp(56px, 9vh, 100px) max(24px, env(safe-area-inset-left))", position: "relative", overflow: "hidden" }}>
+        <svg aria-hidden="true" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 0, pointerEvents: "none" }}>
+          <g fill="none" stroke="#1A5A35" strokeWidth="1.5" strokeOpacity="0.12">
+            <path d="M-40 92 C 260 52 520 142 760 98 S 1180 42 1490 106" />
+            <path d="M-40 180 C 240 150 500 230 740 188 S 1200 132 1490 196" />
+            <path d="M-40 270 C 280 232 520 318 780 280 S 1180 226 1490 286" />
+            <path d="M-40 362 C 240 328 520 410 760 370 S 1200 314 1490 382" />
+            <path d="M-40 454 C 260 422 500 502 760 460 S 1180 406 1490 472" />
+            <path d="M-40 544 C 240 512 520 590 780 554 S 1200 498 1490 562" />
+          </g>
+        </svg>
         <div className="hero-plate">
           <Fade delay={0.05}>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 18 }}>
