@@ -17,7 +17,7 @@
 
   --text-primary: #21241F;   /* warm near-black */
   --text-secondary: #4D5048; /* warm gray */
-  --text-tertiary: #8A8C80;  /* warm muted gray */
+  --text-tertiary: #686A5E;  /* warm muted gray — darkened to pass WCAG AA on off-white */
 
   /* Borders */
   --border-light: #E6E3DA; /* warm hairline */

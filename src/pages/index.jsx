@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Fade, Link, I, useSEO } from "../utils";
 import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials, ProcessSteps, ServiceArea, StatsBand } from "../components/Shared";
 
@@ -325,6 +326,24 @@ export function GalleryPage() {
     { src: "/images/roof-framing.webp", alt: "Roof framing and decking on a Magnolia project", cat: "Roofing" },
   ];
 
+  const [active, setActive] = useState(null);
+  const close = () => setActive(null);
+  const go = (dir) => setActive(a => (a + dir + items.length) % items.length);
+  useEffect(() => {
+    if (active === null) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") setActive(null);
+      else if (e.key === "ArrowRight") setActive(a => (a + 1) % items.length);
+      else if (e.key === "ArrowLeft") setActive(a => (a - 1 + items.length) % items.length);
+    };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = prev; };
+  }, [active, items.length]);
+
+  const navBtn = { position: "absolute", top: "50%", transform: "translateY(-50%)", width: 52, height: 52, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.3)", background: "rgba(255,255,255,0.08)", color: "#fff", fontSize: 26, lineHeight: 1, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" };
+
   return (
     <>
       <PageHero tag="Our Work" title="Project" titleAccent="Gallery" sub="Commercial, custom home, and roofing projects across Central Louisiana — structural foundations, full envelopes, and finished builds." />
@@ -332,14 +351,29 @@ export function GalleryPage() {
         <div className="bento-grid" style={{ maxWidth: 1200, margin: "0 auto", gap: 24, gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))" }}>
           {items.map((it, i) => (
             <Fade key={i} delay={(i % 4) * 0.1} className="bento-gallery-item">
-              <div className="sc" style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "16/10", background: "var(--bg-elevated)", border: "1px solid var(--border-light)" }}>
-                <img src={it.src} alt={it.alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s" }} loading="lazy" onMouseOver={e => e.currentTarget.style.transform="scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform="scale(1)"}/>
-              </div>
+              <button onClick={() => setActive(i)} aria-label={`Enlarge: ${it.alt}`} style={{ display: "block", width: "100%", padding: 0, border: "none", background: "none", cursor: "pointer" }}>
+                <div className="sc" style={{ borderRadius: 16, overflow: "hidden", aspectRatio: "16/10", background: "var(--bg-elevated)", border: "1px solid var(--border-light)" }}>
+                  <img src={it.src} alt={it.alt} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s" }} loading="lazy" onMouseOver={e => e.currentTarget.style.transform="scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform="scale(1)"}/>
+                </div>
+              </button>
               <div style={{ marginTop: 14, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--text-tertiary)" }}>{it.cat} · Central Louisiana</div>
             </Fade>
           ))}
         </div>
       </section>
+
+      {active !== null && (
+        <div role="dialog" aria-modal="true" aria-label="Project photo" onClick={close} style={{ position: "fixed", inset: 0, zIndex: 2000, background: "rgba(8,12,9,0.93)", display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(16px, 5vw, 64px)" }}>
+          <button onClick={close} aria-label="Close" style={{ position: "absolute", top: 20, right: 24, width: 48, height: 48, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.3)", background: "rgba(255,255,255,0.08)", color: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}><I.X /></button>
+          <button onClick={e => { e.stopPropagation(); go(-1); }} aria-label="Previous photo" style={{ ...navBtn, left: 16 }}>‹</button>
+          <figure onClick={e => e.stopPropagation()} style={{ margin: 0, display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 1100 }}>
+            <img src={items[active].src} alt={items[active].alt} style={{ maxWidth: "100%", maxHeight: "78vh", objectFit: "contain", borderRadius: 8, display: "block" }} />
+            <figcaption style={{ color: "rgba(255,255,255,0.82)", marginTop: 18, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 1.5, textTransform: "uppercase" }}>{items[active].cat} · Central Louisiana</figcaption>
+          </figure>
+          <button onClick={e => { e.stopPropagation(); go(1); }} aria-label="Next photo" style={{ ...navBtn, right: 16 }}>›</button>
+        </div>
+      )}
+
       <CTA title="Like What You See?" sub="Let's build something worth showing off. Talk to Chris about your commercial or custom project." btn="Call About Your Project" />
     </>
   );
