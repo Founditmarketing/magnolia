@@ -261,7 +261,7 @@ export function RoofingPage() {
   useSEO({ title: "Roofing Systems in Alexandria & Central Louisiana", description: "Complete commercial and residential roof systems across Alexandria and Central Louisiana — TPO, metal, modified bitumen, and architectural shingle. Full tear-off and new installation by an ISN-certified contractor. Call (318) 704-6308." });
   return (
     <>
-      <PageHero tag="Roofing Systems" title="Commercial & Residential" titleAccent="Roof Systems" sub="Complete roof systems for Central Louisiana — engineered, torn off to deck, and installed new. Commercial flat-roof systems and full residential roofs. We install whole systems, not patch jobs." media="/images/roof-framing.webp" />
+      <PageHero tag="Roofing Systems" title="Commercial & Residential" titleAccent="Roof Systems" sub="Complete roof systems for Central Louisiana — engineered, torn off to deck, and installed new. Commercial flat-roof systems and full residential roofs. We install whole systems, not patch jobs." media="/images/roof-hero.webp" />
       <TrustBar />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
