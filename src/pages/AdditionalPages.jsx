@@ -255,3 +255,52 @@ export function ResidentialPage() {
     </>
   );
 }
+
+export function LicensesPage() {
+  useSEO({ title: "Licenses & Credentials", description: "Magnolia State Construction — Louisiana State Licensing Board for Contractors classifications, insurance, and certifications. Commercial builder serving Alexandria and Central Louisiana." });
+  const classifications = ["Building Construction", "Highway, Street & Bridge Construction", "Municipal & Public Works Construction"];
+  const block = { background: "var(--bg-dark)", border: "1px solid var(--border-light)", borderRadius: 12, padding: "clamp(22px, 3vw, 30px)", marginBottom: 20 };
+  const h2 = { fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: "var(--primary)", margin: "0 0 14px" };
+  const li = { display: "flex", alignItems: "flex-start", gap: 12, padding: "9px 0", fontFamily: "var(--font-body)", fontSize: 16, color: "var(--text-primary)" };
+  const tick = { color: "var(--primary)", display: "inline-flex", marginTop: 2, flexShrink: 0 };
+  return (
+    <section className="licenses-sheet" style={{ background: "var(--bg-elevated)", padding: "clamp(120px, 16vh, 176px) 24px clamp(60px, 9vh, 100px)" }}>
+      <div className="licenses-card" style={{ maxWidth: 820, margin: "0 auto", background: "var(--bg-surface)", border: "1px solid var(--border-light)", borderRadius: 16, padding: "clamp(30px, 5vw, 56px)", boxShadow: "var(--shadow-sm)" }}>
+        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: 20, borderBottom: "2px solid var(--border-light)", paddingBottom: 26, marginBottom: 30 }}>
+          <div>
+            <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 12 }}>Credentials</div>
+            <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(30px, 5vw, 44px)", lineHeight: 1.1, color: "var(--text-primary)", margin: "0 0 8px" }}>Licenses &amp; Insurance</h1>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "var(--text-secondary)", margin: 0 }}>Magnolia State Construction LLC · Alexandria, Louisiana</p>
+          </div>
+          <img src="/logo.png" alt="Magnolia State Construction" style={{ height: 64, objectFit: "contain", flexShrink: 0 }} />
+        </div>
+
+        <div style={block}>
+          <h2 style={h2}>Louisiana State Licensing Board for Contractors</h2>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7, color: "var(--text-secondary)", margin: "0 0 16px" }}>Licensed commercial contractor in good standing — first issued February 2017, current through February 2027.</p>
+          <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 1.5, textTransform: "uppercase", color: "var(--text-tertiary)", marginBottom: 6 }}>Classifications</div>
+          {classifications.map((c, i) => (<div key={i} style={li}><span style={tick}><I.Check /></span>{c}</div>))}
+        </div>
+
+        <div style={block}>
+          <h2 style={h2}>Insurance</h2>
+          <div style={li}><span style={tick}><I.Shield /></span>General Liability — carried and current</div>
+          <div style={li}><span style={tick}><I.Shield /></span>Workers' Compensation — carried and current</div>
+        </div>
+
+        <div style={block}>
+          <h2 style={h2}>Certifications &amp; Memberships</h2>
+          <div style={li}><span style={tick}><I.Check /></span>ISNetworld Certified Contractor</div>
+          <div style={li}><span style={tick}><I.Check /></span>Member — Louisiana Associated General Contractors (LAGC)</div>
+        </div>
+
+        <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--text-tertiary)", lineHeight: 1.6, margin: "18px 0 0" }}>Verify at the Louisiana State Licensing Board for Contractors — lslbc.louisiana.gov</p>
+
+        <div className="no-print" style={{ marginTop: 28, display: "flex", gap: 14, flexWrap: "wrap" }}>
+          <Btn onClick={() => window.print()}><I.Check /> Print this sheet</Btn>
+          <Btn to="/contact" variant="outline">Contact Us</Btn>
+        </div>
+      </div>
+    </section>
+  );
+}

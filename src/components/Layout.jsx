@@ -188,6 +188,7 @@ export function Footer() {
               <span style={{ color: "var(--text-secondary)", display: "inline-flex" }}><I.Shield /></span>
               <span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", fontSize: 12 }}>Licensed & Insured</span>
             </div>
+            <Link to="/licenses" style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 1, textTransform: "uppercase", textDecoration: "none" }}>View Licenses ›</Link>
           </div>
         </div>
       </div>

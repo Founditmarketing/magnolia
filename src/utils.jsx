@@ -5,7 +5,7 @@ const ROUTES = {
   "/": "home", "/commercial": "commercial", "/industrial": "industrial",
   "/dumpsters": "dumpsters", "/dumpster-pricing": "pricing", "/about": "about",
   "/contact": "contact", "/residential": "residential", "/roofing": "roofing",
-  "/gallery": "gallery",
+  "/gallery": "gallery", "/licenses": "licenses",
 };
 
 export function useRouter() {

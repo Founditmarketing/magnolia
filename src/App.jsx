@@ -3,7 +3,7 @@ import { useRouter } from "./utils";
 import { Header, Footer } from "./components/Layout";
 import { NotFound } from "./components/Shared";
 import { HomePage, CommercialPage, IndustrialPage, DumpstersPage, GalleryPage, RoofingPage } from "./pages";
-import { PricingPage, AboutPage, ContactPage, ResidentialPage } from "./pages/AdditionalPages";
+import { PricingPage, AboutPage, ContactPage, ResidentialPage, LicensesPage } from "./pages/AdditionalPages";
 
 export default function App() {
   const { path, page } = useRouter();
@@ -21,6 +21,7 @@ export default function App() {
         {page === "about" && <AboutPage />}
         {page === "contact" && <ContactPage />}
         {page === "residential" && <ResidentialPage />}
+        {page === "licenses" && <LicensesPage />}
         {page === "gallery" && <GalleryPage />}
         {page === "notfound" && <NotFound />}
       </main>
