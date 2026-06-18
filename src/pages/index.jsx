@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Fade, Link, I, useSEO } from "../utils";
 import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials, ProcessSteps, ServiceArea, StatsBand, WhyUs } from "../components/Shared";
 
@@ -79,40 +79,40 @@ export function HomePage() {
   return (
     <>
       {/* 1. Hero — warm editorial split: charcoal serif on linen, proof-forward, phone-first */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(124px, 17vh, 172px) 24px clamp(56px, 9vh, 100px)" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(132px, 17vh, 172px) max(24px, env(safe-area-inset-right)) clamp(56px, 9vh, 100px) max(24px, env(safe-area-inset-left))" }}>
         <div className="hero-plate">
           <Fade delay={0.05}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-              <span style={{ width: 28, height: 2, background: "var(--primary)", flexShrink: 0 }} aria-hidden="true" />
-              <span style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 2.4, textTransform: "uppercase" }}>Commercial · Custom Homes · Roofing — Alexandria + Cenla</span>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 18 }}>
+              <span style={{ width: 28, height: 2, background: "var(--primary)", flexShrink: 0, marginTop: 7 }} aria-hidden="true" />
+              <span style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 1.8, textTransform: "uppercase" }}>Commercial · Custom Homes · Roofing — Alexandria + Cenla</span>
             </div>
-            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(31px, 6vw, 70px)", letterSpacing: -1.2, lineHeight: 1.05, margin: "0 0 22px" }}>
+            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(31px, 6vw, 70px)", letterSpacing: "-0.6px", lineHeight: 1.08, textWrap: "balance", margin: "0 0 22px" }}>
               Commercial. Custom homes. Roofing — and our <span style={{ color: "var(--primary)", fontWeight: 500 }}>name</span> on every one.
             </h1>
-            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, margin: "0 0 30px", maxWidth: 540 }}>
+            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, margin: "0 0 26px", maxWidth: 540 }}>
               Ground-up commercial buildings, custom homes, and complete roofing systems across Central Louisiana — one accountable contractor, permits to punch list. No call center. You call Chris.
             </p>
-            <div style={{ display: "flex", flexWrap: "wrap", background: "var(--bg-surface)", border: "1px solid var(--border-light)", borderRadius: 12, overflow: "hidden", width: "fit-content", maxWidth: "100%", marginBottom: 32, boxShadow: "var(--shadow-sm)" }}>
-              <a href={REVIEWS_URL} target="_blank" rel="noopener noreferrer" style={{ padding: "13px 18px", display: "flex", alignItems: "center", gap: 8, textDecoration: "none", borderRight: "1px solid var(--border-light)" }}>
+            <div className="cred-plate" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "var(--border-light)", border: "1px solid var(--border-light)", borderRadius: 12, overflow: "hidden", width: "100%", maxWidth: 560, marginBottom: 32, boxShadow: "var(--shadow-sm)" }}>
+              <a href={REVIEWS_URL} target="_blank" rel="noopener noreferrer" style={{ padding: "13px 18px", display: "flex", alignItems: "center", gap: 8, textDecoration: "none", background: "var(--bg-surface)", minHeight: 48 }}>
                 <span style={{ color: "var(--primary)", fontWeight: 700, fontSize: 15, fontFamily: "var(--font-display)" }}>{RATING.value} ★</span>
                 <span style={{ color: "var(--text-secondary)", fontSize: 13, fontWeight: 500 }}>{RATING.count} Google reviews</span>
               </a>
-              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, borderRight: "1px solid var(--border-light)" }}>LAGC Member</span>
-              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, borderRight: "1px solid var(--border-light)" }}>ISNetworld Certified</span>
-              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500 }}>Licensed · Insured</span>
+              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, background: "var(--bg-surface)", minHeight: 48 }}>LAGC Member</span>
+              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, background: "var(--bg-surface)", minHeight: 48 }}>ISNetworld Certified</span>
+              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, background: "var(--bg-surface)", minHeight: 48 }}>Licensed · Insured</span>
             </div>
-            <div style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "center" }}>
-              <Btn href={TEL} style={{ padding: "17px 36px", fontSize: 17, justifyContent: "center" }}><I.Phone /><span>Call Chris — (318) 704-6308</span></Btn>
-              <Link to="/gallery" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 1.2, textTransform: "uppercase", textDecoration: "none" }}>See recent work <I.Arrow /></Link>
+            <div className="hero-cta-row" style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "center" }}>
+              <Btn href={TEL} className="hero-call" style={{ padding: "17px 36px", fontSize: 17, justifyContent: "center" }}><I.Phone /><span>Call Chris — (318) 704-6308</span></Btn>
+              <Link to="/gallery" className="hero-seework" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 1.2, textTransform: "uppercase", textDecoration: "none" }}>See recent work <I.Arrow /></Link>
             </div>
           </Fade>
           <Fade delay={0.18}>
-            <div style={{ position: "relative", borderRadius: 18, overflow: "hidden", border: "1px solid var(--primary)", aspectRatio: "4 / 5", maxHeight: "76vh", boxShadow: "var(--shadow-md)" }}>
+            <div className="hero-media" style={{ position: "relative", borderRadius: 18, overflow: "hidden", border: "1px solid var(--primary)", aspectRatio: "4 / 5", maxHeight: "76vh", boxShadow: "var(--shadow-md)" }}>
               <img src="/images/hero-sitework.webp" alt="CAT excavator on a Magnolia State Construction demolition and site-work job in Alexandria, Louisiana" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
               <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-sitework.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
                 <source src="/hero-sitework.mp4" type="video/mp4" />
               </video>
-              <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: "34%", background: "linear-gradient(to top, rgba(33,36,31,0.5), rgba(33,36,31,0))" }} aria-hidden="true" />
+              <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: "46%", background: "linear-gradient(to top, rgba(33,36,31,0.62), rgba(33,36,31,0))" }} aria-hidden="true" />
               <span style={{ position: "absolute", left: 16, bottom: 14, color: "#fff", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 11, letterSpacing: 1.4, textTransform: "uppercase" }}>Demolition & site work · Alexandria, LA</span>
             </div>
           </Fade>
@@ -143,12 +143,12 @@ export function HomePage() {
       <StandardsBand {...STANDARDS} />
 
       {/* 3c. Full-bleed image break — cinematic rhythm */}
-      <section style={{ position: "relative", minHeight: "clamp(420px, 62vh, 600px)", display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <img src="/images/break-greatroom.webp" alt="" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-        <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/break-greatroom.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
+      <section className="fullbleed-break" style={{ position: "relative", minHeight: "clamp(420px, 62vh, 600px)", display: "flex", alignItems: "center", overflow: "hidden" }}>
+        <img src="/images/break-greatroom.webp" alt="" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }} />
+        <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/break-greatroom.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }}>
           <source src="/break-greatroom.mp4" type="video/mp4" />
         </video>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,20,12,0.95) 0%, rgba(8,20,12,0.66) 50%, rgba(8,20,12,0.32) 100%)" }} />
+        <div className="fullbleed-overlay" />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto", padding: "0 24px", width: "100%" }}>
           <Fade>
             <h2 style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(34px, 5.5vw, 60px)", lineHeight: 1.1, letterSpacing: -0.4, margin: "0 0 16px", maxWidth: 600 }}>Built once. Built right.</h2>
@@ -168,7 +168,7 @@ export function HomePage() {
             <Link to="/gallery" style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8 }}>View the full gallery <I.Arrow /></Link>
           </Fade>
           <Fade delay={0.1}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+            <div className="splitrow-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
               <img src="/images/foyer-staircase.webp" alt="Custom home foyer and staircase" loading="lazy" style={{ width: "100%", aspectRatio: "3 / 4", objectFit: "cover", borderRadius: 12, marginTop: 32 }} />
               <img src="/images/commercial-build.webp" alt="Commercial construction job site in Central Louisiana" loading="lazy" style={{ width: "100%", aspectRatio: "3 / 4", objectFit: "cover", borderRadius: 12 }} />
             </div>
@@ -356,6 +356,7 @@ export function GalleryPage() {
   ];
 
   const [active, setActive] = useState(null);
+  const tx = useRef(0);
   const close = () => setActive(null);
   const go = (dir) => setActive(a => (a + dir + items.length) % items.length);
   useEffect(() => {
@@ -371,7 +372,7 @@ export function GalleryPage() {
     return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = prev; };
   }, [active, items.length]);
 
-  const navBtn = { position: "absolute", top: "50%", transform: "translateY(-50%)", width: 52, height: 52, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.3)", background: "rgba(255,255,255,0.08)", color: "#fff", fontSize: 26, lineHeight: 1, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" };
+  const navBtn = { position: "absolute", top: "50%", transform: "translateY(-50%)", width: 52, height: 52, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.3)", background: "rgba(255,255,255,0.14)", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)", color: "#fff", fontSize: 26, lineHeight: 1, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" };
 
   return (
     <>
@@ -393,9 +394,9 @@ export function GalleryPage() {
 
       {active !== null && (
         <div role="dialog" aria-modal="true" aria-label="Project photo" onClick={close} style={{ position: "fixed", inset: 0, zIndex: 2000, background: "rgba(8,12,9,0.93)", display: "flex", alignItems: "center", justifyContent: "center", padding: "clamp(16px, 5vw, 64px)" }}>
-          <button onClick={close} aria-label="Close" style={{ position: "absolute", top: 20, right: 24, width: 48, height: 48, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.3)", background: "rgba(255,255,255,0.08)", color: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}><I.X /></button>
+          <button onClick={close} aria-label="Close" style={{ position: "absolute", top: "max(20px, env(safe-area-inset-top))", right: "max(16px, env(safe-area-inset-right))", width: 52, height: 52, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.3)", background: "rgba(255,255,255,0.14)", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)", color: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1 }}><I.X /></button>
           <button onClick={e => { e.stopPropagation(); go(-1); }} aria-label="Previous photo" style={{ ...navBtn, left: 16 }}>‹</button>
-          <figure onClick={e => e.stopPropagation()} style={{ margin: 0, display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 1100 }}>
+          <figure onClick={e => e.stopPropagation()} onTouchStart={e => { tx.current = e.touches[0].clientX; }} onTouchEnd={e => { const dx = e.changedTouches[0].clientX - tx.current; if (Math.abs(dx) > 45) go(dx < 0 ? 1 : -1); }} style={{ margin: 0, display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 1100, touchAction: "pan-y" }}>
             <img src={items[active].src} alt={items[active].alt} style={{ maxWidth: "100%", maxHeight: "78vh", objectFit: "contain", borderRadius: 8, display: "block" }} />
             <figcaption style={{ color: "rgba(255,255,255,0.82)", marginTop: 18, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 1.5, textTransform: "uppercase" }}>{items[active].cat} · Central Louisiana</figcaption>
           </figure>

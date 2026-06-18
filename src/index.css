@@ -41,7 +41,9 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  overscroll-behavior-y: none;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -72,6 +74,9 @@ img {
   display: block;
 }
 
+video, iframe { max-width: 100%; height: auto; }
+* { min-width: 0; }
+
 /* Animations & Utilities */
 .sc {
   transition: all 0.3s ease;
@@ -94,6 +99,8 @@ img {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  overflow-x: clip;
 }
 
 /* Material/Solid Structural Classes */
@@ -144,7 +151,9 @@ html {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding-left: 20px;
+    scroll-padding-left: 24px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
     padding-bottom: 24px;
     margin: 0 -24px;
     padding-left: 24px;
@@ -159,6 +168,7 @@ html {
   .bento-item, .bento-gallery-item {
     flex: 0 0 85%;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 }
 
@@ -230,8 +240,8 @@ html {
     overflow: hidden;
   }
   .hero-split-content {
-    margin-top: -5vh; /* Gentle overlap */
-    padding: 0 16px 40px;
+    margin-top: -48px; /* deterministic editorial overlap */
+    padding: 0 16px max(40px, env(safe-area-inset-bottom));
   }
 }
 
@@ -255,7 +265,7 @@ html {
   gap: clamp(40px, 6vw, 88px);
   align-items: center;
 }
-@media (max-width: 860px) {
+@media (max-width: 768px) {
   .split-row { grid-template-columns: 1fr; gap: 40px; }
 }
 
@@ -269,7 +279,7 @@ html {
   margin: 0 auto;
   width: 100%;
 }
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .hero-plate { grid-template-columns: 1fr; gap: clamp(32px, 6vw, 44px); max-width: 560px; }
 }
 
@@ -316,5 +326,87 @@ html {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ============================================================
+   MOBILE POLISH PASS — iOS-grade phone experience
+   ============================================================ */
+
+/* Tap ergonomics: kill the gray flash, add a crisp press-in on touch */
+* { -webkit-tap-highlight-color: transparent; }
+@media (hover: none) {
+  a:active, button:active, summary:active, .bento-item:active, .service-card:active, [role="button"]:active { transform: scale(0.97); transition: transform 0.08s ease-out; }
+  .faq-item summary:active { color: var(--primary-hover); }
+  .mt:active { background: rgba(0,0,0,0.06) !important; }
+}
+
+/* Service-card touch press pairs a subtle image nudge with the card scale */
+.service-card { transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+@media (hover: none) { .service-card:active .service-card-img { transform: scale(1.02); } }
+
+/* Sticky mobile click-to-call bar (phone only) */
+.call-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 998;
+  display: none; text-decoration: none;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: #fff; box-shadow: 0 -8px 24px -10px rgba(0,0,0,0.25);
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.call-bar-inner { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: 0.5px; text-transform: uppercase; }
+.call-bar:active { filter: brightness(0.94); }
+
+/* Mobile menu entrance + per-item stagger (reduced-motion neutralizes these) */
+.mobile-menu-panel { animation: menuFade 0.32s cubic-bezier(0.16,1,0.3,1); }
+@keyframes menuFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes menuItem { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Full-bleed break overlay — desktop horizontal scrim */
+.fullbleed-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,20,12,0.95) 0%, rgba(8,20,12,0.66) 50%, rgba(8,20,12,0.32) 100%); }
+
+/* FAQ answer reveal + open-offset under the fixed header */
+.faq-item p { animation: faqReveal 0.28s cubic-bezier(0.16,1,0.3,1); }
+@keyframes faqReveal { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+.faq-item[open] { scroll-margin-top: 110px; }
+
+/* ---- Phone / tablet (<=768px) ---- */
+@media (max-width: 768px) {
+  html { scroll-padding-top: 64px; }
+  .header-bar { height: 64px !important; }
+  .header-bar.scrolled { height: 60px !important; }
+  header { border-bottom-width: 1px !important; }
+  .call-bar { display: block !important; }
+  .has-call-bar { padding-bottom: calc(58px + env(safe-area-inset-bottom)); }
+  .fullbleed-break { min-height: clamp(440px, 70vh, 560px) !important; align-items: flex-end !important; }
+  .fullbleed-overlay { background: linear-gradient(to top, rgba(8,20,12,0.95) 0%, rgba(8,20,12,0.6) 45%, rgba(8,20,12,0.2) 100%); }
+  .fullbleed-break > div { padding-bottom: clamp(40px, 8vh, 64px); }
+}
+
+/* ---- Phone (<=600px) ---- */
+@media (max-width: 600px) {
+  .hero-cta-row { gap: 16px; flex-direction: column; align-items: stretch; }
+  .hero-cta-row .hero-call { width: 100%; justify-content: center; padding: 18px 28px; font-size: 17px; }
+  .hero-cta-row a.hero-seework { width: 100%; justify-content: center; min-height: 48px; padding: 12px 8px; }
+  .hero-media { max-height: 70vh !important; border-radius: 22px !important; border-color: rgba(26,90,53,0.55) !important; }
+  .service-card { aspect-ratio: 4 / 5 !important; }
+  .splitrow-grid { grid-template-columns: 1fr !important; gap: 16px; }
+  .splitrow-grid img { margin-top: 0 !important; aspect-ratio: 4 / 3 !important; }
+}
+
+/* ---- Narrow phone (<=560px) ---- */
+@media (max-width: 560px) {
+  .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 36px 20px !important; }
+  .cta-actions { flex-direction: column; align-items: stretch; }
+  .cta-actions a { width: 100%; justify-content: center; }
+  .footer-cta-btn { width: 100%; max-width: 360px; justify-content: center; padding: 18px 24px !important; }
+  .footer-grid { gap: 40px !important; }
+  .footer-legal { flex-direction: column-reverse; align-items: flex-start; gap: 28px; }
+  .footer-creds { flex-direction: column; align-items: flex-start; gap: 18px; width: 100%; }
+  .footer-legal > p { font-size: 13px; }
+}
+
+/* ---- Very narrow phone (<=380px) ---- */
+@media (max-width: 380px) {
+  .cred-plate { grid-template-columns: 1fr !important; }
 }
 

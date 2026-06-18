@@ -32,8 +32,20 @@ export function Link({ to, children, ...props }) {
 }
 
 // --- SCROLL ANIMATION HOOK ---
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(() => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const on = () => setReduced(mq.matches);
+    mq.addEventListener("change", on);
+    return () => mq.removeEventListener("change", on);
+  }, []);
+  return reduced;
+}
+
 export function Fade({ children, delay = 0, className = "", style = {} }) {
   const [isVisible, setVisible] = useState(false);
+  const reduced = usePrefersReducedMotion();
   const ref = useRef(null);
   useEffect(() => {
     const observer = new IntersectionObserver(([e]) => { 
@@ -46,7 +58,7 @@ export function Fade({ children, delay = 0, className = "", style = {} }) {
     return () => observer.disconnect();
   }, []);
   return (
-    <div ref={ref} className={className} style={{ transition: "opacity 0.4s ease-out, transform 0.4s ease-out", transitionDelay: `${delay}s`, opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0)" : "translateY(20px)", ...style }}>
+    <div ref={ref} className={className} style={{ transition: "opacity 0.4s ease-out, transform 0.4s ease-out", transitionDelay: `${delay}s`, opacity: (isVisible || reduced) ? 1 : 0, transform: (isVisible || reduced) ? "translateY(0)" : "translateY(20px)", ...style }}>
       {children}
     </div>
   );
@@ -55,8 +67,10 @@ export function Fade({ children, delay = 0, className = "", style = {} }) {
 // --- PARALLAX ENGINE ---
 export function Parallax({ children, speed = 0.2, style = {}, className = "" }) {
   const [offset, setOffset] = useState(0);
-  
+  const reduced = usePrefersReducedMotion();
+
   useEffect(() => {
+    if (reduced) return;
     let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
@@ -69,10 +83,10 @@ export function Parallax({ children, speed = 0.2, style = {}, className = "" }) 
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [speed]);
+  }, [speed, reduced]);
 
   return (
-    <div className={className} style={{ transform: `translateY(${offset}px)`, willChange: "transform", ...style }}>
+    <div className={className} style={{ transform: reduced ? "none" : `translateY(${offset}px)`, willChange: "transform", ...style }}>
       {children}
     </div>
   );
@@ -168,12 +182,14 @@ export function useSEO({ title, description, image = "https://magnoliastateconst
 // --- COUNTER ---
 export function Counter({ end, suffix = "", duration = 2000 }) {
   const [c, setC] = useState(0);
+  const reduced = usePrefersReducedMotion();
   const ref = useRef(null);
   const started = useRef(false);
   useEffect(() => {
     const obs = new IntersectionObserver(([e]) => {
       if (e.isIntersecting && !started.current) {
         started.current = true;
+        if (reduced) { setC(end); return; }
         const s = performance.now();
         const step = (n) => { const t = Math.min((n - s) / duration, 1); setC(Math.floor((1 - Math.pow(1 - t, 3)) * end)); if (t < 1) requestAnimationFrame(step); };
         requestAnimationFrame(step);
@@ -181,7 +197,7 @@ export function Counter({ end, suffix = "", duration = 2000 }) {
     }, { threshold: 0.3 });
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
-  }, [end, duration]);
+  }, [end, duration, reduced]);
   return <span ref={ref}>{c}{suffix}</span>;
 }
 

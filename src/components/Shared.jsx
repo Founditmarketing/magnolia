@@ -65,7 +65,7 @@ export function TrustBar() {
 
 export function SH({ tag, title, sub, center }) {
   return (
-    <div style={{ marginBottom: 76, textAlign: center ? "center" : "left", maxWidth: center ? 760 : "none", margin: center ? "0 auto 76px" : "0 0 76px", position: "relative" }}>
+    <div style={{ marginBottom: "clamp(40px, 8vw, 76px)", textAlign: center ? "center" : "left", maxWidth: center ? 760 : "none", margin: center ? "0 auto clamp(40px, 8vw, 76px)" : "0 0 clamp(40px, 8vw, 76px)", position: "relative" }}>
       {tag && <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 22 }}>{tag}</div>}
       <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(34px, 5vw, 54px)", lineHeight: 1.12, letterSpacing: -0.4, margin: 0, color: "var(--text-primary)" }}>
         {title}
@@ -107,7 +107,7 @@ export function StandardsBand({ eyebrow, heading, framingLine, weBuild, weDont, 
           </Fade>
 
           <Fade delay={0.1}>
-            <div style={{ background: "transparent", border: "1px solid var(--border-light)", borderRadius: 14, padding: "clamp(28px, 4vw, 44px)", height: "100%" }}>
+            <div style={{ background: "var(--bg-elevated)", border: "1px solid var(--border-light)", borderRadius: 14, padding: "clamp(28px, 4vw, 44px)", height: "100%" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
                 <span style={{ color: "var(--text-tertiary)", display: "inline-flex" }}><I.X /></span>
                 <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 2.5, textTransform: "uppercase", color: "var(--text-tertiary)", margin: 0 }}>What We Don't</h3>
@@ -134,9 +134,9 @@ export function CTA({ title, sub, btn }) {
         <Fade><h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(34px, 5.5vw, 56px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: "0 0 24px" }}>{title}</h2></Fade>
         <Fade><p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.75, maxWidth: 560, margin: "0 auto 44px" }}>{sub}</p></Fade>
         <Fade>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+          <div className="cta-actions" style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <Btn href={TEL} variant="primary">{btn || "Call for an Estimate"} <I.Phone /></Btn>
-            <Btn href={TEL} variant="outlineDark">{PHONE}</Btn>
+            <Btn href={TEL} variant="outlineDark" style={{ padding: "14px 24px" }}>{PHONE}</Btn>
           </div>
         </Fade>
       </div>
@@ -146,16 +146,16 @@ export function CTA({ title, sub, btn }) {
 
 export function WhyUs({ items }) {
   return (
-    <section style={{ background: "var(--bg-dark)", padding: "clamp(96px, 15vh, 184px) 24px", borderTop: "1px solid var(--border-light)" }}>
+    <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 11vh, 184px) 24px", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <Fade>
           <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 18 }}>Why Magnolia State</div>
           <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(32px, 4.5vw, 50px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: 0, maxWidth: 600 }}>Serious builds, managed like it matters.</h2>
         </Fade>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(238px, 1fr))", gap: "clamp(32px, 4vw, 56px)", marginTop: 64 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(238px, 1fr))", gap: "clamp(32px, 4vw, 56px)", marginTop: "clamp(40px, 7vw, 64px)" }}>
           {items.map((it, i) => (
             <Fade key={i} delay={i * 0.08}>
-              <div style={{ color: "var(--primary)", marginBottom: 18, display: "inline-flex" }}>{it.icon}</div>
+              <div style={{ color: "var(--primary)", marginBottom: 18, display: "inline-flex", transform: "scale(1.25)", transformOrigin: "left center" }}>{it.icon}</div>
               <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 17, textTransform: "uppercase", letterSpacing: 0.5, color: "var(--text-primary)", margin: "0 0 10px" }}>{it.t}</h3>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 15.5, lineHeight: 1.65, color: "var(--text-secondary)", margin: 0 }}>{it.d}</p>
             </Fade>
@@ -168,15 +168,15 @@ export function WhyUs({ items }) {
 
 export function StatsBand({ items }) {
   return (
-    <section style={{ background: "linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)", padding: "clamp(76px, 12vh, 136px) 24px", borderTop: "1px solid var(--border-light)" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 32, textAlign: "center" }}>
+    <section style={{ background: "linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%)", padding: "clamp(72px, 9vh, 136px) 24px", borderTop: "1px solid var(--border-light)" }}>
+      <div className="stats-grid" style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 32, textAlign: "center" }}>
         {items.map((s, i) => (
           <Fade key={i} delay={i * 0.1}>
             <div style={{ width: 32, height: 2, background: "rgba(255,255,255,0.4)", margin: "0 auto 22px" }} />
             <div style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(40px, 6vw, 62px)", lineHeight: 1, color: "#fff" }}>
               {s.end != null ? <Counter end={s.end} suffix={s.suffix || ""} duration={1300} /> : s.text}
             </div>
-            <div style={{ marginTop: 12, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: "rgba(255,255,255,0.78)" }}>{s.label}</div>
+            <div style={{ marginTop: 12, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 1.5, textTransform: "uppercase", color: "rgba(255,255,255,0.86)" }}>{s.label}</div>
           </Fade>
         ))}
       </div>
@@ -194,9 +194,9 @@ export function ServiceArea({ towns }) {
           <p style={{ maxWidth: 680, margin: "0 auto", color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7 }}>Ground-up commercial, custom homes, roofing systems, and roll-off dumpster rental for Alexandria, Pineville, and communities across Cenla.</p>
         </Fade>
         <Fade>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12, maxWidth: 840, margin: "40px auto 0" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "12px 10px", maxWidth: 840, margin: "40px auto 0" }}>
             {towns.map((t, i) => (
-              <span key={i} style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14, letterSpacing: 0.3, color: "var(--text-secondary)", background: "var(--bg-surface)", border: "1px solid var(--border-light)", borderRadius: 50, padding: "9px 18px" }}>{t}</span>
+              <span key={i} style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 14, letterSpacing: 0.3, color: "var(--text-secondary)", background: "var(--bg-surface)", border: "1px solid var(--border-light)", borderRadius: 50, padding: "11px 18px", display: "inline-flex", alignItems: "center", minHeight: 40, lineHeight: 1 }}>{t}</span>
             ))}
           </div>
         </Fade>
@@ -207,7 +207,7 @@ export function ServiceArea({ towns }) {
 
 export function ProcessSteps({ tag = "Our Process", title, sub, steps }) {
   return (
-    <section style={{ background: "var(--bg-surface)", padding: "clamp(88px, 14vh, 176px) 24px", borderTop: "1px solid var(--border-light)" }}>
+    <section style={{ background: "var(--bg-surface)", padding: "clamp(84px, 11vh, 176px) 24px", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <SH tag={tag} title={title} sub={sub} center />
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 28 }}>
@@ -228,7 +228,7 @@ export function ProcessSteps({ tag = "Our Process", title, sub, steps }) {
 
 export function Testimonials({ rating, count, items, reviewsUrl }) {
   return (
-    <section style={{ background: "var(--bg-elevated)", padding: "clamp(96px, 15vh, 184px) 24px", borderTop: "1px solid var(--border-light)" }}>
+    <section style={{ background: "var(--bg-elevated)", padding: "clamp(88px, 11vh, 184px) 24px", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <Fade style={{ textAlign: "center", marginBottom: 56 }}>
           <div style={{ color: "var(--primary)", fontSize: 26, letterSpacing: 3 }}>★★★★★</div>
@@ -238,7 +238,7 @@ export function Testimonials({ rating, count, items, reviewsUrl }) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 28 }}>
           {items.map((t, i) => (
             <Fade key={i} delay={i * 0.1}>
-              <div className="sc" style={{ borderRadius: 16, padding: "36px 34px", height: "100%", display: "flex", flexDirection: "column" }}>
+              <div className="sc" style={{ borderRadius: 16, padding: "clamp(26px, 6vw, 36px) clamp(24px, 6vw, 34px)", height: "100%", display: "flex", flexDirection: "column" }}>
                 <div style={{ color: "var(--primary)", letterSpacing: 2, fontSize: 16, marginBottom: 18 }}>★★★★★</div>
                 <p style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(19px, 2.5vw, 22px)", lineHeight: 1.5, color: "var(--text-primary)", margin: "0 0 24px", flex: 1 }}>"{t.text}"</p>
                 <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, color: "var(--text-primary)" }}>{t.author}</div>
@@ -259,7 +259,7 @@ export function Testimonials({ rating, count, items, reviewsUrl }) {
 
 export function FAQ({ items }) {
   return (
-    <section style={{ background: "var(--bg-dark)", padding: "clamp(96px, 15vh, 184px) 24px", borderTop: "1px solid var(--border-light)" }}>
+    <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 11vh, 184px) 24px", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
         <Fade>
           <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 16, textAlign: "center" }}>Questions</div>
@@ -322,7 +322,7 @@ export function PageHero({ tag, title, titleAccent, sub, children, media, poster
         </div>
 
         <div className="hero-split-content">
-          <div className="glass sc" style={{ maxWidth: 840, padding: "clamp(32px, 5vw, 56px)", borderRadius: 16, border: "2px solid rgba(255,255,255,1)", boxShadow: "0 24px 48px -12px rgba(0,0,0,0.1)" }}>
+          <div className="glass sc" style={{ maxWidth: 840, padding: "clamp(32px, 5vw, 56px)", borderRadius: 16, border: "1px solid rgba(255,255,255,0.9)", boxShadow: "0 24px 60px -16px rgba(0,0,0,0.45)" }}>
             {tag && <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>{tag}</div>}
             <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(34px, 7vw, 60px)", letterSpacing: -0.4, margin: 0, lineHeight: 1.1 }}>
               {title}{titleAccent && <>{" "}<br /><span className="primary-text">{titleAccent}</span></>}
