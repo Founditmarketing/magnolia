@@ -85,7 +85,7 @@ export function HomePage() {
           <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-poster-2.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
             <source src="/hero-build-2.mp4" type="video/mp4" />
           </video>
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.5) 42%, rgba(0,0,0,0.86) 100%)" }} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.52) 40%, rgba(0,0,0,0.28) 75%), linear-gradient(100deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.12) 55%, rgba(0,0,0,0) 100%)" }} />
         </div>
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto", width: "100%" }}>
           <Fade delay={0.1}>
@@ -97,7 +97,7 @@ export function HomePage() {
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
               <Btn href={TEL} style={{ padding: "17px 38px", fontSize: 17, justifyContent: "center", textAlign: "center" }}><I.Phone /><span>Call for a Commercial Estimate</span></Btn>
-              <Link to="/gallery" style={{ display: "inline-flex", alignItems: "center", gap: 10, color: "#fff", border: "2px solid rgba(255,255,255,0.55)", borderRadius: 8, padding: "15px 32px", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: 1.5, textTransform: "uppercase", textDecoration: "none", transition: "all 0.3s", background: "rgba(255,255,255,0.06)" }} onMouseOver={e => { e.currentTarget.style.background = "rgba(255,255,255,0.16)"; }} onMouseOut={e => { e.currentTarget.style.background = "rgba(255,255,255,0.06)"; }}>See Our Work</Link>
+              <Link to="/gallery" style={{ display: "inline-flex", alignItems: "center", gap: 10, color: "#fff", border: "1.5px solid rgba(255,255,255,0.9)", borderRadius: 8, padding: "15px 32px", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: 1.5, textTransform: "uppercase", textDecoration: "none", transition: "all 0.3s", background: "rgba(0,0,0,0.4)" }} onMouseOver={e => { e.currentTarget.style.background = "rgba(0,0,0,0.62)"; }} onMouseOut={e => { e.currentTarget.style.background = "rgba(0,0,0,0.4)"; }}>See Our Work</Link>
             </div>
           </Fade>
         </div>
@@ -129,7 +129,7 @@ export function HomePage() {
       {/* 3c. Full-bleed image break — cinematic rhythm */}
       <section style={{ position: "relative", minHeight: "clamp(420px, 62vh, 600px)", display: "flex", alignItems: "center", overflow: "hidden" }}>
         <img src="/images/kitchen-marble.webp" alt="" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,20,12,0.9) 0%, rgba(8,20,12,0.55) 52%, rgba(8,20,12,0.22) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,20,12,0.95) 0%, rgba(8,20,12,0.66) 50%, rgba(8,20,12,0.32) 100%)" }} />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto", padding: "0 24px", width: "100%" }}>
           <Fade>
             <h2 style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(34px, 5.5vw, 60px)", lineHeight: 1.1, letterSpacing: -0.4, margin: "0 0 16px", maxWidth: 600 }}>Built once. Built right.</h2>

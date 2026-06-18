@@ -174,7 +174,7 @@ export function StatsBand({ items }) {
           <Fade key={i} delay={i * 0.1}>
             <div style={{ width: 32, height: 2, background: "rgba(255,255,255,0.4)", margin: "0 auto 22px" }} />
             <div style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(40px, 6vw, 62px)", lineHeight: 1, color: "#fff" }}>
-              {s.end != null ? <Counter end={s.end} suffix={s.suffix || ""} /> : s.text}
+              {s.end != null ? <Counter end={s.end} suffix={s.suffix || ""} duration={1300} /> : s.text}
             </div>
             <div style={{ marginTop: 12, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 2, textTransform: "uppercase", color: "rgba(255,255,255,0.78)" }}>{s.label}</div>
           </Fade>
