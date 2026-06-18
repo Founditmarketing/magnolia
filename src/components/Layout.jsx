@@ -124,20 +124,13 @@ export function Header({ path }) {
           <Btn to="/contact" onClick={() => setOpen(false)} style={{ width: "100%", justifyContent: "center", padding: "20px", fontSize: 16 }}>Contact Us</Btn>
         </div>
       </div>}
-
-      {!open && (
-        <div className="mt call-bar" role="group" aria-label="Quick contact">
-          <a href={TEL} className="call-bar-btn call-bar-call" aria-label={`Call Magnolia State Construction at ${PHONE}`}><I.Phone /> Call</a>
-          <Link to="/contact" className="call-bar-btn call-bar-contact">Contact Us</Link>
-        </div>
-      )}
     </>
   );
 }
 
 export function Footer() {
   return (
-    <footer className="has-call-bar" style={{ background: "var(--bg-surface)", borderTop: "1px solid var(--border-light)" }}>
+    <footer style={{ background: "var(--bg-surface)", borderTop: "1px solid var(--border-light)" }}>
       {/* Phone-first CTA band — no email harvest */}
       <div style={{ padding: "80px 24px", borderBottom: "1px solid var(--border-light)", textAlign: "center" }}>
         <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(36px, 6vw, 56px)", margin: "0 0 16px", color: "var(--text-primary)" }}>Ready to build?</h2>
