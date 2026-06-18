@@ -195,11 +195,12 @@ html {
 .hero-split-container {
   position: relative;
   min-height: clamp(600px, 100vh, 900px);
+  min-height: clamp(600px, 100dvh, 900px); /* dvh avoids the mobile address-bar jump */
   display: flex;
   align-items: center;
   padding: clamp(100px, 15vh, 160px) 24px clamp(40px, 8vh, 80px);
   overflow: hidden;
-  background: #0F172A; /* Slate 900 */
+  background: #1B1E18; /* warm near-black — matches palette (was cool slate #0F172A) */
 }
 .hero-split-media {
   position: absolute;
@@ -223,7 +224,9 @@ html {
   .hero-split-media {
     position: relative;
     height: 65vh;
+    height: 65dvh;
     min-height: 65vh;
+    min-height: 65dvh;
     overflow: hidden;
   }
   .hero-split-content {
