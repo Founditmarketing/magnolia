@@ -10,11 +10,11 @@ const STANDARDS = {
   heading: "What We Build. What We Don't.",
   framingLine: "We focus on full builds and major projects. That focus is what makes the work hold up — and it is why every job gets the same standard, start to finish.",
   weBuild: [
-    { title: "Ground-Up Commercial", desc: "Full commercial buildings from permits to punch list — metal buildings, foundations, envelope, and tenant buildouts. Every phase, one contractor on record." },
-    { title: "Custom Homes", desc: "New custom home builds for owners who want it done once and done right. Architectural homes, not patch jobs." },
-    { title: "Roofing Systems", desc: "Complete commercial and residential roofing systems — TPO, metal, and modified bitumen. Full systems engineered to last, never spot repairs." },
-    { title: "Demolition & Site Work", desc: "Controlled demolition and site clearing for commercial and structural projects, executed under full safety protocols." },
-    { title: "Roll-Off Dumpster Rental", desc: "20, 30, and 40-yard roll-offs delivered across Cenla for job sites, demolition, and major cleanouts. Transparent pricing, often same-day." },
+    { title: "Ground-up commercial buildings" },
+    { title: "Custom homes, built ground-up" },
+    { title: "Full roofing systems" },
+    { title: "Demolition & site work" },
+    { title: "Roll-off dumpster rental" },
   ],
   weDont: ["Sheetrock patches", "Door replacements", "Fence repair", "General handyman work", "Roof repairs and patch jobs", "Small remodels and odd jobs"],
   closingLine: "Not handyman work. If the job is a quick fix, we'll point you to someone who does that — it isn't us.",
@@ -35,6 +35,7 @@ const REVIEWS_URL = "https://share.google/B8INfhtP4WqrgQICZ";
 const REVIEWS = [
   { author: "Avery Bandy", role: "Custom Home Build · Google review", rating: 5, text: "Chris built our custom home! Was a great communicator and executed all our dreams. Will call Chris again to build our next home!" },
   { author: "Christopher Johns", role: "Construction Client · Google review", rating: 5, text: "Chris and his crew do great work! They were quick, accommodating, and had constant communication throughout our project. Looking forward to working with Magnolia State Construction again!" },
+  { author: "Tatiana Keizman", role: "Commercial & Residential · Google review", rating: 5, text: "I highly recommend Magnolia State Construction for any upcoming residential or commercial projects. Chris, the owner, runs a team that is professional, respectful, and truly committed to quality." },
 ];
 
 const STATS = [
@@ -76,7 +77,7 @@ export function HomePage() {
           <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-poster-2.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
             <source src="/hero-build-2.mp4" type="video/mp4" />
           </video>
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.82) 100%)" }} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.5) 42%, rgba(0,0,0,0.86) 100%)" }} />
         </div>
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto", width: "100%" }}>
           <Fade delay={0.1}>
@@ -88,7 +89,7 @@ export function HomePage() {
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
               <Btn href={TEL} style={{ padding: "17px 38px", fontSize: 17, justifyContent: "center", textAlign: "center" }}><I.Phone /><span>Call for a Commercial Estimate</span></Btn>
-              <a href="#what-we-do" style={{ display: "inline-flex", alignItems: "center", gap: 10, color: "#fff", border: "2px solid rgba(255,255,255,0.55)", borderRadius: 8, padding: "15px 32px", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: 1.5, textTransform: "uppercase", textDecoration: "none", transition: "all 0.3s", background: "rgba(255,255,255,0.06)" }} onMouseOver={e => { e.currentTarget.style.background = "rgba(255,255,255,0.16)"; }} onMouseOut={e => { e.currentTarget.style.background = "rgba(255,255,255,0.06)"; }}>What We Build</a>
+              <Link to="/gallery" style={{ display: "inline-flex", alignItems: "center", gap: 10, color: "#fff", border: "2px solid rgba(255,255,255,0.55)", borderRadius: 8, padding: "15px 32px", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: 1.5, textTransform: "uppercase", textDecoration: "none", transition: "all 0.3s", background: "rgba(255,255,255,0.06)" }} onMouseOver={e => { e.currentTarget.style.background = "rgba(255,255,255,0.16)"; }} onMouseOut={e => { e.currentTarget.style.background = "rgba(255,255,255,0.06)"; }}>See Our Work</Link>
             </div>
           </Fade>
         </div>

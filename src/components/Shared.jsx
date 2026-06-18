@@ -95,11 +95,11 @@ export function StandardsBand({ eyebrow, heading, framingLine, weBuild, weDont, 
                 <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 2.5, textTransform: "uppercase", color: "var(--text-primary)", margin: 0 }}>What We Build</h3>
               </div>
               {weBuild.map((b, i) => (
-                <div key={i} style={{ display: "flex", gap: 14, padding: "18px 0", borderTop: i ? "1px solid var(--border-light)" : "none" }}>
-                  <span style={{ color: "var(--primary)", flexShrink: 0, marginTop: 2, display: "inline-flex" }}><I.Check /></span>
+                <div key={i} style={{ display: "flex", gap: 14, padding: "15px 0", borderTop: i ? "1px solid var(--border-light)" : "none", alignItems: b.desc ? "flex-start" : "center" }}>
+                  <span style={{ color: "var(--primary)", flexShrink: 0, marginTop: b.desc ? 2 : 0, display: "inline-flex" }}><I.Check /></span>
                   <div>
-                    <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 17, color: "var(--text-primary)", marginBottom: 5 }}>{b.title}</div>
-                    <div style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--text-secondary)" }}>{b.desc}</div>
+                    <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 16, color: "var(--text-primary)", marginBottom: b.desc ? 5 : 0 }}>{b.title}</div>
+                    {b.desc && <div style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--text-secondary)" }}>{b.desc}</div>}
                   </div>
                 </div>
               ))}
@@ -150,6 +150,7 @@ export function StatsBand({ items }) {
       <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 32, textAlign: "center" }}>
         {items.map((s, i) => (
           <Fade key={i} delay={i * 0.1}>
+            <div style={{ width: 32, height: 2, background: "rgba(255,255,255,0.4)", margin: "0 auto 22px" }} />
             <div style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(40px, 6vw, 62px)", lineHeight: 1, color: "#fff" }}>
               {s.end != null ? <Counter end={s.end} suffix={s.suffix || ""} /> : s.text}
             </div>
