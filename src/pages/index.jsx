@@ -29,6 +29,12 @@ export function HomePage() {
     { n: "Roll-Off Trucking & Dumpsters", to: "/dumpsters", icon: <I.Truck />, d: "20, 30 & 40-yard roll-offs delivered across Cenla." },
     { n: "Roofing Systems", to: "/roofing", icon: <I.Roof />, d: "Complete commercial & residential roof systems — never patch jobs." },
   ];
+  const WHY = [
+    { t: "One accountable builder", d: "Commercial, custom homes, roofing, and roll-off dumpsters — all under one company, one point of contact." },
+    { t: "15+ years across Cenla", d: "Built throughout Alexandria, Pineville, and Central Louisiana — we know the codes, the ground, and the weather." },
+    { t: "Real project management", d: "Schedules kept, budgets respected, and updates straight from Chris — no call center, no runaround." },
+    { t: "Licensed, insured & ISN-certified", d: "Serious builds, done on record to commercial safety and quality standards." },
+  ];
 
   return (
     <>
@@ -84,7 +90,7 @@ export function HomePage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(238px, 1fr))", gap: 20, marginTop: 48 }}>
             {SERVICES.map((s, i) => (
               <Fade key={i} delay={i * 0.06}>
-                <Link to={s.to} className="sc" aria-label={s.n} style={{ display: "block", height: "100%", borderRadius: 16, padding: "clamp(28px, 4vw, 34px)", textDecoration: "none" }}>
+                <Link to={s.to} className="sc service-tile" aria-label={s.n} style={{ display: "block", height: "100%", borderRadius: 16, padding: "clamp(28px, 4vw, 34px)", textDecoration: "none" }}>
                   <div style={{ color: "var(--primary)", display: "inline-flex", transform: "scale(1.35)", transformOrigin: "left center", marginBottom: 24 }}>{s.icon}</div>
                   <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 17, textTransform: "uppercase", letterSpacing: 0.5, color: "var(--text-primary)", margin: "0 0 10px" }}>{s.n}</h3>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--text-secondary)", margin: "0 0 16px" }}>{s.d}</p>
@@ -107,6 +113,34 @@ export function HomePage() {
             <span style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16 }}>{RATING.value} ★</span>
             <span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 14 }}>{RATING.count} Google reviews</span>
           </a>
+        </div>
+      </section>
+
+      {/* 3b. Why Magnolia — dark contrast band for depth + trust */}
+      <section style={{ background: "var(--text-primary)", padding: "clamp(64px, 10vh, 112px) 24px" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <Fade>
+            <div style={{ color: "#86B595", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 14 }}>Why Magnolia</div>
+            <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(30px, 4.5vw, 46px)", lineHeight: 1.12, letterSpacing: -0.4, color: "#FCFCFA", margin: 0, maxWidth: 620 }}>One builder who answers for the whole job.</h2>
+          </Fade>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(248px, 1fr))", gap: "clamp(26px, 4vw, 44px)", marginTop: "clamp(40px, 6vw, 60px)" }}>
+            {WHY.map((w, i) => (
+              <Fade key={i} delay={i * 0.08}>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+                  <span style={{ color: "#86B595", display: "inline-flex", marginTop: 3, flexShrink: 0 }}><I.Check /></span>
+                  <div>
+                    <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 0.3, color: "#FCFCFA", margin: "0 0 8px" }}>{w.t}</h3>
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.65, color: "rgba(252,252,250,0.74)", margin: 0 }}>{w.d}</p>
+                  </div>
+                </div>
+              </Fade>
+            ))}
+          </div>
+          <Fade>
+            <div style={{ marginTop: "clamp(40px, 6vw, 56px)" }}>
+              <Link to="/contact" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--bg-dark)", color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: 0.5, padding: "16px 32px", borderRadius: 8, textDecoration: "none" }}>Contact Us <I.Arrow /></Link>
+            </div>
+          </Fade>
         </div>
       </section>
 

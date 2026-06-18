@@ -87,8 +87,11 @@ video, iframe { max-width: 100%; height: auto; }
 .sc:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: #CBD5E1 !important;
+  border-color: var(--primary) !important;
 }
+
+/* Service tiles — a quiet designed green top accent */
+.service-tile { border-top: 2px solid var(--primary); }
 
 .dn { display: flex !important; }
 .mt { display: none !important; }
