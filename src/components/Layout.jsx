@@ -126,9 +126,10 @@ export function Header({ path }) {
       </div>}
 
       {!open && (
-        <a href={TEL} className="mt call-bar" aria-label={`Call Chris at ${PHONE}`}>
-          <span className="call-bar-inner"><I.Phone /> Call Chris — {PHONE}</span>
-        </a>
+        <div className="mt call-bar" role="group" aria-label="Quick contact">
+          <a href={TEL} className="call-bar-btn call-bar-call" aria-label={`Call Chris at ${PHONE}`}><I.Phone /> Call</a>
+          <Link to="/contact" className="call-bar-btn call-bar-contact">Contact Us</Link>
+        </div>
       )}
     </>
   );

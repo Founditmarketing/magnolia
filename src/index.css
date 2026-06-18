@@ -346,14 +346,15 @@ html {
 /* Sticky mobile click-to-call bar (phone only) */
 .call-bar {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 998;
-  display: none; text-decoration: none;
+  display: none;
   background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-  color: #fff; box-shadow: 0 -8px 24px -10px rgba(0,0,0,0.25);
+  box-shadow: 0 -8px 24px -10px rgba(0,0,0,0.25);
   padding-bottom: env(safe-area-inset-bottom);
   border-top: 1px solid rgba(255,255,255,0.12);
 }
-.call-bar-inner { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: 0.5px; text-transform: uppercase; }
-.call-bar:active { filter: brightness(0.94); }
+.call-bar-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; color: #fff; text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: 0.5px; text-transform: uppercase; }
+.call-bar-contact { border-left: 1px solid rgba(255,255,255,0.22); }
+.call-bar-btn:active { background: rgba(0,0,0,0.14); }
 
 /* Mobile menu entrance + per-item stagger (reduced-motion neutralizes these) */
 .mobile-menu-panel { animation: menuFade 0.32s cubic-bezier(0.16,1,0.3,1); }
@@ -374,7 +375,7 @@ html {
   .header-bar { height: 64px !important; }
   .header-bar.scrolled { height: 60px !important; }
   header { border-bottom-width: 1px !important; }
-  .call-bar { display: block !important; }
+  .call-bar { display: flex !important; }
   .has-call-bar { padding-bottom: calc(58px + env(safe-area-inset-bottom)); }
   .fullbleed-break { min-height: clamp(440px, 70vh, 560px) !important; align-items: flex-end !important; }
   .fullbleed-overlay { background: linear-gradient(to top, rgba(8,20,12,0.95) 0%, rgba(8,20,12,0.6) 45%, rgba(8,20,12,0.2) 100%); }
