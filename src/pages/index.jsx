@@ -117,26 +117,33 @@ export function HomePage() {
       {/* 3. The lead filter — What We Build / What We Don't */}
       <StandardsBand {...STANDARDS} />
 
-      {/* 4. Work Grid (Horizontal Scroll on Mobile) */}
+      {/* 3c. Full-bleed image break — cinematic rhythm */}
+      <section style={{ position: "relative", minHeight: "clamp(420px, 62vh, 600px)", display: "flex", alignItems: "center", overflow: "hidden" }}>
+        <img src="/images/kitchen-marble.webp" alt="" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,20,12,0.9) 0%, rgba(8,20,12,0.55) 52%, rgba(8,20,12,0.22) 100%)" }} />
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto", padding: "0 24px", width: "100%" }}>
+          <Fade>
+            <h2 style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(34px, 5.5vw, 60px)", lineHeight: 1.1, letterSpacing: -0.4, margin: "0 0 16px", maxWidth: 600 }}>Built once. Built right.</h2>
+            <p style={{ color: "rgba(255,255,255,0.86)", fontFamily: "var(--font-body)", fontSize: "clamp(16px, 2.5vw, 20px)", lineHeight: 1.6, margin: "0 0 34px", maxWidth: 500 }}>One accountable builder, from the foundation to the final walk-through.</p>
+            <Btn href={TEL}><I.Phone /> Call for an Estimate</Btn>
+          </Fade>
+        </div>
+      </section>
+
+      {/* 4. Recent work — content beside headline (editorial flow) */}
       <section style={{ background: "var(--bg-surface)", padding: "clamp(96px, 15vh, 184px) 24px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "flex", gap: 32, overflowX: "auto", scrollSnapType: "x mandatory", paddingBottom: 24, WebkitOverflowScrolling: "touch" }}>
-            {[
-              { img: "/images/foyer-staircase.webp", n: "Custom Home", r: "Ground-up, built once and built right." },
-              { img: "/images/kitchen-white.webp", n: "Custom Interiors", r: "Finished in-house, down to the last detail." },
-              { img: "/images/roof-framing.webp", n: "Roof System", r: "Full tear-off and rebuild to deck." },
-            ].map((p, i) => (
-               <Fade key={i} delay={i * 0.1} style={{ flex: "1 0 min(350px, 85vw)", scrollSnapAlign: "start" }}>
-                 <div style={{ aspectRatio: "4/3", width: "100%", overflow: "hidden", marginBottom: 24, borderRadius: 8 }}>
-                   <img src={p.img} alt={p.n} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.4s" }} onMouseOver={e => e.currentTarget.style.transform="scale(1.05)"} onMouseOut={e => e.currentTarget.style.transform="scale(1)"}/>
-                 </div>
-                 <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 20, margin: "0 0 8px" }}>{p.n}</h3>
-                 <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, margin: 0 }}>{p.r}</p>
-               </Fade>
-            ))}
-          </div>
-          <Fade delay={0.4} style={{ textAlign: "center", marginTop: 48 }}>
-             <Link to="/gallery" style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 1, textTransform: "uppercase", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8 }}>See the Gallery <I.Arrow /></Link>
+        <div className="split-row" style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <Fade>
+            <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 18 }}>Our Work</div>
+            <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(32px, 4.5vw, 50px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: "0 0 18px" }}>Recent builds across Cenla.</h2>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7, margin: "0 0 32px", maxWidth: 420 }}>Commercial buildings and custom homes we've delivered, start to finish.</p>
+            <Link to="/gallery" style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8 }}>View the full gallery <I.Arrow /></Link>
+          </Fade>
+          <Fade delay={0.1}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+              <img src="/images/foyer-staircase.webp" alt="Custom home foyer and staircase" loading="lazy" style={{ width: "100%", aspectRatio: "3 / 4", objectFit: "cover", borderRadius: 12, marginTop: 32 }} />
+              <img src="/images/commercial-build.webp" alt="Commercial construction job site in Central Louisiana" loading="lazy" style={{ width: "100%", aspectRatio: "3 / 4", objectFit: "cover", borderRadius: 12 }} />
+            </div>
           </Fade>
         </div>
       </section>

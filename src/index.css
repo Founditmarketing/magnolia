@@ -245,6 +245,17 @@ html {
 }
 .kenburns { animation: kenburns 26s ease-in-out infinite alternate; will-change: transform; }
 
+/* Editorial split row — content beside headline (stacks on mobile) */
+.split-row {
+  display: grid;
+  grid-template-columns: 0.85fr 1.25fr;
+  gap: clamp(40px, 6vw, 88px);
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .split-row { grid-template-columns: 1fr; gap: 40px; }
+}
+
 /* Service image cards — photo zoom on hover/focus */
 .service-card-img { transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1); }
 .service-card:hover .service-card-img,
