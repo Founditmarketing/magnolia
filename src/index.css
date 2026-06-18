@@ -295,23 +295,6 @@ html {
   z-index: 1;
 }
 
-/* Hero "hazard tape" — diagonal Magnolia-green stripes that unroll behind the text */
-.hero-tape {
-  position: absolute;
-  left: -8%;
-  right: -8%;
-  top: 34%;
-  height: clamp(140px, 24vh, 240px);
-  transform: rotate(-2.5deg);
-  background: repeating-linear-gradient(135deg, rgba(26, 90, 53, 0.16) 0 32px, transparent 32px 64px);
-  z-index: 0;
-  pointer-events: none;
-  animation: tapeUnroll 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
-}
-@keyframes tapeUnroll {
-  from { clip-path: inset(0 100% 0 0); }
-  to { clip-path: inset(0 0 0 0); }
-}
 @media (max-width: 768px) {
   .hero-plate { grid-template-columns: 1fr; gap: clamp(32px, 6vw, 44px); max-width: 560px; }
 }
@@ -392,9 +375,10 @@ html {
 
 /* ---- Phone / tablet (<=768px) ---- */
 @media (max-width: 768px) {
-  html { scroll-padding-top: 84px; }
-  .header-bar { height: 84px !important; }
-  .header-bar.scrolled { height: 76px !important; }
+  html { scroll-padding-top: 96px; }
+  .header-bar { height: 96px !important; }
+  .header-bar.scrolled { height: 88px !important; }
+  .nav-logo { height: 80px !important; }
   header { border-bottom-width: 1px !important; }
   .fullbleed-break { min-height: clamp(440px, 70vh, 560px) !important; align-items: flex-end !important; }
   .fullbleed-overlay { background: linear-gradient(to top, rgba(8,20,12,0.95) 0%, rgba(8,20,12,0.6) 45%, rgba(8,20,12,0.2) 100%); }

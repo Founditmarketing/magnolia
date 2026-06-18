@@ -44,8 +44,7 @@ export function HomePage() {
   return (
     <>
       {/* 1. Hero — warm editorial split: charcoal serif on linen, proof-forward, phone-first */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(132px, 17vh, 172px) max(24px, env(safe-area-inset-right)) clamp(56px, 9vh, 100px) max(24px, env(safe-area-inset-left))", position: "relative", overflow: "hidden" }}>
-        <div className="hero-tape" aria-hidden="true" />
+      <section style={{ background: "radial-gradient(115% 80% at 8% -12%, rgba(26,90,53,0.10), transparent 52%), radial-gradient(95% 75% at 110% 120%, rgba(33,36,31,0.07), transparent 55%), var(--bg-dark)", padding: "clamp(132px, 17vh, 172px) max(24px, env(safe-area-inset-right)) clamp(56px, 9vh, 100px) max(24px, env(safe-area-inset-left))" }}>
         <div className="hero-plate">
           <Fade delay={0.05}>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 18 }}>
