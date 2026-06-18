@@ -302,16 +302,19 @@ export function NotFound() {
   );
 }
 
-export function PageHero({ tag, title, titleAccent, sub, children, media }) {
+export function PageHero({ tag, title, titleAccent, sub, children, media, poster }) {
   if (media) {
     return (
       <section className="hero-split-container">
 
         <div className="hero-split-media">
           {media.endsWith(".mp4") ? (
-            <video autoPlay loop muted playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}>
-              <source src={media} type="video/mp4" />
-            </video>
+            <>
+              {poster && <img src={poster} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />}
+              <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster={poster} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}>
+                <source src={media} type="video/mp4" />
+              </video>
+            </>
           ) : (
             <img src={media} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           )}

@@ -128,7 +128,10 @@ export function HomePage() {
 
       {/* 3c. Full-bleed image break — cinematic rhythm */}
       <section style={{ position: "relative", minHeight: "clamp(420px, 62vh, 600px)", display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <img src="/images/kitchen-marble.webp" alt="" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+        <img src="/images/break-greatroom.webp" alt="" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+        <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/break-greatroom.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
+          <source src="/break-greatroom.mp4" type="video/mp4" />
+        </video>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(8,20,12,0.95) 0%, rgba(8,20,12,0.66) 50%, rgba(8,20,12,0.32) 100%)" }} />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto", padding: "0 24px", width: "100%" }}>
           <Fade>
@@ -287,7 +290,7 @@ export function DumpstersPage() {
   useSEO({ title: "Roll-Off Dumpster Rental — Alexandria & Cenla", description: "20, 30, and 40-yard roll-off dumpster rental across Central Louisiana. Transparent pricing, fast delivery for job sites, demolition, and major cleanouts. Call (318) 704-6308." });
   return (
     <>
-      <PageHero tag="Dumpster Rentals" title="Roll-Off Dumpsters" titleAccent="for Every Project" sub="Convenient, reliable dumpster rentals for commercial job sites, demolition projects, renovations, and large-scale cleanouts across Central Louisiana." media="/images/dumpster.webp" />
+      <PageHero tag="Dumpster Rentals" title="Roll-Off Dumpsters" titleAccent="for Every Project" sub="Convenient, reliable dumpster rentals for commercial job sites, demolition projects, renovations, and large-scale cleanouts across Central Louisiana." media="/hero-dumpster.mp4" poster="/images/hero-dumpster.webp" />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SH tag="Our Fleet" title="Three Sizes. One Standard of Service." center />

@@ -223,7 +223,7 @@ export function ResidentialPage() {
   useSEO({ title: "Custom Home Building in Central Louisiana", description: "Ground-up custom home building across Central Louisiana — foundation to roof, one accountable builder. Full custom homes, not remodels or repairs. Call (318) 704-6308." });
   return (
     <>
-      <PageHero tag="Custom Home Building" title="Custom" titleAccent="Homes" sub="Ground-up custom homes built across Central Louisiana. We take a lot and a set of plans and deliver a finished home — foundation to roof, framing to final trim. This is full custom home building, not remodels or repairs." media="/images/custom-home-greatroom.webp" />
+      <PageHero tag="Custom Home Building" title="Custom" titleAccent="Homes" sub="Ground-up custom homes built across Central Louisiana. We take a lot and a set of plans and deliver a finished home — foundation to roof, framing to final trim. This is full custom home building, not remodels or repairs." media="/hero-customhome.mp4" poster="/images/hero-customhome.webp" />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <SH tag="Ground-Up" title="Built From the Foundation Up" sub="We build new custom homes as a single accountable contractor — every phase managed in-house, from raw lot to final walk-through." />
