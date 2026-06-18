@@ -49,7 +49,7 @@ export function PricingPage() {
           </Fade>
         </div>
       </section>
-      <CTA title="Ready to Reserve?" sub="Call Chris directly at (318) 704-6308. We'll confirm availability and schedule delivery — often same day." btn="Call to Reserve a Roll-Off" />
+      <CTA title="Ready to Reserve?" sub="Contact us at (318) 704-6308 and we'll confirm availability and schedule delivery — often same day." />
     </>
   );
 }
@@ -94,7 +94,7 @@ export function AboutPage() {
 }
 
 export function ContactPage() {
-  useSEO({ title: "Contact", description: "Call Chris directly for a commercial estimate. Full builds and major projects only — commercial construction, custom homes, roofing, and dumpster rental across Central Louisiana." });
+  useSEO({ title: "Contact", description: "Contact us for a commercial estimate. Full builds and major projects only — commercial construction, custom homes, roofing, and dumpster rental across Central Louisiana." });
 
   // Spam-resistant mini intake. Posts to a Formspree endpoint (public URL, not a secret)
   // set via VITE_FORMSPREE_ENDPOINT. Honeypot + required fields. Form is hidden until configured.
@@ -129,18 +129,18 @@ export function ContactPage() {
 
   return (
     <>
-      <PageHero tag="Contact" title="Let's Discuss" titleAccent="Your Project" sub="One call to Chris. No call centers, no runaround." />
+      <PageHero tag="Contact" title="Let's Discuss" titleAccent="Your Project" sub="Reach us directly. No call centers, no runaround." />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 64 }}>
 
           {/* Phone-first call card */}
           <div className="glass" style={{ borderRadius: 24, padding: "56px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>Call for an Estimate</div>
-            <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 40px)", lineHeight: 1.15, margin: "0 0 20px" }}>Talk to Chris directly.</h3>
+            <h3 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 40px)", lineHeight: 1.15, margin: "0 0 20px" }}>Talk to us directly.</h3>
             <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.7, margin: "0 0 32px" }}>Full builds and major projects only — commercial construction, custom homes, roofing systems, and roll-off dumpster rental across Central Louisiana.</p>
             <a href={TEL} style={{ display: "inline-flex", alignItems: "center", gap: 14, color: "var(--text-primary)", textDecoration: "none", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(28px, 5vw, 40px)", letterSpacing: -0.5, marginBottom: 28 }}><span style={{ color: "var(--primary)", display: "inline-flex" }}><I.Phone /></span>{PHONE}</a>
-            <Btn href={TEL} style={{ width: "100%", justifyContent: "center", padding: "18px" }}>Call Chris Now</Btn>
-            <Btn href="sms:3187046308" variant="outline" style={{ width: "100%", justifyContent: "center", padding: "16px", marginTop: 12 }}>Text Chris</Btn>
+            <Btn href={TEL} style={{ width: "100%", justifyContent: "center", padding: "18px" }}>Call Now</Btn>
+            <Btn href="sms:3187046308" variant="outline" style={{ width: "100%", justifyContent: "center", padding: "16px", marginTop: 12 }}>Text Us</Btn>
           </div>
 
           {/* Direct details */}
@@ -176,13 +176,13 @@ export function ContactPage() {
                 <div style={{ textAlign: "center", padding: "24px 0" }}>
                   <div style={{ color: "var(--primary)", display: "inline-flex", transform: "scale(1.4)", marginBottom: 22 }}><I.Check /></div>
                   <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: 30, color: "var(--text-primary)", margin: "0 0 12px" }}>Request sent</h3>
-                  <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7, margin: 0 }}>Thanks — Chris will reach out shortly. Need it faster? Call or text {PHONE}.</p>
+                  <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.7, margin: 0 }}>Thanks — we'll reach out shortly. Need it faster? Call or text {PHONE}.</p>
                 </div>
               ) : (
                 <form onSubmit={submit}>
                   <div style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 4, textTransform: "uppercase", marginBottom: 12 }}>Prefer to send a request?</div>
                   <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(24px, 3.5vw, 32px)", color: "var(--text-primary)", margin: "0 0 8px" }}>Tell us about your project</h3>
-                  <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, margin: "0 0 28px" }}>Full builds and major projects only. The fastest way to reach Chris is still a call or text.</p>
+                  <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, margin: "0 0 28px" }}>Full builds and major projects only. The fastest way to reach us is still a call or text.</p>
                   <input type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" value={form.company} onChange={e => up("company", e.target.value)} style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }} />
                   {field("name", "Name")}
                   {field("phone", "Phone", "tel")}
@@ -246,12 +246,12 @@ export function ResidentialPage() {
         </div>
       </section>
       <ProcessSteps title="How We Build Your Home" sub="One builder accountable from raw lot to the day we hand you the keys." steps={[
-        { t: "Call & Lot Review", d: "Call Chris with your lot and your plans. We talk through what you want to build and what it takes." },
+        { t: "Lot Review", d: "Contact us with your lot and your plans, and we'll talk through what you want to build and what it takes." },
         { t: "Plans, Permits & Estimate", d: "We handle the permitting and code path and give you a real number before a wall goes up." },
         { t: "Foundation to Finish", d: "One builder manages every phase — sitework, foundation, framing, envelope, mechanicals, and finish." },
         { t: "Final Walk-Through", d: "We walk the finished home with you and hand over the keys to a home built once and built right." },
       ]} />
-      <CTA title="Planning a Custom Home Build?" sub="Talk to Chris about your lot, your plans, and your timeline. Full custom homes only." btn="Call to Discuss Your Build" />
+      <CTA title="Planning a Custom Home Build?" sub="Contact us about your lot, your plans, and your timeline. Full custom homes only." />
     </>
   );
 }

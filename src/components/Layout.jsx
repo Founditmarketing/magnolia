@@ -127,7 +127,7 @@ export function Header({ path }) {
 
       {!open && (
         <div className="mt call-bar" role="group" aria-label="Quick contact">
-          <a href={TEL} className="call-bar-btn call-bar-call" aria-label={`Call Chris at ${PHONE}`}><I.Phone /> Call</a>
+          <a href={TEL} className="call-bar-btn call-bar-call" aria-label={`Call Magnolia State Construction at ${PHONE}`}><I.Phone /> Call</a>
           <Link to="/contact" className="call-bar-btn call-bar-contact">Contact Us</Link>
         </div>
       )}

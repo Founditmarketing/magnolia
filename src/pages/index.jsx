@@ -8,7 +8,7 @@ const FAQ_ITEMS = [
   { q: "Do you take on small repairs or handyman work?", a: "No. We focus on full builds and major projects — ground-up commercial, custom homes, complete roofing systems, demolition, and roll-off dumpster rental. We don't do sheetrock patches, door swaps, fence repair, or general handyman jobs." },
   { q: "Do you handle both commercial and residential roofing?", a: "Yes — complete roof systems for both. Commercial flat and low-slope systems (TPO, EPDM, modified bitumen) and full residential systems (standing-seam metal and architectural shingle). We install whole systems, not patch jobs." },
   { q: "What size roll-off dumpster do I need?", a: "We offer 20, 30, and 40-yard roll-offs — roughly 6, 9, and 12 pickup-truck loads. A 20-yard suits smaller projects and cleanouts; a 40-yard handles major construction and demolition. Call and we'll size it for your job." },
-  { q: "How do I get an estimate?", a: "Call Chris directly at (318) 704-6308. No forms and no call center — one call to talk through your project scope and timeline." },
+  { q: "How do I get an estimate?", a: "Contact us at (318) 704-6308 to talk through your project scope and timeline. No call center, no runaround." },
 ];
 
 // Real Google reviews (verbatim) — aggregate 4.7 across 23 reviews as of 2026-06.
@@ -32,7 +32,7 @@ export function HomePage() {
   const WHY = [
     { t: "One accountable builder", d: "Commercial, custom homes, roofing, and roll-off dumpsters — all under one company, one point of contact." },
     { t: "15+ years across Cenla", d: "Built throughout Alexandria, Pineville, and Central Louisiana — we know the codes, the ground, and the weather." },
-    { t: "Real project management", d: "Schedules kept, budgets respected, and updates straight from Chris — no call center, no runaround." },
+    { t: "Real project management", d: "Schedules kept, budgets respected, and direct updates from the team running your build — no call center, no runaround." },
     { t: "Licensed, insured & ISN-certified", d: "Serious builds, done on record to commercial safety and quality standards." },
   ];
 
@@ -50,7 +50,7 @@ export function HomePage() {
               Commercial. Custom homes. Roofing — and our <span style={{ color: "var(--primary)", fontWeight: 500 }}>name</span> on every one.
             </h1>
             <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, margin: "0 0 26px", maxWidth: 540 }}>
-              Ground-up commercial buildings, custom homes, and complete roofing systems across Central Louisiana — one accountable contractor, permits to punch list. No call center. You call Chris.
+              Ground-up commercial buildings, custom homes, and complete roofing systems across Central Louisiana — one accountable contractor, permits to punch list. No call center, no runaround.
             </p>
             <div className="cred-plate" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "var(--border-light)", border: "1px solid var(--border-light)", borderRadius: 12, overflow: "hidden", width: "100%", maxWidth: 560, marginBottom: 32, boxShadow: "var(--shadow-sm)" }}>
               <a href={REVIEWS_URL} target="_blank" rel="noopener noreferrer" style={{ padding: "13px 18px", display: "flex", alignItems: "center", gap: 8, textDecoration: "none", background: "var(--bg-surface)", minHeight: 48 }}>
@@ -176,7 +176,7 @@ export function CommercialPage() {
         </div>
       </section>
       <ProcessSteps title="How a Commercial Build Works" sub="One accountable contractor, from the first call to the final walk-through." steps={[
-        { t: "Call & Scope", d: "Call Chris directly. We walk the site and talk scope, budget, and timeline — no call center, no runaround." },
+        { t: "Get in Touch", d: "Contact us to start, and we'll walk the site and talk scope, budget, and timeline — no call center, no runaround." },
         { t: "Estimate & Plan", d: "We build a real estimate and a plan: permits, materials, and schedule, all handled in-house." },
         { t: "Ground-Up Build", d: "One contractor runs every phase — foundation, structure, envelope, and finish — on time and on record." },
         { t: "Punch List & Handover", d: "We walk the finished building with you, close the punch list, and hand over a space ready to open." },
@@ -255,7 +255,7 @@ export function RoofingPage() {
         { t: "Tear-Off & Install", d: "We tear off to deck and install the entire system, sealed top to bottom, under full safety protocols." },
         { t: "Final Inspection", d: "We inspect the finished roof and hand over a system engineered to last decades, not seasons." },
       ]} />
-      <CTA title="Specifying a Roof System?" sub="Talk to Chris directly about your commercial or residential roof. One call, no call center, a real scope from an ISN-certified contractor." btn="Call About Your Roof" />
+      <CTA title="Specifying a Roof System?" sub="Contact us about your commercial or residential roof — a real scope from an ISN-certified contractor, no call center." />
     </>
   );
 }
@@ -289,12 +289,12 @@ export function DumpstersPage() {
         </div>
       </section>
       <ProcessSteps tag="Simple Process" title="How Roll-Off Rental Works" sub="Call, and we handle the rest — fast delivery, transparent pricing, clean pickup." steps={[
-        { t: "Call to Reserve", d: "Call Chris with your job and location. We help you size the right roll-off — 20, 30, or 40-yard." },
+        { t: "Reserve a Roll-Off", d: "Contact us with your job and location and we'll help you size the right roll-off — 20, 30, or 40-yard." },
         { t: "Fast Delivery", d: "We drop the container where you need it, often same day, placed for easy loading." },
         { t: "Fill It", d: "Load to the water line over your rental period. Transparent pricing — no surprise fees." },
         { t: "We Haul It", d: "Call when you're done and we haul it off and dispose of the debris properly." },
       ]} />
-      <CTA title="Need a Dumpster on Your Job Site?" sub="Call Chris directly at (318) 704-6308 — we'll get a roll-off delivered, often same day." btn="Call to Reserve a Roll-Off" />
+      <CTA title="Need a Dumpster on Your Job Site?" sub="Contact us at (318) 704-6308 and we'll get a roll-off delivered, often same day." />
     </>
   );
 }
@@ -362,7 +362,7 @@ export function GalleryPage() {
         </div>
       )}
 
-      <CTA title="Like What You See?" sub="Let's build something worth showing off. Talk to Chris about your commercial or custom project." btn="Call About Your Project" />
+      <CTA title="Like What You See?" sub="Let's build something worth showing off. Contact us about your commercial or custom project." />
     </>
   );
 }
