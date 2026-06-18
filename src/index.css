@@ -271,6 +271,17 @@ html {
   .split-row { grid-template-columns: 1fr; gap: 40px; }
 }
 
+/* Why-Magnolia dark band — editorial split (statement beside numbered list) */
+.why-split {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: clamp(40px, 6vw, 88px);
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .why-split { grid-template-columns: 1fr; gap: clamp(36px, 7vw, 48px); }
+}
+
 /* Credential-plate hero — content column beside a framed media panel */
 .hero-plate {
   display: grid;

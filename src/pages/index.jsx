@@ -116,29 +116,28 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 3b. Why Magnolia — dark contrast band for depth + trust */}
-      <section style={{ background: "var(--text-primary)", padding: "clamp(64px, 10vh, 112px) 24px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+      {/* 3b. Why Magnolia — dark editorial band: statement beside a numbered list */}
+      <section style={{ background: "var(--text-primary)", padding: "clamp(76px, 12vh, 128px) 24px" }}>
+        <div className="why-split" style={{ maxWidth: 1180, margin: "0 auto" }}>
           <Fade>
-            <div style={{ color: "#86B595", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 14 }}>Why Magnolia</div>
-            <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(30px, 4.5vw, 46px)", lineHeight: 1.12, letterSpacing: -0.4, color: "#FCFCFA", margin: 0, maxWidth: 620 }}>One builder who answers for the whole job.</h2>
+            <div>
+              <div style={{ color: "#86B595", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 18 }}>Why Magnolia</div>
+              <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(32px, 4.2vw, 52px)", lineHeight: 1.07, letterSpacing: -0.5, color: "#FCFCFA", margin: "0 0 20px" }}>One builder who answers for the whole job.</h2>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(16px, 1.6vw, 18px)", lineHeight: 1.65, color: "rgba(252,252,250,0.72)", margin: "0 0 32px", maxWidth: 400 }}>From permits to punch list, one team stays accountable. No subcontracted runaround, no call center.</p>
+              <Link to="/contact" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--bg-dark)", color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: 0.5, padding: "16px 32px", borderRadius: 8, textDecoration: "none" }}>Contact Us <I.Arrow /></Link>
+            </div>
           </Fade>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(248px, 1fr))", gap: "clamp(26px, 4vw, 44px)", marginTop: "clamp(40px, 6vw, 60px)" }}>
-            {WHY.map((w, i) => (
-              <Fade key={i} delay={i * 0.08}>
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                  <span style={{ color: "#86B595", display: "inline-flex", marginTop: 3, flexShrink: 0 }}><I.Check /></span>
+          <Fade delay={0.12}>
+            <div>
+              {WHY.map((w, i) => (
+                <div key={i} style={{ display: "flex", gap: "clamp(16px, 2vw, 30px)", alignItems: "baseline", padding: "clamp(20px, 2.6vw, 28px) 0", borderTop: i ? "1px solid rgba(252,252,250,0.12)" : "none" }}>
+                  <span style={{ color: "#86B595", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 1, flexShrink: 0, fontVariantNumeric: "tabular-nums" }}>0{i + 1}</span>
                   <div>
-                    <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, letterSpacing: 0.3, color: "#FCFCFA", margin: "0 0 8px" }}>{w.t}</h3>
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.65, color: "rgba(252,252,250,0.74)", margin: 0 }}>{w.d}</p>
+                    <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(16px, 1.7vw, 18px)", letterSpacing: 0.2, color: "#FCFCFA", margin: "0 0 7px" }}>{w.t}</h3>
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "rgba(252,252,250,0.7)", margin: 0, maxWidth: 520 }}>{w.d}</p>
                   </div>
                 </div>
-              </Fade>
-            ))}
-          </div>
-          <Fade>
-            <div style={{ marginTop: "clamp(40px, 6vw, 56px)" }}>
-              <Link to="/contact" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--bg-dark)", color: "var(--text-primary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: 0.5, padding: "16px 32px", borderRadius: 8, textDecoration: "none" }}>Contact Us <I.Arrow /></Link>
+              ))}
             </div>
           </Fade>
         </div>
