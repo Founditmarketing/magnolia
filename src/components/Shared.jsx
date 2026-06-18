@@ -250,9 +250,10 @@ export function Testimonials({ rating, count, items, reviewsUrl }) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 28 }}>
           {items.map((t, i) => (
             <Fade key={i} delay={i * 0.1}>
-              <div className="sc" style={{ borderRadius: 16, padding: "clamp(26px, 6vw, 36px) clamp(24px, 6vw, 34px)", height: "100%", display: "flex", flexDirection: "column" }}>
-                <div style={{ color: "var(--primary)", letterSpacing: 2, fontSize: 16, marginBottom: 18 }}>★★★★★</div>
-                <p style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(19px, 2.5vw, 22px)", lineHeight: 1.5, color: "var(--text-primary)", margin: "0 0 24px", flex: 1 }}>"{t.text}"</p>
+              <div className="sc" style={{ borderRadius: 16, padding: "clamp(28px, 6vw, 38px)", height: "100%", display: "flex", flexDirection: "column" }}>
+                <span aria-hidden="true" style={{ fontFamily: "var(--font-serif)", fontSize: 50, lineHeight: 1, color: "var(--primary)", opacity: 0.3, display: "block", marginBottom: 4 }}>&ldquo;</span>
+                <p style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(19px, 2.5vw, 22px)", lineHeight: 1.5, color: "var(--text-primary)", margin: "0 0 22px", flex: 1 }}>{t.text}</p>
+                <div style={{ color: "var(--primary)", letterSpacing: 2, fontSize: 13, marginBottom: 10 }}>★★★★★</div>
                 <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, color: "var(--text-primary)" }}>{t.author}</div>
                 <div style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--text-secondary)", marginTop: 4 }}>{t.role}</div>
               </div>
