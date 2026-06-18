@@ -57,8 +57,8 @@ export function HomePage() {
   useSEO({ title: "Commercial Construction, Custom Homes, Roofing & Dumpsters", description: "Central Louisiana's commercial and custom builder. Ground-up commercial construction, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. ISN-certified.", faq: FAQ_ITEMS, rating: RATING, reviews: REVIEWS });
 
   const featured = [
-    { n: "Commercial Construction", to: "/commercial", img: "/images/commercial-build.webp", proof: "Metal buildings, foundations, full envelopes, and tenant buildouts — every phase on record.", cta: "Explore commercial construction" },
-    { n: "Custom Home Building", to: "/residential", img: "/images/custom-home-greatroom.webp", proof: "Ground-up custom homes, foundation to final walk-through. One accountable builder.", cta: "Learn about custom homes" },
+    { n: "Commercial Construction", to: "/commercial", img: "/images/commercial-pour-night.webp", proof: "Metal buildings, foundations, full envelopes, and tenant buildouts — every phase on record.", cta: "Explore commercial construction" },
+    { n: "Custom Home Building", to: "/residential", img: "/images/finished-home.webp", proof: "Ground-up custom homes, foundation to final walk-through. One accountable builder.", cta: "Learn about custom homes" },
   ];
   const secondary = [
     { n: "Roofing Systems", to: "/roofing", img: "/images/roof-framing.webp", proof: "TPO, metal, and modified bitumen — full systems, never patch jobs.", cta: "Explore roofing" },
@@ -179,7 +179,7 @@ export function CommercialPage() {
   useSEO({ title: "Commercial Construction in Central Louisiana", description: "Ground-up commercial construction across Alexandria and Central Louisiana — metal buildings, foundations, full envelopes, and tenant buildouts. ISN-certified. Call (318) 704-6308." });
   return (
     <>
-      <PageHero tag="Our Services" title="Commercial" titleAccent="Construction" sub="Full-service, ground-up commercial builds across Central Louisiana. From multi-unit apartments and financial institutions to restaurants and retail — we handle every phase from permits to punch list." media="/images/commercial-trusses.webp" />
+      <PageHero tag="Our Services" title="Commercial" titleAccent="Construction" sub="Full-service, ground-up commercial builds across Central Louisiana. From multi-unit apartments and financial institutions to restaurants and retail — we handle every phase from permits to punch list." media="/images/commercial-interior.webp" />
       <TrustBar />
       <section style={{ background: "var(--bg-dark)", padding: "clamp(88px, 14vh, 176px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -329,13 +329,13 @@ export function GalleryPage() {
   useSEO({ title: "Project Gallery", description: "View our recent commercial, custom home, and roofing projects across Central Louisiana." });
   // Edit captions/categories here. Keep them truthful — category only, no fabricated project locations.
   const items = [
+    { src: "/images/commercial-pour-night.webp", alt: "Night concrete pour on a Magnolia commercial project", cat: "Commercial" },
+    { src: "/images/finished-home.webp", alt: "Finished custom brick home built by Magnolia State Construction", cat: "Custom Home" },
+    { src: "/images/commercial-interior.webp", alt: "Commercial interior build-out with terrazzo flooring", cat: "Commercial Build-Out" },
     { src: "/images/custom-home-greatroom.webp", alt: "Open-concept great room in a Magnolia custom home", cat: "Custom Home" },
+    { src: "/images/commercial-breakroom.webp", alt: "Commercial break-room cabinetry and stone countertops", cat: "Commercial Interior" },
     { src: "/images/kitchen-marble.webp", alt: "Custom kitchen with marble island and gold lighting", cat: "Custom Kitchen" },
-    { src: "/images/kitchen-white.webp", alt: "White custom kitchen with marble counters", cat: "Custom Kitchen" },
-    { src: "/images/staircase-overhead.webp", alt: "Custom staircase and two-story entry", cat: "Custom Home" },
     { src: "/images/foyer-staircase.webp", alt: "Two-story foyer with arched front door", cat: "Custom Home" },
-    { src: "/images/closet.webp", alt: "Built-in custom closet millwork", cat: "Custom Millwork" },
-    { src: "/images/commercial-build.webp", alt: "Commercial construction job site in Central Louisiana", cat: "Commercial" },
     { src: "/images/roof-framing.webp", alt: "Roof framing and decking on a Magnolia project", cat: "Roofing" },
   ];
 
