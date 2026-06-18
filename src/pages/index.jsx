@@ -108,12 +108,12 @@ export function HomePage() {
           </Fade>
           <Fade delay={0.18}>
             <div style={{ position: "relative", borderRadius: 18, overflow: "hidden", border: "1px solid var(--primary)", aspectRatio: "4 / 5", maxHeight: "76vh", boxShadow: "var(--shadow-md)" }}>
-              <img src="/images/hero-staircase.webp" alt="Custom home staircase with wrought-iron balusters and oak handrail built by Magnolia State Construction in Alexandria, Louisiana" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-              <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-staircase.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
-                <source src="/hero-staircase.mp4" type="video/mp4" />
+              <img src="/images/hero-sitework.webp" alt="CAT excavator on a Magnolia State Construction demolition and site-work job in Alexandria, Louisiana" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+              <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-sitework.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
+                <source src="/hero-sitework.mp4" type="video/mp4" />
               </video>
               <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: "34%", background: "linear-gradient(to top, rgba(33,36,31,0.5), rgba(33,36,31,0))" }} aria-hidden="true" />
-              <span style={{ position: "absolute", left: 16, bottom: 14, color: "#fff", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 11, letterSpacing: 1.4, textTransform: "uppercase" }}>Custom home craftsmanship · Alexandria, LA</span>
+              <span style={{ position: "absolute", left: 16, bottom: 14, color: "#fff", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 11, letterSpacing: 1.4, textTransform: "uppercase" }}>Demolition & site work · Alexandria, LA</span>
             </div>
           </Fade>
         </div>
