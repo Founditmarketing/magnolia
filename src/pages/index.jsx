@@ -86,7 +86,7 @@ export function HomePage() {
               <span style={{ width: 28, height: 2, background: "var(--primary)", flexShrink: 0 }} aria-hidden="true" />
               <span style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 2.4, textTransform: "uppercase" }}>Commercial · Custom Homes · Roofing — Alexandria + Cenla</span>
             </div>
-            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(40px, 5.4vw, 70px)", letterSpacing: -1.2, lineHeight: 1.04, margin: "0 0 22px" }}>
+            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(31px, 6vw, 70px)", letterSpacing: -1.2, lineHeight: 1.05, margin: "0 0 22px" }}>
               Commercial. Custom homes. Roofing — and our <span style={{ color: "var(--primary)", fontWeight: 500 }}>name</span> on every one.
             </h1>
             <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, margin: "0 0 30px", maxWidth: 540 }}>
@@ -108,9 +108,9 @@ export function HomePage() {
           </Fade>
           <Fade delay={0.18}>
             <div style={{ position: "relative", borderRadius: 18, overflow: "hidden", border: "1px solid var(--primary)", aspectRatio: "4 / 5", maxHeight: "76vh", boxShadow: "var(--shadow-md)" }}>
-              <img src="/images/hero-commercial.webp" alt="Ground-up commercial construction by Magnolia State Construction in Alexandria, Louisiana" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-              <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-commercial.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
-                <source src="/hero-commercial.mp4" type="video/mp4" />
+              <img src="/images/hero-build-4.webp" alt="Ground-up commercial construction by Magnolia State Construction in Alexandria, Louisiana" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+              <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-build-4.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
+                <source src="/hero-build-4.mp4" type="video/mp4" />
               </video>
               <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: "34%", background: "linear-gradient(to top, rgba(33,36,31,0.5), rgba(33,36,31,0))" }} aria-hidden="true" />
               <span style={{ position: "absolute", left: 16, bottom: 14, color: "#fff", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 11, letterSpacing: 1.4, textTransform: "uppercase" }}>Ground-up commercial · Alexandria, LA</span>
