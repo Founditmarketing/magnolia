@@ -35,6 +35,11 @@ export function HomePage() {
     { t: "Real project management", d: "Schedules kept, budgets respected, and direct updates from the team running your build — no call center, no runaround." },
     { t: "Licensed, insured & ISN-certified", d: "Serious builds, done on record to commercial safety and quality standards." },
   ];
+  const WORK = [
+    { src: "/images/kitchen-marble.webp", alt: "Custom home kitchen with marble waterfall island built by Magnolia State Construction", cat: "Custom Home · Kitchen" },
+    { src: "/images/commercial-interior.webp", alt: "Finished commercial interior build-out in Central Louisiana", cat: "Commercial · Build-Out" },
+    { src: "/images/hero-customhome.webp", alt: "Custom home foyer and staircase built by Magnolia State Construction", cat: "Custom Home · Entry" },
+  ];
 
   return (
     <>
@@ -95,6 +100,32 @@ export function HomePage() {
                   <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 17, textTransform: "uppercase", letterSpacing: 0.5, color: "var(--text-primary)", margin: "0 0 10px" }}>{s.n}</h3>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--text-secondary)", margin: "0 0 16px" }}>{s.d}</p>
                   <span style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 12, letterSpacing: 1.2, textTransform: "uppercase", display: "inline-flex", alignItems: "center", gap: 6 }}>Learn more <I.Arrow /></span>
+                </Link>
+              </Fade>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2b. Recent work — clean photos of real builds, links to the gallery */}
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(64px, 10vh, 112px) 24px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <Fade>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 16, marginBottom: "clamp(32px, 4vw, 48px)" }}>
+              <div>
+                <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 12 }}>Recent Work</div>
+                <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(30px, 4.5vw, 48px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: 0 }}>Built across Central Louisiana.</h2>
+              </div>
+              <Link to="/gallery" style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 1, textTransform: "uppercase", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8, whiteSpace: "nowrap" }}>View the gallery <I.Arrow /></Link>
+            </div>
+          </Fade>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
+            {WORK.map((w, i) => (
+              <Fade key={i} delay={i * 0.08}>
+                <Link to="/gallery" className="service-card" aria-label={`${w.cat} — view gallery`} style={{ display: "block", position: "relative", aspectRatio: "4 / 3", borderRadius: 14, overflow: "hidden", textDecoration: "none" }}>
+                  <img src={w.src} alt={w.alt} className="service-card-img" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+                  <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: "55%", background: "linear-gradient(to top, rgba(8,20,12,0.82), rgba(8,20,12,0))" }} aria-hidden="true" />
+                  <span style={{ position: "absolute", left: 16, bottom: 14, color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 1.2, textTransform: "uppercase" }}>{w.cat}</span>
                 </Link>
               </Fade>
             ))}
