@@ -121,7 +121,7 @@ export function Header({ path }) {
         </div>
         <div>
           <a href={TEL} style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 24, textDecoration: "none", display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}><I.Phone /> {PHONE}</a>
-          <Btn href={TEL} onClick={() => setOpen(false)} style={{ width: "100%", justifyContent: "center", padding: "20px", fontSize: 16 }}>Call for an Estimate</Btn>
+          <Btn to="/contact" onClick={() => setOpen(false)} style={{ width: "100%", justifyContent: "center", padding: "20px", fontSize: 16 }}>Contact Us</Btn>
         </div>
       </div>}
 
@@ -140,8 +140,8 @@ export function Footer() {
       {/* Phone-first CTA band — no email harvest */}
       <div style={{ padding: "80px 24px", borderBottom: "1px solid var(--border-light)", textAlign: "center" }}>
         <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(36px, 6vw, 56px)", margin: "0 0 16px", color: "var(--text-primary)" }}>Ready to build?</h2>
-        <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6, margin: "0 0 36px", maxWidth: 640, marginLeft: "auto", marginRight: "auto" }}>Serving Alexandria, Pineville, and all of Central Louisiana. Full builds and major projects only — call Chris directly.</p>
-        <Btn href={TEL} className="footer-cta-btn" style={{ padding: "18px 44px", fontSize: 18 }}><I.Phone /> Call Chris · {PHONE}</Btn>
+        <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.6, margin: "0 0 36px", maxWidth: 640, marginLeft: "auto", marginRight: "auto" }}>Serving Alexandria, Pineville, and all of Central Louisiana. Full builds and major projects only — reach out to get started.</p>
+        <Btn to="/contact" className="footer-cta-btn" style={{ padding: "18px 44px", fontSize: 18 }}>Contact Us <I.Arrow /></Btn>
       </div>
 
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "clamp(48px, 9vw, 80px) 24px 40px" }}>

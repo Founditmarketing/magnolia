@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, I, Fade, useSEO, Counter } from "../utils";
 
 const PHONE = "(318) 704-6308";
@@ -37,6 +38,13 @@ export function Btn({ to, href, children, variant = "primary", style: s = {}, ..
   if (to) return <Link to={to} style={variants[variant]} {...hoverProps} {...rest}>{children}</Link>;
   if (href) return <a href={href} style={variants[variant]} {...hoverProps} {...rest}>{children}</a>;
   return <button style={variants[variant]} {...hoverProps} {...rest}>{children}</button>;
+}
+
+// Real-logo slot: shows the image at /assets/* if present, else a graceful fallback.
+export function AssetBadge({ src, alt, size = 44, fallback = null }) {
+  const [failed, setFailed] = useState(false);
+  if (failed || !src) return fallback;
+  return <img src={src} alt={alt} style={{ height: size, width: "auto", maxWidth: 220, objectFit: "contain", display: "block" }} onError={() => setFailed(true)} />;
 }
 
 export function TrustBar() {
@@ -127,7 +135,7 @@ export function StandardsBand({ eyebrow, heading, framingLine, weBuild, weDont, 
   );
 }
 
-export function CTA({ title, sub, btn }) {
+export function CTA({ title, sub }) {
   return (
     <section style={{ background: "var(--bg-elevated)", padding: "clamp(88px, 15vh, 176px) 24px", textAlign: "center", position: "relative", overflow: "hidden", borderTop: "1px solid var(--border-light)" }}>
       <div style={{ position: "relative", zIndex: 1, maxWidth: 760, margin: "0 auto" }}>
@@ -135,8 +143,8 @@ export function CTA({ title, sub, btn }) {
         <Fade><p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.75, maxWidth: 560, margin: "0 auto 44px" }}>{sub}</p></Fade>
         <Fade>
           <div className="cta-actions" style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <Btn href={TEL} variant="primary">{btn || "Call for an Estimate"} <I.Phone /></Btn>
-            <Btn href={TEL} variant="outlineDark" style={{ padding: "14px 24px" }}>{PHONE}</Btn>
+            <Btn to="/contact" variant="primary">Contact Us <I.Arrow /></Btn>
+            <Btn href={TEL} variant="outlineDark" style={{ padding: "14px 24px" }}><I.Phone /> {PHONE}</Btn>
           </div>
         </Fade>
       </div>

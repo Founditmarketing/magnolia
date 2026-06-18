@@ -1,25 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Fade, Link, I, useSEO } from "../utils";
-import { Btn, TrustBar, SH, CTA, PageHero, StandardsBand, FAQ, Testimonials, ProcessSteps, ServiceArea, StatsBand, WhyUs } from "../components/Shared";
-
-const TOWNS = ["Alexandria", "Pineville", "Ball", "Tioga", "Boyce", "Lecompte", "Deville", "Woodworth", "Forest Hill", "Glenmora", "Pollock", "Marksville", "Bunkie", "Cheneyville"];
-
-const TEL = "tel:3187046308";
-
-const STANDARDS = {
-  eyebrow: "How We Work",
-  heading: "What We Build. What We Don't.",
-  framingLine: "We focus on full builds and major projects. That focus is what makes the work hold up — and it is why every job gets the same standard, start to finish.",
-  weBuild: [
-    { title: "Ground-up commercial buildings" },
-    { title: "Custom homes, built ground-up" },
-    { title: "Full roofing systems" },
-    { title: "Demolition & site work" },
-    { title: "Roll-off dumpster rental" },
-  ],
-  weDont: ["Sheetrock patches", "Door replacements", "Fence repair", "General handyman work", "Roof repairs and patch jobs", "Small remodels and odd jobs"],
-  closingLine: "Not handyman work. If the job is a quick fix, we'll point you to someone who does that — it isn't us.",
-};
+import { Btn, TrustBar, SH, CTA, PageHero, Testimonials, ProcessSteps, AssetBadge, ISNBadge } from "../components/Shared";
 
 const FAQ_ITEMS = [
   { q: "What areas do you serve?", a: "Magnolia State Construction serves Alexandria, Pineville, and all of Central Louisiana." },
@@ -39,42 +20,15 @@ const REVIEWS = [
   { author: "Tatiana Keizman", role: "Commercial & Residential · Google review", rating: 5, text: "I highly recommend Magnolia State Construction for any upcoming residential or commercial projects. Chris, the owner, runs a team that is professional, respectful, and truly committed to quality." },
 ];
 
-const WHY_US = [
-  { icon: <I.Shield />, t: "One Accountable Builder", d: "One contractor on record from permits to punch list — no subs to chase, no finger-pointing." },
-  { icon: <I.Clock />, t: "Real Project Management", d: "Schedules kept, budgets respected, and updates straight from Chris — not a call center." },
-  { icon: <I.HardHat />, t: "15+ Years in Cenla", d: "Over fifteen years building across Central Louisiana. ISN-certified, licensed, and fully insured." },
-  { icon: <I.Truck />, t: "Clean, Professional Sites", d: "We treat your property like our own — orderly job sites, tidy finishes, roll-offs on hand." },
-];
-
-const STATS = [
-  { end: 15, suffix: "+", label: "Years Building Cenla" },
-  { text: "4.7★", label: "Google Rating" },
-  { end: 23, label: "Google Reviews" },
-  { text: "ISN", label: "Certified Contractor" },
-];
-
 export function HomePage() {
   useSEO({ title: "Commercial Construction, Custom Homes, Roofing & Dumpsters", description: "Central Louisiana's commercial and custom builder. Ground-up commercial construction, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. ISN-certified.", faq: FAQ_ITEMS, rating: RATING, reviews: REVIEWS });
 
-  const featured = [
-    { n: "Commercial Construction", to: "/commercial", img: "/images/commercial-pour-night.webp", proof: "Metal buildings, foundations, full envelopes, and tenant buildouts — every phase on record.", cta: "Explore commercial construction" },
-    { n: "Custom Home Building", to: "/residential", img: "/images/finished-home.webp", proof: "Ground-up custom homes, foundation to final walk-through. One accountable builder.", cta: "Learn about custom homes" },
+  const SERVICES = [
+    { n: "Commercial Construction", to: "/commercial", icon: <I.Building />, d: "Ground-up commercial buildings — permits to punch list." },
+    { n: "Residential Construction", to: "/residential", icon: <I.Home />, d: "Custom homes built start to finish, one accountable builder." },
+    { n: "Roll-Off Trucking & Dumpsters", to: "/dumpsters", icon: <I.Truck />, d: "20, 30 & 40-yard roll-offs delivered across Cenla." },
+    { n: "Roofing Systems", to: "/roofing", icon: <I.Roof />, d: "Complete commercial & residential roof systems — never patch jobs." },
   ];
-  const secondary = [
-    { n: "Roofing Systems", to: "/roofing", img: "/images/roof-framing.webp", proof: "TPO, metal, and modified bitumen — full systems, never patch jobs.", cta: "Explore roofing" },
-    { n: "Roll-Off Dumpster Rental", to: "/dumpsters", img: "/images/dumpster.webp", proof: "20, 30, and 40-yard roll-offs. Transparent pricing, fast delivery.", cta: "See sizes & pricing" },
-  ];
-  const serviceCard = (s, big) => (
-    <Link to={s.to} className="service-card" aria-label={s.n} style={{ display: "block", position: "relative", aspectRatio: big ? "5 / 4" : "16 / 9", borderRadius: 14, overflow: "hidden", textDecoration: "none" }}>
-      <img src={s.img} alt="" className="service-card-img" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(8,20,12,0.93) 0%, rgba(8,20,12,0.45) 52%, rgba(8,20,12,0.08) 100%)" }} />
-      <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, padding: big ? "clamp(28px, 4vw, 40px)" : "26px 26px" }}>
-        <h3 style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: big ? "clamp(26px, 3.5vw, 34px)" : 23, margin: "0 0 10px", lineHeight: 1.12 }}>{s.n}</h3>
-        <p style={{ color: "rgba(255,255,255,0.85)", fontFamily: "var(--font-body)", fontSize: big ? 15.5 : 14, lineHeight: 1.55, margin: "0 0 16px", maxWidth: 440 }}>{s.proof}</p>
-        <span style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 12, letterSpacing: 1.5, textTransform: "uppercase", display: "inline-flex", alignItems: "center", gap: 8 }}>{s.cta} <I.Arrow /></span>
-      </div>
-    </Link>
-  );
 
   return (
     <>
@@ -102,7 +56,7 @@ export function HomePage() {
               <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, background: "var(--bg-surface)", minHeight: 48 }}>Licensed · Insured</span>
             </div>
             <div className="hero-cta-row" style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "center" }}>
-              <Btn href={TEL} className="hero-call" style={{ padding: "17px 36px", fontSize: 17, justifyContent: "center" }}><I.Phone /><span>Call Chris — (318) 704-6308</span></Btn>
+              <Btn to="/contact" className="hero-call" style={{ padding: "17px 36px", fontSize: 17, justifyContent: "center" }}><span>Contact Us</span> <I.Arrow /></Btn>
               <Link to="/gallery" className="hero-seework" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 1.2, textTransform: "uppercase", textDecoration: "none" }}>See recent work <I.Arrow /></Link>
             </div>
           </Fade>
@@ -119,74 +73,45 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 2. Services — image cards with hierarchy (flagships larger) */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(96px, 15vh, 184px) 24px" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
+      {/* 2. Services — clean icon cards, each links to its page */}
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(72px, 11vh, 128px) 24px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <Fade>
-            <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 18 }}>Our Services</div>
-            <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(32px, 4.5vw, 50px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: 0, maxWidth: 560 }}>What we take on.</h2>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7, marginTop: 18, maxWidth: 520 }}>Full builds and major projects, start to finish.</p>
+            <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 14, textAlign: "center" }}>What We Do</div>
+            <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(30px, 4.5vw, 48px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: "0 0 10px", textAlign: "center" }}>Full builds and major projects.</h2>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.6, margin: "0 auto", maxWidth: 560, textAlign: "center" }}>Serving Alexandria, Pineville &amp; all of Central Louisiana.</p>
           </Fade>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24, marginTop: 56 }}>
-            {featured.map((s, i) => <Fade key={i} delay={i * 0.08}>{serviceCard(s, true)}</Fade>)}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(238px, 1fr))", gap: 20, marginTop: 48 }}>
+            {SERVICES.map((s, i) => (
+              <Fade key={i} delay={i * 0.06}>
+                <Link to={s.to} className="sc" aria-label={s.n} style={{ display: "block", height: "100%", borderRadius: 16, padding: "clamp(28px, 4vw, 34px)", textDecoration: "none" }}>
+                  <div style={{ color: "var(--primary)", display: "inline-flex", transform: "scale(1.35)", transformOrigin: "left center", marginBottom: 24 }}>{s.icon}</div>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 17, textTransform: "uppercase", letterSpacing: 0.5, color: "var(--text-primary)", margin: "0 0 10px" }}>{s.n}</h3>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--text-secondary)", margin: "0 0 16px" }}>{s.d}</p>
+                  <span style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 12, letterSpacing: 1.2, textTransform: "uppercase", display: "inline-flex", alignItems: "center", gap: 6 }}>Learn more <I.Arrow /></span>
+                </Link>
+              </Fade>
+            ))}
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24, marginTop: 24 }}>
-            {secondary.map((s, i) => <Fade key={i} delay={i * 0.08}>{serviceCard(s, false)}</Fade>)}
-          </div>
         </div>
       </section>
 
-      {/* 3. By the numbers — dark band: contrast + proof */}
-      <StatsBand items={STATS} />
-
-      {/* 3. The lead filter — What We Build / What We Don't */}
-      <StandardsBand {...STANDARDS} />
-
-      {/* 3c. Full-bleed image break — cinematic rhythm */}
-      <section className="fullbleed-break" style={{ position: "relative", minHeight: "clamp(420px, 62vh, 600px)", display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <img src="/images/break-greatroom.webp" alt="" loading="lazy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }} />
-        <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/break-greatroom.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }}>
-          <source src="/break-greatroom.mp4" type="video/mp4" />
-        </video>
-        <div className="fullbleed-overlay" />
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto", padding: "0 24px", width: "100%" }}>
-          <Fade>
-            <h2 style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(34px, 5.5vw, 60px)", lineHeight: 1.1, letterSpacing: -0.4, margin: "0 0 16px", maxWidth: 600 }}>Built once. Built right.</h2>
-            <p style={{ color: "rgba(255,255,255,0.86)", fontFamily: "var(--font-body)", fontSize: "clamp(16px, 2.5vw, 20px)", lineHeight: 1.6, margin: "0 0 34px", maxWidth: 500 }}>One accountable builder, from the foundation to the final walk-through.</p>
-            <Btn href={TEL}><I.Phone /> Call for an Estimate</Btn>
-          </Fade>
+      {/* 3. Trust strip — credentials at a glance */}
+      <section style={{ background: "var(--bg-elevated)", padding: "clamp(36px, 6vh, 56px) 24px", borderTop: "1px solid var(--border-light)", borderBottom: "1px solid var(--border-light)" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "22px 36px" }}>
+          <AssetBadge src="/assets/isn-logo.png" alt="ISNetworld Certified" size={46} fallback={<span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}><ISNBadge size={38} /><span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 0.5, color: "var(--text-primary)" }}>ISNetworld Certified</span></span>} />
+          <AssetBadge src="/assets/lagc-logo.png" alt="Louisiana Associated General Contractors member" size={42} fallback={<span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 0.5, color: "var(--text-primary)" }}>LAGC Member</span>} />
+          <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 0.5, color: "var(--text-primary)" }}>Licensed &amp; Insured</span>
+          <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 0.5, color: "var(--text-primary)" }}>15+ Years in Cenla</span>
+          <a href={REVIEWS_URL} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <span style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16 }}>{RATING.value} ★</span>
+            <span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 14 }}>{RATING.count} Google reviews</span>
+          </a>
         </div>
       </section>
 
-      {/* 4. Recent work — content beside headline (editorial flow) */}
-      <section style={{ background: "var(--bg-surface)", padding: "clamp(96px, 15vh, 184px) 24px" }}>
-        <div className="split-row" style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <Fade>
-            <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 18 }}>Our Work</div>
-            <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(32px, 4.5vw, 50px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: "0 0 18px" }}>Recent builds across Cenla.</h2>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7, margin: "0 0 32px", maxWidth: 420 }}>Commercial buildings and custom homes we've delivered, start to finish.</p>
-            <Link to="/gallery" style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 14, letterSpacing: 1, textTransform: "uppercase", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 8 }}>View the full gallery <I.Arrow /></Link>
-          </Fade>
-          <Fade delay={0.1}>
-            <div className="splitrow-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-              <img src="/images/foyer-staircase.webp" alt="Custom home foyer and staircase" loading="lazy" style={{ width: "100%", aspectRatio: "3 / 4", objectFit: "cover", borderRadius: 12, marginTop: 32 }} />
-              <img src="/images/commercial-build.webp" alt="Commercial construction job site in Central Louisiana" loading="lazy" style={{ width: "100%", aspectRatio: "3 / 4", objectFit: "cover", borderRadius: 12 }} />
-            </div>
-          </Fade>
-        </div>
-      </section>
-
-      {/* 4b. Why Magnolia State — value props / differentiators */}
-      <WhyUs items={WHY_US} />
-
-      {/* 5. Social Proof — real Google reviews */}
+      {/* 4. Social proof — real Google reviews */}
       <Testimonials rating={RATING.value} count={RATING.count} items={REVIEWS} reviewsUrl={REVIEWS_URL} />
-
-      {/* 6. Service area — local SEO for the surrounding Cenla communities */}
-      <ServiceArea towns={TOWNS} />
-
-      {/* 7. FAQ — depth + FAQPage schema (see useSEO faq prop) */}
-      <FAQ items={FAQ_ITEMS} />
     </>
   );
 }
