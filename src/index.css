@@ -256,6 +256,20 @@ html {
   .split-row { grid-template-columns: 1fr; gap: 40px; }
 }
 
+/* Credential-plate hero — content column beside a framed media panel */
+.hero-plate {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .hero-plate { grid-template-columns: 1fr; gap: clamp(32px, 6vw, 44px); max-width: 560px; }
+}
+
 /* Service image cards — photo zoom on hover/focus */
 .service-card-img { transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1); }
 .service-card:hover .service-card-img,

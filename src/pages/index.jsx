@@ -78,26 +78,42 @@ export function HomePage() {
 
   return (
     <>
-      {/* 1. Hero — sells scale, repels small jobs */}
-      <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "flex-end", padding: "clamp(60px, 15vh, 120px) 24px" }}>
-        <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
-          <img src="/images/hero-commercial.webp" alt="" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-          <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-commercial.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
-            <source src="/hero-commercial.mp4" type="video/mp4" />
-          </video>
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.52) 40%, rgba(0,0,0,0.28) 75%), linear-gradient(100deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.12) 55%, rgba(0,0,0,0) 100%)" }} />
-        </div>
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 1000, margin: "0 auto", width: "100%" }}>
-          <Fade delay={0.1}>
-            <h1 style={{ color: "#fff", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(38px, 7.5vw, 78px)", letterSpacing: -1, margin: "0 0 24px", lineHeight: 1.05 }}>
-              Central Louisiana's<br />Commercial &amp; Custom Builder
+      {/* 1. Hero — warm editorial split: charcoal serif on linen, proof-forward, phone-first */}
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(124px, 17vh, 172px) 24px clamp(56px, 9vh, 100px)" }}>
+        <div className="hero-plate">
+          <Fade delay={0.05}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+              <span style={{ width: 28, height: 2, background: "var(--primary)", flexShrink: 0 }} aria-hidden="true" />
+              <span style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 2.4, textTransform: "uppercase" }}>Commercial · Custom Homes · Roofing — Alexandria + Cenla</span>
+            </div>
+            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(40px, 5.4vw, 70px)", letterSpacing: -1.2, lineHeight: 1.04, margin: "0 0 22px" }}>
+              Commercial. Custom homes. Roofing — and our <span style={{ color: "var(--primary)", fontWeight: 500 }}>name</span> on every one.
             </h1>
-            <p style={{ color: "rgba(255,255,255,0.92)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 4vw, 22px)", lineHeight: 1.55, margin: "0 0 40px", maxWidth: 640 }}>
-              Ground-up commercial buildings, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. This is not handyman work.
+            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, margin: "0 0 30px", maxWidth: 540 }}>
+              Ground-up commercial buildings, custom homes, and complete roofing systems across Central Louisiana — one accountable contractor, permits to punch list. No call center. You call Chris.
             </p>
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
-              <Btn href={TEL} style={{ padding: "17px 38px", fontSize: 17, justifyContent: "center", textAlign: "center" }}><I.Phone /><span>Call for a Commercial Estimate</span></Btn>
-              <Link to="/gallery" style={{ display: "inline-flex", alignItems: "center", gap: 10, color: "#fff", border: "1.5px solid rgba(255,255,255,0.9)", borderRadius: 8, padding: "15px 32px", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, letterSpacing: 1.5, textTransform: "uppercase", textDecoration: "none", transition: "all 0.3s", background: "rgba(0,0,0,0.4)" }} onMouseOver={e => { e.currentTarget.style.background = "rgba(0,0,0,0.62)"; }} onMouseOut={e => { e.currentTarget.style.background = "rgba(0,0,0,0.4)"; }}>See Our Work</Link>
+            <div style={{ display: "flex", flexWrap: "wrap", background: "var(--bg-surface)", border: "1px solid var(--border-light)", borderRadius: 12, overflow: "hidden", width: "fit-content", maxWidth: "100%", marginBottom: 32, boxShadow: "var(--shadow-sm)" }}>
+              <a href={REVIEWS_URL} target="_blank" rel="noopener noreferrer" style={{ padding: "13px 18px", display: "flex", alignItems: "center", gap: 8, textDecoration: "none", borderRight: "1px solid var(--border-light)" }}>
+                <span style={{ color: "var(--primary)", fontWeight: 700, fontSize: 15, fontFamily: "var(--font-display)" }}>{RATING.value} ★</span>
+                <span style={{ color: "var(--text-secondary)", fontSize: 13, fontWeight: 500 }}>{RATING.count} Google reviews</span>
+              </a>
+              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, borderRight: "1px solid var(--border-light)" }}>LAGC Member</span>
+              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, borderRight: "1px solid var(--border-light)" }}>ISNetworld Certified</span>
+              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500 }}>Licensed · Insured</span>
+            </div>
+            <div style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "center" }}>
+              <Btn href={TEL} style={{ padding: "17px 36px", fontSize: 17, justifyContent: "center" }}><I.Phone /><span>Call Chris — (318) 704-6308</span></Btn>
+              <Link to="/gallery" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 1.2, textTransform: "uppercase", textDecoration: "none" }}>See recent work <I.Arrow /></Link>
+            </div>
+          </Fade>
+          <Fade delay={0.18}>
+            <div style={{ position: "relative", borderRadius: 18, overflow: "hidden", border: "1px solid var(--primary)", aspectRatio: "4 / 5", maxHeight: "76vh", boxShadow: "var(--shadow-md)" }}>
+              <img src="/images/hero-commercial.webp" alt="Ground-up commercial construction by Magnolia State Construction in Alexandria, Louisiana" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+              <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-commercial.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
+                <source src="/hero-commercial.mp4" type="video/mp4" />
+              </video>
+              <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: "34%", background: "linear-gradient(to top, rgba(33,36,31,0.5), rgba(33,36,31,0))" }} aria-hidden="true" />
+              <span style={{ position: "absolute", left: 16, bottom: 14, color: "#fff", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 11, letterSpacing: 1.4, textTransform: "uppercase" }}>Ground-up commercial · Alexandria, LA</span>
             </div>
           </Fade>
         </div>
