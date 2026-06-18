@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, I } from "../utils";
-import { Btn, ISNBadge } from "./Shared";
+import { Btn, ISNBadge, AssetBadge } from "./Shared";
 
 const PHONE = "(318) 704-6308";
 const TEL = "tel:3187046308";
@@ -176,13 +176,11 @@ export function Footer() {
           <p style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-body)", fontSize: 14, margin: 0 }}>© {new Date().getFullYear()} Magnolia State Construction LLC. All rights reserved.</p>
           <div className="footer-creds" style={{ display: "flex", alignItems: "center", gap: 28, flexWrap: "wrap" }}>
             <a href="https://www.isnetworld.com/" target="_blank" rel="noopener noreferrer" aria-label="ISNetworld verified contractor" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-              <ISNBadge size={34} />
+              <AssetBadge src="/assets/isn-logo.png" alt="ISNetworld Verified" size={34} fallback={<ISNBadge size={34} />} />
               <span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", fontSize: 12 }}>ISNetworld Verified</span>
             </a>
             <a href="https://www.lagc.org/" target="_blank" rel="noopener noreferrer" aria-label="Louisiana Associated General Contractors member" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-              <div style={{ width: 34, height: 34, borderRadius: 5, border: "2px solid var(--text-secondary)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                <span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 12, letterSpacing: 0.5 }}>LAGC</span>
-              </div>
+              <AssetBadge src="/assets/lagc-logo.png" alt="Louisiana Associated General Contractors member" size={34} fallback={<div style={{ width: 34, height: 34, borderRadius: 5, border: "2px solid var(--text-secondary)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 12, letterSpacing: 0.5 }}>LAGC</span></div>} />
               <span style={{ color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", fontSize: 12 }}>LA Assoc. General Contractors</span>
             </a>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
