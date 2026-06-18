@@ -57,14 +57,19 @@ export function HomePage() {
             <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, margin: "0 0 26px", maxWidth: 540 }}>
               Ground-up commercial buildings, custom homes, and complete roofing systems across Central Louisiana — one accountable contractor, permits to punch list. No call center, no runaround.
             </p>
-            <div className="cred-plate" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "var(--border-light)", border: "1px solid var(--border-light)", borderRadius: 12, overflow: "hidden", width: "100%", maxWidth: 560, marginBottom: 32, boxShadow: "var(--shadow-sm)" }}>
-              <a href={REVIEWS_URL} target="_blank" rel="noopener noreferrer" style={{ padding: "13px 18px", display: "flex", alignItems: "center", gap: 8, textDecoration: "none", background: "var(--bg-surface)", minHeight: 48 }}>
-                <span style={{ color: "var(--primary)", fontWeight: 700, fontSize: 15, fontFamily: "var(--font-display)" }}>{RATING.value} ★</span>
-                <span style={{ color: "var(--text-secondary)", fontSize: 13, fontWeight: 500 }}>{RATING.count} Google reviews</span>
-              </a>
-              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, background: "var(--bg-surface)", minHeight: 48 }}>LAGC Member</span>
-              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, background: "var(--bg-surface)", minHeight: 48 }}>ISNetworld Certified</span>
-              <span style={{ padding: "13px 18px", display: "flex", alignItems: "center", color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, background: "var(--bg-surface)", minHeight: 48 }}>Licensed · Insured</span>
+            <div className="cred-plate" style={{ background: "var(--bg-surface)", border: "1px solid var(--border-light)", borderRadius: 14, padding: "16px 20px", width: "fit-content", maxWidth: "100%", marginBottom: 32, boxShadow: "var(--shadow-sm)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 22, paddingBottom: 14, borderBottom: "1px solid var(--border-light)", marginBottom: 14 }}>
+                <AssetBadge src="/assets/isn-logo.png" alt="ISNetworld Certified contractor" size={40} fallback={<span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 0.5, color: "var(--text-primary)" }}>ISNetworld</span>} />
+                <AssetBadge src="/assets/lagc-logo.png" alt="Louisiana Associated General Contractors member" size={40} fallback={<span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 0.5, color: "var(--text-primary)" }}>LAGC Member</span>} />
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+                <a href={REVIEWS_URL} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 7, textDecoration: "none" }}>
+                  <span style={{ color: "var(--primary)", fontWeight: 700, fontSize: 15, fontFamily: "var(--font-display)" }}>{RATING.value} ★</span>
+                  <span style={{ color: "var(--text-secondary)", fontSize: 13, fontWeight: 500 }}>{RATING.count} Google reviews</span>
+                </a>
+                <span style={{ width: 1, height: 15, background: "var(--border-light)", flexShrink: 0 }} aria-hidden="true" />
+                <span style={{ color: "var(--text-secondary)", fontSize: 13, fontWeight: 500, fontFamily: "var(--font-display)" }}>Licensed &amp; Insured</span>
+              </div>
             </div>
             <div className="hero-cta-row" style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "center" }}>
               <Btn to="/contact" className="hero-call" style={{ padding: "17px 36px", fontSize: 17, justifyContent: "center" }}><span>Contact Us</span> <I.Arrow /></Btn>
