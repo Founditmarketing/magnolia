@@ -44,7 +44,7 @@ export function TrustBar() {
     { badge: true, label: "ISNetworld Certified", sub: "Verified Contractor" },
     { icon: <I.Shield />, label: "High-Limit Insurance", sub: "Fully Covered" },
     { icon: <I.HardHat />, label: "OSHA Compliant", sub: "Safety-First Operations" },
-    { icon: <I.Check />, label: "Licensed & Bonded", sub: "State of Louisiana" },
+    { icon: <I.Check />, label: "Licensed & Insured", sub: "State of Louisiana" },
   ];
   return (
     <div style={{ background: "var(--bg-surface)", borderTop: "1px solid var(--border-light)", borderBottom: "1px solid var(--border-light)", padding: "20px 24px" }}>

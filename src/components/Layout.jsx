@@ -61,7 +61,7 @@ export function Header({ path }) {
         <div className={`header-bar${sc ? " scrolled" : ""}`} style={{ maxWidth: 1400, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: sc ? 80 : 100, transition: "height 0.4s" }}>
 
           <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }} aria-label="Magnolia State Construction Home">
-            <img src="/logo.png" alt="Magnolia State Construction" style={{ height: "clamp(40px, 9vw, 60px)", objectFit: "contain" }} />
+            <img src="/logo.png" alt="Magnolia State Construction" style={{ height: "clamp(48px, 9vw, 74px)", objectFit: "contain" }} />
           </Link>
 
           <nav className="dn" style={{ display: "flex", alignItems: "center", gap: "clamp(16px, 2vw, 32px)", whiteSpace: "nowrap" }}>
