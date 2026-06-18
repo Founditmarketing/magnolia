@@ -100,7 +100,6 @@ video, iframe { max-width: 100%; height: auto; }
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
-  overflow-x: clip;
 }
 
 /* Material/Solid Structural Classes */
