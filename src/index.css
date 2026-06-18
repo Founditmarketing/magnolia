@@ -291,6 +291,26 @@ html {
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero "hazard tape" — diagonal Magnolia-green stripes that unroll behind the text */
+.hero-tape {
+  position: absolute;
+  left: -8%;
+  right: -8%;
+  top: 40%;
+  height: clamp(96px, 15vh, 150px);
+  transform: rotate(-2.5deg);
+  background: repeating-linear-gradient(135deg, rgba(26, 90, 53, 0.13) 0 22px, transparent 22px 44px);
+  z-index: 0;
+  pointer-events: none;
+  animation: tapeUnroll 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
+}
+@keyframes tapeUnroll {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
 }
 @media (max-width: 768px) {
   .hero-plate { grid-template-columns: 1fr; gap: clamp(32px, 6vw, 44px); max-width: 560px; }
