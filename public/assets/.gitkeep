@@ -1,0 +1,4 @@
+# Drop the real association logos here (the homepage trust strip auto-loads them):
+#   isn-logo.png    -> ISNetworld hexagon
+#   lagc-logo.png   -> AGC / LAGC seal (filename may change to agc-logo.png pending the AGC-vs-LAGC decision)
+# Until these files exist, the trust strip falls back to the built-in badge/text.
