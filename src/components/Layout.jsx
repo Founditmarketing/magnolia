@@ -61,7 +61,7 @@ export function Header({ path }) {
         <div className={`header-bar${sc ? " scrolled" : ""}`} style={{ maxWidth: 1400, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: sc ? 80 : 100, transition: "height 0.4s" }}>
 
           <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }} aria-label="Magnolia State Construction Home">
-            <img src="/logo.png" alt="Magnolia State Construction" style={{ height: "clamp(48px, 9vw, 74px)", objectFit: "contain" }} />
+            <img src="/logo.png" alt="Magnolia State Construction" style={{ height: "clamp(66px, 15vw, 74px)", objectFit: "contain" }} />
           </Link>
 
           <nav className="dn" style={{ display: "flex", alignItems: "center", gap: "clamp(16px, 2vw, 32px)", whiteSpace: "nowrap" }}>
@@ -106,7 +106,7 @@ export function Header({ path }) {
       </header>
 
       {/* Premium Full-Screen Mobile Menu */}
-      {open && <div ref={menuRef} id="mobile-menu" className="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Site menu" style={{ position: "fixed", inset: 0, zIndex: 999, background: "#FFFFFF", display: "flex", flexDirection: "column", padding: "calc(64px + env(safe-area-inset-top)) 24px calc(40px + env(safe-area-inset-bottom))", overflowY: "auto" }}>
+      {open && <div ref={menuRef} id="mobile-menu" className="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Site menu" style={{ position: "fixed", inset: 0, zIndex: 999, background: "#FFFFFF", display: "flex", flexDirection: "column", padding: "calc(84px + env(safe-area-inset-top)) 24px calc(40px + env(safe-area-inset-bottom))", overflowY: "auto" }}>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 24 }}>
           {links.map((l, i) => l.ch ? (
             <div key={i} style={{ animation: "menuItem 0.4s cubic-bezier(0.16,1,0.3,1) backwards", animationDelay: `${0.06 * i + 0.05}s` }}>
