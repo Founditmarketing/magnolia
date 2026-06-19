@@ -21,7 +21,7 @@ const REVIEWS = [
 ];
 
 export function HomePage() {
-  useSEO({ title: "Commercial Construction, Custom Homes, Roofing & Dumpsters", description: "Central Louisiana's commercial and custom builder. Ground-up commercial construction, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. ISN-certified.", faq: FAQ_ITEMS, rating: RATING, reviews: REVIEWS });
+  useSEO({ title: "Commercial Construction, Custom Homes, Roofing & Dumpsters", shareTitle: "Magnolia State Construction — Commercial & Custom Builders | Central Louisiana", description: "Central Louisiana's commercial and custom builder. Ground-up commercial construction, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. ISN-certified.", faq: FAQ_ITEMS, rating: RATING, reviews: REVIEWS });
 
   const WHY = [
     { t: "One accountable builder", d: "Commercial, custom homes, roofing, and roll-off dumpsters — all under one company, one point of contact." },
@@ -38,7 +38,7 @@ export function HomePage() {
   return (
     <>
       {/* 1. Hero — warm editorial split: charcoal serif on linen, proof-forward, phone-first */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(132px, 17vh, 172px) max(24px, env(safe-area-inset-right)) clamp(56px, 9vh, 100px) max(24px, env(safe-area-inset-left))", position: "relative", overflow: "hidden" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(156px, 18vh, 192px) max(24px, env(safe-area-inset-right)) clamp(56px, 9vh, 100px) max(24px, env(safe-area-inset-left))", position: "relative", overflow: "hidden" }}>
         <img src="/images/hero-build-3.webp" alt="" aria-hidden="true" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0, background: "linear-gradient(105deg, rgba(246,245,241,0.96) 0%, rgba(246,245,241,0.89) 50%, rgba(246,245,241,0.62) 100%)" }} />
         <div className="hero-plate">
@@ -70,7 +70,7 @@ export function HomePage() {
             </div>
           </Fade>
           <Fade delay={0.18}>
-            <div className="hero-media" style={{ position: "relative", borderRadius: 18, overflow: "hidden", border: "1px solid var(--primary)", aspectRatio: "4 / 5", maxHeight: "76vh", boxShadow: "var(--shadow-md)" }}>
+            <div className="hero-media" style={{ position: "relative", borderRadius: 18, overflow: "hidden", border: "1px solid var(--primary)", aspectRatio: "4 / 5", maxHeight: "80vh", boxShadow: "var(--shadow-md)" }}>
               <img src="/images/hero-sitework.webp" alt="CAT excavator on a Magnolia State Construction demolition and site-work job in Alexandria, Louisiana" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
               <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-sitework.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
                 <source src="/hero-sitework.mp4" type="video/mp4" />
@@ -133,7 +133,7 @@ export function HomePage() {
           <Fade>
             <div style={{ maxWidth: 580 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
-                <span style={{ color: "#86B595", display: "inline-flex" }}><I.Truck /></span>
+                <span style={{ width: 28, height: 2, background: "#86B595", flexShrink: 0 }} aria-hidden="true" />
                 <span style={{ color: "#86B595", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 3, textTransform: "uppercase" }}>Site Logistics</span>
               </div>
               <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 44px)", letterSpacing: -0.4, lineHeight: 1.1, color: "#FCFCFA", margin: "0 0 14px" }}>Roll-off dumpsters, delivered across Cenla.</h2>

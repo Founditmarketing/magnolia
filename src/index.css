@@ -285,7 +285,7 @@ html {
 /* Credential-plate hero — content column beside a framed media panel */
 .hero-plate {
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
+  grid-template-columns: 0.92fr 1.08fr;
   gap: clamp(36px, 5vw, 72px);
   align-items: center;
   max-width: 1280px;
@@ -375,10 +375,10 @@ html {
 
 /* ---- Phone / tablet (<=768px) ---- */
 @media (max-width: 768px) {
-  html { scroll-padding-top: 96px; }
-  .header-bar { height: 96px !important; }
-  .header-bar.scrolled { height: 88px !important; }
-  .nav-logo { height: 80px !important; }
+  html { scroll-padding-top: 116px; }
+  .header-bar { height: 116px !important; }
+  .header-bar.scrolled { height: 102px !important; }
+  .nav-logo { height: 98px !important; }
   header { border-bottom-width: 1px !important; }
   .fullbleed-break { min-height: clamp(440px, 70vh, 560px) !important; align-items: flex-end !important; }
   .fullbleed-overlay { background: linear-gradient(to top, rgba(8,20,12,0.95) 0%, rgba(8,20,12,0.6) 45%, rgba(8,20,12,0.2) 100%); }

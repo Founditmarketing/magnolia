@@ -92,9 +92,9 @@ export function Parallax({ children, speed = 0.2, style = {}, className = "" }) 
   );
 }
 
-export function useSEO({ title, description, image = "https://magnoliastateconstruction.com/og-image.jpg", faq, rating, reviews, noindex }) {
+export function useSEO({ title, shareTitle, description, image = "https://magnoliastateconstruction.com/og-image.jpg", faq, rating, reviews, noindex }) {
   useEffect(() => {
-    const fullTitle = title + " | Magnolia State Construction";
+    const fullTitle = shareTitle || (title + " | Magnolia State Construction");
     document.title = fullTitle;
 
     const setMeta = (name, content, isProp = false) => {
@@ -110,6 +110,9 @@ export function useSEO({ title, description, image = "https://magnoliastateconst
     setMeta("og:image", image, true);
     setMeta("og:type", "website", true);
     setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", fullTitle);
+    setMeta("twitter:description", description);
+    setMeta("twitter:image", image);
     setMeta("robots", noindex ? "noindex, follow" : "index, follow");
 
     // Canonical
@@ -176,7 +179,7 @@ export function useSEO({ title, description, image = "https://magnoliastateconst
     } else if (faqScript) {
       faqScript.remove();
     }
-  }, [title, description, image, faq, rating, reviews, noindex]);
+  }, [title, shareTitle, description, image, faq, rating, reviews, noindex]);
 }
 
 // --- COUNTER ---
