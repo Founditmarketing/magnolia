@@ -126,7 +126,7 @@ export function HomePage() {
       </section>
 
       {/* 2a. Services — Track 2: roll-off / site logistics, a separate full-bleed utilitarian band */}
-      <section className="fullbleed-break" style={{ position: "relative", display: "flex", alignItems: "center", minHeight: "clamp(400px, 54vh, 500px)", overflow: "hidden", padding: "clamp(56px, 9vh, 92px) 24px" }}>
+      <section className="fullbleed-break" style={{ position: "relative", display: "flex", alignItems: "center", minHeight: "clamp(360px, 46vh, 460px)", overflow: "hidden", padding: "clamp(56px, 9vh, 92px) 24px" }}>
         <img src="/images/hero-dumpster.webp" alt="Roll-off dumpster truck delivering a container on a Central Louisiana jobsite" loading="lazy" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
         <div className="fullbleed-overlay" aria-hidden="true" style={{ zIndex: 1 }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1180, width: "100%", margin: "0 auto" }}>
@@ -137,20 +137,8 @@ export function HomePage() {
                 <span style={{ color: "#86B595", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 3, textTransform: "uppercase" }}>Site Logistics</span>
               </div>
               <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 44px)", letterSpacing: -0.4, lineHeight: 1.1, color: "#FCFCFA", margin: "0 0 14px" }}>Roll-off dumpsters, delivered across Cenla.</h2>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16.5, lineHeight: 1.62, color: "rgba(252,252,250,0.86)", margin: "0 0 28px", maxWidth: 500 }}>Roll-off trucking and dumpster rental for construction, demolition, and cleanouts. We size it for the job and keep your site moving.</p>
-              <div className="svc-yards" style={{ marginBottom: 32 }}>
-                {[
-                  { yd: "20", c: "yard roll-off" },
-                  { yd: "30", c: "yard roll-off" },
-                  { yd: "40", c: "yard roll-off" },
-                ].map((y, i) => (
-                  <div key={i} className="svc-yard">
-                    <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(26px, 3vw, 32px)", lineHeight: 1, color: "#FCFCFA", fontVariantNumeric: "tabular-nums" }}>{y.yd}<span style={{ fontSize: 13, fontWeight: 700, marginLeft: 3, color: "#86B595", letterSpacing: 0.5 }}>YD</span></span>
-                    <span style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 10.5, letterSpacing: 1.6, textTransform: "uppercase", color: "rgba(252,252,250,0.62)", marginTop: 4 }}>{y.c}</span>
-                  </div>
-                ))}
-              </div>
-              <Btn to="/dumpsters" style={{ padding: "15px 32px" }}><span>Rent a roll-off</span> <I.Arrow /></Btn>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 16.5, lineHeight: 1.62, color: "rgba(252,252,250,0.86)", margin: "0 0 30px", maxWidth: 520 }}>Complete site logistics — from demolition and site clearing to roll-off container service that keeps your jobsite moving and clear.</p>
+              <Link to="/dumpsters" style={{ display: "inline-flex", alignItems: "center", gap: 9, color: "#FCFCFA", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, letterSpacing: 1.4, textTransform: "uppercase", textDecoration: "none", borderBottom: "1px solid rgba(252,252,250,0.45)", paddingBottom: 5 }}>Explore Site Logistics <I.Arrow /></Link>
             </div>
           </Fade>
         </div>
@@ -208,9 +196,9 @@ export function HomePage() {
             </div>
           </Fade>
           <Fade delay={0.12}>
-            <div>
+            <div className="why-list">
               {WHY.map((w, i) => (
-                <div key={i} style={{ display: "flex", gap: "clamp(16px, 2vw, 30px)", alignItems: "baseline", padding: "clamp(20px, 2.6vw, 28px) 0", borderTop: i ? "1px solid rgba(252,252,250,0.12)" : "none" }}>
+                <div key={i} className="why-item" style={{ display: "flex", gap: "clamp(16px, 2vw, 30px)", alignItems: "baseline" }}>
                   <span style={{ color: "#86B595", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 14, letterSpacing: 1, flexShrink: 0, fontVariantNumeric: "tabular-nums" }}>0{i + 1}</span>
                   <div>
                     <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(16px, 1.7vw, 18px)", letterSpacing: 0.2, color: "#FCFCFA", margin: "0 0 7px" }}>{w.t}</h3>

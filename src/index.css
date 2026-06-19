@@ -434,20 +434,15 @@ html {
   .svc-trio { grid-template-columns: 1fr; gap: 16px; }
 }
 
-/* Services Track 2 — spec-sheet yardage row in the dumpster band.
-   Vertical hairline dividers via border-left on items 2+ (wrap-aware:
-   a wrapped first item never leaves a stray trailing rule). */
-.svc-yards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 0;
-  align-items: flex-end;
+/* Why Magnolia — staggered, left-accented list for a bespoke zigzag.
+   Even items step inward on desktop; flattens to a clean stack on mobile. */
+.why-list { display: flex; flex-direction: column; gap: clamp(6px, 1vw, 12px); }
+.why-item {
+  border-left: 2px solid rgba(134, 181, 149, 0.30);
+  padding: clamp(14px, 1.8vw, 20px) 0 clamp(14px, 1.8vw, 20px) clamp(18px, 2vw, 26px);
 }
-.svc-yard {
-  display: flex;
-  flex-direction: column;
-  padding: 2px 22px;
+.why-item:nth-child(even) { margin-left: clamp(22px, 5vw, 64px); }
+@media (max-width: 860px) {
+  .why-item:nth-child(even) { margin-left: 0; }
 }
-.svc-yard:first-child { padding-left: 0; }
-.svc-yard + .svc-yard { border-left: 1px solid rgba(252, 252, 250, 0.18); }
 
