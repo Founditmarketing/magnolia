@@ -423,3 +423,31 @@ html {
   .licenses-sheet, .licenses-sheet * { color: #000 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 
+/* Services Track 1 — premium construction trio (fixed 3-up, single column on phone).
+   Uses 860px to match the existing .why-split collapse point. */
+.svc-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 860px) {
+  .svc-trio { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* Services Track 2 — spec-sheet yardage row in the dumpster band.
+   Vertical hairline dividers via border-left on items 2+ (wrap-aware:
+   a wrapped first item never leaves a stray trailing rule). */
+.svc-yards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 0;
+  align-items: flex-end;
+}
+.svc-yard {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 22px;
+}
+.svc-yard:first-child { padding-left: 0; }
+.svc-yard + .svc-yard { border-left: 1px solid rgba(252, 252, 250, 0.18); }
+

@@ -23,12 +23,6 @@ const REVIEWS = [
 export function HomePage() {
   useSEO({ title: "Commercial Construction, Custom Homes, Roofing & Dumpsters", description: "Central Louisiana's commercial and custom builder. Ground-up commercial construction, custom homes, full roofing systems, and roll-off dumpster rental across Cenla. ISN-certified.", faq: FAQ_ITEMS, rating: RATING, reviews: REVIEWS });
 
-  const SERVICES = [
-    { n: "Commercial Construction", to: "/commercial", icon: <I.Building />, d: "Ground-up commercial buildings — permits to punch list." },
-    { n: "Residential Construction", to: "/residential", icon: <I.Home />, d: "Custom homes built start to finish, one accountable builder." },
-    { n: "Roll-Off Trucking & Dumpsters", to: "/dumpsters", icon: <I.Truck />, d: "20, 30 & 40-yard roll-offs delivered across Cenla." },
-    { n: "Roofing Systems", to: "/roofing", icon: <I.Roof />, d: "Complete commercial & residential roof systems — never patch jobs." },
-  ];
   const WHY = [
     { t: "One accountable builder", d: "Commercial, custom homes, roofing, and roll-off dumpsters — all under one company, one point of contact." },
     { t: "15+ years across Cenla", d: "Built throughout Alexandria, Pineville, and Central Louisiana — we know the codes, the ground, and the weather." },
@@ -88,26 +82,77 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 2. Services — clean icon cards, each links to its page */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(72px, 11vh, 128px) 24px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+      {/* 2. Services — Track 1: the premium construction trio (the star) */}
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(72px, 11vh, 128px) 24px clamp(56px, 8vh, 96px)" }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto" }}>
           <Fade>
-            <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 14, textAlign: "center" }}>What We Do</div>
+            <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 14, textAlign: "center" }}>What We Build</div>
             <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(30px, 4.5vw, 48px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: "0 0 10px", textAlign: "center" }}>Full builds and major projects.</h2>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.6, margin: "0 auto", maxWidth: 560, textAlign: "center" }}>Serving Alexandria, Pineville &amp; all of Central Louisiana.</p>
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.6, margin: "0 auto", maxWidth: 560, textAlign: "center" }}>Commercial, custom homes &amp; complete roofing systems — one accountable builder across Central Louisiana.</p>
           </Fade>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(238px, 1fr))", gap: 20, marginTop: 48 }}>
-            {SERVICES.map((s, i) => (
-              <Fade key={i} delay={i * 0.06}>
-                <Link to={s.to} className="sc service-tile" aria-label={s.n} style={{ display: "block", height: "100%", borderRadius: 16, padding: "clamp(28px, 4vw, 34px)", textDecoration: "none" }}>
-                  <div style={{ color: "var(--primary)", display: "inline-flex", transform: "scale(1.35)", transformOrigin: "left center", marginBottom: 24 }}>{s.icon}</div>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 17, textTransform: "uppercase", letterSpacing: 0.5, color: "var(--text-primary)", margin: "0 0 10px" }}>{s.n}</h3>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--text-secondary)", margin: "0 0 16px" }}>{s.d}</p>
-                  <span style={{ color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 12, letterSpacing: 1.2, textTransform: "uppercase", display: "inline-flex", alignItems: "center", gap: 6 }}>Learn more <I.Arrow /></span>
+          <div className="svc-trio" style={{ marginTop: "clamp(40px, 5vw, 56px)" }}>
+            {[
+              { n: "Commercial Construction", to: "/commercial", icon: <I.Building />, d: "Ground-up commercial buildings — permits to punch list, on commercial safety and quality standards." },
+              { n: "Residential / Custom Homes", to: "/residential", icon: <I.Home />, d: "Custom homes built start to finish, with one accountable builder answering for the whole job." },
+              { n: "Roofing Systems", to: "/roofing", icon: <I.Roof />, d: "Complete commercial & residential roof systems — standing-seam, shingle, TPO. Never patch jobs." },
+            ].map((s, i) => (
+              <Fade key={i} delay={i * 0.08} style={{ height: "100%" }}>
+                <Link to={s.to} className="sc service-tile" aria-label={s.n} style={{ display: "flex", flexDirection: "column", height: "100%", borderRadius: 16, padding: "clamp(30px, 3.4vw, 40px)", textDecoration: "none" }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "clamp(22px, 3vw, 30px)" }}>
+                    <span style={{ width: 56, height: 56, borderRadius: 14, background: "var(--primary-bg)", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "var(--primary)", flexShrink: 0 }}>
+                      <span style={{ display: "inline-flex", transform: "scale(1.2)" }}>{s.icon}</span>
+                    </span>
+                    <span style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: 24, color: "var(--border-light)", lineHeight: 1, fontVariantNumeric: "tabular-nums" }}>{`0${i + 1}`}</span>
+                  </div>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 18, textTransform: "uppercase", letterSpacing: 0.5, color: "var(--text-primary)", margin: "0 0 12px", lineHeight: 1.25 }}>{s.n}</h3>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15.5, lineHeight: 1.62, color: "var(--text-secondary)", margin: "0 0 22px", maxWidth: "34ch" }}>{s.d}</p>
+                  <span style={{ marginTop: "auto", color: "var(--primary)", fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 12, letterSpacing: 1.2, textTransform: "uppercase", display: "inline-flex", alignItems: "center", gap: 6 }}>Learn more <I.Arrow /></span>
                 </Link>
               </Fade>
             ))}
           </div>
+
+          {/* Editorial divider — narrates the category shift before the utilitarian band */}
+          <Fade delay={0.04}>
+            <div style={{ marginTop: "clamp(48px, 6vw, 72px)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 14 }}>
+                <span style={{ width: 28, height: 2, background: "var(--primary)", flexShrink: 0 }} aria-hidden="true" />
+                <span style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 2.4, textTransform: "uppercase" }}>Beyond the build</span>
+              </div>
+              <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(24px, 3.2vw, 36px)", letterSpacing: -0.4, lineHeight: 1.12, color: "var(--text-primary)", margin: 0, maxWidth: 640 }}>On the jobsite.</h3>
+            </div>
+          </Fade>
+        </div>
+      </section>
+
+      {/* 2a. Services — Track 2: roll-off / site logistics, a separate full-bleed utilitarian band */}
+      <section className="fullbleed-break" style={{ position: "relative", display: "flex", alignItems: "center", minHeight: "clamp(400px, 54vh, 500px)", overflow: "hidden", padding: "clamp(56px, 9vh, 92px) 24px" }}>
+        <img src="/images/hero-dumpster.webp" alt="Roll-off dumpster truck delivering a container on a Central Louisiana jobsite" loading="lazy" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
+        <div className="fullbleed-overlay" aria-hidden="true" style={{ zIndex: 1 }} />
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1180, width: "100%", margin: "0 auto" }}>
+          <Fade>
+            <div style={{ maxWidth: 580 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+                <span style={{ color: "#86B595", display: "inline-flex" }}><I.Truck /></span>
+                <span style={{ color: "#86B595", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 3, textTransform: "uppercase" }}>Site Logistics</span>
+              </div>
+              <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 44px)", letterSpacing: -0.4, lineHeight: 1.1, color: "#FCFCFA", margin: "0 0 14px" }}>Roll-off dumpsters, delivered across Cenla.</h2>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 16.5, lineHeight: 1.62, color: "rgba(252,252,250,0.86)", margin: "0 0 28px", maxWidth: 500 }}>Roll-off trucking and dumpster rental for construction, demolition, and cleanouts. We size it for the job and keep your site moving.</p>
+              <div className="svc-yards" style={{ marginBottom: 32 }}>
+                {[
+                  { yd: "20", c: "yard roll-off" },
+                  { yd: "30", c: "yard roll-off" },
+                  { yd: "40", c: "yard roll-off" },
+                ].map((y, i) => (
+                  <div key={i} className="svc-yard">
+                    <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "clamp(26px, 3vw, 32px)", lineHeight: 1, color: "#FCFCFA", fontVariantNumeric: "tabular-nums" }}>{y.yd}<span style={{ fontSize: 13, fontWeight: 700, marginLeft: 3, color: "#86B595", letterSpacing: 0.5 }}>YD</span></span>
+                    <span style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 10.5, letterSpacing: 1.6, textTransform: "uppercase", color: "rgba(252,252,250,0.62)", marginTop: 4 }}>{y.c}</span>
+                  </div>
+                ))}
+              </div>
+              <Btn to="/dumpsters" style={{ padding: "15px 32px" }}><span>Rent a roll-off</span> <I.Arrow /></Btn>
+            </div>
+          </Fade>
         </div>
       </section>
 
