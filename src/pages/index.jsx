@@ -47,7 +47,7 @@ export function HomePage() {
               <span style={{ width: 28, height: 2, background: "var(--primary)", flexShrink: 0, marginTop: 7 }} aria-hidden="true" />
               <span style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 1.8, textTransform: "uppercase" }}>Commercial · Custom Homes · Roofing — Alexandria + Cenla</span>
             </div>
-            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(31px, 6vw, 70px)", letterSpacing: "-0.6px", lineHeight: 1.08, textWrap: "balance", margin: "0 0 22px" }}>
+            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(31px, 6vw, 70px)", letterSpacing: "-0.6px", lineHeight: 1.13, textWrap: "balance", margin: "0 0 22px" }}>
               Commercial. Custom homes. Roofing — and our <span style={{ color: "var(--primary)", fontWeight: 500 }}>name</span> on every one.
             </h1>
             <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, margin: "0 0 26px", maxWidth: 540 }}>
@@ -83,7 +83,7 @@ export function HomePage() {
       </section>
 
       {/* 2. Services — Track 1: the premium construction trio (the star) */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(72px, 11vh, 128px) 24px clamp(56px, 8vh, 96px)" }}>
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(96px, 14vh, 168px) 24px clamp(72px, 10vh, 120px)" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto" }}>
           <Fade>
             <div style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 12, letterSpacing: 3, textTransform: "uppercase", marginBottom: 14, textAlign: "center" }}>What We Build</div>
@@ -145,7 +145,7 @@ export function HomePage() {
       </section>
 
       {/* 2b. Recent work — clean photos of real builds, links to the gallery */}
-      <section style={{ background: "var(--bg-surface)", padding: "clamp(64px, 10vh, 112px) 24px" }}>
+      <section style={{ background: "var(--bg-surface)", padding: "clamp(88px, 13vh, 160px) 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <Fade>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 16, marginBottom: "clamp(32px, 4vw, 48px)" }}>
@@ -185,7 +185,7 @@ export function HomePage() {
       </section>
 
       {/* 3b. Why Magnolia — dark editorial band: statement beside a numbered list */}
-      <section style={{ background: "var(--text-primary)", padding: "clamp(76px, 12vh, 128px) 24px" }}>
+      <section style={{ background: "var(--text-primary)", padding: "clamp(96px, 14vh, 168px) 24px" }}>
         <div className="why-split" style={{ maxWidth: 1180, margin: "0 auto" }}>
           <Fade>
             <div>
