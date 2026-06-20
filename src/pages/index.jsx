@@ -129,6 +129,10 @@ export function HomePage() {
       <section className="fullbleed-break" style={{ position: "relative", display: "flex", alignItems: "center", minHeight: "clamp(360px, 46vh, 460px)", overflow: "hidden", padding: "clamp(56px, 9vh, 92px) 24px" }}>
         <img src="/images/hero-dumpster.webp" alt="Roll-off dumpster truck delivering a container on a Central Louisiana jobsite" loading="lazy" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
         <div className="fullbleed-overlay" aria-hidden="true" style={{ zIndex: 1 }} />
+        {/* Top-right corner marker for the roll-off / dumpster service (clean line icon, not clip-art) */}
+        <div aria-hidden="true" style={{ position: "absolute", top: "clamp(20px, 4vw, 34px)", right: "clamp(20px, 4vw, 34px)", zIndex: 2, width: "clamp(52px, 7vw, 64px)", height: "clamp(52px, 7vw, 64px)", padding: 0, borderRadius: 16, background: "rgba(8,20,12,0.42)", border: "1px solid rgba(252,252,250,0.28)", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FCFCFA", boxShadow: "0 10px 26px -10px rgba(0,0,0,0.5)" }}>
+          <span style={{ display: "inline-flex", transform: "scale(1.35)" }}><I.Truck /></span>
+        </div>
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1180, width: "100%", margin: "0 auto" }}>
           <Fade>
             <div style={{ maxWidth: 580 }}>
