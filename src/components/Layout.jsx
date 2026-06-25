@@ -61,7 +61,7 @@ export function Header({ path }) {
         <div className={`header-bar${sc ? " scrolled" : ""}`} style={{ maxWidth: 1400, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: sc ? 104 : 128, transition: "height 0.4s" }}>
 
           <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }} aria-label="Magnolia State Construction Home">
-            <img src="/logo.png" alt="Magnolia State Construction" className="nav-logo" style={{ height: "clamp(98px, 18vw, 116px)", objectFit: "contain" }} />
+            <img src="/msc-logo.png" alt="Magnolia State Construction" className="nav-logo" style={{ height: "clamp(98px, 18vw, 116px)", objectFit: "contain" }} />
           </Link>
 
           <nav className="dn" style={{ display: "flex", alignItems: "center", gap: "clamp(16px, 2vw, 32px)", whiteSpace: "nowrap" }}>
@@ -142,7 +142,7 @@ export function Footer() {
         <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 56, marginBottom: 56 }}>
           <div>
             <div style={{ marginBottom: 24 }}>
-              <img src="/logo.png" alt="Magnolia State Construction" style={{ height: "clamp(64px, 16vw, 92px)", objectFit: "contain" }} />
+              <img src="/msc-logo.png" alt="Magnolia State Construction" style={{ height: "clamp(72px, 16vw, 104px)", objectFit: "contain" }} />
             </div>
             <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.8 }}>ISNetworld-certified builder serving Central Louisiana — ground-up commercial construction, custom homes, roofing systems, and roll-off dumpster rental. Safety-first, on record, start to finish.</p>
             <div style={{ display: "flex", gap: 16, marginTop: 24 }}>
