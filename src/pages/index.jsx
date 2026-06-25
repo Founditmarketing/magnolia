@@ -37,49 +37,44 @@ export function HomePage() {
 
   return (
     <>
-      {/* 1. Hero — warm editorial split: charcoal serif on linen, proof-forward, phone-first */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(156px, 18vh, 192px) max(24px, env(safe-area-inset-right)) clamp(56px, 9vh, 100px) max(24px, env(safe-area-inset-left))", position: "relative", overflow: "hidden" }}>
-        <img src="/images/hero-build-3.webp" alt="" aria-hidden="true" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
-        <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0, background: "linear-gradient(105deg, rgba(246,245,241,0.96) 0%, rgba(246,245,241,0.89) 50%, rgba(246,245,241,0.62) 100%)" }} />
-        <div className="hero-plate">
-          <Fade delay={0.05}>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 18 }}>
-              <span style={{ width: 28, height: 2, background: "var(--primary)", flexShrink: 0, marginTop: 7 }} aria-hidden="true" />
-              <span style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 1.8, textTransform: "uppercase" }}>Commercial · Custom Homes · Roofing — Alexandria + Cenla</span>
+      {/* 1. Hero — centered statement on warm linen, then a full-bleed cinematic band.
+            SIMPLE: eyebrow / one serif H1 / one line / one green CTA, then ONE image band.
+            The white fixed header sits on linen (seamless); the band owns the width below it.
+            COMMERCIAL-vs-WARMTH swap (one line, zero layout change): use
+              /images/hero-customhome.webp + /hero-customhome.mp4  (warmest "Land Rover interior" foyer — default), OR
+              /images/hero-build-3.webp     + /hero-build-3.mp4     (best commercial read). */}
+      <section style={{ background: "var(--bg-dark)", padding: "clamp(168px, 20vh, 208px) max(24px, env(safe-area-inset-right)) clamp(48px, 7vh, 80px) max(24px, env(safe-area-inset-left))", position: "relative", overflow: "hidden" }}>
+        <Fade delay={0.05}>
+          <div className="hero-stack">
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 12, marginBottom: 22 }}>
+              <span style={{ width: 26, height: 2, background: "var(--primary)", flexShrink: 0 }} aria-hidden="true" />
+              <span style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 2, textTransform: "uppercase" }}>Commercial · Custom Homes · Roofing — Central Louisiana</span>
+              <span style={{ width: 26, height: 2, background: "var(--primary)", flexShrink: 0 }} aria-hidden="true" />
             </div>
-            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(31px, 6vw, 70px)", letterSpacing: "-0.6px", lineHeight: 1.13, textWrap: "balance", margin: "0 0 22px" }}>
-              Commercial. Custom homes. Roofing — and our <span style={{ color: "var(--primary)", fontWeight: 500 }}>name</span> on every one.
+            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(40px, 6.6vw, 82px)", letterSpacing: "-0.8px", lineHeight: 1.08, textWrap: "balance", margin: "0 0 22px" }}>
+              We build the ones that <span style={{ color: "var(--primary)" }}>last</span>.
             </h1>
-            <p style={{ color: "var(--text-primary)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, margin: "0 0 26px", maxWidth: 540 }}>
-              Ground-up commercial buildings, custom homes, and complete roofing systems across Central Louisiana — one accountable contractor, permits to punch list. No call center, no runaround.
+            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, margin: "0 auto 34px", maxWidth: 560, textWrap: "balance" }}>
+              Ground-up commercial, custom homes, and complete roofing systems across Central Louisiana — one accountable builder, permits to punch list.
             </p>
-            <div className="cred-plate" style={{ display: "flex", alignItems: "center", gap: 10, background: "var(--bg-surface)", border: "1px solid var(--border-light)", borderRadius: 12, padding: "8px 12px", width: "fit-content", maxWidth: "100%", marginBottom: 32, boxShadow: "var(--shadow-sm)" }}>
-              <AssetBadge src="/assets/isn-logo.png" alt="ISNetworld Certified contractor" size={26} fallback={<span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11, color: "var(--text-primary)" }}>ISN</span>} />
-              <AssetBadge src="/assets/lagc-logo.png" alt="Louisiana Associated General Contractors member" size={26} fallback={<span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 11, color: "var(--text-primary)" }}>LAGC</span>} />
-              <span style={{ width: 1, height: 18, background: "var(--border-light)", flexShrink: 0 }} aria-hidden="true" />
-              <a href={REVIEWS_URL} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 4, textDecoration: "none", whiteSpace: "nowrap" }}>
-                <span style={{ color: "var(--primary)", fontWeight: 700, fontSize: 13, fontFamily: "var(--font-display)" }}>{RATING.value} ★</span>
-                <span style={{ color: "var(--text-secondary)", fontSize: 11.5, fontWeight: 500 }}>{RATING.count} reviews</span>
-              </a>
-              <span style={{ width: 1, height: 18, background: "var(--border-light)", flexShrink: 0 }} aria-hidden="true" />
-              <span style={{ color: "var(--text-secondary)", fontSize: 11.5, fontWeight: 500, fontFamily: "var(--font-display)", whiteSpace: "nowrap" }}>Licensed &amp; Insured</span>
-            </div>
-            <div className="hero-cta-row" style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "center" }}>
-              <Btn to="/contact" className="hero-call" style={{ padding: "17px 36px", fontSize: 17, justifyContent: "center" }}><span>Contact Us</span> <I.Arrow /></Btn>
-              <Link to="/gallery" className="hero-seework" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--text-secondary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 13, letterSpacing: 1.2, textTransform: "uppercase", textDecoration: "none" }}>See recent work <I.Arrow /></Link>
-            </div>
-          </Fade>
-          <Fade delay={0.18}>
-            <div className="hero-media" style={{ position: "relative", borderRadius: 18, overflow: "hidden", border: "1px solid var(--primary)", aspectRatio: "4 / 5", maxHeight: "80vh", boxShadow: "var(--shadow-md)" }}>
-              <img src="/images/hero-sitework.webp" alt="CAT excavator on a Magnolia State Construction demolition and site-work job in Alexandria, Louisiana" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-              <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-sitework.webp" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
-                <source src="/hero-sitework.mp4" type="video/mp4" />
-              </video>
-              <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: "46%", background: "linear-gradient(to top, rgba(33,36,31,0.62), rgba(33,36,31,0))" }} aria-hidden="true" />
-              <span style={{ position: "absolute", left: 16, bottom: 14, color: "#fff", fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 11, letterSpacing: 1.4, textTransform: "uppercase" }}>Demolition & site work · Alexandria, LA</span>
-            </div>
-          </Fade>
-        </div>
+            <Btn to="/contact" className="hero-stack-cta" style={{ padding: "17px 38px", fontSize: 17, justifyContent: "center" }}><span>Start your project</span> <I.Arrow /></Btn>
+          </div>
+        </Fade>
+
+        <Fade delay={0.18}>
+          <div className="hero-band">
+            <img src="/images/hero-customhome.webp" alt="Warm two-story foyer with an arched glass entry in a custom home built by Magnolia State Construction in Central Louisiana" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+            <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-customhome.webp" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
+              <source src="/hero-customhome.mp4" type="video/mp4" />
+            </video>
+            {/* Graft (fullbleed-cinematic): one hairline proof tag, bottom-right, desktop-only.
+                Balances the wide frame and restores ONE proof token — no busy credential card.
+                Wired to the real REVIEWS_URL + RATING consts. */}
+            <a href={REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="hero-band-tag">
+              Alexandria + Cenla&nbsp;&nbsp;·&nbsp;&nbsp;{RATING.value}&#9733; Licensed &amp; Insured
+            </a>
+          </div>
+        </Fade>
       </section>
 
       {/* 2. Services — Track 1: the premium construction trio (the star) */}
