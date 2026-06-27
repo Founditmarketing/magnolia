@@ -447,59 +447,32 @@ html {
 }
 
 /* ============================================================
-   HERO — centered statement on linen + full-bleed cinematic band
-   (new scoped classes; the legacy .hero-plate rules are left
-   untouched so nothing else can break)
+   HERO — fullscreen commercial video reel (public/hero-reel.mp4)
+   The white fixed header overlays the top; the reel fills the
+   viewport; the statement sits lower-left over a dark scrim.
    ============================================================ */
-.hero-stack {
-  max-width: 720px;
-  margin: 0 auto clamp(48px, 6vh, 72px);
-  text-align: center;
+.hero-cine {
   position: relative;
-  z-index: 1;
-}
-
-/* Full-bleed cinematic band: breaks out of the padded section to span the
-   entire viewport. Verified safe in this codebase (body{overflow-x:hidden},
-   #root{max-width:100%}) — no horizontal scrollbar. */
-.hero-band {
-  position: relative;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  aspect-ratio: 21 / 9;
-  max-height: 78vh;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
   overflow: hidden;
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
-  background: var(--bg-elevated);
+  background: var(--text-primary);
 }
-
-/* Hairline proof tag — pinned bottom-right of the band on wide frames. */
-.hero-band-tag {
+.hero-cine-scrim {
   position: absolute;
-  z-index: 2;
-  right: clamp(20px, 4vw, 40px);
-  bottom: clamp(16px, 3vh, 28px);
-  color: rgba(252, 252, 250, 0.82);
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-  text-shadow: 0 1px 14px rgba(8, 12, 9, 0.55);
-  transition: color 0.25s ease;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(8,12,9,0.80) 0%, rgba(8,12,9,0.36) 42%, rgba(8,12,9,0.20) 68%, rgba(8,12,9,0.34) 100%);
 }
-.hero-band-tag:hover { color: #FCFCFA; }
-
-/* ---- Tablet / phone (<=768px) ---- */
-@media (max-width: 768px) {
-  .hero-stack { margin-bottom: clamp(36px, 6vh, 52px); }
-  .hero-band { aspect-ratio: 16 / 9; max-height: none; }
-  /* Hide the proof tag on small screens (keeps the mobile band clean). */
-  .hero-band-tag { display: none; }
+.hero-cine-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 max(24px, env(safe-area-inset-right)) clamp(64px, 12vh, 132px) max(24px, env(safe-area-inset-left));
 }
 
 /* ---- Phone (<=600px): full-width tappable CTA ---- */

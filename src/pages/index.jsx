@@ -37,44 +37,31 @@ export function HomePage() {
 
   return (
     <>
-      {/* 1. Hero — centered statement on warm linen, then a full-bleed cinematic band.
-            SIMPLE: eyebrow / one serif H1 / one line / one green CTA, then ONE image band.
-            The white fixed header sits on linen (seamless); the band owns the width below it.
-            COMMERCIAL-vs-WARMTH swap (one line, zero layout change): use
-              /images/hero-customhome.webp + /hero-customhome.mp4  (warmest "Land Rover interior" foyer — default), OR
-              /images/hero-build-3.webp     + /hero-build-3.mp4     (best commercial read). */}
-      <section style={{ background: "var(--bg-dark)", padding: "clamp(168px, 20vh, 208px) max(24px, env(safe-area-inset-right)) clamp(48px, 7vh, 80px) max(24px, env(safe-area-inset-left))", position: "relative", overflow: "hidden" }}>
-        <Fade delay={0.05}>
-          <div className="hero-stack">
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 12, marginBottom: 22 }}>
-              <span style={{ width: 26, height: 2, background: "var(--primary)", flexShrink: 0 }} aria-hidden="true" />
-              <span style={{ color: "var(--text-tertiary)", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 2, textTransform: "uppercase" }}>Commercial · Custom Homes · Roofing — Central Louisiana</span>
-              <span style={{ width: 26, height: 2, background: "var(--primary)", flexShrink: 0 }} aria-hidden="true" />
+      {/* 1. Hero — fullscreen commercial video reel (public/hero-reel.mp4 = 4 trimmed AI clips stitched).
+            The white fixed header overlays the top; the reel fills the viewport; a white statement +
+            one CTA sit at the lower-left over a dark scrim. Reduced-motion shows the poster (global
+            .hero-video rule). Swap the reel by replacing /hero-reel.mp4 (and the poster img). */}
+      <section className="hero-cine">
+        <img src="/images/hero-build-3.webp" alt="" aria-hidden="true" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
+        <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-build-3.webp" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}>
+          <source src="/hero-reel.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-cine-scrim" aria-hidden="true" />
+        <div className="hero-cine-content">
+          <Fade delay={0.05}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+              <span style={{ width: 28, height: 2, background: "#9BC9AC", flexShrink: 0 }} aria-hidden="true" />
+              <span style={{ color: "#9BC9AC", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 2, textTransform: "uppercase" }}>Commercial · Custom Homes · Roofing — Central Louisiana</span>
             </div>
-            <h1 style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(40px, 6.6vw, 82px)", letterSpacing: "-0.8px", lineHeight: 1.08, textWrap: "balance", margin: "0 0 22px" }}>
-              We build the ones that <span style={{ color: "var(--primary)" }}>last</span>.
+            <h1 style={{ color: "#FCFCFA", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(40px, 6.4vw, 86px)", letterSpacing: "-0.8px", lineHeight: 1.06, textWrap: "balance", margin: "0 0 22px", maxWidth: 880, textShadow: "0 2px 30px rgba(8,12,9,0.5)" }}>
+              We build the ones that <span style={{ color: "#9BC9AC" }}>last</span>.
             </h1>
-            <p style={{ color: "var(--text-secondary)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, margin: "0 auto 34px", maxWidth: 560, textWrap: "balance" }}>
-              Ground-up commercial, custom homes, and complete roofing systems across Central Louisiana — one accountable builder, permits to punch list.
+            <p style={{ color: "rgba(252,252,250,0.92)", fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 21px)", lineHeight: 1.6, margin: "0 0 32px", maxWidth: 560, textShadow: "0 1px 18px rgba(8,12,9,0.6)" }}>
+              Ground-up commercial construction, custom homes, and complete roofing systems across Central Louisiana — one accountable builder, permits to punch list.
             </p>
             <Btn to="/contact" className="hero-stack-cta" style={{ padding: "17px 38px", fontSize: 17, justifyContent: "center" }}><span>Start your project</span> <I.Arrow /></Btn>
-          </div>
-        </Fade>
-
-        <Fade delay={0.18}>
-          <div className="hero-band">
-            <img src="/images/hero-customhome.webp" alt="Warm two-story foyer with an arched glass entry in a custom home built by Magnolia State Construction in Central Louisiana" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-            <video className="hero-video" ref={v => { if (v) v.muted = true; }} autoPlay loop muted playsInline poster="/images/hero-customhome.webp" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
-              <source src="/hero-customhome.mp4" type="video/mp4" />
-            </video>
-            {/* Graft (fullbleed-cinematic): one hairline proof tag, bottom-right, desktop-only.
-                Balances the wide frame and restores ONE proof token — no busy credential card.
-                Wired to the real REVIEWS_URL + RATING consts. */}
-            <a href={REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="hero-band-tag">
-              Alexandria + Cenla&nbsp;&nbsp;·&nbsp;&nbsp;{RATING.value}&#9733; Licensed &amp; Insured
-            </a>
-          </div>
-        </Fade>
+          </Fade>
+        </div>
       </section>
 
       {/* 2. Services — Track 1: the premium construction trio (the star) */}
