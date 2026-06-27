@@ -464,7 +464,10 @@ html {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(to top, rgba(8,12,9,0.80) 0%, rgba(8,12,9,0.36) 42%, rgba(8,12,9,0.20) 68%, rgba(8,12,9,0.34) 100%);
+  background:
+    linear-gradient(to top, rgba(8,12,9,0.86) 0%, rgba(8,12,9,0.55) 26%, rgba(8,12,9,0.12) 58%, rgba(8,12,9,0) 82%),
+    linear-gradient(to right, rgba(8,12,9,0.52) 0%, rgba(8,12,9,0.14) 44%, rgba(8,12,9,0) 70%),
+    linear-gradient(to bottom, rgba(8,12,9,0.30) 0%, rgba(8,12,9,0) 16%);
 }
 .hero-cine-content {
   position: relative;
@@ -474,6 +477,24 @@ html {
   margin: 0 auto;
   padding: 0 max(24px, env(safe-area-inset-right)) clamp(64px, 12vh, 132px) max(24px, env(safe-area-inset-left));
 }
+
+/* Subtle scroll affordance for the fullscreen hero (desktop only; reduced-motion safe). */
+.hero-cine-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(14px, 2.4vh, 26px);
+  transform: translateX(-50%);
+  z-index: 2;
+  color: rgba(252, 252, 250, 0.72);
+  pointer-events: none;
+  animation: heroScrollBob 2.4s ease-in-out infinite;
+}
+@keyframes heroScrollBob {
+  0%, 100% { transform: translate(-50%, 0); opacity: 0.7; }
+  50% { transform: translate(-50%, 6px); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-cine-scroll { animation: none; } }
+@media (max-width: 768px) { .hero-cine-scroll { display: none; } }
 
 /* ---- Phone (<=600px): full-width tappable CTA ---- */
 @media (max-width: 600px) {

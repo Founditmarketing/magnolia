@@ -51,7 +51,7 @@ export function HomePage() {
           <Fade delay={0.05}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
               <span style={{ width: 28, height: 2, background: "#9BC9AC", flexShrink: 0 }} aria-hidden="true" />
-              <span style={{ color: "#9BC9AC", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 2, textTransform: "uppercase" }}>Commercial · Custom Homes · Roofing — Central Louisiana</span>
+              <span style={{ color: "#9BC9AC", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 12, letterSpacing: 2, textTransform: "uppercase", textShadow: "0 1px 12px rgba(8,12,9,0.75)" }}>Commercial · Custom Homes · Roofing — Central Louisiana</span>
             </div>
             <h1 style={{ color: "#FCFCFA", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(40px, 6.4vw, 86px)", letterSpacing: "-0.8px", lineHeight: 1.06, textWrap: "balance", margin: "0 0 22px", maxWidth: 880, textShadow: "0 2px 30px rgba(8,12,9,0.5)" }}>
               We build the ones that <span style={{ color: "#9BC9AC" }}>last</span>.
@@ -62,6 +62,7 @@ export function HomePage() {
             <Btn to="/contact" className="hero-stack-cta" style={{ padding: "17px 38px", fontSize: 17, justifyContent: "center" }}><span>Start your project</span> <I.Arrow /></Btn>
           </Fade>
         </div>
+        <div className="hero-cine-scroll" aria-hidden="true"><span style={{ display: "inline-flex", transform: "scale(1.7)" }}><I.ChevDown /></span></div>
       </section>
 
       {/* 2. Services — Track 1: the premium construction trio (the star) */}
